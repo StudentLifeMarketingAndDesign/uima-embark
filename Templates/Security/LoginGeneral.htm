@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Security/LoginGeneral.htm-->
+<html>
+<head>
+  <title>{Include title.inc} Login</title>
+  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+  <script type="text/javascript">
+  //<!-- hide scripting from older browsers
+  function cont(tag) {
+  document.forms["Login"].action="/4DACTION/HANDLECGI/Log"+tag
+  document.forms["Login"].submit()
+  }
+  // end script hiding-->
+  </script>
+  {Include scripts.inc}
+</head>
+
+<body class="clearfix">
+
+{Include header.inc}
+<div id="content">
+<form id="Login" name="Login" method="post" action="/4DACTION/HANDLECGI/LogOK">
+<input type="hidden" name="sid" value="{SessionID}"/>
+    <table width="300">
+        <tr>
+            <td>
+                <p>A password is required to view this page.</p>
+                <p>If you have {type} access priveleges, please enter the password below and click OK.</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+              <input type="password" size="30"name="password"/>
+              {hiddenFields}
+              <br/><br/>
+              <input type="submit" value="OK"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+{Include footer.inc}
+
+</body>
+</html>

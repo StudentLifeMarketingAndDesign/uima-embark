@@ -1,0 +1,58 @@
+<!-- kiosk pages\BrowseCategory.htm -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{include title.inc} - Browse by Category</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+
+    {Include scripts.inc}
+
+
+</head>
+
+<body onload="initialize()" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+<h1>Browse the Collections by Curatorial Category</h1>
+
+<!-- In order for this to work, Category must be the 5th field in the list of Advanced Search object fields. -->
+
+
+<p><em>Other browse options:</em>&nbsp;
+<a href="/kiosk/BrowseArtist.htm">Artist</a> |
+<a href="/kiosk/BrowseGeography.htm">Geography</a> |
+<a href="/kiosk/BrowseCategory.htm">Curatorial Category</a>
+</p>
+
+<hr />
+
+<h2>By Curatorial Category</h2>
+</hr />
+	<ul>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=African&lineCount=1&RefineSearch=NewSelection&sort=7&sid={sessionid}]">African</a></li>
+	<!-- <li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Central/South+American&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Central and South American</a></li> -->
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Ceramics&lineCount=1&RefineSearch=NewSelection&sort=7&sid=135={sessionid}">Ceramics</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Drawings&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Drawings</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=North+American&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">North American</a></li>
+	<!-- <li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Oceania&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Oceanian</a></li> -->
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Other+Arts&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Other Arts</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Paintings&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Paintings</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Photographs&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Photographs</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Prints&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Prints</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Sculptures&lineCount=1&RefineSearch=NewSelection&sort=7&sid=180={sessionid}">Sculptures</a></li>
+	</ul>
+</ul>
+<hr />
+
+
+
+
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>

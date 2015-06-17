@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Search/Object/Date.htm-->
+<html>
+<head>
+    <meta http-equiv="expires" content="1 Jan 1900 00:00 GMT"/>
+    <title>{Include title.inc} - Date Search</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    <script type="text/javascript">
+    //<!--hide from older browsers
+        function lineChange(NameOfForm,srchType,lastLine) {
+            document.forms[NameOfForm].action = "/4DACTION/HandleCGI/QS_"+srchType+"*"+lastLine+"?sid={SessionId}";
+            document.forms[NameOfForm].submit();
+        }
+    // end script hiding-->
+    </script>
+    {Include scripts.inc}
+</head>
+
+<body onload="setMenu('search');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+
+<h1>Date Search</h1>
+<br><br>
+<form id="Date" name="Date" action="/4DACTION/HANDLECGI/DATE?display=POR" method="post">
+
+    <table width="450">
+        <tr>
+            <td>Choose operator:</td>
+            <td>Enter date in box below...</td>
+        </tr>
+
+        <!--The following will repeat for each line of the date search. The user will be allowed to create up to 2 lines.-->
+        {LineLoop Start}
+            <tr>
+                <td>
+                    {SearchType Start}
+                        <select name="SearchType">
+                            <option value="1" selected="selected">is circa</option>
+                            <option value="2">is earlier than</option>
+                            <option value="3">is later than</option>
+                        </select>
+                    {SearchType End}
+                </td>
+                <td>
+                    {Value Start}<input type="text" size="30" name="value1" value=""/>{Value End}
+                </td>
+                <td>
+                    {Line Buttons}
+                </td>
+            </tr>
+        {LineLoop End}
+
+    </table>
+
+    <input type="hidden" name="lineCount" value="{lineCount}"/>
+
+    <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+
+    <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+    <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+    <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+
+    <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option></select></p>
+
+    <p class="centered"><input type="submit" value="Find"/></p>
+
+	<input type="hidden" name="sid" value="{SessionID}"/>
+
+</form>
+
+{if(Records)}
+    <p>
+        <br/><br/>
+        <b>Your current selection of {Records - Object} records is:</b><br/>
+        {Selection Name Object}
+    </p>
+{end if}
+
+<p><b>Other Search Options:</b><br/>
+<a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
+<a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
+<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+Date |
+<a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> |
+<a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
+
+</div>
+
+{Include footer.inc}
+
+</body>
+
+</html>
+
+

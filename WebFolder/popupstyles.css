@@ -1,0 +1,62 @@
+body {
+    margin: 0 auto;
+    padding:15px;
+    font-family: verdana,arial,trebuchet,sans-serif;
+    font-size: 12px;
+    color: #333366;
+	border:0px;
+	position:relative;
+}
+
+div.right {
+	float: right;
+	margin-right: 5px;
+}
+
+/*********************************************
+ * START CONTENT BOX STYLES
+ */
+	#content {
+		padding-top:5px;
+		padding-right:7px;
+		padding-bottom:20px;
+		padding-left:15px;
+		width:600px;
+		display: inline-block;
+		float:left;
+		margin-left:0px;
+	}
+/*
+ * END CONTENT BOX STYLES
+ ********************************************/
+
+
+td {
+    font-family: verdana,arial,trebuchet,sans-serif;
+    font-size: 12px;
+    color: #333366;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333366;
+  margin-bottom:0px;
+  margin-top:0px;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #333366;
+  margin-bottom:0px;
+  margin-top:0px;
+}
+
+h1 a:hover {
+  color: #cccccc;
+}
+
+h2 {
+    font-size: 14px;
+}

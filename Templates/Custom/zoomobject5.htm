@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Custom/zoomobject.htm-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>{Include title.inc} - Zoomify HTML 5 test</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" href="/zoomstyles.css"/>
+    {Include scripts.inc}
+
+		<script type="text/javascript" src="/scripts/ZoomifyImageViewer-min.js"></script>
+		<style type="text/css">
+		<!--
+			#myContainer
+			{
+				width: 900px;
+				height:700px;
+				margin:auto;
+				border:1px;
+				border-style:solid;
+				border-color:#696969;
+			}
+		-->
+		</style>
+		<script type="text/javascript"> Z.showImage("myContainer", "{Zoom;blank.gif;}", "zSkinPath=/Graphics/Assets/Skins/Dark");</script>
+</head>
+
+<body class="clearfix">
+
+<div class="right"><a href="javascript:showHelp('Zoomify');" title="help">How do I use Zoomify?</a></div>
+
+<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a><br/>
+<i>(<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">Click to return to Description</a>)</i>
+
+{Include pagenavigation.inc}
+
+<center>
+<div id="myContainer"></div>
+</center>
+
+{Include footer.inc}
+
+</body>
+</html>

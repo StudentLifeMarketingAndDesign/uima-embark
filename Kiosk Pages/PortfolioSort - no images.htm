@@ -1,0 +1,92 @@
+<!--Users/PortfolioSort.htm-->
+<html>
+<head>
+<title>EmbARK Web Kiosk Login</title>
+    <script type="text/javascript">
+    <!--
+        function move(incr){
+            var objList = self.document.objSort.objects;
+            var sel = objList.selectedIndex;
+
+            if(sel + incr < objList.length) {
+                if(sel + incr >= 0) {
+                    var swapVal = objList.options[sel + incr].value;
+                    var swapText = objList.options[sel + incr].text;
+
+                    objList.options[sel + incr].value = objList.options[sel].value;
+                    objList.options[sel + incr].text = objList.options[sel].text;
+                    objList.options[sel].value = swapVal;
+                    objList.options[sel].text = swapText;
+
+                    objList.selectedIndex = objList.selectedIndex + incr;
+                }
+                else {
+                    alert("This is the first item. It can not be moved up.");
+                }
+            }
+            else {
+                alert("This is the last item. It can not be moved down.");
+            }
+        }
+
+        function saveSort() {
+            var objList = self.document.objSort.objects;
+
+            for(var i = 0; i < objList.length; i++) {
+                self.document.objSort.order.value = self.document.objSort.order.value + objList.options[i].value+"*";
+            }
+
+            self.document.objSort.submit();
+        }
+    //-->
+    </script>
+    {Include scripts.inc}
+    <style type="text/css">
+        #fixedsize {font-size: 10px;}
+        a.greylink {text-decoration: none; color: CCCCCC;}
+        a.darkgreylink {text-decoration: none; color: 333333;}
+        a.whitelink {text-decoration: none; color: ffffff;}
+        a.greyedlink {text-decoration: none; color: 666666;}
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" onLoad="setMenu('myportfolios');">
+
+{Include header.inc}
+
+<font face="verdana,arial,trebuchet,sans-serif" color="#333366" size="1">
+
+<font face="verdana,arial,trebuchet,sans-serif" color="#333366" size="2"><b>Change sort order for portfolio {Portfolio Name}</b></font>
+
+<br>
+
+<form name="objSort" action="/USavS{_ID}${SessionID}" method="GET">
+
+    <input type="hidden" name="order" value="">
+
+    <table>
+        <tr valign="middle">
+            <td><font face="verdana,arial,trebuchet,sans-serif" color="#333366" size="1">
+            <select name="objects" size="30">
+
+            <!-- The following will repeat for each record in the page. -->
+            {RecordLoop Start}
+                <option value="{_ID}">{[Objects_1]Disp_Title}
+            {RecordLoop End}
+
+            </select></font>
+            </td>
+
+            <td><font face="verdana,arial,trebuchet,sans-serif" color="#333366" size="1"><b><a href="javascript:move(-1)">Move Up</a><br>
+            <a href="javascript:move(1)">Move Down</a></b></font></td>
+        </tr>
+    </table>
+    <input type="button" onClick="saveSort()" value="Save Sort Order">
+</form>
+
+</font>
+
+{Include footer.inc}
+
+</body>
+</html>

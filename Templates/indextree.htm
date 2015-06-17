@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--IndexTree.htm-->
+<html>
+<head>
+	<title>{Include title.inc} - Browse the Collection</title>
+	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+	{Include scripts.inc}
+</head>
+
+<body onload="setMenu('collections');" class="clearfix">
+
+{Include header.inc}
+
+<div id="content">
+
+    <h1>{Branch title;Online Collections}</h1><br>
+	    <!-- Hide 'up a level' at top level -->
+    {if(_ID!="-1")}
+    	<span class="smalltxt">&lt;&nbsp;<a href="{ParentLink}">up a level</a></span>
+	{else}
+    	Click any link below to begin browsing through the collection.
+    {end if}
+	 <br><br>
+	<a href="kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by Artist</a> - <a href="kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by Geography</a> - 
+	<a href="kiosk/browsecategory.htm?sid={SessionId}&x{Sequence}">Browse by Curatorial Category</a>
+	
+	<br><br>
+	<hr>
+
+
+<!-- child branches start -->
+{RecordLoop Start}		 
+	<div class="index-tree-record-box">
+	<div class="index-tree-thumbnail">
+        <a href="{Index Tree}&display=th={Sequence}">{If(Has Image)}<img src="{Thumbnail}" alt=""/>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{End If}</a>
+	</div>
+	<div class="index-tree-label">
+        <a href="{Index Tree}&display=th={Sequence}">{Branch Title}</a>
+	</div>
+</div>
+{RecordLoop End}
+<!-- child branches end -->
+ </div>
+
+{Include footer.inc}
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- kiosk pages\BrowseGeography.htm -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>{include title.inc} - Browse by Geography</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+
+    {Include scripts.inc}
+
+
+</head>
+
+<body onload="initialize()" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+<h1>Browse the Collections by Geography</h1>
+
+<!-- In order for this to work, Region-Continent must be the 5th field in the list of Advanced Search object fields. -->
+
+
+<p><em>Other browse options:</em>&nbsp;
+<a href="/kiosk/BrowseArtist.htm">Artist</a> |
+<a href="/kiosk/BrowseGeography.htm">Geography</a> |
+<a href="/kiosk/BrowseCategory.htm">Curatorial Category</a>
+</p>
+
+<hr />
+
+<h2>By Continent</h2>
+</hr />
+	<ul>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@africa&sid={sessionid}">Africa</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@asia&sid={sessionid}">Asia</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@europe&sid={sessionid}">Europe</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@north america&sid={sessionid}">North America</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@oceania&sid={sessionid}">Oceania</a></li>
+	<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@south america&sid={sessionid}">South America</a></li>
+	</ul>
+</ul>
+<hr />
+
+
+
+
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>

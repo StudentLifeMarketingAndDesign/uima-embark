@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>EmbARK Web Kiosk</title>
+  <link rel="stylesheet" href="/txtStyles.css" type="text/css">
+  <script type="text/javascript">
+	<!--
+		function setPort(selOpt) {
+		if (selOpt == 1) {
+				var portName = prompt("Please enter the new portfolio name:");
+				if(portName.length>0) {
+					opener.document.theForm.name.value = portName;
+					submitPort(selOpt);
+				}
+			}
+			else {
+				submitPort(selOpt);
+			}
+		}
+
+		function submitPort(selOpt) {
+			opener.document.theForm.portID.value = document.portForm.portList.options[selOpt].value;
+			opener.addIDs();
+			window.close();
+		}
+	//-->
+	</script>
+</head>
+
+<body>
+
+Which portfolio would you like to add this object to?
+<br><br>
+
+<form name="portForm">
+<select name="portList" onChange="setPort(this.selectedIndex)" class="txt">
+<option value=0>-- Select Portfolio --
+<option value=0>Create new
+{PortfolioPopup;personal}
+</select>
+</form>
+
+</body>
+</html>

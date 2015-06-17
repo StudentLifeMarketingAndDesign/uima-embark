@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--IndexTreeMessage.htm-->
+<html>
+<head>
+	<title>{Include title.inc}</title>
+	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+	{Include scripts.inc}
+</head>
+
+<body onload="setMenu('collections');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+
+<h1><a href="{ParentLink}">{Branch title}</a></h1>
+<span class="smalltxt">&lt;&nbsp;<a href="{ParentLink}">up a level</a></span>
+
+<br/><br/>
+
+{If(Has Image)}
+	<img src="{Thumbnail}" align="left" hspace="20" vspace="20" alt=""/>
+{End If}
+
+{Message}
+
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Users/PortfolioSort.htm-->
+<html>
+<head>
+  <title>{Include title.inc} Login</title>
+  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+  <script type="text/javascript">
+  <!--
+
+  function saveSort() {
+    var objForm = self.document.processSort;
+    var sortOrder = new Array();
+
+    for(var i = 3; i < objForm.elements.length-3; i++) {
+      //loop through all the input boxes in the form
+      //skip the first 3 and last 3 - these are buttons
+
+      sortOrder.length += 1; //add one more element to the array
+      sortOrder[sortOrder.length-1] = new Array();
+      sortOrder[sortOrder.length-1][0] = objForm.elements[i].name;
+      sortOrder[sortOrder.length-1][1] = objForm.elements[i].value;
+    }
+
+    sortOrder.sort(function(a,b){return a[1] - b[1];});
+
+    var submitForm = self.document.objSort
+
+    for(var i = 0; i < sortOrder.length; i++) {submitForm.order.value += sortOrder[i][0]+"*";}
+
+    submitForm.submit();
+
+  }
+
+  function clearSort() {
+    var objForm = self.document.processSort;
+
+    for(var i = 3; i < objForm.elements.length-3; i++) {
+      objForm.elements[i].value = 0;
+    }
+
+  }
+
+  //-->
+  </script>
+  {Include scripts.inc}
+</head>
+
+<body onload="setMenu('myportfolios');" class="clearfix">
+
+{Include header.inc}<div id="content"><br/>
+
+<h1>Change sort order for portfolio {Portfolio Name}</h1>
+
+<p>To change the portfolio sort order, adjust the numbers in the left column below, then click 'Save Sort Order'.</p>
+
+<p>For example, to make a particular object the first to display in the portfolio, change the number at its left to '1', and change the first object to '2'.</p>
+
+<p>If you create duplicate sort numbers, the kiosk will do its best to adjust them appropriately. You may wish to 'Resort' a second time to verify these adjustments.</p>
+
+<form id="objSort" name="objSort" action="/USavS{_ID}" method="GET">
+  <input type="hidden" name="sid" value="{SessionID}"/>
+  <input type="hidden" name="order" value=""/>
+</form>
+
+<form id="processSort" name="processSort" method="post">
+
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <td><input type="button" value="Clear Existing Order" onclick="clearSort();"/></td>
+
+        <td align="right">
+            <input type="button" value="Cancel" onclick="processSort.action='/UPor?sid={SessionId}&x={Sequence}';processSort.submit();"/>
+            <input type="button" onclick="saveSort()" value="Save Sort Order"/>
+        </td>
+    </tr>
+
+    <tr height="5">
+        <td colspan="2"><img src="/graphics/blank.gif" width="1" height="5" alt=""/></td>
+    </tr>
+
+    <!-- The following will repeat for each record in the page. -->
+    {RecordLoop Start}
+        <tr valign="top">
+            <td colspan="2"><table cellpadding="0" cellspacing="0">
+                <tr valign="top">
+                    <td width="30"><input name="{_ID}" value="{Sort Order}" size="3"/></td>
+
+                    {If(Has Image)}
+                        <td width="128" align="center"><img src="{thumbnail}" width="{thumbnail width*.5}" height="{thumbnail height*.5}" alt=""/></a></td>
+                    {Else}
+                        <td width="128" align="center"><img src="/graphics/DefaultThumbnail.gif" width="64" height="64" alt=""/></td>
+                    {EndIf}
+
+                    <td>
+                        <i>{[Objects_1]Disp_Title}</i><br/>
+                        {[Objects_1]Disp_Maker_1}<br/>
+                        {[Objects_1]Disp_Create_DT}
+                    </td>
+                </tr>
+            </table></td>
+        </tr>
+
+        <tr height="5">
+            <td colspan="2"><img src="/graphics/blank.gif" width="1" height="5" alt=""/></td>
+        </tr>
+    {RecordLoop End}
+
+    <tr>
+        <td>
+            <input type="button" value="Clear Existing Order" onclick="clearSort();"/>
+        </td>
+        <td align="right">
+            <input type="button" value="Cancel" onclick="processSort.action='/UPor?sid={SessionId}&x={Sequence}';processSort.submit();"/>
+            <input type="button" onclick="saveSort()" value="Save Sort Order"/>
+        </td>
+    </tr>
+</table>
+
+</form>
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>

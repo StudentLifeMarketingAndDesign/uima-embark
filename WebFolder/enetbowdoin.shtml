@@ -1,0 +1,572 @@
+-- <info>
+-- <foundcount><!--#4DVAR Records in Selection([Objects_1])--></foundcount>
+-- <criteria><!--#4DVAR queryString--></criteria>
+-- </info>
+
+<pre>
+--
+-- EmbARK Web Kiosk SQL Dump for eMuseum Network - Bowdoin College Museum of Art
+-- Last updated 8/7/2013. 
+
+
+--
+--
+-- Adjust object_url and image_url as appropriate to local URL.
+-- If no full images, adjust to Preview Path. No full image. THUMBS AND PREVIEW ONLY.
+--
+----------------------------------------------------------
+--
+-- Table structure for table ds_classifications
+--
+if exists (select id from sysobjects where name = 'ds_classifications' and type ='u')
+truncate table ds_classifications
+else
+CREATE TABLE ds_classifications (
+  object_id int NOT NULL,
+  display_order int NULL,
+  classification varchar(255) NULL,
+  classification_type varchar(255) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_classifications
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]Class1#"")-->
+INSERT INTO ds_classifications 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '1', <!--#4DIF ([Objects_1]Class1#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Class1-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'Primary') 
+GO <!--#4DENDIF--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_constituents
+--
+if exists (select id from sysobjects where name = 'ds_constituents' and type ='u')
+truncate table ds_constituents
+else
+CREATE TABLE ds_constituents (
+  object_id int NOT NULL,
+  constituentid int NULL,
+  display_order int NULL,
+  biography nvarchar(max) NULL,
+  institution nvarchar(1000) NULL,
+  nametitle nvarchar(1000) NULL,
+  suffix nvarchar(1000) NULL,
+  alphasort nvarchar(1000) NULL,
+  nationality nvarchar(1000) NULL,
+  displaydate nvarchar(1000) NULL,
+  role nvarchar(1000) NULL,
+  lastname nvarchar(1000) NULL,
+  firstname nvarchar(1000) NULL,
+  displayname nvarchar(1000) NULL,
+  begin_date nvarchar(1000) NULL,
+  end_date nvarchar(1000) NULL,
+  is_name_default INT NULL,
+  is_name_used INT NULL,
+  role_prepositional nvarchar(1000) NULL,
+  constituent_type nvarchar(1000) NULL,
+  maker_ulan_id nvarchar(1000) NULL,
+  term_ulan_id nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_constituents
+--
+<!--#4DLOOP [Objects_1]--><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker-->
+INSERT INTO ds_constituents 
+VALUES ('<!--#4DVAR [Object_Artist]_Object_ID-->', '<!--#4DVAR [Object_Artist]_Artist_ID-->', '<!--#4DVAR [Object_Artist]Seq_ID-->', <!--#4DIF ([Artist_Maker]Biography#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Biography-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, <!--#4DIF ([Artist_Maker]Prefix#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Prefix-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Suffix#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Suffix-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Sort_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Sort_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Nat_Culture_L2#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Nat_Culture_L2-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Disp_Maker_Life#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Disp_Maker_Life-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Object_Artist]Role#"")-->'<!--#4DSCRIPT/SQL_Encode/[Object_Artist]Role-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Last_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Last_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]First_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]First_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Artist_Maker]Display_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Display_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, '<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Start_Date_Disp-->', '<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]End_Date_Disp-->', '1', '1', NULL, 'Artist', <!--#4DIF ([Artist_Maker]Artist_Code#"")-->'<!--#4DSCRIPT/SQL_Encode/[Artist_Maker]Artist_Code-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL) 
+GO <!--#4DENDLOOP--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_object_identifiers
+--
+if exists (select id from sysobjects where name = 'ds_object_identifiers' and type ='u')
+truncate table ds_object_identifiers
+else
+CREATE TABLE ds_object_identifiers (
+  object_id int NOT NULL,
+  display_order int NULL,
+  identifier nvarchar(1000) NULL,
+  identifier_type nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_object_identifiers
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]Disp_Access_No#"")-->
+INSERT INTO ds_object_identifiers 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '1', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Access_No-->', 'Accession Number') <!--#4DENDIF--><!--#4DIF ([Objects_1]Temp_ID#"")-->
+INSERT INTO ds_object_identifiers 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '2', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Temp_ID-->', 'Temporary ID') <!--#4DENDIF--><!--#4DIF ([Objects_1]Alt_Number_1#"")-->
+INSERT INTO ds_object_identifiers 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '3', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Alt_Number_1-->', 'Alternate Number 1') <!--#4DENDIF--><!--#4DIF ([Objects_1]Al_Number_2#"")-->
+INSERT INTO ds_object_identifiers 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '4', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Al_Number_2-->', 'Alternate Number 2')
+<!--#4DENDIF-->
+GO <!--#4DENDLOOP-->
+--
+-- Table structure for table ds_geography
+--
+if exists (select id from sysobjects where name = 'ds_geography' and type ='u')
+truncate table ds_geography
+else
+CREATE TABLE ds_geography (
+  object_id int NOT NULL,
+  geocode nvarchar(1000) NULL,
+  country nvarchar(1000) NULL,
+  city nvarchar(1000) NULL,
+  state nvarchar(1000) NULL,
+  Longitude nvarchar(1000) NULL,
+  Latitude nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_geography
+--
+<!--#4DLOOP [Objects_1]-->
+INSERT INTO ds_geography 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', 'Creation Place', <!--#4DIF ([Objects_1]Creation_Place2#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Creation_Place2-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Creation_Place4#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Creation_Place4-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Creation_Place3#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Creation_Place3-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL) 
+GO <!--#4DENDLOOP-->
+--
+-- Table structure for table ds_images
+--
+if exists (select id from sysobjects where name = 'ds_images' and type ='u')
+truncate table ds_images
+else
+CREATE TABLE ds_images (
+  object_id int NOT NULL,
+  image_postage_url nvarchar(1000) NULL,
+  image_full_url nvarchar(1000) NULL,
+  image_thumb_url nvarchar(1000) NULL,
+  image_preview_url nvarchar(1000) NULL,
+  publiccaption	nvarchar(max) NULL,
+  is_primary	int NULL,
+  image_local_url	int NULL,
+  isUpdated	int NULL,
+  media_id	int NULL,
+  rank	int NULL,
+  media_type	nvarchar(1000) NULL,
+  copyrights	nvarchar(1000) NULL,
+  restrictions	nvarchar(255) NULL,
+  media_view	nvarchar(255) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_images
+--
+<!--#4DLOOP [Objects_1]--><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Surrogates--><!--#4DLOOP [Surrogates]--><!--#4DIF ([Surrogates]Web_Access=TRUE)-->
+INSERT INTO ds_images 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', 'http://artmuseum.bowdoin.edu<!--#4DVAR ThumbnailPath("Surrogates")-->', 'http://artmuseum.bowdoin.edu<!--#4DVAR PreviewPath("Surrogates")-->', 'http://artmuseum.bowdoin.edu<!--#4DVAR ThumbnailPath("Surrogates")-->', 'http://artmuseum.bowdoin.edu<!--#4DVAR PreviewPath("Surrogates")-->', NULL, '<!--#4DVAR [Surrogates]IsPrimary-->', NULL, NULL, '<!--#4DVAR [Surrogates]_Surrogate_ID-->', NULL, <!--#4DIF ([Surrogates]Image_Type#"")-->'<!--#4DSCRIPT/SQL_Encode/[Surrogates]Image_Type-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Surrogates]Photo_Credit#"")-->'<!--#4DSCRIPT/SQL_Encode/[Surrogates]PhotoCredit-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Surrogates]Remarks#"")-->'<!--#4DSCRIPT/SQL_Encode/[Surrogates]Remarks-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Surrogates]View_1#"")-->'<!--#4DSCRIPT/SQL_Encode/[Surrogates]View_1-->'<!--#4DELSE-->NULL<!--#4DENDIF-->) 
+GO <!--#4DENDIF--><!--#4DENDLOOP--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_object_dates
+--
+if exists (select id from sysobjects where name = 'ds_object_dates' and type ='u')
+truncate table ds_object_dates
+else
+CREATE TABLE ds_object_dates (
+  object_id int NOT NULL,
+  begindate nvarchar(1000) NULL,
+  enddate nvarchar(1000) NULL,
+  display_order smallint NULL,
+  displaydate nvarchar(1000) NULL,
+  eventtype nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_object_dates
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]Disp_Create_DT#"")-->
+INSERT INTO ds_object_dates 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DVAR [Objects_1]_Disp_Start_Dat-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DVAR [Objects_1]_Disp_End_Date-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, '1', <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Create_DT-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'Creation Date') 
+GO <!--#4DENDIF--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_object_names
+--
+if exists (select id from sysobjects where name = 'ds_object_names' and type ='u')
+truncate table ds_object_names
+else
+CREATE TABLE ds_object_names (
+  object_id int NOT NULL,
+  display_order int NULL,
+  name nvarchar(1000) NULL,
+  name_type nvarchar(1000) NULL,
+  language nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_object_names
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]Obj_name#"")-->
+INSERT INTO ds_object_names 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '1', <!--#4DIF ([Objects_1]Obj_name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Obj_name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'Object Name', 'English') 
+GO <!--#4DENDIF--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_titles
+--
+if exists (select id from sysobjects where name = 'ds_titles' and type ='u')
+truncate table ds_titles
+else
+CREATE TABLE ds_titles (
+  object_id int NOT NULL,
+  title nvarchar(2000) NOT NULL,
+  titletype nvarchar(1000) NULL,
+  display_order int NULL,
+  language nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_titles
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]Alt_Title#"")-->
+INSERT INTO ds_titles 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Alt_Title-->', 'Alt_Title', '3', 'English') <!--#4DENDIF--><!--#4DIF ([Objects_1]Obj_Title#"")-->
+INSERT INTO ds_titles 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Obj_Title-->', 'Obj_Title', '2', 'English') <!--#4DENDIF--><!--#4DIF ([Objects_1]Disp_Title#"")-->
+INSERT INTO ds_titles 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Title-->', 'Disp_Title', '1', 'English') <!--#4DENDIF--><!--#4DIF ([Objects_1]Series_Title#"")-->
+INSERT INTO ds_titles 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', '<!--#4DSCRIPT/SQL_Encode/[Objects_1]Series_Title-->', 'Series_Title', '4', 'English') <!--#4DENDIF--> 
+GO <!--#4DENDLOOP-->
+--
+-- Table structure for table ds_inscriptions
+--
+if exists (select id from sysobjects where name = 'ds_inscriptions' and type ='u')
+truncate table ds_inscriptions
+else
+CREATE TABLE ds_inscriptions (
+  object_id int NOT NULL,
+  transcription nvarchar(max) NULL,
+  display_order int NULL,
+  description nvarchar(max) NULL,
+  inscription_type nvarchar(1000) NULL,
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_inscriptions
+--
+<!--#4DLOOP [Objects_1]--><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Marks--><!--#4DLOOP [Marks]-->
+INSERT INTO ds_inscriptions 
+VALUES ('<!--#4DVAR [Marks]_Object_ID-->', <!--#4DIF ([Marks]Transcription#"")-->'<!--#4DSCRIPT/SQL_Encode/[Marks]Transcription-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, '1', <!--#4DIF ([Marks]Description#"")-->'<!--#4DSCRIPT/SQL_Encode/[Marks]Description-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Marks]Mark_Type#"")-->'<!--#4DSCRIPT/SQL_Encode/[Marks]Mark_Type-->'<!--#4DELSE-->NULL<!--#4DENDIF-->) 
+GO <!--#4DENDLOOP--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_dimensions
+--
+if exists (select id from sysobjects where name = 'ds_dimensions' and type ='u')
+truncate table ds_dimensions
+else
+CREATE TABLE ds_dimensions (
+  object_id int NOT NULL,
+  value decimal(38, 13) NULL,
+  dimension_type nvarchar(1000) NULL,
+  unit_type_name nvarchar(1000) NULL,
+  unit_name nvarchar(1000) NULL,
+  element_display nvarchar(1000) NULL,
+  element_name nvarchar(1000) NULL,
+  method nvarchar(1000) NULL
+  ) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_dimensions
+--
+<!--#4DLOOP [Objects_1]--><!--#4DIF ([Objects_1]_Height>0)-->
+INSERT INTO ds_dimensions 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Objects_1]Disp_Height#"")-->'<!--#4DVAR [Objects_1]_Height-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Dimen_Extent#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Dimen_Extent-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'mm', 'height',  <!--#4DIF ([Objects_1]Disp_Height#"")-->'<!--#4DVAR [Objects_1]_Height-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL) <!--#4DENDIF--><!--#4DIF ([Objects_1]_Width>0)-->
+INSERT INTO ds_dimensions 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Objects_1]Disp_Width#"")-->'<!--#4DVAR [Objects_1]_Width-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Dimen_Extent#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Dimen_Extent-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'mm', 'width', <!--#4DIF ([Objects_1]Disp_Width#"")-->'<!--#4DVAR [Objects_1]_Width-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL) <!--#4DENDIF--><!--#4DIF ([Objects_1]_Depth>0)-->
+INSERT INTO ds_dimensions 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Objects_1]Disp_Depth#"")-->'<!--#4DVAR [Objects_1]_Depth-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Dimen_Extent#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Dimen_Extent-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'mm', 'depth', <!--#4DIF ([Objects_1]Disp_Depth#"")-->'<!--#4DVAR [Objects_1]_Depth-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL) <!--#4DENDIF--> 
+GO <!--#4DENDLOOP-->
+--
+-- Table structure for table ds_objects
+--
+if exists (select id from sysobjects where name = 'ds_objects' and type ='u')
+BEGIN
+	TRUNCATE TABLE DS_OBJECTS
+	DROP INDEX DS_OBJECTS.dso_datebegin
+	DROP INDEX DS_OBJECTS.dso_dateend
+	ALTER TABLE DS_OBJECTS ALTER COLUMN DateBegin nvarchar(1000)
+	ALTER TABLE DS_OBJECTS ALTER COLUMN DateEnd nvarchar(1000)
+END
+else
+CREATE TABLE ds_objects (
+  object_id int NOT NULL,
+  datebegin nvarchar(1000) NULL,
+  dateend nvarchar(1000) NULL,
+  n_title nvarchar(max) NULL,
+  description nvarchar(max) NULL,
+  creditline nvarchar(max) NULL,
+  dimensions nvarchar(max) NULL,
+  medium nvarchar(max) NULL,
+  provenance nvarchar(max) NULL,
+  copyright nvarchar(max) NULL,
+  classification nvarchar(1000) NULL,
+  geo_region_mapped nvarchar(1000) NULL,
+  department nvarchar(1000) NULL,
+  objectnumber nvarchar(1000) NULL,
+  sortnumber nvarchar(1000) NULL,
+  culture nvarchar(1000) NULL,
+  culture_nationality nvarchar(1000) NULL,
+  dated nvarchar(1000) NULL,
+  objectname nvarchar(1000) NULL,
+  period nvarchar(1000) NULL,
+  style nvarchar(1000) NULL,
+  dynasty nvarchar(1000) NULL,
+  reign nvarchar(1000) NULL,
+  movement nvarchar(1000) NULL,
+  school nvarchar(1000) NULL,
+  primarytitle nvarchar(1000) NULL,
+  primary_maker nvarchar(1000) NULL,
+  primarymakeralphasort nvarchar(1000) NULL,
+  object_url nvarchar(1000) NULL,
+  Edition	nvarchar(max) NULL,
+  State	nvarchar(max) NULL,
+  Notes	nvarchar(max) NULL,
+  CuratorialRemarks	nvarchar(max) NULL,
+  Virtual_Object	int NULL,
+  Access_Flag	int NULL,
+  ObjectCount	int NULL,
+  Catalog_Rais	nvarchar(1000) NULL,
+  AccessionDate	nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_objects
+--
+<!--#4DLOOP [Objects_1]-->
+INSERT INTO ds_objects 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DVAR [Objects_1]_Disp_Start_Dat-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DVAR [Objects_1]_Disp_End_Date-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, <!--#4DIF ([Objects_1]Info_Page_Comm#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Info_Page_Comm-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Dedication#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Dedication-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Dimen#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Dimen-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Medium#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Medium-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, <!--#4DIF ([Objects_1]Copyright_Type#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Copyright_Type-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Obj_Type#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Obj_Type-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Creation_Place2#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Creation_Place2-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Department#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Department-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Access_No#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Access_No-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Access_No#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]_AccNumSort1-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL, <!--#4DIF ([Objects_1]Disp_Create_DT#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Create_DT-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Obj_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Obj_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Period#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Period-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Style#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Style-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL, NULL, NULL, <!--#4DIF ([Objects_1]Disp_Title#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Title-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Disp_Maker_1#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Disp_Maker_1-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, <!--#4DIF ([Objects_1]Sort_Artist#"")-->'<!--#4DSCRIPT/SQL_Encode/[Objects_1]Sort_Artist-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, 'http://artmuseum.bowdoin.edu/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->', '<!--#4DSCRIPT/LoadObjectNotes/Edition--><!--#4DSCRIPT/SQL_Encode/[Object_Notes]Text-->', NULL, NULL, NULL, NULL, NULL, '<!--#4DVAR [Objects_1]Num_Components-->', NULL, NULL) 
+GO<!--#4DENDLOOP-->
+--
+-- Table structure for table ds_exhibitions
+--
+if exists (select id from sysobjects where name = 'ds_exhibitions' and type ='u')
+truncate table ds_exhibitions
+else
+CREATE TABLE ds_exhibitions (
+  object_id int NOT NULL,
+  exhibition_title nvarchar(1000) NULL,
+  subtitle nvarchar(1000) NULL,
+  exhibition_dates nvarchar(1000) NULL,
+  exhibition_begin_date nvarchar(1000) NULL,
+  exhibition_end_date nvarchar(1000) NULL,
+  exhibition_url nvarchar(1000) NULL,
+  exhibition_object_title nvarchar(1000) NULL,
+  exhibition_object_medium nvarchar(1000) NULL,
+  exhibition_object_attribution nvarchar(1000) NULL,
+  exhibition_object_dimensions nvarchar(1000) NULL,
+  exhibition_object_credit_line nvarchar(1000) NULL,
+  exhibition_object_description nvarchar(1000) NULL
+) ON [PRIMARY]
+GO
+--
+-- Dumping data for table ds_exhibitions
+--
+<!--#4DLOOP [Objects_1]--><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Use--><!--#4DLOOP [Object_Use]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Use:Exhibitions--><!--#4DIF ([Exhibitions]Exhibition_Name#"")-->
+INSERT INTO ds_exhibitions 
+VALUES ('<!--#4DVAR [Objects_1]_Objects_1_ID-->', <!--#4DIF ([Exhibitions]Exhibition_Name#"")-->'<!--#4DSCRIPT/SQL_Encode/[Exhibitions]Exhibition_Name-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, '<!--#4DVAR [Exhibitions]Start_Date-->-<!--#4DVAR [Exhibitions]End_Date-->', '<!--#4DVAR [Exhibitions]Start_Date-->', '<!--#4DVAR [Exhibitions]End_Date-->', NULL, <!--#4DIF ([Exhibitions]User_Def_1#"")-->'<!--#4DSCRIPT/SQL_Encode/[Exhibitions]User_Def_1-->'<!--#4DELSE-->NULL<!--#4DENDIF-->, NULL, NULL, NULL, NULL, NULL, NULL) 
+GO <!--#4DENDIF--><!--#4DENDLOOP--><!--#4DENDLOOP-->
+--
+-- Table structure for table ds_attributes
+--
+if exists (select id from sysobjects where name = 'ds_attributes' and type ='u')
+truncate table ds_ds_attributes
+else
+CREATE TABLE [dbo].[ds_attributes](
+                [id] [int] NOT NULL,
+                [attr_parent_term] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+                [attr_type] [varchar](1000) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+                [attr_term_type] [nvarchar](1000) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+                [attr_equivalent_term] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+                [attr_path] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+                [attr_term] [nvarchar](1000) COLLATE SQL_Latin1_General_CP1_CI_AI NOT NULL,
+                [attr_term_id] [int] NOT NULL,
+                [attr_term_source_id] [int] NOT NULL
+) ON [PRIMARY] 
+GO
+
+--
+-- Table structure for table ds_RefreshTimeStamp
+--
+if exists (select id from sysobjects where name = 'ds_RefreshTimeStamp' and type ='u')
+truncate table ds_RefreshTimeStamp
+else
+CREATE TABLE [dbo].[ds_RefreshTimeStamp](
+	[DataRefreshTimeStamp] [datetime] NULL,
+	[MediaRefreshTimeStamp] [datetime] NULL
+) ON [PRIMARY]
+insert into  [dbo].[ds_RefreshTimeStamp]
+select getdate(), getdate() 
+GO
+
+--
+-- Add indexes to fields
+--
+if not exists(select id from sysindexes where name = 'dso_constituent_objectid')
+ CREATE  CLUSTERED  INDEX [dso_constituent_objectid] ON [dbo].[ds_constituents]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_geography_objectid')
+ CREATE  CLUSTERED  INDEX [dso_geography_objectid] ON [dbo].[ds_geography]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_image_objectid')
+ CREATE  CLUSTERED  INDEX [dso_image_objectid] ON [dbo].[ds_images]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_objectid')
+ CREATE  CLUSTERED  INDEX [dso_objectid] ON [dbo].[ds_objects]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_title_objectid')
+ CREATE  CLUSTERED  INDEX [dso_title_objectid] ON [dbo].[ds_titles]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_name_objectid')
+ CREATE  CLUSTERED  INDEX [dso_name_objectid] ON [dbo].[ds_object_names]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_identifier_objectid')
+ CREATE  CLUSTERED  INDEX [dso_identifier_objectid] ON [dbo].[ds_object_identifiers]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_date_objectid')
+ CREATE  CLUSTERED  INDEX [dso_date_objectid] ON [dbo].[ds_object_dates]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_exhibition_objectid')
+ CREATE  CLUSTERED  INDEX [dso_exhibition_objectid] ON [dbo].[ds_exhibitions]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_dimension_objectid')
+ CREATE  CLUSTERED  INDEX [dso_dimension_objectid] ON [dbo].[ds_dimensions]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_classification_objectid')
+ CREATE  CLUSTERED  INDEX [dso_classification_objectid] ON [dbo].[ds_classifications]([object_id]) ON [PRIMARY]
+GO
+if not exists(select id from sysindexes where name = 'dso_attribute_id')
+ CREATE  CLUSTERED  INDEX [dso_attribute_id] ON [dbo].[ds_attributes]([id]) ON [PRIMARY]
+GO
+
+
+if not exists(select id from sysindexes where name = 'dso_image_thumb_url')
+ CREATE  INDEX [dso_image_thumb_url] ON [dbo].[ds_images]([image_thumb_url]) ON [PRIMARY]
+GO
+
+
+--
+-- Generate values for Classification and Geography Mapping
+--
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'[ds_classification_mapping]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+BEGIN
+	SELECT	classification as db_value, count(*) as occurance
+	INTO 	ds_classification_mapping
+	FROM 	dbo.ds_objects
+	GROUP BY classification
+	ORDER BY classification
+	ALTER TABLE ds_classification_mapping ADD logical_value nvarchar(1000)
+	CREATE INDEX ds_cm_db_value on ds_classification_mapping(db_value)
+	CREATE INDEX ds_cm_logical_value on ds_classification_mapping(logical_value)
+END
+else
+BEGIN
+	INSERT INTO ds_classification_mapping (db_value, occurance)
+	SELECT	classification as db_value, count(*) as occurance
+	FROM 	dbo.ds_objects o
+	WHERE o.classification NOT IN (SELECT db_value FROM ds_classification_mapping)
+	GROUP BY classification
+	ORDER BY classification
+END
+GO
+
+if not exists(select id from sysindexes where name = 'dso_db_value')
+ CREATE  CLUSTERED  INDEX [dso_db_value] ON [dbo].[ds_classification_mapping]([db_value]) ON [PRIMARY]
+
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'[ds_geo_region_mapping]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+BEGIN
+	SELECT	geo_region_mapped as db_value, count(*) as occurance
+	INTO	ds_geo_region_mapping
+	FROM  dbo.ds_objects
+	GROUP BY geo_region_mapped
+	ORDER BY geo_region_mapped
+	ALTER TABLE ds_geo_region_mapping ADD logical_value nvarchar(1000)
+	CREATE INDEX ds_dm_db_value on ds_geo_region_mapping(db_value)
+	CREATE INDEX ds_dm_logical_value on ds_geo_region_mapping(logical_value)
+END
+else
+BEGIN
+	INSERT INTO ds_geo_region_mapping (db_value, occurance)
+	SELECT	geo_region_mapped as db_value, count(*) as occurance
+	FROM  dbo.ds_objects o
+	WHERE	o.geo_region_mapped NOT IN (SELECT db_value FROM ds_geo_region_mapping)
+	GROUP BY geo_region_mapped
+	ORDER BY geo_region_mapped
+END
+
+update ds_objects
+set datebegin =
+case
+	when isnumeric(datebegin) &gt; 0 and charindex(',',datebegin) = 0 then datebegin
+	when patindex('%[0-9][0-9][0-9][0-9]%',datebegin) &gt; 0 then
+		case
+		 when datebegin like '%BC%' then  '-' + substring(datebegin,patindex('%[0-9][0-9][0-9][0-9]%',datebegin),4)
+			else substring(datebegin,patindex('%[0-9][0-9][0-9][0-9]%',datebegin),4)
+		end
+	when patindex('%[0-9][0-9][0-9]%',datebegin) &gt; 0 then
+		case
+		 when datebegin like '%BC%' then  '-' + substring(datebegin,patindex('%[0-9][0-9][0-9]%',datebegin),3)
+			else substring(datebegin,patindex('%[0-9][0-9][0-9]%',datebegin),3)
+		end
+   when patindex('%[0-9][0-9]%',datebegin) &gt; 0 then
+		case
+		 when datebegin like '%BC%' then '-' + substring(datebegin,patindex('%[0-9][0-9]%',datebegin),2)
+			else substring(datebegin,patindex('%[0-9][0-9]%',datebegin),2)
+		end
+else null
+end
+from ds_objects
+
+GO
+
+update ds_objects
+set dateend =
+case
+	when isnumeric(dateend) &gt; 0 and charindex(',',dateend) = 0 then dateend
+	when patindex('%[0-9][0-9][0-9][0-9]%',dateend) &gt; 0 then
+		case
+		 when dateend like '%BC%' then  '-' + substring(dateend,patindex('%[0-9][0-9][0-9][0-9]%',dateend),4)
+			else substring(dateend,patindex('%[0-9][0-9][0-9][0-9]%',dateend),4)
+		end
+	when patindex('%[0-9][0-9][0-9]%',dateend) &gt; 0 then
+		case
+		 when dateend like '%BC%' then  '-' + substring(dateend,patindex('%[0-9][0-9][0-9]%',dateend),3)
+			else substring(dateend,patindex('%[0-9][0-9][0-9]%',dateend),3)
+		end
+   when patindex('%[0-9][0-9]%',dateend) &gt; 0 then
+		case
+		 when dateend like '%BC%' then '-' + substring(dateend,patindex('%[0-9][0-9]%',dateend),2)
+			else substring(dateend,patindex('%[0-9][0-9]%',dateend),2)
+		end
+else null
+end
+from ds_objects
+
+GO
+if exists(select id from sysindexes where name = 'dso_datebegin')
+DROP INDEX DS_OBJECTS.dso_datebegin
+GO
+if exists(select id from sysindexes where name = 'dso_dateend')
+DROP INDEX DS_OBJECTS.dso_dateend
+GO
+ALTER TABLE DS_OBJECTS ALTER COLUMN DateBegin int
+GO
+ALTER TABLE DS_OBJECTS ALTER COLUMN DateEnd int
+GO
+CREATE  INDEX [dso_datebegin] ON [dbo].[ds_objects]([datebegin]) ON [PRIMARY]
+GO
+CREATE  INDEX [dso_dateend] ON [dbo].[ds_objects]([dateend]) ON [PRIMARY]
+GO
+
+--
+-- Clean up ds_images records without actual image link
+--
+
+delete
+from ds_images
+where right(image_full_url,9) = 'blank.gif'
+
+update ds_constituents set role = 'Maker' where role = 'Primary'
+
+-- exec ds_getParents 1
+
+</pre>

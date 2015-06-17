@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--PortfolioIndex.htm-->
+<html>
+<head>
+    <title>{Include title.inc}</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    {Include scripts.inc}
+</head>
+
+<body onload="setMenu('portfolios');" class="clearfix">
+
+{Include header.inc}
+
+<div id="content">
+
+	<div class="right">{Include activerecords.inc}</div>
+	<h1>Portfolio Index</h1>
+
+	{Include pagenavigation.inc}
+	{Popup;portfolio}
+<br><br>
+			<!-- The following will repeat for each record in the page.
+			 The kiosk will take care of inserting <tr> tags as appropriate. -->
+{RecordLoop Start}		 
+<div class="portfolio-index-record-box">
+	<div class="portfolio-index-thumbnail">
+		{If(Has Image)}
+		<a href="{Portfolio}&display=th"><img src="{thumbnail}" alt=""/></a>
+		{Else}
+		<a href="{Portfolio}&display=th"><img src="/graphics/DefaultPostage.gif" alt=""/></a>
+		{End If}
+	</div>
+	<div class="portfolio-index-label">
+		<a href="{Portfolio}&display=th">{Portfolio Name}</a><br>
+		{Portfolio Size} record(s)
+	</div>
+</div>
+{RecordLoop End}
+
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>

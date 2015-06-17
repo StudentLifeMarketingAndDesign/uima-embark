@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>EmbARK Web Kiosk</title>
+  <link rel="stylesheet" href="/txtStyles.css" type="text/css">
+    {Include scripts.inc}
+    <script type="text/javascript">
+    <!--
+        function selPort(SessionID,selOpt) {
+            if(selOpt>0){
+                if(selOpt==1) {
+                    document.portSel.name.value=prompt("Please enter the name for the new portfolio:","");
+                    if(document.portSel.name.value!="null") {
+                        document.portSel.action = document.portSel.action+document.portSel.portList.options[selOpt].value+"$"+SessionID;
+                        document.portSel.submit();
+                    }
+                    else {
+                        document.portSel.portList.selectedIndex = 0;
+                    }
+                }
+                else {
+                    document.portSel.action = document.portSel.action+document.portSel.portList.options[selOpt].value+"$"+SessionID;
+                    document.portSel.submit();
+                }
+            }
+        }
+    //-->
+    </script>
+</head>
+
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+{Include header.inc}
+
+</span>
+
+<span class="head1">Add to Portfolio</span>
+
+<span class="txt">
+<br><br>
+
+This process allows you to add your entire selection of <b>{Records} object records</b> to a portfolio, which will be saved for you.
+
+<br><br>
+
+If you would like to add a single record to a portfolio, open that record to use the 'Add to portfolio' link.
+
+<br><br>
+
+{If(Can Share)}After making a portfolio, you may share it with the public. Just click <img src="/img/navbar/myportfolios_off.gif" width="106" height="21" border="0"> to edit the portfolio Properties.{end if}
+
+<br>
+
+<form name="portSel" action="/UAdd" method="get">
+Which portfolio would you like to add these objects to?
+<br>
+<select name="portList" onChange="selPort({SessionID},this.selectedIndex)" class="txt">
+<option value=0>-- Select Portfolio --
+<option value=0>Create a new portfolio
+{PortfolioPopup;personal}
+</select>
+<input type="hidden" name="name" value="" class="txt">
+</form>
+
+{Include footer.inc}
+
+</body>
+</html>

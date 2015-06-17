@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?> 
+
+<cdwalite:cdwaliteWrap xmlns:cdwalite="http://www.getty.edu/CDWA/CDWALite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.getty.edu/CDWA/CDWALite
+C:\DOCUME~1\aa.AWMF\Desktop\cdwalite_009c2.xsd">
+
+<info>
+<foundcount><!--#4DVAR Records in Selection([Objects_1])--></foundcount>
+<criteria><!--#4DVAR queryString--></criteria>
+</info> 
+<!--#4DLOOP [Objects_1]-->
+<cdwalite:cdwalite>
+        <cdwalite:descriptiveMetadata>  
+   	  <cdwalite:recordID><!--#4DIF ([Objects_1]Disp_Access_No#"")--><!--#4DVAR [Objects_1]Disp_Access_No--><!--#4DELSE--> <!--#4DVAR [Objects_1]Temp_ID--><!--#4DENDIF--></cdwalite:recordID>           
+   	      <cdwalite:indexingBibliographyWrap><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Biblio--><!--#4DLOOP [Object_Biblio]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Biblio:Biblio_Citation-->  
+                <cdwalite:BibliographySet>
+                        <cdwalite:documentTitle><!--#4DVAR [Biblio_Citation]Doc_Title--></cdwalite:documentTitle>
+                        <cdwalite:pageNumber><!--#4DVAR [Object_biblio]page_nums--></cdwalite:pageNumber>
+                </cdwalite:BibliographySet><!--#4DENDLOOP-->
+              </cdwalite:indexingBibliographyWrap> 
+        </cdwalite:descriptiveMetadata>
+    </cdwalite:cdwalite>
+<!--#4DENDLOOP--> 
+</cdwalite:cdwaliteWrap>

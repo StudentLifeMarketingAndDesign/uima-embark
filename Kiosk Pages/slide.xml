@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+   <rss version="2.0">
+      <channel> 
+         <title>Shin'enKan Collection</title> 
+   	 <link>http://webkiosk.gallerysystems.com</link> 
+   	 <description>The largest collection of Edo period Japanese art</description>
+   	 <image> 
+    	 <url>http://webkiosk.gallerysystems.com/media/thumbnails/Works/Jakuchu/Jakuchu_images/001.65.OY.X.jpg</url>
+   	 </image> 
+  {start loop([Objects_1]Web_Access=="yes")}<item> 
+    	    <title>{[Objects_1]Disp_Title}</title> 
+    	    <link>http://webkiosk.gallerysystems.com/OBJ{_ID}.htm</link>
+    	    <pubDate>Tue, 20 Dec 2005 11:02:34 -0700</pubDate>
+    	    <description>{[Objects_1]Display2}</description>
+    	    <enclosure url="http://webkiosk.gallerysystems.com{Image Path}" type="image/jpeg" /> 
+   	 </item>
+	{end loop}
+    </channel>
+  </rss>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Users/PortfolioIndex.htm-->
+<html>
+<head>
+    <title>{Include title.inc}</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    {Include scripts.inc}
+    <script type="text/javascript">
+    <!--
+        function areUsure(toURL,portName) {
+            if(confirm('Are you sure you want to delete portfolio '+portName+'?')) {
+                window.location=toURL;
+            }
+        }
+    //-->
+    </script>
+</head>
+
+<body onload="setMenu('myportfolios');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+
+<h1>Portfolio Management</h1>
+
+<p class="err">{Message}</p>
+
+{if(Records)}
+    <p><a href="javascript:addToPort('{SessionID}','&x={Sequence}','-1');">Add</a> current selection of objects to a portfolio.</p>
+{end if}
+
+<!-- The following will repeat for each record in the page. -->
+{RecordLoop Start}
+    <div class="list-row">
+        <table width="100%">
+            <tr>
+                <td valign="top">
+                    <a href="{Portfolio}">{Portfolio Name}</a><br/>
+                    <span class="smalltxt">
+                        {Portfolio Size} record(s)
+                        {if(Can Share)}
+                            {if(Shared)}
+                                Shared
+                            {else}
+                                Not Shared
+                            {end if}
+                        {end if}
+                    </span>
+                </td>
+                <td class="navtxt" align="right" valign="top">
+                    <a href="UEdit{_ID}?sid={SessionId}&x={Sequence}">Remove Objects</a> |
+                    <a href="/USort{_ID}?sid={SessionId}&x={Sequence}">Change Sort Order</a> |
+                    <a href="/UPP{_ID}?sid={SessionId}&x={Sequence}">Properties</a> |
+                    <a href="javascript:areUsure('/UDel{_ID}?sid={SessionId}&x={Sequence}','{Portfolio Name}');">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+{RecordLoop End}
+
+{Include formaddtoport.inc}
+
+</div>
+{Include footer.inc}
+
+</body>
+</html>

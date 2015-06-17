@@ -1,0 +1,756 @@
+/************************* Framing blocks *************************/
+
+body {
+	background: #FAF8CC;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 20px 0px 20px;
+}
+
+#page-block {
+	/* A master block that wraps all the page content. */
+	width: 1000px;
+	min-height: 700px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	padding: 0px;
+	margin: 20px auto 20px !important;
+	background-color: #ffffff;
+	border: 1px solid black;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	vertical-align:top;
+}
+
+#title-banner {
+	display: inline-block;
+	margin: none;
+	padding: none;
+	background-color:#333366;
+	width: 100%;
+	height:70px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+	
+#left-menu {
+	position: absolute;
+	top: 70px;
+	left: 0px;
+	bottom: 0px;
+	vertical-align:top;
+	width:200px;
+	padding-top:1px;
+	padding-right:0px;
+	padding-left:0px;
+	border-top: 1px solid #ffffff;
+	background-color: #666699;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-left-radius: 8px;
+}
+	
+#content {
+	/* Since this block is inside the page-block, which is 1000 px wide, 
+	   but has 200px margins on right and left, and 40 px of padding on each side,
+	   you have 560px of width to use 
+	   for divs that you put inside this one. */
+	margin-right: 200px;
+	margin-left: 200px;
+	padding: 20px;
+	background-color: #ffffff;
+}
+
+img {
+	border: 0px;
+}
+
+select#page {
+	/* This will limit the width of the data in the Popup tag. */
+    width:500px !important;
+}
+
+/*************** Text Styles **********************/
+
+body, td, input, select, textarea {
+	font-family: verdana,arial,trebuchet,sans-serif;
+	font-size: 12px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333366;
+  margin-bottom:0px;
+  margin-top:0px;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #333366;
+  margin-bottom:0px;
+  margin-top:0px;
+}
+
+h1 a:hover {
+  color: #cccccc;
+}
+
+h2 {
+	font-size: 14px;
+}
+
+.smalltxt {
+	font-family: verdana,arial,trebuchet,sans-serif;
+	font-size: 10px;
+	color: #333366;
+}
+
+.err {
+	color: red;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+/*************** Block Styles **********************/
+
+.centered {
+	text-align:center;
+}
+
+.right {
+	float: right;
+	margin-right: 5px;
+}
+
+div.thumbnail-box {
+	float: left;
+	margin-right: 12px;
+}
+
+.thumbnail-box {
+	width: 130px;
+	height: 130px;
+	text-align: center;
+	vertical-align: center;
+	border: 1px solid #999999;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+/********** Shared elements ****************/
+
+div.active-records {
+	float: right;
+}
+
+div.display-options {
+	padding-bottom: 12px;
+}
+	
+div.display-options div {
+	padding-left: 5px;
+	padding-right: 10px;
+	display:inline;
+}
+
+.navtxt {
+	font-family: verdana,arial,trebuchet,sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+a.navtxt, .navtxt a, a.navtxt:active, .navtxt a:active, a.navtxt:visited, .navtxt a:visited {
+	color: #333366;
+}
+
+a.navtxt:hover, .navtxt a:hover, a.navtxt:visited:hover, .navtxt a:visited:hover {
+	color: #B6AFDA;
+}
+
+/********** Page: IndexTree.htm ****************/
+
+
+
+div.index-tree-banner {
+	border-bottom: 1px double #333366;
+	width:600px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+div.index-tree-banner-thumbnail-box {
+	display: inline-block;
+	width: 180px;
+      vertical-align:top;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.index-tree-text {
+	display: inline-block;
+	vertical-align:middle;
+	width: 400px;
+	text-align: left;
+	padding: 4px;
+}
+
+div.index-tree-record-box {
+	display: inline-block;
+	width: 250;
+	padding: 4px;
+}
+
+div.index-tree-thumbnail {
+	display: inline-block;
+	width: 180px;
+		vertical-align:middle;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.index-tree-label {
+	display: inline-block;
+	vertical-align:middle;
+	width: 70px;
+	text-align: left;
+}
+
+/********** Page: PortfolioIndex.htm ****************/
+
+div.portfolio-index-record-box {
+	display: inline-block;
+	width: 270;
+	padding: 4px;
+}
+
+div.portfolio-index-thumbnail {
+	display: inline-block;
+	width: 130px;
+		vertical-align:middle;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.portfolio-index-label {
+	display: inline-block;
+	vertical-align:middle;
+	width: 120px;
+	text-align: left;
+}
+
+/********** Page: ArtistInfo.htm ****************/
+div.artist-info-field {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-left: 24px;
+	text-indent: -24px;
+}
+/********** Page: ObjectInfo.htm ****************/
+
+td.object-info-image {
+	padding-top: 12px;
+	padding-left: 0px;
+	padding-right: 12px;
+	padding-bottom: 24px;
+	min-width: 200px;
+	max-width: 394px;
+	vertical-align: top;
+}
+
+td.object-info-label {
+	margin: 0px;
+	padding: 12px 0px;
+	vertical-align: top;
+}
+
+div.object-info-field {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-left: 24px;
+	text-indent: -24px;
+}
+
+div.objnotes-record-box {
+	display: inline-block;
+	vertical-align:top;
+	padding: 4px;
+}
+
+div.objkeyword-record-box {
+	display: inline-block;
+	vertical-align:top;
+	padding: 4px;
+}
+
+div.objrelated-record-box {
+	display: inline-block;
+	vertical-align:top;
+	padding: 4px;
+}
+
+div.objsur-record-box {
+	display: inline-block;
+	vertical-align:top;
+	width: 128px;
+	padding: 4px;
+}
+
+div.objsur-thumbnail {
+	display: inline-block;
+	vertical-align:middle;
+	width: 128px;
+	height: 128px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.objsur-label {
+    display: inline-block;
+    width: 128px;
+    text-align: center;
+    vertical-align:bottom;
+}
+
+
+
+
+div.objport-record-box {
+	display: inline-block;
+	vertical-align:top;
+	width: 80px;
+	padding: 4px;
+}
+
+div.objport-thumbnail {
+	display: inline-block;
+	vertical-align:middle;
+	width: 64px;
+	height: 64px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.objport-label {
+	display: inline-block;
+	width: 64px;
+	text-align: center;
+	vertical-align:bottom;
+}
+
+div.objrelated-record-box {
+	display: inline-block;
+	vertical-align:top;
+	width: 140px;
+	padding: 4px;
+}
+
+div.objrelated-thumbnail {
+	display: inline-block;
+	vertical-align:middle;
+	width: 128px;
+	height: 128px;
+	text-align: center;
+	background-color: #fafafa;
+}
+
+div.objrelated-label {
+	display: inline-block;
+	width: 128px;
+	text-align: center;
+	vertical-align:bottom;
+}
+
+/********** Page: MultipleRecords/Portfolio.htm ****************/
+	
+#portfolio td {
+	padding: 5px;
+}
+
+div.portfolio-record-box {
+	display: inline-block;
+	width: 270;
+	padding: 4px;
+}
+
+div.portfolio-thumbnail {
+	display: inline-block;
+	width: 130px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.portfolio-label {
+	display: inline-block;
+	width: 120px;
+	text-align: left;
+}
+
+
+/********** Page: MultipleRecords/thumbnails.htm ****************/
+
+#thumbnail td {
+	padding: 5px;
+}
+
+div.thumbnail-record-box {
+	display: inline-block;
+	vertical-align:top;
+	width: 128px;
+	padding: 4px;
+}
+
+div.thumbnail-thumbnail {
+	display: inline-block;
+	vertical-align:middle;
+	width: 128px;
+	height: 128px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.thumbnail-label {
+	display: inline-block;
+	width: 128px;
+	text-align: center;
+	vertical-align:bottom;
+}
+
+/********** Page: MultipleRecords/artistobjects.htm ****************/
+	
+#artobj td {
+	padding: 5px;
+}
+
+div.artobj-record-box {
+	display: inline-block;
+	width: 270;
+	padding: 4px;
+}
+
+div.artobj-thumbnail {
+	display: inline-block;
+	width: 130px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.artobj-label {
+	display: inline-block;
+	width: 120px;
+	text-align: left;
+}
+
+/********** Page: Users/Portfolio.htm ****************/
+	
+#user-portfolio td {
+	padding: 5px;
+}
+
+div.user-portfolio-record-box {
+	display: inline-block;
+	width: 600;
+	padding: 4px;
+}
+
+div.user-portfolio-thumbnail {
+	display: inline-block;
+	width: 130px;
+	text-align: center;
+	background-color: #fff;
+}
+
+div.user-portfolio-label {
+	display: inline-block;
+	width: 250px;
+	text-align: left;
+}
+
+
+div.user-portfolio-action {
+	display: inline-block;
+	vertical-align: center;
+	width: 120px;
+	text-align: left;
+}
+
+
+
+/**********************************************
+ * START TOP BANNER STYLES                    */
+	#poweredBy{
+		position:absolute;
+		right:10px;
+	}
+	#title-banner img {
+		position: relative;
+		top: 13px;
+	}
+
+
+	#logo-right {
+		float: right;
+		margin-right: 5px;
+	}
+/* END TOP BANNER STYLES
+ ********************************************/
+
+/*********************************************
+ * START LEFT MENU STYLES                    */
+	div.menu-item {
+		padding-top:2px;
+		padding-bottom:5px;
+		padding-left:8px;
+		border-bottom:1px solid #ffffff;
+		font-family: verdana,arial,trebuchet,sans-serif;
+		font-size: 12px;
+		font-weight:bold;
+		color: #ffffff;
+	}
+
+	form.menu-item {
+		margin:0px;
+		padding:0px;
+	}
+
+	.menu-item a,
+	.menu-item a:active,
+	.menu-item a:visited {
+		text-decoration:none;
+		color: #ffffff;
+	}
+
+	.menu-item a:hover,
+	.menu-item a:visited:hover {
+		background-color: #333366;
+	}
+
+	div.account-mgmt {
+		border:1px solid #333366;
+		padding:0px;
+		margin:0px;
+		width:125px;
+	}
+
+	div.account-mgmt-header {
+		background-color:#ffffff;
+		padding:3px;
+		color:#333366;
+	}
+
+	div.account-mgmt-item {
+		padding:3px;
+		color:#ffffff;
+	}
+/* END LEFT MENU STYLES
+ ********************************************/
+
+/*********************************************
+ * START PAGE NAVIGATION STYLES              */
+	div.page-nav {
+		border-bottom: 1px solid #333366;
+		padding-bottom: 15px;
+		margin-bottom:10px;
+	}
+
+	div.page-nav div.page-nav-left {
+		float:left;
+	}
+
+	div.page-nav div.page-nav-right {
+		float:right;
+	}
+/* END PAGE NAVIGATION STYLES
+ ********************************************/
+
+/*********************************************
+ * START RECORD LIST STYLES                  */
+	td.list-heading {
+			background-color: #333366;
+			padding: 2px;
+			vertical-align: top;
+	}
+
+	.list-heading a,
+	.list-heading a:active,
+	.list-heading a:visited {
+			color: #ffffff;
+	}
+
+	.list-heading a:hover,
+	.list-heading a:visited:hover {
+			color: #cccccc;
+	}
+
+	td.list-row {
+			padding: 2px;
+			border-bottom: 1px solid #9999CC;
+			vertical-align: top;
+	}
+
+	div.list-row {
+			padding: 2px;
+			border-bottom: 1px solid #9999CC;
+			vertical-align: top;
+	}
+/* END RECORD LIST STYLES
+ ********************************************/
+
+/*********************************************
+ * START FILTER BOX STYLES                   */
+#filterBox {
+	background-color: #ffffff;
+	padding: 4px;
+	border: 1px solid #333366;
+	display: block;
+	width: 200px;
+	position:absolute;
+	top:132px;
+	right:0;
+	z-index: 10;
+}
+
+#filterBox #title {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#filterForm {
+	display: none;
+}
+
+.filterField {
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+	padding-left: 12px;
+	padding-bottom: 4px;
+	margin-top: 4px;
+}
+
+.fieldName {
+	font-size: 12px;
+	font-color: #333366;
+	font-weight: normal;
+	margin: none;
+}
+
+.field-hover {
+	font-weight:bold;
+	text-transform:uppercase;
+}
+
+.filterValues {;
+	padding-left: 8px;
+	margin-top: 2px;
+	background-color: #ffffff;
+}
+
+.filterValues a {
+	text-decoration: none;
+}
+
+.filterValues p {
+	padding-top: 4px;
+	margin: 0px 0px 2px 0px;
+	font-size: 12px;
+	border-top: 1px solid gray;
+}
+
+#title a {
+	text-decoration: none;
+}
+
+#triangle {
+	margin-right: 2px;
+	padding: none;
+}
+
+/********** Miscellaneous ****************/
+ 
+  /* Control whether the FreeBase content displays on the ObjectInfo.htm view. */
+ #freebase{
+	display:block;
+	clear:both;
+	}
+	
+ .hideFreebase{
+	display:none !important;
+	}
+ 
+ /* Setting to make images on the ObjectInfo.htm display horizontally on the page. */
+.smallImageList{
+	float:left;
+	width:100%;
+	list-style:none;
+	margin:0 0 0 -15px;
+	padding:0;
+	}
+	
+.smallImageList li{
+	float:left;
+	margin:0 0 15px 15px;
+	padding:0;
+	list-style:none;
+	}
+	
+.smallImageList li .listImageLink{
+	height:70px;
+	display:block;
+	}
+	
+.smallImageList li a+a{
+	display:block;
+	margin-top:10px;
+	}
+
+div.thumb-page {
+		border-bottom: 1px double #333366;
+		height: 130px;
+	}
+		
+div.thumb-text {
+		width:350px;
+		padding-left: 10px;
+		float: left;
+	}
+	
+/*********************************************
+ * Google MAP STYLES                   */
+ 
+.popin{
+  background:#fff;
+  padding:15px;
+  box-shadow: 0 0 20px #999;
+  border-radius:2px;
+}
+
+#map,
+#panorama {
+  height:300px;
+  background:#6699cc;
+}

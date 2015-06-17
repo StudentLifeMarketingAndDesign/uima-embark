@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--IndexTree.htm-->
+<html>
+<head>
+	<title>{Include title.inc} - Browse the Collection</title>
+	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+	{Include scripts.inc}
+</head>
+
+<body onload="setMenu('collections');" class="clearfix">
+
+{Include header.inc}
+
+<div id="content">
+
+    <h1>{Branch title;Our Collection}</h1><br>
+	<a href="kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by Artist</a> - <a href="kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by Region-Continent</a>
+
+    <br><br>
+
+    <!-- Hide 'up a level' at top level -->
+    {if(_ID!="-1")}
+    	<span class="smalltxt">&lt;&nbsp;<a href="{ParentLink}">up a level</a></span>
+	{else}
+    	Click any link below to begin browsing through the collection.
+    {end if}
+
+    <div class="index-tree-banner">
+		<div class="index-tree-banner-thumbnail-box">
+        	<a href="{ParentLink}">{If(Has Image)}<img src="{Thumbnail}" alt=""/>{Else}<img src="/graphics/DefaultPostage.gif" alt=""/>{End If}</a>
+		</div>
+		<div class="index-tree-text">{Branch Text}</div>
+	</div>
+
+<!-- child branches start -->
+{RecordLoop Start}		 
+	<div class="index-tree-record-box">
+	<div class="index-tree-thumbnail">
+        <a href="{Index Tree}&display=thu&x={Sequence}">{If(Has Image)}<img src="{Thumbnail}" alt=""/>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{End If}</a>
+	</div>
+	<div class="index-tree-label">
+        <a href="{Index Tree}&display=thu&x={Sequence}">{Branch Title}</a>
+	</div>
+</div>
+{RecordLoop End}
+<!-- child branches end -->
+ </div>
+
+{Include footer.inc}
+
+</body>
+
+</html>

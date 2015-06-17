@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom"> 
+<channel>
+<title>EmbARK Web Kiosk - Shinenkan Collection</title>
+<link>http://webkiosk.gallerysystems.com</link>
+<description>EmbARK Web Kiosk demo site</description>
+<atom:link rel="previous" href="http://webkiosk.gallerysystems.com/kiosk/gallery/photosP.rss"/>
+<atom:link rel="next" href="http://webkiosk.gallerysystems.com/kiosk/gallery/photosR.rss"/>
+{start loop([Objects_1]disp_title=="q@")}
+		<item>
+                <title>{[Objects_1]Disp_Title}</title>
+                <media:description>{[Objects_1]Display2}</media:description>
+                <link>http://webkiosk.gallerysystems.com/OBJ{_ID}.htm</link>
+                <media:thumbnail url="http://webkiosk.gallerysystems.com{Preview}" />
+                <media:content url="http://webkiosk.gallerysystems.com{Image Path}" type="image/jpeg" />
+            </item>{end loop}
+</channel>
+</rss>

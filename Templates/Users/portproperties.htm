@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Users/PortProperties.htm-->
+<html>
+<head>
+    <title>{Include title.inc}</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    {Include scripts.inc}
+</head>
+
+<body onload="setMenu('myportfolios');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+<h1>Portfolio Properties for {Portfolio Name}</h1>
+
+<form id="portProps" name="portProps" action="4DACTION/USAVP/{_ID}" method="post">
+<input type="hidden" name="sid" value="{SessionID}"/>
+    <table cellpadding="0" cellspacing="0">
+        <tr height="10">
+            <td colspan="3"><!-- spacer --><img src="/graphics/blank.gif" width="1" height="10" alt=""/></td>
+        </tr>
+        <tr valign="top">
+            <td align="right">Portfolio name: </td>
+            <td><!-- spacer --><img src="/graphics/blank.gif" width="10" height="1" alt=""/></td>
+            <td><input type="text" size="75" name="name" value="{Portfolio Name}"/></td>
+        </tr>
+
+        {if(Can Share)}
+            <tr height="10">
+                <td colspan="3"><!-- spacer --><img src="/graphics/blank.gif" width="1" height="10" alt=""/></td>
+            </tr>
+            <tr valign="top">
+                <td align="right">Shared? </td>
+                <td><!-- spacer --><img src="/graphics/blank.gif" width="10" height="1" alt=""/></td>
+                <td>
+                {if(Shared)}
+                    <input type="radio" name="shared" value="0"/>No &nbsp; <input type="radio" name="shared" value="1" checked="checked"/>Yes
+                {else}
+                    <input type="radio" name="shared" value="0" checked="checked"/>No &nbsp; <input type="radio" name="shared" value="1"/>Yes
+                {end if}
+                </td>
+            </tr>
+        {end if}
+
+        <tr height="10">
+            <td colspan="3"><!-- spacer --><img src="/graphics/blank.gif" width="1" height="10" alt=""/></td>
+        </tr>
+        <tr valign="top">
+            <td align="right">Notes: </td>
+            <td><!-- spacer --><img src="/graphics/blank.gif" width="10" height="1" alt=""/></td>
+            <td><textarea cols="75" rows="10" name="notes">{Portfolio Notes}</textarea></td>
+        </tr>
+
+        <tr height="10">
+            <td colspan="3"><!-- spacer --><img src="/graphics/blank.gif" width="1" height="10" alt=""/></td>
+        </tr>
+        <tr valign="top">
+            <td align="right">Private Notes: </td>
+            <td><!-- spacer --><img src="/graphics/blank.gif" width="10" height="1" alt=""/></td>
+            <td><textarea cols="75" rows="10" name="notes2">{Portfolio Notes 2}</textarea></td>
+        </tr>
+
+        <tr height="10">
+            <td colspan="3"><!-- spacer --><img src="/graphics/blank.gif" width="1" height="10" alt=""/></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" align="right">
+                <input type="button" value="Cancel" onclick="portProps.action='/UPor?sid={SessionId}&x={Sequence}';portProps.submit();"/>
+                <input type="submit" value="Save"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+{Include footer.inc}
+
+</body>
+</html>

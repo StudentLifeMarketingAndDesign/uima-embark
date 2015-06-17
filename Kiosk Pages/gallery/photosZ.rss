@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom"> 
+<channel>
+<title>{Include title.inc} - Shinenkan Collection</title>
+<link></link>
+<description>EmbARK Web Kiosk demo site</description>
+<atom:link rel="previous" href="/kiosk/gallery/photosY.rss"/>
+<!-- <atom:link rel="next" href="/kiosk/gallery/photos.rss"/> -->
+{start loop([Objects_1]disp_title=="z@")}
+		<item>
+                <title>{[Objects_1]Disp_Title}</title>
+                <media:description>{[Objects_1]Display2}</media:description>
+                <link>/OBJ{_ID}.htm</link>
+                <media:thumbnail url="{Preview}" />
+                <media:content url="{Image Path}" type="image/jpeg" />
+            </item>{end loop}
+</channel>
+</rss>

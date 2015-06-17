@@ -1,0 +1,73 @@
+<script type="text/javascript">
+//<!-- hide scripting from older browsers
+function addKW() { //adds selected KW to KeywordsSelected and FindKW
+ var KWFound = self.document.forms["ChooseKW"].elements["KeywordsFound"]
+ var KWSelected = self.document.forms["ChooseKW"].elements["KeywordsSelected"]
+ var ChooseForm = self.document.forms["ChooseKW"]
+ var FindForm = self.document.forms["FindKW"]
+ var i = KWFound.selectedIndex //keyword to be added
+ var len = KWSelected.length //number of options currently in KeywordsSelected
+ if(len == 6) {
+  alert("You may only select 6 keywords to search.")
+ }
+ else {
+   if(KWSelected.options[0].text == "{Blank}") {
+    if(len > 1) {
+     alert("Error: contact webmaster or support.")
+    }
+    KWSelected.options[0]=null //clear the dashes, to be replaced
+    KWSelected.length = len
+    len = 0
+   }
+   else {
+    KWSelected.length = len + 1
+   }
+   //the option number is actually one less than the new length of the list (starts with 0)
+   KWSelected.options[len].text = KWFound.options[i].text //add to KWSelected
+   var KWid = KWFound.options[i].value
+   //assign pathNum of selected keyword to search list
+   self.document.forms["ChooseKW"].elements["KW"+(len)].value = KWid
+   self.document.forms["FindKW"].elements["KW"+(len)].value = KWid
+   //assign ID of selected keyword to search list
+			self.document.forms["ChooseKW"].elements["KWID"+(len)].value= self.document.forms["KeywordIDs"].elements["ID-"+(i)].value
+			self.document.forms["FindKW"].elements["KWID"+(len)].value= self.document.forms["KeywordIDs"].elements["ID-"+(i)].value
+  }
+}
+function removeKW() { //removes selected KW from KeywordsSelected
+ var KWSelected = self.document.forms["ChooseKW"].elements["KeywordsSelected"]
+ var i = KWSelected.selectedIndex //keyword to be removed
+ var ChooseForm = self.document.forms["ChooseKW"]
+ var FindForm = self.document.forms["FindKW"]
+ //remember that the option number is one less than the place on the list
+ KWSelected.options[i] = null
+ if(KWSelected.length == 0) {
+  KWSelected.options[0] = new Option("{Blank}")
+ }
+ if(i<5){
+  for(var j = i; j < 5; j++) { //shift down the values to be passed back to the kiosk on search
+   ChooseForm.elements["KW"+j].value =  ChooseForm.elements["KW"+(j+1)].value
+   FindForm.elements["KW"+j].value =  FindForm.elements["KW"+(j+1)].value
+  }
+ }
+ ChooseForm.elements["KW5"].value = ""
+ FindForm.elements["KW5"].value = ""
+}
+function loadPath(word) { //displays path of selected KW
+if(word.selectedIndex>-1) {
+	self.document.ChooseKW.DisplayPath.value = self.document.KeywordIDs.elements["Path"+(word.selectedIndex)].value
+}
+}
+function clearKW() {
+ self.document.forms["ChooseKW"].elements["KeywordsSelected"].length = (parseInt(self.document.forms["KeywordIDs"].elements["NumSubmitted"].value)+1)
+ if(self.document.forms["ChooseKW"].elements["KeywordsSelected"].length == 0) {
+ self.document.forms["ChooseKW"].elements["KeywordsSelected"].options[0] = new Option("{Blank}")
+ }
+for(var i = (parseInt(self.document.forms["KeywordIDs"].elements["NumSubmitted"].value)+1); i < 6; i++) {
+  self.document.forms["ChooseKW"].elements["KW"+i].value = ""
+  self.document.forms["ChooseKW"].elements["KWID"+i].value = ""
+  self.document.forms["FindKW"].elements["KW"+i].value = ""
+  self.document.forms["FindKW"].elements["KWID"+i].value = ""
+ }
+}
+//end script hiding-->
+</script>

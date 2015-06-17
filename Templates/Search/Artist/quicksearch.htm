@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Search/Artist/QuickSearch.htm-->
+<html>
+<head>
+    <title>EmbARK Web Kiosk - Advanced Search for Artist</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    <script type="text/javascript">
+    <!-- hide Javascript from older browsers
+        {scripts}
+    // end script hiding -->
+    </script>
+    {Include scripts.inc}
+</head>
+
+<body onload="setMenu('search');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+
+<form action="/4DACTION/HANDLECGI/QSF1" method="post" name="QuickSearch">
+
+    <h1>Search for Artist Biographies</h1>
+	<br><br>
+
+    <table cellpadding="0" cellspacing="0" width="500">
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" width="580">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>Field to search:</td>
+                        <td>Value:</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <!-- The following will repeat for each line of search criteria that the user creates.-->
+                    {LineLoop Start}
+                        <tr>
+                            <td>{SearchType}</td>
+                            <td>{Field Popup}</td>
+                            <td>{Value Popup}</td>
+                            <td>{Line Buttons}</td>
+                        </tr>
+                    {LineLoop End}
+
+                </table>
+				
+
+                <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+
+                <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+
+                <p class="centered"><input type="submit" value="Find"/></p>
+            </td>
+        </tr>
+    </table>
+<input type="hidden" name="sid" value="{SessionID}"/>
+</form>
+
+{if(Records - Artist)}
+    <p>
+        <br/><br/>
+        <b>Your current selection of {Records - Artist} records is:</b><br/>
+        {Selection Name Artist}
+    </p>
+{end if}
+
+<p><b>Other Search Options:</b><br/>
+<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Advanced Search</a> |
+Artist Biographies</p>
+
+</div>
+{Include footer.inc}
+
+</body>
+</html>

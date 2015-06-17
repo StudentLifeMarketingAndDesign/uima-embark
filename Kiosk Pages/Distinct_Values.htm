@@ -1,0 +1,72 @@
+<!--ArtistList.htm-->
+<html>
+<head>
+    <title>EmbARK Web Kiosk</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css">
+    {Include scripts.inc}
+</head>
+
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+{Include header.inc}
+
+<h1>Distinct Values</h1>
+
+<span class="navtxt">&lt;&lt;<a href="javascript:history.go(-1);">Back</a></span>
+
+<h2>Mediums - all objects</h2>
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Medium-->
+<!--4DIF (Size of array(atTemp1)>0)-->
+	<!--4DLOOP atTemp1-->
+		<!--4DVAR atTemp1{atTemp1}--><br>
+	<!--4DENDLOOP-->
+<!--4DELSE-->
+	There are no values to display.
+<!--4DENDIF-->
+
+<hr>
+
+<h2>Mediums - current selection</h2>
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Medium/0-->
+<!--4DIF (Size of array(atTemp1)>0)-->
+	<!--4DLOOP atTemp1-->
+		<!--4DVAR atTemp1{atTemp1}--><br>
+	<!--4DENDLOOP-->
+<!--4DELSE-->
+	There are no values to display.
+<!--4DENDIF-->
+
+<hr>
+
+<h2>Mediums - all objects; occurs at least 2 times</h2>
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Medium/1/2-->
+<!--4DIF (Size of array(atTemp1)>0)-->
+	<!--4DLOOP atTemp1-->
+		<!--4DVAR atTemp1{atTemp1}--><br>
+	<!--4DENDLOOP-->
+<!--4DELSE-->
+	There are no values to display.
+<!--4DENDIF-->
+
+<hr>
+
+<h1>Custom Loops</h1>
+
+Here are the first 5 objects whose title starts with 'r'.<br><br>
+
+<table cellpadding="10" cellspacing="0" border="0">
+{start loop 5;[Objects_1]Disp_Title=="r@"}
+	<tr>
+		<td valign="middle" align="left"><img src="{thumbnail}"></td>
+		<td valign="middle" align="left">{[Objects_1]Disp_Title}</td>
+	</tr>
+{end loop}
+</table>
+
+{Include footer.inc}
+
+</body>
+</html>

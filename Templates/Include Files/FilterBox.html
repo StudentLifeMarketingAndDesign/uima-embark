@@ -1,0 +1,106 @@
+<!--
+Displays a filter box for search results.
+
+Requires that the FilterBoxScripts.inc file be included in the HEAD of the page.
+This script will pull in JQuery and activate the filter box elements.
+
+Relies on the ability to filter the current selection, so using the BACK button
+   in the browser will break things.
+-->
+
+<div id="filterBox">
+	<form action="/4DACTION/HANDLECGI/Search?display={Current Display}" method="post" id="filterForm" name="filterForm">
+			<input type="hidden" name="SearchField1" value=""/>
+			<input type="hidden" name="SearchValue1" value=""/>
+			<input type="hidden" name="ImagesOnly" value="0"/>
+			<input type="hidden" name="SearchType" value="all"/>
+			<input type="hidden" name="RefineSearch" value="WithinCurrent"/>
+	</form>
+
+	<div id="title"><img id="triangle" src="Graphics/carat-right.jpg"/>Filter Results</div>
+
+	<div id="filterFields">
+
+
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Century/0/1-->
+<!--4DIF (Size of array(atGDVValues)>0)-->
+		<div class="filterField" id="centuryFilter">
+			<div class="fieldName" id="century">Century</div>
+			<div id="centuryValues" class="filterValues">
+			<!--4DLOOP atGDVValues-->
+				<p>
+					<a href="/4DACTION/HANDLECGI/Search?display={Current Display}&sid={SessionId}&ImagesOnly=0&SearchType=all&RefineSearch=WithinCurrent&SearchField=[Objects_1]Century&SearchValue=<!--4DVAR atGDVValues{atGDVValues}-->&SearchOp=is">
+						<!--4DVAR atGDVValues{atGDVValues}-->
+						<span class="filterCount">[<!--#4DVAR alGDVCounts{atGDVValues}-->]</span>
+					</a>
+				</p>
+			<!--4DENDLOOP-->
+			</div>
+		</div>
+<!--4DENDIF-->
+
+
+
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Creation_Place2/0/1-->
+<!--4DIF (Size of array(atGDVValues)>0)-->
+		<div class="filterField" id="regionFilter">
+			<div class="fieldName" id="region">Region</div>
+			<div id="regionValues" class="filterValues">
+			<!--4DLOOP atGDVValues-->
+				<p>
+					<a href="/4DACTION/HANDLECGI/Search?display={Current Display}&sid={SessionId}&ImagesOnly=0&SearchType=all&RefineSearch=WithinCurrent&SearchField=[Objects_1]Creation_Place2&SearchValue=<!--4DVAR atGDVValues{atGDVValues}-->&SearchOp=is">
+						<!--4DVAR atGDVValues{atGDVValues}-->
+						<span class="filterCount">[<!--#4DVAR alGDVCounts{atGDVValues}-->]</span>
+					</a>
+				</p>
+			<!--4DENDLOOP-->
+			</div>
+		</div>
+<!--4DENDIF-->
+
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Class_System/0/1-->
+<!--4DIF (Size of array(atGDVValues)>0)-->
+		<div class="filterField" id="categoryFilter">
+			<div class="fieldName" id="category">Curatorial Category</div>
+			<div id="categoryValues" class="filterValues">
+			<!--4DLOOP atGDVValues-->
+				<p>
+					<a href="/4DACTION/HANDLECGI/Search?display={Current Display}&sid={SessionId}&ImagesOnly=0&SearchType=all&RefineSearch=WithinCurrent&SearchField=[Objects_1]Class_System&SearchValue=<!--4DVAR atGDVValues{atGDVValues}-->&SearchOp=is">
+						<!--4DVAR atGDVValues{atGDVValues}-->
+						<span class="filterCount">[<!--#4DVAR alGDVCounts{atGDVValues}-->]</span>
+					</a>
+				</p>
+			<!--4DENDLOOP-->
+			</div>
+		</div>
+<!--4DENDIF-->
+
+<!--4DSCRIPT/GetDistinctValues/[Objects_1]Period/0/1-->
+<!--4DIF (Size of array(atGDVValues)>0)-->
+		<div class="filterField" id="periodFilter">
+			<div class="fieldName" id="period">Period</div>
+			<div id="periodValues" class="filterValues">
+			<!--4DLOOP atGDVValues-->
+				<p>
+					<a href="/4DACTION/HANDLECGI/Search?display={Current Display}&sid={SessionId}&ImagesOnly=0&SearchType=all&RefineSearch=WithinCurrent&SearchField=[Objects_1]Period&SearchValue=<!--4DVAR atGDVValues{atGDVValues}-->&SearchOp=is">
+						<!--4DVAR atGDVValues{atGDVValues}-->
+						<span class="filterCount">[<!--#4DVAR alGDVCounts{atGDVValues}-->]</span>
+					</a>
+				</p>
+			<!--4DENDLOOP-->
+			</div>
+		</div>
+<!--4DENDIF-->
+
+
+
+
+
+
+
+
+	</div>
+</div>

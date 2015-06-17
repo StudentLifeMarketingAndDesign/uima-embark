@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--FullView/Surrogate.htm-->
+<html>
+<head>
+    <title>{Include title.inc}</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    {Include scripts.inc}
+</head>
+
+<body class="clearfix">
+
+{Include header.inc}
+<div id="content">
+
+<h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a></h1>
+<span class="smalltxt"><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">return to object descriptionx</a></span>
+
+<br/><br/>
+
+{Include activerecords.inc}
+<b>Surrogate images</b><br/>
+
+{Include pagenavigation.inc}
+
+{[Surrogate]Surrogate Type}
+
+<br/><br/>
+
+<center>
+{if(Has Image)}
+    {if(Image height=="0")}
+        <object
+            classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="100"
+            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+            <param name="SRC" value="{Image Path}">
+            <param name="AUTOPLAY" value="true">
+            <param name="CONTROLLER" value="true">
+            <embed
+                src="{Image Path}" width="{Image width+100}" height="{Image height+100}"
+                autoplay="true" controller="true"
+                pluginspage="http://www.apple.com/quicktime/download/">
+            </embed>
+        </object>
+    {else}
+        {if(Image duration=="0")}
+            <img src="{Image Path;DefaultPreview.gif}" alt="{[Surrogates]Image_Type}"/>
+        {else}
+            <object
+              classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{Image width}" height="{Image height+20}"
+              codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+              <param name="SRC" value="{Image Path}">
+              <param name="AUTOPLAY" value="true">
+              <param name="CONTROLLER" value="true">
+              <embed
+                src="{Image Path}" width="{Image width}" height="{Image height}"
+                autoplay="true" controller="true"
+                pluginspage="http://www.apple.com/quicktime/download/">
+              </embed>
+            </object>
+        {end if}
+    {end if}
+{else}
+    This object does not have an image.
+{end if}
+</center>
+
+<br/><br/>
+
+</div>
+{Include footer.inc}
+
+</body>
+
+</html>

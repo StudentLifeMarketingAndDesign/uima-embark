@@ -1,0 +1,110 @@
+<!-- kiosk pages\simplesearch.htm -->
+<html>
+<head>
+  <title>EmbARK Web Kiosk</title>
+  <link rel="stylesheet" href="/txtStyles.css" type="text/css">
+  {Include scripts.inc}
+  <script type="text/javascript">
+  <!--
+  function setField(iField,sValue) {
+    var theValue = eval("document.QuickSearch.setVal"+iField);
+    if(sValue!="Select...") {
+      theValue.value = sValue;
+    }
+    else {
+      theValue.value = "";
+    }
+  }
+
+  function doSearch() {
+    var numLines = 0;
+    var theValue;
+    var theInput;
+    for (var i = 1; i < 7; i++) {
+      theValue = eval("document.QuickSearch.setVal"+i+".value");
+      if(theValue.length>0) {
+        if(i==3) {
+        	theValue = theValue + "@";
+        }
+        numLines = numLines + 1;
+        theInput = eval("document.QuickSearch.value"+numLines);
+        theInput.value = theValue;
+        theInput = eval("document.QuickSearch.field"+numLines);
+        theInput.value = i;
+      }
+    }
+
+    document.QuickSearch.lineCount.value=numLines;
+    for (i = numLines + 1; i < 7; i++) {
+      theInput = eval("document.QuickSearch.value"+i);
+      theInput.value = "";
+    }
+
+    document.QuickSearch.submit();
+  }
+  //-->
+  </script>
+</head>
+
+<body bgcolor="#FFFFFF" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+{Include header.inc}
+
+<br>
+<span class="head1">Simple Object Search</span>
+<br><br>
+
+<form action="/4DACTION/HANDLECGI/QSF2" method="POST"  name="QuickSearch">
+<INPUT TYPE="hidden" NAME="whichfield" VALUE="1"><INPUT TYPE="HIDDEN" NAME="lineCount" VALUE="1"><input name="setVal1" type="hidden" value=""><input name="setVal2" type="hidden" value=""><input name="setVal3" type="hidden" value=""><input name="setVal4" type="hidden" value=""><input name="setVal5" type="hidden" value=""><input name="setVal6" type="hidden" value="">
+<input type="hidden" value="{SessionID}" name="sid"/>
+<input name="field1" type="hidden" value="1"><input name="value1" type="hidden" value="">
+<input name="field2" type="hidden" value="2"><input name="value2" type="hidden" value="">
+<input name="field3" type="hidden" value="3"><input name="value3" type="hidden" value="">
+<input name="field4" type="hidden" value="4"><input name="value4" type="hidden" value="">
+<input name="field5" type="hidden" value="5"><input name="value5" type="hidden" value="">
+<input name="field6" type="hidden" value="6"><input name="value6" type="hidden" value="">
+  <table border="0" width="500">
+  <!--4DLoop QuickSearchFields-->
+  <tr valign="top">
+    <td class="txt" width="400">
+      <!--4DVar tQSFieldname-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td class="txt">
+      <!--4DIf (tQSFieldname="Accession Number")-->
+      <input class="txt" type="text" size="30" onChange="setField(<!--4DVar myCounter-->,this.value);">
+      <!--4DElse-->
+		  <!--4DIf (tQSFieldname="Accession Number")-->
+		  <input class="txt" type="text" size="30" onChange="setField(<!--4DVar myCounter-->,this.value);">
+		  <!--4DElse-->
+			  <SELECT onChange="setField(<!--4DVar myCounter-->,this.options[this.selectedIndex].value);">
+			  <option value="">Select...
+			  <!--4DLoop QuickSearchValues-->
+				<option value="<!--4DVar pQSValues->{lQSSelValue}-->"><!--4DVar pQSValues->{lQSSelValue}-->
+			  <!--4DEndLoop-->
+			  </select>
+			  <!--4DIf (tQSFieldname="Artist Sort Name")-->
+			  	<span class="smalltxt">Type the first letter of an artist's last name to jump to that section of the list</span><br><br>
+			  <!--4DEndIf-->
+		  <!--4DEndIf-->
+      <!--4DEndIf-->
+    </td>
+  </tr>
+  <!--4DEndLoop-->
+  <tr>
+  	<td></td>
+    <td class="txt" align="left"><br><br><input type="button" value="FIND" class="txt" onClick="doSearch();"></input></td>
+  </tr>
+  </table>
+  <input name="RefineSearch" value="NewSelection" type="hidden" class="txt" value="New Selection">
+</form>
+<br>
+Current object selection: {Records-objects} records<br><br>
+<a href="/kiosk/search.htm${sessionid}">Other Search Options ></a>
+
+
+{Include footer.inc}
+
+</body>
+</html>
+
+

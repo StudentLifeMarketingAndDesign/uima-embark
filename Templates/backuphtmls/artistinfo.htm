@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--ArtistInfo.htm-->
+<html>
+<head>
+	<title>{Include title.inc} - {[Artist_Maker]Full_Name}</title>
+	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+	{Include scripts.inc}
+</head>
+
+<body class="clearfix">
+
+{Include header.inc}
+
+<div id="content">
+
+<div class="right">{Include activerecords.inc}</div>
+
+<h1>Artist Results</h1>
+
+{Include pagenavigation.inc}
+
+<!-- display options start -->
+<div class="display-options">
+    <div class="smalltxt">View:</div>
+    <div class="navtxt">
+        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+        <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+    </div>
+    <div class="navtxt">
+        <img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
+        biography
+    </div>
+</div>
+<!-- display options end -->
+
+<br/>
+
+{pagePopup;Artist Info}
+
+<br/>
+
+<!-- data layout table start -->
+<table cellpadding="0" cellspacing="0" width="503">
+    <tr valign="top">
+
+        {If(Has Image)}
+            <td><!-- image cell start --><a href="{Full View}" onmouseover="self.status = 'View Full Image';return true" onmouseout="self.status = '';return true"><img src="{preview}" width="{thumbnail width*2}" height="{thumbnail height*2}" alt=""/></a><!-- image cell end --></td>
+        {Else}
+            <td align="center"><img src="/graphics/DefaultPreview.gif" alt=""/></td>
+        {End If}
+
+        <td width="5"> </td>
+
+        <!-- data cell start -->
+        <td>
+            <b>{[Artist_Maker]Full_Name}</b><br/>
+            {[Artist_Maker]Artist_Label}<br/>
+            {if ([Artist_Maker]Nat_Culture_L2 != "")}{[Artist_Maker]Nat_Culture_L2}<br/>{end if}
+            {if ([Artist_Maker]Disp_Maker_Life != "")}{[Artist_Maker]Disp_Maker_Life}<br/>{end if}
+            {if ([Artist_Maker]Name_Elab != "")}{[Artist_Maker]Name_Elab}<br/>{end if}
+			{if ({[Surrogates]Photo_Credit} != "")}{[Surrogates]Photo_Credit}<br/>{end if}
+			{[Surrogates]Photo_Credit}
+
+            <br/><br/>
+
+            View <a href="{Artist's objects}">objects</a> by this artist.
+        </td>
+        <!-- data cell end -->
+    </tr>
+</table>
+<!-- data layout table end -->
+
+<br/><br/>
+{[Artist_Maker]Biography}
+
+<br/><br/>
+{if ([Surrogates])}
+<br>
+<hr>
+<br>
+<b>Additional Images</b>
+<br><br>
+{Start Loop([Surrogates];Order by [Surrogates]_ID)}
+<div class="objsur-record-box">
+	<div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+	<div class="objsur-label">{[Surrogates]View_1}</div>
+</div>
+{End Loop}
+{end if}
+
+{Include selectiondescription.inc}
+
+
+</div>
+
+{Include footer.inc}
+
+</body>
+</html>

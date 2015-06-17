@@ -1,0 +1,46 @@
+<!--Kiosk/galleryD.htm-->
+<html>
+<head>
+    <title>EmbARK Web Kiosk</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css">
+    <title>EmbARK Web Kiosk</title>
+    <link rel="alternate" href="http://webkiosk.gallerysystems.com/kiosk/gallery/photosD.rss" type="application/rss+xml" title="EmbARK Web Kiosk" id="gallery" />
+<script type="text/javascript" src="http://lite.piclens.com/current/piclens.js"></script>
+
+    {Include scripts.inc}
+</head>
+
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+{Include header.inc}
+
+<h1>Gallery for CoolIris Display</h1>
+<br><br>
+This is a sample group of records with titles that start with the letter D. (It is best to not have too many images on one page for display... though multiple page feeds can be linked.)
+
+<br><br>
+Install the <a href="http://www.cooliris.com/" target=_blank>Cooliris Plug-in for Firefox</a>
+<br><br>
+Click the lower-left corner of the image to load the CoolIris viewer.
+<br><br>
+If you would like to see a sample slideshow without installing the plugin, click this link:
+  <a href="javascript:PicLensLite.start();">Start Slideshow 
+  <img src="http://lite.piclens.com/images/PicLensButton.png"
+  alt="PicLens" width="16" height="12" border="0" align="absmiddle"></a> (Firefox browser only, 3D experience requires full plug-in)
+
+
+<br><br>
+
+<table cellpadding="10" cellspacing="0" border="0">
+{start loop;[Objects_1]disp_Title=="d@"}
+	<tr>
+		<td valign="middle" align="left"><img src="{preview}"></td>
+		<td valign="middle" align="left">{[Objects_1]Disp_Title}</td>
+	</tr>
+{end loop}
+</table>
+
+{Include footer.inc}
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+var listWind = ""
+function setPopup(row, str) {
+  document.forms["QuickSearch"].elements["value"+row].selectedIndex=0
+  document.forms["QuickSearch"].elements["value"+row].options[0].text="- "+str+" -"
+  document.forms["QuickSearch"].elements["value"+row].options[0].value=str
+  document.forms["QuickSearch"].elements["value"+row].blur()
+  listWind.close()
+}
+
+function lineChange(NameOfForm,srchType,lastLine) {
+document.forms[NameOfForm].action = "/4DACTION/HandleCGI/QS_"+srchType+"*"+lastLine
+ document.forms[NameOfForm].submit()
+}
+
+function checkValues() {
+  var row = document.forms["QuickSearch"].lineCount.value;
+  loadValues(row);
+}
+function valueChange(row) {
+  //only execute if this is a 'Begins with:' list
+  var fieldPop = document.forms["QuickSearch"].elements[(row*3)-2]
+  var valuePop = document.forms["QuickSearch"].elements[(row*3)-1]
+  var doIt = "No" //until proven otherwise
+  if (valuePop.options[0].text.charAt(0) == "-") {
+    if (valuePop.options[0].text.charAt(valuePop.options[0].length-1) == "-") {
+      doIt = "Yes"
+    }
+  }
+  else {
+    if (valuePop.options[0].text == "Begins with:") {
+      doIt = "Yes"
+    }
+  }
+  if (doIt == "Yes") {
+    doNew(row)
+  }
+}
+
+function doNew(row) {
+  var fieldPop = document.forms["QuickSearch"].elements[(row*3)-2]
+  var valuePop = document.forms["QuickSearch"].elements[(row*3)-1]
+  var numElements = (3*row)+2
+  if(document.forms["QuickSearch"].elements[(row*3)-1].selectedIndex > 0) {
+    if(row > 1) {
+      if(row == 4) {
+        numElements = numElements - 1 //no buttons in line 4
+      }
+      else {
+        numElements = numElements + 1 //two buttons lines 2-3
+      }
+    }
+    //if a value window was left open, close it
+    if (!listWind || listWind.closed){
+    }
+    else {
+      listWind.focus()
+      listWind.close()
+    }
+    //open value window and reset popup to 0
+    listWind = window.open("","","height=500,width=400,resizable")
+    listWind.name="SearchValues"
+    if(listWind != null){
+      document.QuickSearch.elements[0].value=(fieldPop.selectedIndex + 1)+"row"+row;
+      QSForm = document.QuickSearch;
+      var content = "<html><head><title>Pick a search value</title>";
+      content += "<link rel='stylesheet' type='text/css' href='/kioskstyles.css'>";
+      content += "</head>";
+      content += "<body onload='self.document.QuickSearch.submit();'>";
+      content += "<h1>Loading Field Values</h1>";
+      content += "<form name='QuickSearch' action='/4DACTION/HANDLECGI/QSA2' method='post'><input type='hidden' name='sid' value='{SessionId}'/>";
+
+      for (var i = 0; i < numElements; i++){
+        if(QSForm.elements[i].type == "select-one") {
+          content += "<input type='hidden' name='"+QSForm.elements[i].name+"' value='"+QSForm.elements[i].options[QSForm.elements[i].selectedIndex].value+"'/>";
+        }
+        else {
+        content += "<input type='hidden' name='"+QSForm.elements[i].name+"' value='"+QSForm.elements[i].value+"'/>";
+        }
+      }
+      content += "</form></body></html>";
+      valuePop.selectedIndex = 0;
+      listWind.document.write(content);
+      listWind.document.close();
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--MultipleRecords/ArtistList.htm-->
+<html>
+<head>
+    <title>{Include title.inc}</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    {Include scripts.inc}
+</head>
+
+<body class="clearfix">
+
+{Include header.inc}
+
+<div id="content">
+
+<div class="right">{Include activerecords.inc}</div>
+<h1>Artist Results</h1>
+
+{Include pagenavigation.inc}
+
+<!-- display options start -->
+<div class="display-options">
+    <div class="smalltxt">View:</div>
+    <div class="navtxt">
+        <img src="/graphics/icon2b.gif" width="12" height="12" alt=""/>
+        text list
+    </div>
+    <div class="navtxt">
+        <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+        <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
+    </div>
+</div>
+<!-- display options end -->
+
+{pagePopup;Artist Info}
+
+<p>(Click on an underlined column heading to sort the list)</p>
+
+<!-- list start -->
+<table cellpadding="0" cellspacing="0" width="600">
+
+	<!-- list headings start -->
+	<tr>
+      <td class="list-heading"><a href="{List Artist_Maker-Full_Name}">Name</a></td>
+      <td class="list-heading"><a href="{List Artist_Maker-Disp_Maker_Life}">Life Info</a></td>
+	</tr>
+	<!-- list headings end -->
+
+	<!--The following will be repeated for each record in the page.-->
+	{RecordLoop Start}
+      <tr>
+          <td class="list-row"><a href="{Artist Info}">{[Artist_Maker]Full_Name}</a>&nbsp;</td>
+          <td class="list-row">{[Artist_Maker]Disp_Maker_Life}&nbsp;</td>
+      </tr>
+	{RecordLoop End}
+
+</table>
+<!-- list end -->
+
+<br/><br/>
+
+{Include selectiondescription.inc}
+
+
+</div>
+{Include footer.inc}
+
+</body>
+</html>
+
