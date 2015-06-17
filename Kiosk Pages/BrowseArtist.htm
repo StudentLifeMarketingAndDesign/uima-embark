@@ -1,240 +1,263 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--MultipleRecords/SearchResults/Artist.htm-->
-<html>
-<head>
-    <title>{include title.inc} - Browse by Artist</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
-<div id="content">
-<h1>Artists by Name: <script type="text/javascript">document.write(currentLetter.toUpperCase());</script></h1>
-<p><em>Other browse options:</em>&nbsp;
-<a href="/kiosk/BrowseArtist.htm">Artist</a> |
-<a href="/kiosk/BrowseGeography.htm">Geography</a> |
-<a href="/kiosk/BrowseCategory.htm">Curatorial Category</a>
-</p>
+	{Include header.inc}
 
-<table cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-    <td>
-    <a id="letter_a" class="letter" href="/kiosk/BrowseArtist.htm#A">A</a> 
-    <a id="letter_b" class="letter" href="/kiosk/BrowseArtist.htm#B">B</a> 
-    <a id="letter_c" class="letter" href="/kiosk/BrowseArtist.htm#C">C</a> 
-    <a id="letter_d" class="letter" href="/kiosk/BrowseArtist.htm#D">D</a> 
-    <a id="letter_e" class="letter" href="/kiosk/BrowseArtist.htm#E">E</a> 
-    <a id="letter_f" class="letter" href="/kiosk/BrowseArtist.htm#F">F</a> 
-    <a id="letter_g" class="letter" href="/kiosk/BrowseArtist.htm#G">G</a> 
-    <a id="letter_h" class="letter" href="/kiosk/BrowseArtist.htm#H">H</a> 
-    <a id="letter_i" class="letter" href="/kiosk/BrowseArtist.htm#I">I</a> 
-    <a id="letter_j" class="letter" href="/kiosk/BrowseArtist.htm#J">J</a> 
-    <a id="letter_k" class="letter" href="/kiosk/BrowseArtist.htm#K">K</a> 
-    <a id="letter_l" class="letter" href="/kiosk/BrowseArtist.htm#L">L</a> 
-    <a id="letter_m" class="letter" href="/kiosk/BrowseArtist.htm#M">M</a> 
-    <a id="letter_n" class="letter" href="/kiosk/BrowseArtist.htm#N">N</a> 
-    <a id="letter_o" class="letter" href="/kiosk/BrowseArtist.htm#O">O</a> 
-    <a id="letter_p" class="letter" href="/kiosk/BrowseArtist.htm#P">P</a> 
-    <a id="letter_q" class="letter" href="/kiosk/BrowseArtist.htm#Q">Q</a> 
-    <a id="letter_r" class="letter" href="/kiosk/BrowseArtist.htm#R">R</a> 
-    <a id="letter_s" class="letter" href="/kiosk/BrowseArtist.htm#S">S</a> 
-    <a id="letter_t" class="letter" href="/kiosk/BrowseArtist.htm#T">T</a> 
-    <a id="letter_u" class="letter" href="/kiosk/BrowseArtist.htm#U">U</a> 
-    <a id="letter_v" class="letter" href="/kiosk/BrowseArtist.htm#V">V</a> 
-    <a id="letter_w" class="letter" href="/kiosk/BrowseArtist.htm#W">W</a> 
-    <a id="letter_x" class="letter" href="/kiosk/BrowseArtist.htm#X">X</a> 
-    <a id="letter_z" class="letter" href="/kiosk/BrowseArtist.htm#Z">Z</a> 
-  </p>
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Browse By Artist</h3>
+		</div>
 
-</table>
+		
 
-<a name="A"><h5>A</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="a@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br><br>
-<a name="B"><h5>B</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="b@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br><br>
-<a name="C"><h5>C</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="c@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br><br>
-<a name="D"><h5>D</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="d@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br><br>
-<a name="E"><h5>E</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="e@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br><br>
-<a name="F"><h5>F</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="f@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="G"><h5>G</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="h@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="H"><h5>H</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="h@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="I"><h5>I</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="i@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="J"><h5>J</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="j@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="K"><h5>K</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="k@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="L"><h5>L</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="l@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="M"><h5>M</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="m@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="N"><h5>N</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="n@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="O"><h5>O</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="o@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="P"><h5>P</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="p@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="Q"><h5>Q</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="q@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="R"><h5>R</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="r@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="S"><h5>S</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="s@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="T"><h5>T</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="t@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="U"><h5>U</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="u@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="V"><h5>V</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="v@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="W"><h5>W</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="w@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="X"><h5>X</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="x@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="Y"><h5>Y</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="y@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-<a name="Z"><h5>Z</h5></a>
-		<ul>
-		{start loop([Artist_Maker]Sort_Name=="z@")}
-            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
-	    {end loop}
-		</ul>
-<br/><br/>
-</div>
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
+
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+			<section id="main-content" tabindex="-1">
+				<h1>Artists by Name: <script type="text/javascript">document.write(currentLetter.toUpperCase());</script></h1>
+				<p><em>Other browse options:</em>&nbsp;
+				<a href="/kiosk/BrowseArtist.htm">Artist</a> |
+				<a href="/kiosk/BrowseGeography.htm">Geography</a> |
+				<a href="/kiosk/BrowseCategory.htm">Curatorial Category</a>
+				</p>
+
+				<table cellpadding="0" cellspacing="0" width="100%">
+				    <tr>
+				    <td>
+				    <a id="letter_a" class="letter" href="/kiosk/BrowseArtist.htm#A">A</a> 
+				    <a id="letter_b" class="letter" href="/kiosk/BrowseArtist.htm#B">B</a> 
+				    <a id="letter_c" class="letter" href="/kiosk/BrowseArtist.htm#C">C</a> 
+				    <a id="letter_d" class="letter" href="/kiosk/BrowseArtist.htm#D">D</a> 
+				    <a id="letter_e" class="letter" href="/kiosk/BrowseArtist.htm#E">E</a> 
+				    <a id="letter_f" class="letter" href="/kiosk/BrowseArtist.htm#F">F</a> 
+				    <a id="letter_g" class="letter" href="/kiosk/BrowseArtist.htm#G">G</a> 
+				    <a id="letter_h" class="letter" href="/kiosk/BrowseArtist.htm#H">H</a> 
+				    <a id="letter_i" class="letter" href="/kiosk/BrowseArtist.htm#I">I</a> 
+				    <a id="letter_j" class="letter" href="/kiosk/BrowseArtist.htm#J">J</a> 
+				    <a id="letter_k" class="letter" href="/kiosk/BrowseArtist.htm#K">K</a> 
+				    <a id="letter_l" class="letter" href="/kiosk/BrowseArtist.htm#L">L</a> 
+				    <a id="letter_m" class="letter" href="/kiosk/BrowseArtist.htm#M">M</a> 
+				    <a id="letter_n" class="letter" href="/kiosk/BrowseArtist.htm#N">N</a> 
+				    <a id="letter_o" class="letter" href="/kiosk/BrowseArtist.htm#O">O</a> 
+				    <a id="letter_p" class="letter" href="/kiosk/BrowseArtist.htm#P">P</a> 
+				    <a id="letter_q" class="letter" href="/kiosk/BrowseArtist.htm#Q">Q</a> 
+				    <a id="letter_r" class="letter" href="/kiosk/BrowseArtist.htm#R">R</a> 
+				    <a id="letter_s" class="letter" href="/kiosk/BrowseArtist.htm#S">S</a> 
+				    <a id="letter_t" class="letter" href="/kiosk/BrowseArtist.htm#T">T</a> 
+				    <a id="letter_u" class="letter" href="/kiosk/BrowseArtist.htm#U">U</a> 
+				    <a id="letter_v" class="letter" href="/kiosk/BrowseArtist.htm#V">V</a> 
+				    <a id="letter_w" class="letter" href="/kiosk/BrowseArtist.htm#W">W</a> 
+				    <a id="letter_x" class="letter" href="/kiosk/BrowseArtist.htm#X">X</a> 
+				    <a id="letter_z" class="letter" href="/kiosk/BrowseArtist.htm#Z">Z</a> 
+				  </p>
+
+				</table>
+
+				<a name="A"><h5>A</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="a@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br><br>
+				<a name="B"><h5>B</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="b@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br><br>
+				<a name="C"><h5>C</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="c@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br><br>
+				<a name="D"><h5>D</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="d@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br><br>
+				<a name="E"><h5>E</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="e@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br><br>
+				<a name="F"><h5>F</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="f@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="G"><h5>G</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="h@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="H"><h5>H</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="h@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="I"><h5>I</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="i@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="J"><h5>J</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="j@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="K"><h5>K</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="k@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="L"><h5>L</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="l@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="M"><h5>M</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="m@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="N"><h5>N</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="n@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="O"><h5>O</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="o@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="P"><h5>P</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="p@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="Q"><h5>Q</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="q@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="R"><h5>R</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="r@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="S"><h5>S</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="s@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="T"><h5>T</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="t@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="U"><h5>U</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="u@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="V"><h5>V</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="v@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="W"><h5>W</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="w@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="X"><h5>X</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="x@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="Y"><h5>Y</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="y@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				<a name="Z"><h5>Z</h5></a>
+						<ul>
+						{start loop([Artist_Maker]Sort_Name=="z@")}
+				            <li><a href="{Artist's Objects}">{[Artist_Maker]Sort_Name}</a> {[Artist_Maker]Disp_Maker_Life}</li>
+					    {end loop}
+						</ul>
+				<br/><br/>
+				
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>

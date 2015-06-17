@@ -1,50 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--IndexTree.htm-->
-<html>
-<head>
-	<title>{Include title.inc} - Browse the Collection</title>
-	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-	{Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body onload="setMenu('collections');" class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
+	{Include header.inc}
 
-<div id="content">
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Browse Collection</h3>
+		</div>
 
-    <h1>{Branch title;Online Collections}</h1><br>
-	    <!-- Hide 'up a level' at top level -->
-    {if(_ID!="-1")}
-    	<span class="smalltxt">&lt;&nbsp;<a href="{ParentLink}">up a level</a></span>
-	{else}
-    	Click any link below to begin browsing through the collection.
-    {end if}
-	 <br><br>
-	<a href="kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by Artist</a> - <a href="kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by Geography</a> - 
-	<a href="kiosk/browsecategory.htm?sid={SessionId}&x{Sequence}">Browse by Curatorial Category</a>
-	
-	<br><br>
-	<hr>
+		
 
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
 
-<!-- child branches start -->
-{RecordLoop Start}		 
-	<div class="index-tree-record-box">
-	<div class="index-tree-thumbnail">
-        <a href="{Index Tree}&display=th={Sequence}">{If(Has Image)}<img src="{Thumbnail}" alt=""/>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{End If}</a>
-	</div>
-	<div class="index-tree-label">
-        <a href="{Index Tree}&display=th={Sequence}">{Branch Title}</a>
-	</div>
-</div>
-{RecordLoop End}
-<!-- child branches end -->
- </div>
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+			<section id="main-content" tabindex="-1">
+			    <h1>{Branch title;Online Collections}</h1><br>
+				    <!-- Hide 'up a level' at top level -->
+			    {if(_ID!="-1")}
+			    	<span class="smalltxt">&lt;&nbsp;<a href="{ParentLink}">up a level</a></span>
+				{else}
+			    	Click any link below to begin browsing through the collection.
+			    {end if}
+				 <br><br>
+				<a href="kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by Artist</a> - <a href="kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by Geography</a> - 
+				<a href="kiosk/browsecategory.htm?sid={SessionId}&x{Sequence}">Browse by Curatorial Category</a>
+				
+				<br><br>
+				<hr>
 
+				<ul class="collectionsholder justify">
+					<!-- child branches start -->
+					{RecordLoop Start}
+						{Include collectionitem.inc}
+					{RecordLoop End}
+					<!-- child branches end -->
+					<li class="justify-item filler"></li>
+				</ul>
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
-
 </html>

@@ -1,141 +1,163 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Kiosk Pages/search.htm-->
-<html>
-<head>
-    <title>{include title.inc} - Advanced Search</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+{Include meta-head.inc}
 
+<body class="CollectionHomePage  shifter">
     <script language="javascript" type="text/javascript" src="/scripts/datetimepicker.js">
-	//Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
-	//Script featured on JavaScript Kit (http://www.javascriptkit.com)
-	//For this script, visit http://www.javascriptkit.com
-	</script>
+    //Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
+    //Script featured on JavaScript Kit (http://www.javascriptkit.com)
+    //For this script, visit http://www.javascriptkit.com
+    </script>
 
-	<script language="javascript" type="text/javascript">
-	<!--
-		function setHier(selectName, parentField, childField) {
-			var selItem = document.forms["Search"].elements[selectName].selectedIndex;
-			var selValue = document.forms["Search"].elements[selectName].options[selItem].value;
-			if( selValue.substring(0,5) == "sub::" ) {
-				document.forms["Search"].elements[childField].value = selValue;
-			} else {
-				document.forms["Search"].elements[parentField].value = selValue;
-				document.forms["Search"].elements[childField].value = "";
-			}
-		}
-	//-->
-	</script>
+    <script language="javascript" type="text/javascript">
+    <!--
+        function setHier(selectName, parentField, childField) {
+            var selItem = document.forms["Search"].elements[selectName].selectedIndex;
+            var selValue = document.forms["Search"].elements[selectName].options[selItem].value;
+            if( selValue.substring(0,5) == "sub::" ) {
+                document.forms["Search"].elements[childField].value = selValue;
+            } else {
+                document.forms["Search"].elements[parentField].value = selValue;
+                document.forms["Search"].elements[childField].value = "";
+            }
+        }
+    //-->
+    </script>
+<div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-</head>
+    {Include header.inc}
 
-<body class="clearfix">
+    <main class="container main" role="main">
+    <div class="row">
+        <!-- Section Heading -->
+        
+            
+        <div class="col-sm-12">
+            <h3 class="section-title">Collections Home</h3>
+        </div>
 
-{Include header.inc}
-<div id="content">
-<h1>Advanced Search</h1>
+        
 
-<form id="Search" name="Search" action="/4DACTION/HANDLECGI/Search?display=por" method="post" >
+        <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-3 sidebar">
+            {Include sidenav.inc}
+        </div>
+        
 
-<!-- For each new search field, you need to add 2 variables to the form:
-1) "SearchField#": make sure the # is sequential; set value to the name of the field you want to search.
-2) "SearchValue#": make sure the # matches the # from SearchField; the user must be able to set the value to the desired search value; a wildcard will be appended before and after the search value
--->
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+            <section id="main-content" tabindex="-1">
+                <h1>Advanced Search</h1>
 
-    <table>
-    		<td>Title<input type="hidden" name="SearchField1" value="Disp_Title"/></td>
-    		<td><input type="text" size="80" name="SearchValue1" value=""/></td>
-    	</tr>
-    	<tr>
-    		<td>Artist<input type="hidden" name="SearchField2" value="sort_Artist"/></td>
-    		<td><input type="text" size="80" name="SearchValue2" value=""/></td>
-    	</tr>
-    	<tr>
-    		<td>Media & Support<input type="hidden" name="SearchField3" value="Disp_medium"/></td>
-    		<td><input type="text" size="80" name="SearchValue3" value=""/></td>
-    	</tr>
-		<tr>
-    		<td>Period or Century<input type="hidden" name="SearchField10" value="Combo::Period;;Century"/></td>
-    		<td><input type="text" size="80" name="SearchValue10" value=""/></td>
-    	</tr>
-		
-		
-	<!--4DSCRIPT/GetDistinctValues/[Objects_1]Period/1/1-->
-	<!--4DIF (Size of array(atGDVValues)>0)-->
-    	<tr>
-    		<td>Period<input type="hidden" name="SearchField4" value="period"/></td>
-    		<td><select name="SearchValue4"><option selected="selected" value=""></option><!--4DLOOP atGDVValues--><option value="<!--4DVAR atGDVValues{atGDVValues}-->"><!--4DVAR atGDVValues{atGDVValues}--></option><!--4DENDLOOP--></select></td>
-    	</tr>
-	<!--4DENDIF-->
+                <form id="Search" name="Search" action="/4DACTION/HANDLECGI/Search?display=por" method="post" >
 
+                <!-- For each new search field, you need to add 2 variables to the form:
+                1) "SearchField#": make sure the # is sequential; set value to the name of the field you want to search.
+                2) "SearchValue#": make sure the # matches the # from SearchField; the user must be able to set the value to the desired search value; a wildcard will be appended before and after the search value
+                -->
 
-
-	<!--4DSCRIPT/GetDistinctValues/[Objects_1]_CP_4_ID/1/1/CHOICELIST/atCLParent1/alCLParent1-->
-	<!--4DIF (Size of array(atCLParent1)>0)-->
-    	<tr>
-    		<td>Creation Place<input type="hidden" name="SearchField5" value="_CP_4_ID"/><input type="hidden" name="SearchValue5"/>
-    		<input type="hidden" name="SearchField6" value="Creation_Place4"/><input type="hidden" name="SearchValue6"/></td>
-    		<td><select name="place" onChange="setHier('place','SearchValue5','SearchValue6')">
-    		<option value="" checked></option>
-    		<!--4DLOOP alCLParent1--><!--4DIF (alCLParent1{alCLParent1}>0)-->
-    			<option value="<!--4DVAR alCLParent1{alCLParent1}-->" style="font-weight:bold;"><!--4DVAR atCLParent1{alCLParent1}--> </option>
-
-				<!--4DSCRIPT/GetDistinctSubValues/[Objects_1]Creation_Place4/alCLParent1//1/1/atCLTemp2-->
-				<!--4DLOOP atCLTemp2-->
-					<!--4DIF (atCLTemp2{atCLTemp2}#"")-->
-						<option value="sub::<!--4DVAR alCLParent1{alCLParent1}-->::<!--4DVAR atCLTemp2{atCLTemp2}-->">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--4DVAR atCLTemp2{atCLTemp2}--></option>
-					<!--4DENDIF-->
-				<!--4DENDLOOP-->
-    		<!--4DENDIF--><!--4DENDLOOP--></select></td>
-    	</tr>
-	<!--4DENDIF-->
-
-    		<td>Date<input type="hidden" name="SearchField7" value="Start Date"/><input type="hidden" name="SearchField8" value="End Date"/></td>
-    		<td><input type="text" size="10" name="SearchValue7" value=""/> - <input type="text" size="10" name="SearchValue8" value=""/></td>
-    	</tr>
-     	<tr>
-     		<td><p>Donor/Credit Line</p><input type="hidden" name="SearchField9" value="Combo::donor;;dedication"/></td>
-     		<td><input type="text" size="80" name="SearchValue9" value=""/></td>
-     	</tr>
-
-    	<tr>
-    		<td>Object ID<input type="hidden" name="SearchField18" value="Combo::disp_access_no;;Temp_ID"/></td>
-    		<td><input type="text" size="80" name="SearchValue18" value=""/></td>
-    	</tr>
-		
-		
-    </table>
-
-    <p><input type="submit" name="doSubmit" value="  Find  "/></p>
-
-    <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
-
-    <p><input type="radio" name="SearchType" value="all" checked/><b>AND</b> search terms
-    <input type="radio" name="SearchType" value="any"/><b>OR</b> search terms</p>
-
-    <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
-    <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
-    <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
-
-    <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option><option value="52">Medium & Support</option><option value="62">Creation Date</option></select></p>
-
-	<input type="hidden" name="sid" value="{SessionID}"/>
-</form>
-
-{if(Records)}
-    <p>
-        <br/><br/>
-        <b>Your current selection of {Records - Object} records is:</b><br/>
-        {Selection Name Object}
-    </p>
-{end if}
+                    <table>
+                            <td>Title<input type="hidden" name="SearchField1" value="Disp_Title"/></td>
+                            <td><input type="text" size="80" name="SearchValue1" value=""/></td>
+                        </tr>
+                        <tr>
+                            <td>Artist<input type="hidden" name="SearchField2" value="sort_Artist"/></td>
+                            <td><input type="text" size="80" name="SearchValue2" value=""/></td>
+                        </tr>
+                        <tr>
+                            <td>Media & Support<input type="hidden" name="SearchField3" value="Disp_medium"/></td>
+                            <td><input type="text" size="80" name="SearchValue3" value=""/></td>
+                        </tr>
+                        <tr>
+                            <td>Period or Century<input type="hidden" name="SearchField10" value="Combo::Period;;Century"/></td>
+                            <td><input type="text" size="80" name="SearchValue10" value=""/></td>
+                        </tr>
+                        
+                        
+                    <!--4DSCRIPT/GetDistinctValues/[Objects_1]Period/1/1-->
+                    <!--4DIF (Size of array(atGDVValues)>0)-->
+                        <tr>
+                            <td>Period<input type="hidden" name="SearchField4" value="period"/></td>
+                            <td><select name="SearchValue4"><option selected="selected" value=""></option><!--4DLOOP atGDVValues--><option value="<!--4DVAR atGDVValues{atGDVValues}-->"><!--4DVAR atGDVValues{atGDVValues}--></option><!--4DENDLOOP--></select></td>
+                        </tr>
+                    <!--4DENDIF-->
 
 
-<p><b>Other Search Options:</b><br/>
-Advanced Search |
-<a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
-</div>
+
+                    <!--4DSCRIPT/GetDistinctValues/[Objects_1]_CP_4_ID/1/1/CHOICELIST/atCLParent1/alCLParent1-->
+                    <!--4DIF (Size of array(atCLParent1)>0)-->
+                        <tr>
+                            <td>Creation Place<input type="hidden" name="SearchField5" value="_CP_4_ID"/><input type="hidden" name="SearchValue5"/>
+                            <input type="hidden" name="SearchField6" value="Creation_Place4"/><input type="hidden" name="SearchValue6"/></td>
+                            <td><select name="place" onChange="setHier('place','SearchValue5','SearchValue6')">
+                            <option value="" checked></option>
+                            <!--4DLOOP alCLParent1--><!--4DIF (alCLParent1{alCLParent1}>0)-->
+                                <option value="<!--4DVAR alCLParent1{alCLParent1}-->" style="font-weight:bold;"><!--4DVAR atCLParent1{alCLParent1}--> </option>
+
+                                <!--4DSCRIPT/GetDistinctSubValues/[Objects_1]Creation_Place4/alCLParent1//1/1/atCLTemp2-->
+                                <!--4DLOOP atCLTemp2-->
+                                    <!--4DIF (atCLTemp2{atCLTemp2}#"")-->
+                                        <option value="sub::<!--4DVAR alCLParent1{alCLParent1}-->::<!--4DVAR atCLTemp2{atCLTemp2}-->">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--4DVAR atCLTemp2{atCLTemp2}--></option>
+                                    <!--4DENDIF-->
+                                <!--4DENDLOOP-->
+                            <!--4DENDIF--><!--4DENDLOOP--></select></td>
+                        </tr>
+                    <!--4DENDIF-->
+
+                            <td>Date<input type="hidden" name="SearchField7" value="Start Date"/><input type="hidden" name="SearchField8" value="End Date"/></td>
+                            <td><input type="text" size="10" name="SearchValue7" value=""/> - <input type="text" size="10" name="SearchValue8" value=""/></td>
+                        </tr>
+                        <tr>
+                            <td><p>Donor/Credit Line</p><input type="hidden" name="SearchField9" value="Combo::donor;;dedication"/></td>
+                            <td><input type="text" size="80" name="SearchValue9" value=""/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Object ID<input type="hidden" name="SearchField18" value="Combo::disp_access_no;;Temp_ID"/></td>
+                            <td><input type="text" size="80" name="SearchValue18" value=""/></td>
+                        </tr>
+                        
+                        
+                    </table>
+
+                    <p><input type="submit" name="doSubmit" value="  Find  "/></p>
+
+                    <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+
+                    <p><input type="radio" name="SearchType" value="all" checked/><b>AND</b> search terms
+                    <input type="radio" name="SearchType" value="any"/><b>OR</b> search terms</p>
+
+                    <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                    <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                    <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+
+                    <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option><option value="52">Medium & Support</option><option value="62">Creation Date</option></select></p>
+
+                    <input type="hidden" name="sid" value="{SessionID}"/>
+                </form>
+
+                {if(Records)}
+                    <p>
+                        <br/><br/>
+                        <b>Your current selection of {Records - Object} records is:</b><br/>
+                        {Selection Name Object}
+                    </p>
+                {end if}
+
+
+                <p><b>Other Search Options:</b><br/>
+                Advanced Search |
+                <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
+                
+            </section>
+        </div><!-- end .col -->
+    </div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>

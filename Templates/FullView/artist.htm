@@ -1,87 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--FullView/Artist.htm-->
-<html>
-<head>
-	<title>{Include title.inc}</title>
-	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-	{Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
+    {Include header.inc}
 
-<div id="content">
+    <main class="container main" role="main">
+    <div class="row">
+        <!-- Section Heading -->
+        
+            
+        <div class="col-sm-12">
+            <h3 class="section-title">Browse Collection</h3>
+        </div>
 
-{Include activerecords.inc}
-<h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Artist_Maker]Display_Name}</a></h1>
+        
 
-{Include pagenavigation.inc}
+        <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-3 sidebar">
+            {Include sidenav.inc}
+        </div>
+        
 
-<!-- display options start -->
-<div class="display-options">
-    <div class="smalltxt">View:</div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
-        <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
-    </div>
-</div>
-<!-- display options end -->
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+            <section id="main-content" tabindex="-1">
+            {Include activerecords.inc}
+            <h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Artist_Maker]Display_Name}</a></h1>
 
-{pagePopup;Artist Info}
+            {Include pagenavigation.inc}
 
-<center>
-{if(Has Image)}
-    {if(Image height=="0")}
-        <object
-            classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="20"
-            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-            <param name="SRC" value="{Image Path}">
-            <param name="AUTOPLAY" value="true">
-            <param name="CONTROLLER" value="true">
-            <embed
-                src="{Image Path}" width="{Image width}" height="{Image height}"
-                autoplay="true" controller="false"
-                pluginspage="http://www.apple.com/quicktime/download/">
-            </embed>
-        </object>
-    {else}
-        {if(Image duration=="0")}
-            <img src="{Image Path;DefaultPreview.gif}" alt="{[Artist_Maker]Display_Name}"/>
-        {else}
-            <object
-              classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{Image width}" height="{Image height+20}"
-              codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-              <param name="SRC" value="{Image Path}">
-              <param name="AUTOPLAY" value="true">
-              <param name="CONTROLLER" value="true">
-              <embed
-                src="{Image Path}" width="{Image width}" height="{Image height}"
-                autoplay="true" controller="false"
-                pluginspage="http://www.apple.com/quicktime/download/">
-              </embed>
-            </object>
-        {end if}
-    {end if}
-{else}
-    This artist does not have an image.
-{end if}
-</center>
+            <!-- display options start -->
+            <div class="display-options">
+                <div class="smalltxt">View:</div>
+                <div class="navtxt">
+                    <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                    <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+                </div>
+                <div class="navtxt">
+                    <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+                    <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
+                </div>
+            </div>
+            <!-- display options end -->
 
-<br/><br/>
+            {pagePopup;Artist Info}
 
-<div class="selectionDesc">
-{Include selectiondescription.inc}
-</div>
+            <center>
+            {if(Has Image)}
+                {if(Image height=="0")}
+                    <object
+                        classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="20"
+                        codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+                        <param name="SRC" value="{Image Path}">
+                        <param name="AUTOPLAY" value="true">
+                        <param name="CONTROLLER" value="true">
+                        <embed
+                            src="{Image Path}" width="{Image width}" height="{Image height}"
+                            autoplay="true" controller="false"
+                            pluginspage="http://www.apple.com/quicktime/download/">
+                        </embed>
+                    </object>
+                {else}
+                    {if(Image duration=="0")}
+                        <img src="{Image Path;DefaultPreview.gif}" alt="{[Artist_Maker]Display_Name}"/>
+                    {else}
+                        <object
+                          classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{Image width}" height="{Image height+20}"
+                          codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+                          <param name="SRC" value="{Image Path}">
+                          <param name="AUTOPLAY" value="true">
+                          <param name="CONTROLLER" value="true">
+                          <embed
+                            src="{Image Path}" width="{Image width}" height="{Image height}"
+                            autoplay="true" controller="false"
+                            pluginspage="http://www.apple.com/quicktime/download/">
+                          </embed>
+                        </object>
+                    {end if}
+                {end if}
+            {else}
+                This artist does not have an image.
+            {end if}
+            </center>
 
-</div>
+            <br/><br/>
 
+            <div class="selectionDesc">
+            {Include selectiondescription.inc}
+            </div>
+            </section>
+        </div><!-- end .col -->
+    </div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>
