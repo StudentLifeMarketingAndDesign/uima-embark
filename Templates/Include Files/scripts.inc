@@ -1,8 +1,10 @@
-    <!-- start scripts -->
-	<link rel="icon" href="/graphics/favicon.ico" type="image/x-ico" />
-	
-    <!-- inserts JavaScript at the top of every page -->
-	<script type="text/javascript" src="/scripts/jquery-min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
+    <script src="themes/uima/js/build/production.min.js"></script>
+
+    <!-- default embark javascript (to be minified) -->
     <script type="text/javascript" src="/scripts/highslide/highslide-full.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/scripts/highslide/highslide.css" />
     <script type="text/javascript" src="/scripts/highslideinit.js"></script>

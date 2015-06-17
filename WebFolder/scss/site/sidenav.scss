@@ -1,0 +1,86 @@
+/* ---------------------------------------------------------------
+Section Title
+--------------------------------------------------------------- */
+.section-title {
+	font-size: 40px;
+	font-weight: normal;
+	margin-top: 0;
+	text-transform: none;
+	& a {
+		color: #333;
+	}
+}
+
+/* ---------------------------------------------------------------
+Side Navigation
+--------------------------------------------------------------- */
+.side-navigation {
+	@media (min-width: $break-medium) {
+		margin-bottom: 3em;
+	}
+}
+.sec-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.sec-nav li a {
+	color: #333;
+	display: block;
+}
+.sec-nav .first-level > li {
+	border-bottom: 1px solid #ccc;
+	@media (min-width: $break-medium) {
+		border-bottom: 1px solid #333;
+	}
+}
+.sec-nav .first-level > li:last-of-type {
+	@media (max-width: $break-medium) {
+		border-bottom: none;
+	}
+}
+.sec-nav .first-level > li  > a {
+	font-size: 14px;
+	line-height: 1.3;
+	padding: 12px;
+	@media (min-width: $break-medium) {
+		font-size: 21px;
+		padding: 12px 0;
+	}
+}
+.sec-nav .first-level li.active > a {
+	color: $link;
+	font-weight: bold;
+	@media (min-width: $break-medium) {
+		font-weight: normal;
+	}
+}
+.sec-nav .first-level li a:hover, .sec-nav .first-level li a:focus {
+	color: $link;
+}
+
+/* Second level */
+.sec-nav .second-level {
+	margin-bottom: 1em;
+}
+.sec-nav .second-level > li > a {
+	font-size: 14px;
+	line-height: 1.3;
+	padding: 12px;
+	@media (min-width: $break-medium) {
+		font-size: 16px;
+		padding: 5px 0;
+	}
+}
+
+/* ---------------------------------------------------------------
+Mobile Styles (Naver)
+--------------------------------------------------------------- */
+.naver.enabled .naver-container {
+	padding: 0;
+}
+.subnavigation .block {
+	@media (max-width: $break-large -1) {
+		margin-top: 0;
+	}
+}

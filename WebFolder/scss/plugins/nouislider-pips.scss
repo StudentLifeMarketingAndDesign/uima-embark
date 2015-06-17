@@ -1,0 +1,117 @@
+/*! noUiSlider - 7.0.10 - 2014-12-27 14:50:47 */
+
+.noUi-pips, .noUi-pips * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.noUi-pips {
+    position: absolute;
+    font: 400 12px Arial;
+    color: #999;
+}
+
+.noUi-value {
+    width: 54px;
+    position: absolute;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    font-weight: bold;
+    &:hover{
+    	cursor: pointer;
+    }
+    @media (min-width: $break-medium) {
+    	font-size: 13px;
+    }
+    @media (min-width: $break-large) {
+    	font-size: 15px;
+    }
+
+    &.odd {
+    	top: -90px;
+    	@media (min-width: $break-medium) {
+    		top: auto;
+    	}
+    }
+}
+
+.noUi-value-sub {
+    color: #ccc;
+    font-size: 10px;
+}
+
+.noUi-marker {
+    position: absolute;
+    background: #999;
+    display: none;
+    border-radius: 50%;
+}
+
+.noUi-marker-large, .noUi-marker-sub {
+    background: #999;
+    display: block;
+}
+
+.noUi-pips-horizontal {
+    /*padding: 10px 0;*/
+    height: 50px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: -8px;
+}
+
+.noUi-value-horizontal {
+    margin-left: -20px;
+    margin-top: 41px;
+    @media(min-width: $break-medium) {
+       margin-top: 37px;
+    }
+}
+
+.noUi-value-horizontal.noUi-value-sub {
+    padding-top: 15px;
+}
+
+.noUi-marker-horizontal.noUi-marker {
+    margin-left: -1px;
+    width: 12px;
+    height: 12px;
+}
+
+.noUi-marker-horizontal.noUi-marker-sub {
+    height: 12px;
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+    height: 12px;
+
+}
+
+.noUi-pips-vertical {
+    padding: 0 10px;
+    height: 100%;
+    top: 0;
+    left: 100%;
+}
+
+.noUi-value-vertical {
+    width: 15px;
+    margin-left: 20px;
+    margin-top: -5px;
+}
+
+.noUi-marker-vertical.noUi-marker {
+    width: 5px;
+    height: 2px;
+    margin-top: -1px;
+}
+
+.noUi-marker-vertical.noUi-marker-sub {
+    width: 10px;
+}
+
+.noUi-marker-vertical.noUi-marker-large {
+    width: 15px;
+}

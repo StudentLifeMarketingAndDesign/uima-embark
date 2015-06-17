@@ -1,0 +1,214 @@
+.footer {
+	background-color: #4f4b48;
+	color: #fff;
+}
+.footer a {
+	color: #fff;
+}
+.footer-top {
+	padding: 40px 0;
+}
+.footer-top h3 {
+	color: #fff;
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0;
+}
+.footer-bottom {
+	background-color: #84817c;
+	padding: 15px 0;
+}
+/* ---------------------------------------------------------------
+CONTACT INFO
+--------------------------------------------------------------- */
+.footer-contact {
+	@media (min-width: $break-medium) {
+		float: left;
+		width: 50%;
+	}
+}
+.footer-contact h3 {
+	font-weight: bold;
+}
+.footer-contact p {
+	@media (min-width: $break-medium) {
+		font-size: 14px;
+		line-height: 1.2;
+		margin: 3px 0;
+	}
+}
+
+/* ---------------------------------------------------------------
+LINK LISTS
+--------------------------------------------------------------- */
+.footer-links {
+	@media (min-width: $break-medium) {
+		float: left;
+		width: 50%;
+	}
+}
+.footer-links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.footer-links .main-links {
+	font-weight: bold;
+	overflow: hidden;
+	@media (min-width: $break-small) {
+		overflow: inherit;
+	}
+	@media (min-width: $break-medium) {
+		display: inline;
+	}
+}
+.footer-links .main-links ul {
+	float: left;
+	width: 50%;
+	@media (min-width: $break-small) {
+		width: 33.3%;
+	}
+}
+.footer-links li a {
+	border-left: 1px solid rgba(255,255,255,.75);
+	color: #fff;
+	display: block;
+	padding: 6px 0 6px 10px;
+	text-transform: uppercase;
+	@media (min-width: $break-small) {
+		font-size: 14px;
+	}
+	@media (min-width: $break-medium) {
+		padding: 3px 0 3px 10px;
+	}
+}
+.footer-links li a:hover, .footer-links li a:focus {
+	xcolor: $link;
+	border-left-color: $link;
+	padding-left: 12px;
+}
+.footer-links .secondary {
+	margin-top: 1em;
+	@media (min-width: $break-small) {
+		margin-top: 0;
+		float: left;
+		width: 33.3%
+	}
+}
+.footer-links .secondary a {
+	font-size: 13px;
+	padding: 4px 0 4px 10px;
+}
+
+/* ---------------------------------------------------------------
+Newsletter Signup Form
+--------------------------------------------------------------- */
+#newsletter {
+	font-size: 14px;
+	margin-bottom: 2em;
+	@media (min-width: $break-small) {
+		float: left;
+		width: 50%;
+	}
+	@media (min-width: $break-medium) {
+		margin-right: 1em;
+		margin-bottom: 0;
+		width: 260px;
+	}
+}
+#newsletter label {
+	display: block;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+}
+#newsletter .text {
+	border: 1px solid #716e6a;
+	padding: 2px 5px;
+	width: 80%;
+	@media (min-width: $break-small) {
+		width: 70%;
+	}
+	@media (min-width: $break-medium) {
+		width: 192px;
+	}
+}
+#newsletter .submit {
+	background: #4f4b48;
+	border: 1px solid #716e6a;
+	color: #fff;
+	padding: 2px 5px;
+}
+
+/* ---------------------------------------------------------------
+Social Icons
+--------------------------------------------------------------- */
+.social-icons {
+	list-style: none;
+	margin: 0 0 2em 0;
+	padding: 0;
+	text-align: center;
+	@media (min-width: $break-small) {
+		float: left;
+		width: 50%;
+	}
+	@media (min-width: $break-medium) {
+		margin-bottom: 0;
+		text-align: left;
+		width: auto;
+	}
+}
+.social-icons li {
+	display: inline-block;
+	line-height: 46px;
+	margin: 0 5px;
+}
+.social-icons li a {
+	display: block;
+	opacity: .8;
+	&:hover, &:focus {
+		opacity: 1;
+	}
+}
+.social-icons img {
+	vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------
+LOGOS
+--------------------------------------------------------------- */
+.footer-logos {
+	clear: both;
+	@media (min-width: $break-medium) {
+		clear: none;
+		float: right;
+	}
+}
+.footer-logos a, .footer-logos img {
+	display: block;
+	margin: 0 auto;
+	vertical-align: middle;
+	line-height: 46px;
+	@media (min-width: $break-medium) {
+		display: inline-block;
+	}
+}
+.footer-logos a {
+	float: left;
+	width: 50%;
+	@media (min-width: $break-medium) {
+		padding: 0 5px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

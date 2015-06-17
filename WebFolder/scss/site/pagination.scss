@@ -1,0 +1,46 @@
+#PageNumbers {
+	margin-top: 50px;
+	text-align: center;
+}
+ul.pagination {
+	display: block;
+	margin: 0;
+}
+ul.pagination li {
+	color: #222;
+	font-size: 15px;
+	margin-left: 5px;
+	display: inline-block;
+}
+ul.pagination li a {
+	border-radius: 3px;
+
+	background: none;
+	color: #444;
+	display: block;
+	font-size: 15px;
+	font-weight: normal;
+	line-height: inherit;
+	padding: 10px;
+}
+/* Hover */
+ul.pagination li:hover a,
+ul.pagination li a:focus {
+  background: #e6e6e6;
+}
+/* Current Link */
+ul.pagination li.current a {
+	background: $link;
+	color: #FFFFFF;
+	cursor: default;
+	font-weight: bold;
+}
+/* disabled prev/next links */
+ul.pagination li.unavailable a{
+	cursor: default;
+	color: #999999;
+}
+ul.pagination li.unavailable:hover a,
+ul.pagination li.unavailable a:focus {
+  background: transparent;
+}

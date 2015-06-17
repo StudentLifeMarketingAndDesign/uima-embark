@@ -1,34 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--default.htm-->
-<html>
-<head>
-    <title>{include title.inc} - Home</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css" />
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body onload="setMenu('home');" class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
+	{Include header.inc}
 
-<div id="content">
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">About</h3>
+		</div>
 
-<h1>Welcome to the Gallery Systems EmbARK Web Kiosk Demo</h1>
+		
 
-<p><a href="http://www.gallerysystems.com/web-kiosk" target="_blank">EmbARK Web Kiosk</a> is a web interface for the <a href="http://www.gallerysystems.com/embark" target="_blank">EmbARK</a> databases. Use Web Kiosk to make selected data from your internal database available to a broad public via the Internet. You can also set up Web Kiosk as an intranet, allowing staff to access information using any web browser. Web Kiosk can be customized so it matches the look of your primary website and other graphic materials.</p>
-<p>
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
 
-<p>Please use the menu items at the left to begin browsing the collection.</p>
-
-
-<br/><br/><br/><br/><br/><br/>
-
-<p>Last updated: {Mod Date}</p>
-
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+			<section id="main-content" tabindex="-1">
+				<h1>About</h1>
+				<p>copy with Sean</p>
+				
+				
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
+{Include footer.inc}
 </div>
 
-{Include footer.inc}
+{Include shifternavigation.inc}
 
+{Include scripts.inc}
 </body>
 </html>
