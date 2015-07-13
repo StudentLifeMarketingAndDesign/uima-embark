@@ -4,7 +4,7 @@
 			<div class="footer-contact">
 				<div itemscope="" itemtype="http://schema.org/Organization">
 					<h3 itemprop="name">University of Iowa Museum of Art</h3>
-					<p><strong><a href="http://hulk.imu.uiowa.edu/uima/visit/locations/">View Museum Locations</a></strong></p>
+					<p><strong><a href="http://uima.uiowa.edu/visit/locations/">View Museum Locations</a></strong></p>
 					<p itemprop="telephone"><span><span id="gc-number-0" class="gc-cs-link" title="Call with Google Voice">319-335-1727</span></span><br>
 					<a itemprop="email" href="mailto:uima@uiowa.edu">uima@uiowa.edu</a>
 					</p>
@@ -15,32 +15,32 @@
 			<div class="clearfix footer-links">
 				<div class="main-links">
 					<ul class="">
-						<li><a href="http://hulk.imu.uiowa.edu/uima/">Home</a></li>
+						<li><a href="http://uima.uiowa.edu/">Home</a></li>
 						
-							<li><a href="/uima/visit/">Visit</a></li>
+							<li><a href="http://uima.uiowa.edu/visit/">Visit</a></li>
 						
-							<li><a href="/uima/exhibitions/">Exhibitions</a></li>
+							<li><a href="http://uima.uiowa.edu/exhibitions/">Exhibitions</a></li>
 						
-							<li><a href="/uima/collections/">Collections</a></li>
+							<li><a href="http://uima.uiowa.edu//collections/">Collections</a></li>
 						
 					</ul>
 					<ul class="">
 						
-							<li><a href="/uima/education/">Education</a></li>
+							<li><a href="http://uima.uiowa.edu/education/">Education</a></li>
 						
-							<li><a href="/uima/events/">Events</a></li>
+							<li><a href="http://uima.uiowa.edu/events/">Events</a></li>
 						
-							<li><a href="/uima/about/">About</a></li>
+							<li><a href="http://uima.uiowa.edu/about/">About</a></li>
 						
-							<li><a href="/uima/support/">Support</a></li>
+							<li><a href="http://uima.uiowa.edu/support/">Support</a></li>
 						
 					</ul>
 				</div>
 				<ul class="secondary">
-					<li><a href="http://hulk.imu.uiowa.edu/uima/about/contact/">Contact</a></li>
-					<li><a href="http://hulk.imu.uiowa.edu/uima/support/membership/">Membership</a></li>
-					<li><a href="http://hulk.imu.uiowa.edu/uima/about/shop/">Shop</a></li>
-					<li><a href="http://hulk.imu.uiowa.edu/uima/about/news/">News / Press</a></li>
+					<li><a href="http://uima.uiowa.edu/about/contact/">Contact</a></li>
+					<li><a href="http://uima.uiowa.edu/support/membership/">Membership</a></li>
+					<li><a href="http://uima.uiowa.edu/about/shop/">Shop</a></li>
+					<li><a href="http://uima.uiowa.edu/about/news/">News / Press</a></li>
 				</ul>
 			</div>
 		</div><!-- end .container -->
