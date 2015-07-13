@@ -39,7 +39,7 @@
 				<ul class="secondary">
 					<li><a href="http://hulk.imu.uiowa.edu/uima/about/contact/">Contact</a></li>
 					<li><a href="http://hulk.imu.uiowa.edu/uima/support/membership/">Membership</a></li>
-					<li><a href="/uima/about?stage=Stage#">Store</a></li>
+					<li><a href="http://hulk.imu.uiowa.edu/uima/about/shop/">Shop</a></li>
 					<li><a href="http://hulk.imu.uiowa.edu/uima/about/news/">News / Press</a></li>
 				</ul>
 			</div>

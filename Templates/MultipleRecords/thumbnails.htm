@@ -1,96 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--MultipleRecords/Thumbnails.htm-->
-<html>
-<head>
-    <title>{Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+{Include meta-head.inc}
+{Include scripts.inc}
+{Include FilterBoxScripts.inc}
+<body class="CollectionHomePage  shifter">
+  <div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+    {Include header.inc}
+    <main class="container main" role="main">
+    <div class="row">
+      <!-- Section Heading -->
+      
+      
+      <div class="col-sm-12">
+        <h3 class="section-title">Browse Collection</h3>
+      </div>
+      
+      <!-- Side Bar -->
+      
+      <div class="col-md-4 col-lg-3 sidebar">
+        {Include sidenav.inc}
+        {Include FilterBox.html}
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+        <section id="main-content" tabindex="-1">
+          <!-- display options start -->
+          <div class="display-options">
+            <div class="smalltxt">View:</div>
+            <div class="navtxt">
+              <img src="/graphics/icon1b.gif" width="12" height="12" alt=""/>
+              thumbnails
+            </div>
+            <div class="navtxt">
+              <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+              <a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+            </div>
+            <div class="navtxt">
+              <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+              <a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
+            </div>
+            <div class="navtxt">
+              <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+              <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">description</a>
+            </div>
+          </div>
+          <!-- display options end -->
+          {Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
+          <br><br>
+          <!-- The following will repeat for each record in the page.
+          The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
+          (Note: This template is currently configured for a kiosk in which the table option has been turned off for Thumnail. -->
+          <ul class="collectionsholder justify">
+            <!-- child branches start -->
+            {RecordLoop Start}
+              <li class="justify-item">
+                <div class="thumbnail-record-box">
+                  <div class="thumbnail-thumbnail">{If(Has Image)}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true"
+                    onmouseout="self.status = '';return true" title="Display Object Description"><img src="{thumbnail}"
+                  height="{thumbnail height}" width="{thumbnail width}" alt=""/></a>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}
+                  </div>
+                  <br>
+                  <div class="thumbnail-label">
+                    <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description"><i>{[Objects_1]Disp_Title}</i></a><br/>
+                    {if(Logged In)}<span class="smalltxt">
+                      <a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});">Add to portfolio</a>&nbsp;&gt;<br/>
+                      {if(Editing Portfolio)}
+                      &lt;&nbsp;<a href="{RemoveFromPortfolio}&display=THU">Remove from portfolios</a><br/>
+                    {end if}</span>
+                    {end if}
+                </div>
+              </div>     
+            </li>
+            {RecordLoop End}
+            <!-- child branches end -->
+            <li class="justify-item filler"></li>
+          </ul> 
+
+        {If(Logged In)}
+        <br><br>
+        Download the current selection of images:<br>
+        <a href="/{Portfolio Name}.zip?download=images&rec={Current Record}&sid={SessionId}&x={Sequence}">Full Images</a> |
+        <a href="/{Portfolio Name}.zip?download=previews&rec={Current Record}&sid={SessionId}&x={Sequence}">Previews (300px)</a> |
+        <a href="/{Portfolio Name}.zip?download=thumbnails&rec={Current Record}&sid={SessionId}&x={Sequence}">Thumbnails (128px)</a>
+        {End If}
+        <hr>
+        <br>
+        {Include formaddtoport.inc}
+        {Include selectiondescription.inc}
+        <br><br>
+        {Include addobjtoportfolio.inc}
+      </section>
+      </div><!-- end .col -->
+      </div><!-- end .row -->
+      </main>
+      {Include footer.inc}
+    </div>
+    {Include shifternavigation.inc}
     {Include scripts.inc}
-   {Include FilterBoxScripts.inc}
-</head>
-<body class="clearfix">
-
-
-
-{Include header.inc}
-
-{Include FilterBox.html}
-
-<div id="content">
-<div class="right">{Include activerecords.inc}</div>
-<h1>Object Results</h1>
-
-{Include pagenavigation.inc}
-
-<!-- display options start -->
-<div class="display-options">
-    <div class="smalltxt">View:</div>
-    <div class="navtxt">
-        <img src="/graphics/icon1b.gif" width="12" height="12" alt=""/>
-        thumbnails
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
-        <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">description</a>
-    </div>
-</div>
-<!-- display options end -->
-
-{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
-
-<br><br>
-
-
-<!-- The following will repeat for each record in the page.
-     The kiosk will take care of inserting row tags as appropriate, if specified in Preferences. 
-     (Note: This template is currently configured for a kiosk in which the table option has been turned off for Thumnail. -->
-
-{RecordLoop Start}
-<div class="thumbnail-record-box">
-	<div class="thumbnail-thumbnail">{If(Has Image)}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" 
-		onmouseout="self.status = '';return true" title="Display Object Description"><img src="{thumbnail}" 
-		height="{thumbnail height}" width="{thumbnail width}" alt=""/></a>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}
-	</div>
-	<br>
-	<div class="thumbnail-label">
-       <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description"><i>{[Objects_1]Disp_Title}</i></a><br/>
-       {if(Logged In)}<span class="smalltxt">
-       <a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});">Add to portfolio</a>&nbsp;&gt;<br/>
-       {if(Editing Portfolio)}
-       &lt;&nbsp;<a href="{RemoveFromPortfolio}&display=THU">Remove from portfolios</a><br/>
-       {end if}</span>
-       {end if}
-	</div>
-</div>
-{RecordLoop End}
-
-{If(Logged In)}
-<br><br>
-Download the current selection of images:<br>
-	<a href="/{Portfolio Name}.zip?download=images&rec={Current Record}&sid={SessionId}&x={Sequence}">Full Images</a> |
-	<a href="/{Portfolio Name}.zip?download=previews&rec={Current Record}&sid={SessionId}&x={Sequence}">Previews (300px)</a> |
-	<a href="/{Portfolio Name}.zip?download=thumbnails&rec={Current Record}&sid={SessionId}&x={Sequence}">Thumbnails (128px)</a> 
-{End If}	
-
-<hr>
-<br>
-
-{Include formaddtoport.inc}
-
-{Include selectiondescription.inc}
-<br><br>
-{Include addobjtoportfolio.inc}
-</div>
-{Include footer.inc}
-
-</body>
+  </body>
 </html>
-

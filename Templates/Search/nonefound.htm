@@ -1,29 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Search/NoneFound.htm-->
-<html>
-<head>
-    <title>{Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
-<div id="content">
+	{Include header.inc}
 
-<h1>No results found</h1>
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Collection Search</h3>
+		</div>
 
-<p>I'm sorry, there are no records in our database with the search criteria you entered.</p>
+		
 
-<span class="navtxt">&lt;&lt;<a href="javascript:history.go(-1);">Back</a></span>
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
 
-</div>
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+			<section id="main-content" tabindex="-1">
+				<h1>Collection Search Results</h1>
+				<h1>No results found</h1>
+
+				<p>I'm sorry, there are no records in our database with the search criteria you entered.</p>
+				
+				
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
-
 </html>
-
-

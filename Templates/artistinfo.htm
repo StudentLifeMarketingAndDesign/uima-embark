@@ -1,112 +1,129 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--ArtistInfo.htm-->
-<html>
-<head>
-	<title>{Include title.inc} - {[Artist_Maker]Full_Name}</title>
-	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-	{Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body class="clearfix">
+<body class="CollectionHomePage  shifter">
+<div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
+    {Include header.inc}
 
-<div id="content">
+    <main class="container main" role="main">
+    <div class="row">
+        <!-- Section Heading -->
+        
+            
+        <div class="col-sm-12">
+            <h3 class="section-title">Browse Collection</h3>
+        </div>
 
-<div class="right">{Include activerecords.inc}</div>
+        
 
-<h1>Artist Results</h1>
+        <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-3 sidebar">
+            {Include sidenav.inc}
+        </div>
+        
 
-{Include pagenavigation.inc}
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+            <section id="main-content" tabindex="-1">
 
-<!-- display options start -->
-<div class="display-options">
-    <div class="smalltxt">View:</div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
-        biography
-    </div>
-</div>
-<!-- display options end -->
+                <h1>Artist Results</h1>
 
-<br/>
+                {Include pagenavigation.inc}
 
-{pagePopup;Artist Info}
+                <!-- display options start -->
+                <div class="display-options">
+                    <div class="smalltxt">View:</div>
+                    <div class="navtxt">
+                        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                        <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+                    </div>
+                    <div class="navtxt">
+                        <img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
+                        biography
+                    </div>
+                </div>
+                <!-- display options end -->
 
-<br/>
+                <br/>
 
-<!-- data layout table start -->
-<table cellpadding="0" cellspacing="0" width="503">
-    <tr valign="top">
+                {pagePopup;Artist Info}
 
-        {If(Has Image)}
-            <td><!-- image cell start --><a href="{Full View}" onmouseover="self.status = 'View Full Image';return true" onmouseout="self.status = '';return true"><img src="{preview}" width="{thumbnail width*2}" height="{thumbnail height*2}" alt=""/></a><!-- image cell end --></td>
+                <br/>
 
-        {End If}
+                <!-- data layout table start -->
+                <table cellpadding="0" cellspacing="0" width="503">
+                    <tr valign="top">
 
-        <td width="5"> </td>
+                        {If(Has Image)}
+                            <td><!-- image cell start --><a href="{Full View}" onmouseover="self.status = 'View Full Image';return true" onmouseout="self.status = '';return true"><img src="{preview}" width="{thumbnail width*2}" height="{thumbnail height*2}" alt=""/></a><!-- image cell end --></td>
 
-        <!-- data cell start -->
-        <td>
-            <b>{[Artist_Maker]Full_Name}</b><br/>
-            <!-- {[Artist_Maker]Artist_Label}<br/> -->
-            {if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br/>{end if}
-            {if ([Artist_Maker]Disp_Maker_Life != "")}{[Artist_Maker]Disp_Maker_Life}<br/>{end if}
-            {if ([Artist_Maker]Name_Elab != "")}{[Artist_Maker]Name_Elab}<br/>{end if}
-			{if ({[Surrogates]Photo_Credit} != "")}{[Surrogates]Photo_Credit}<br/>{end if}
-			{[Surrogates]Photo_Credit}
-			{if ([Artist_Maker]Nat_Culture_L2 !="")}{[Artist_Maker]Nat_Culture_L2}<br/>{end if}
-			{if ([Artist_Maker]Ethnicity != "")}
-				<div class="artist-info-field"><b>Cultural Group: </b> {[Artist_Maker]Ethnicity}</div>
-			{end if}
-			
-			
-			<br/>
-			{if ([Artist_Maker]Artist_Code != "")}Getty ULAN ID for the artist: 
-			<a href="http://www.getty.edu/vow/ULANFullDisplay?find={[Artist_Maker]Artist_Code}&role=&nation=&prev_page=1&subjectid={[Artist_Maker]Artist_Code}">
-			{if ([Artist_Maker]Artist_Code != "")}{[Artist_Maker]Artist_Code}<br/>{end if}</a>{end if}
-			
-            <br/><br/>
+                        {End If}
 
-            View <a href="{Artist's objects}">objects</a> by this artist.
-        </td>
-        <!-- data cell end -->
-    </tr>
-</table>
-<!-- data layout table end -->
+                        <td width="5"> </td>
 
-<br/><br/>
-{[Artist_Maker]Biography}
+                        <!-- data cell start -->
+                        <td>
+                            <b>{[Artist_Maker]Full_Name}</b><br/>
+                            <!-- {[Artist_Maker]Artist_Label}<br/> -->
+                            {if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br/>{end if}
+                            {if ([Artist_Maker]Disp_Maker_Life != "")}{[Artist_Maker]Disp_Maker_Life}<br/>{end if}
+                            {if ([Artist_Maker]Name_Elab != "")}{[Artist_Maker]Name_Elab}<br/>{end if}
+                			{if ({[Surrogates]Photo_Credit} != "")}{[Surrogates]Photo_Credit}<br/>{end if}
+                			{[Surrogates]Photo_Credit}
+                			{if ([Artist_Maker]Nat_Culture_L2 !="")}{[Artist_Maker]Nat_Culture_L2}<br/>{end if}
+                			{if ([Artist_Maker]Ethnicity != "")}
+                				<div class="artist-info-field"><b>Cultural Group: </b> {[Artist_Maker]Ethnicity}</div>
+                			{end if}
+                			
+                			
+                			<br/>
+                			{if ([Artist_Maker]Artist_Code != "")}Getty ULAN ID for the artist: 
+                			<a href="http://www.getty.edu/vow/ULANFullDisplay?find={[Artist_Maker]Artist_Code}&role=&nation=&prev_page=1&subjectid={[Artist_Maker]Artist_Code}">
+                			{if ([Artist_Maker]Artist_Code != "")}{[Artist_Maker]Artist_Code}<br/>{end if}</a>{end if}
+                			
+                            <br/><br/>
 
+                            View <a href="{Artist's objects}">objects</a> by this artist.
+                        </td>
+                        <!-- data cell end -->
+                    </tr>
+                </table>
+                <!-- data layout table end -->
 
-<br/><br/>
-{if ([Surrogates])}
-<br>
-<hr>
-<br>
-<b>Additional Images</b>
-<br><br>
-{Start Loop([Surrogates];Order by [Surrogates]_ID)}
-<div class="objsur-record-box">
-	<div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
-	<div class="objsur-label">{[Surrogates]View_1}</div>
-</div>
-{End Loop}
-{end if}
-
-{Include selectiondescription.inc}
-<br/><br/>
-<i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.<i/>
+                <br/><br/>
+                {[Artist_Maker]Biography}
 
 
-</div>
+                <br/><br/>
+                {if ([Surrogates])}
+                <br>
+                <hr>
+                <br>
+                <b>Additional Images</b>
+                <br><br>
+                {Start Loop([Surrogates];Order by [Surrogates]_ID)}
+                <div class="objsur-record-box">
+                	<div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+                	<div class="objsur-label">{[Surrogates]View_1}</div>
+                </div>
+                {End Loop}
+                {end if}
 
-{Include footer.inc}
+                {Include selectiondescription.inc}
+                <br/><br/>
+                <i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.<i/>
 
-</body>
-</html>
+                    </section>
+                        </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+                </div>
+
+                {Include shifternavigation.inc}
+
+                {Include scripts.inc}
+                </body>
+                </html>

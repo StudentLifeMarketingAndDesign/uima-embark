@@ -2313,18 +2313,18 @@ function closure ( target, options, originalOptions ){
 
 }( window.jQuery || window.Zepto ));
 
-/*! formstone v0.5.3 [core.js] 2015-04-17 | MIT License | formstone.it */
+/*! formstone v0.6.9 [core.js] 2015-06-17 | MIT License | formstone.it */
 
-var Formstone=this.Formstone=function(a,b,c){"use strict";function d(a,b,c,d){var e,f={raw:{}};d=d||{};for(e in d)d.hasOwnProperty(e)&&("classes"===a?(f.raw[d[e]]=b+"-"+d[e],f[d[e]]="."+b+"-"+d[e]):(f.raw[e]=d[e],f[e]=d[e]+"."+b));for(e in c)c.hasOwnProperty(e)&&("classes"===a?(f.raw[e]=c[e].replace(/{ns}/g,b),f[e]=c[e].replace(/{ns}/g,"."+b)):(f.raw[e]=c[e].replace(/.{ns}/g,""),f[e]=c[e].replace(/{ns}/g,b)));return f}function e(){var a,b={transition:"transitionend",MozTransition:"transitionend",OTransition:"otransitionend",WebkitTransition:"webkitTransitionEnd"},d=["transition","-webkit-transition"],e={transform:"transform",MozTransform:"-moz-transform",OTransform:"-o-transform",msTransform:"-ms-transform",webkitTransform:"-webkit-transform"},f="transitionend",g="",h="",i=c.createElement("div");for(a in b)if(b.hasOwnProperty(a)&&a in i.style){f=b[a],k.support.transition=!0;break}m.transitionEnd=f+".{ns}";for(a in d)if(d.hasOwnProperty(a)&&d[a]in i.style){g=d[a];break}k.transition=g;for(a in e)if(e.hasOwnProperty(a)&&e[a]in i.style){k.support.transform=!0,h=e[a];break}k.transform=h}function f(){k.windowWidth=k.$window.width(),k.windowHeight=k.$window.height(),n=j.startTimer(n,o,g)}function g(){for(var a in k.ResizeHandlers)k.ResizeHandlers.hasOwnProperty(a)&&k.ResizeHandlers[a].callback.call(b,k.windowWidth,k.windowHeight)}function h(a,b){return parseInt(a.priority)-parseInt(b.priority)}var i=function(){this.Plugins={},this.ResizeHandlers=[],this.window=b,this.$window=a(b),this.document=c,this.$document=a(c),this.$body=null,this.windowWidth=0,this.windowHeight=0,this.userAgent=b.navigator.userAgent||b.navigator.vendor||b.opera,this.isFirefox=/Firefox/i.test(this.userAgent),this.isChrome=/Chrome/i.test(this.userAgent),this.isSafari=/Safari/i.test(this.userAgent)&&!this.isChrome,this.isMobile=/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(this.userAgent),this.isFirefoxMobile=this.isFirefox&&this.isMobile,this.transform=null,this.transition=null,this.support={file:!!(b.File&&b.FileList&&b.FileReader),history:!!(b.history&&b.history.pushState&&b.history.replaceState),matchMedia:!(!b.matchMedia&&!b.msMatchMedia),raf:!(!b.requestAnimationFrame||!b.cancelAnimationFrame),touch:!!("ontouchstart"in b||b.DocumentTouch&&c instanceof b.DocumentTouch),transition:!1,transform:!1}},j={killEvent:function(a,b){try{a.preventDefault(),a.stopPropagation(),b&&a.stopImmediatePropagation()}catch(c){}},startTimer:function(a,b,c,d){return j.clearTimer(a),d?setInterval(c,b):setTimeout(c,b)},clearTimer:function(a,b){a&&(b?clearInterval(a):clearTimeout(a),a=null)},sortAsc:function(a,b){return parseInt(b)-parseInt(a)},sortDesc:function(a,b){return parseInt(b)-parseInt(a)}},k=new i,l={base:"{ns}",element:"{ns}-element"},m={namespace:".{ns}",blur:"blur.{ns}",change:"change.{ns}",click:"click.{ns}",dblClick:"dblclick.{ns}",drag:"drag.{ns}",dragEnd:"dragend.{ns}",dragEnter:"dragenter.{ns}",dragLeave:"dragleave.{ns}",dragOver:"dragover.{ns}",dragStart:"dragstart.{ns}",drop:"drop.{ns}",error:"error.{ns}",focus:"focus.{ns}",focusIn:"focusin.{ns}",focusOut:"focusout.{ns}",input:"input.{ns}",keyDown:"keydown.{ns}",keyPress:"keypress.{ns}",keyUp:"keyup.{ns}",load:"load.{ns}",mouseDown:"mousedown.{ns}",mouseEnter:"mouseenter.{ns}",mouseLeave:"mouseleave.{ns}",mouseMove:"mousemove.{ns}",mouseOut:"mouseout.{ns}",mouseOver:"mouseover.{ns}",mouseUp:"mouseup.{ns}",resize:"resize.{ns}",scroll:"scroll.{ns}",select:"select.{ns}",touchCancel:"touchcancel.{ns}",touchEnd:"touchend.{ns}",touchLeave:"touchleave.{ns}",touchMove:"touchmove.{ns}",touchStart:"touchstart.{ns}"};i.prototype.Plugin=function(c,e){return k.Plugins[c]=function(c,e){function f(b){var d="object"===a.type(b);b=a.extend(!0,{},e.defaults||{},d?b:{});for(var f=this,g=0,h=f.length;h>g;g++){var j=f.eq(g);if(!i(j)){var k=j.data(c+"-options"),l=a.extend(!0,{$el:j},b,"object"===a.type(k)?k:{});j.addClass(e.classes.raw.element).data(r,l),e.methods._construct.apply(j,[l].concat(Array.prototype.slice.call(arguments,d?1:0)))}}return f}function g(){e.functions.iterate.apply(this,[e.methods._destruct].concat(Array.prototype.slice.call(arguments,1))),this.removeClass(e.classes.raw.element).removeData(r)}function i(a){return a.data(r)}function n(b){if(this instanceof a){var c=e.methods[b];return"object"!==a.type(b)&&b?c&&0!==b.indexOf("_")?e.functions.iterate.apply(this,[c].concat(Array.prototype.slice.call(arguments,1))):this:f.apply(this,arguments)}}function o(c){var d=e.utilities[c]||e.utilities._initialize||!1;return d?d.apply(b,Array.prototype.slice.call(arguments,"object"===a.type(c)?0:1)):void 0}function p(b){e.defaults=a.extend(!0,e.defaults,b||{})}function q(b){for(var c=this,d=0,e=c.length;e>d;d++){var f=c.eq(d),g=i(f)||{};"undefined"!==a.type(g.$el)&&b.apply(f,[g].concat(Array.prototype.slice.call(arguments,1)))}return c}var r="fs-"+c;return e.initialized=!1,e.priority=e.priority||10,e.classes=d("classes",r,l,e.classes),e.events=d("events",c,m,e.events),e.functions=a.extend({getData:i,iterate:q},j,e.functions),e.methods=a.extend(!0,{_setup:a.noop,_construct:a.noop,_destruct:a.noop,_resize:!1,destroy:g},e.methods),e.utilities=a.extend(!0,{_initialize:!1,_delegate:!1,defaults:p},e.utilities),e.widget&&(a.fn[c]=n),a[c]=e.utilities._delegate||o,e.namespace=c,e.methods._resize&&(k.ResizeHandlers.push({namespace:c,priority:e.priority,callback:e.methods._resize}),k.ResizeHandlers.sort(h)),e}(c,e),k.Plugins[c]};var n=null,o=20;return k.$window.on("resize.fs",f),f(),a(function(){k.$body=a("body");for(var b in k.Plugins)k.Plugins.hasOwnProperty(b)&&!k.Plugins[b].initialized&&(k.Plugins[b].methods._setup.call(c),k.Plugins[b].initialized=!0)}),m.clickTouchStart=m.click+" "+m.touchStart,e(),k}(jQuery,this,document);
-/*! formstone v0.5.3 [transition.js] 2015-04-17 | MIT License | formstone.it */
+var Formstone=this.Formstone=function(a,b,c){"use strict";function d(a){l.Plugins[a].initialized||(l.Plugins[a].methods._setup.call(c),l.Plugins[a].initialized=!0)}function e(a,b,c,d){var e,f={raw:{}};d=d||{};for(e in d)d.hasOwnProperty(e)&&("classes"===a?(f.raw[d[e]]=b+"-"+d[e],f[d[e]]="."+b+"-"+d[e]):(f.raw[e]=d[e],f[e]=d[e]+"."+b));for(e in c)c.hasOwnProperty(e)&&("classes"===a?(f.raw[e]=c[e].replace(/{ns}/g,b),f[e]=c[e].replace(/{ns}/g,"."+b)):(f.raw[e]=c[e].replace(/.{ns}/g,""),f[e]=c[e].replace(/{ns}/g,b)));return f}function f(){var a,b={transition:"transitionend",MozTransition:"transitionend",OTransition:"otransitionend",WebkitTransition:"webkitTransitionEnd"},d=["transition","-webkit-transition"],e={transform:"transform",MozTransform:"-moz-transform",OTransform:"-o-transform",msTransform:"-ms-transform",webkitTransform:"-webkit-transform"},f="transitionend",g="",h="",i=c.createElement("div");for(a in b)if(b.hasOwnProperty(a)&&a in i.style){f=b[a],l.support.transition=!0;break}n.transitionEnd=f+".{ns}";for(a in d)if(d.hasOwnProperty(a)&&d[a]in i.style){g=d[a];break}l.transition=g;for(a in e)if(e.hasOwnProperty(a)&&e[a]in i.style){l.support.transform=!0,h=e[a];break}l.transform=h}function g(){l.windowWidth=l.$window.width(),l.windowHeight=l.$window.height(),o=k.startTimer(o,p,h)}function h(){for(var a in l.ResizeHandlers)l.ResizeHandlers.hasOwnProperty(a)&&l.ResizeHandlers[a].callback.call(b,l.windowWidth,l.windowHeight)}function i(a,b){return parseInt(a.priority)-parseInt(b.priority)}var j=function(){this.Version="0.6.9",this.Plugins={},this.ResizeHandlers=[],this.window=b,this.$window=a(b),this.document=c,this.$document=a(c),this.$body=null,this.windowWidth=0,this.windowHeight=0,this.userAgent=b.navigator.userAgent||b.navigator.vendor||b.opera,this.isFirefox=/Firefox/i.test(this.userAgent),this.isChrome=/Chrome/i.test(this.userAgent),this.isSafari=/Safari/i.test(this.userAgent)&&!this.isChrome,this.isMobile=/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(this.userAgent),this.isFirefoxMobile=this.isFirefox&&this.isMobile,this.transform=null,this.transition=null,this.support={file:!!(b.File&&b.FileList&&b.FileReader),history:!!(b.history&&b.history.pushState&&b.history.replaceState),matchMedia:!(!b.matchMedia&&!b.msMatchMedia),raf:!(!b.requestAnimationFrame||!b.cancelAnimationFrame),touch:!!("ontouchstart"in b||b.DocumentTouch&&c instanceof b.DocumentTouch),transition:!1,transform:!1}},k={killEvent:function(a,b){try{a.preventDefault(),a.stopPropagation(),b&&a.stopImmediatePropagation()}catch(c){}},startTimer:function(a,b,c,d){return k.clearTimer(a),d?setInterval(c,b):setTimeout(c,b)},clearTimer:function(a,b){a&&(b?clearInterval(a):clearTimeout(a),a=null)},sortAsc:function(a,b){return parseInt(b)-parseInt(a)},sortDesc:function(a,b){return parseInt(b)-parseInt(a)}},l=new j,m={base:"{ns}",element:"{ns}-element"},n={namespace:".{ns}",blur:"blur.{ns}",change:"change.{ns}",click:"click.{ns}",dblClick:"dblclick.{ns}",drag:"drag.{ns}",dragEnd:"dragend.{ns}",dragEnter:"dragenter.{ns}",dragLeave:"dragleave.{ns}",dragOver:"dragover.{ns}",dragStart:"dragstart.{ns}",drop:"drop.{ns}",error:"error.{ns}",focus:"focus.{ns}",focusIn:"focusin.{ns}",focusOut:"focusout.{ns}",input:"input.{ns}",keyDown:"keydown.{ns}",keyPress:"keypress.{ns}",keyUp:"keyup.{ns}",load:"load.{ns}",mouseDown:"mousedown.{ns}",mouseEnter:"mouseenter.{ns}",mouseLeave:"mouseleave.{ns}",mouseMove:"mousemove.{ns}",mouseOut:"mouseout.{ns}",mouseOver:"mouseover.{ns}",mouseUp:"mouseup.{ns}",resize:"resize.{ns}",scroll:"scroll.{ns}",select:"select.{ns}",touchCancel:"touchcancel.{ns}",touchEnd:"touchend.{ns}",touchLeave:"touchleave.{ns}",touchMove:"touchmove.{ns}",touchStart:"touchstart.{ns}"};j.prototype.Plugin=function(c,f){return l.Plugins[c]=function(c,f){function g(b){var e="object"===a.type(b);b=a.extend(!0,{},f.defaults||{},e?b:{});for(var g=this,h=0,i=g.length;i>h;h++){var k=g.eq(h);if(!j(k)){var l="__"+f.guid++,m=f.classes.raw.base+l,n=k.data(c+"-options"),o=a.extend(!0,{$el:k,guid:l,rawGuid:m,dotGuid:"."+m},b,"object"===a.type(n)?n:{});k.addClass(f.classes.raw.element).data(t,o),d(c),f.methods._construct.apply(k,[o].concat(Array.prototype.slice.call(arguments,e?1:0)))}}return g}function h(){f.functions.iterate.apply(this,[f.methods._destruct].concat(Array.prototype.slice.call(arguments,1))),this.removeClass(f.classes.raw.element).removeData(t)}function j(a){return a.data(t)}function o(b){if(this instanceof a){var c=f.methods[b];return"object"!==a.type(b)&&b?c&&0!==b.indexOf("_")?f.functions.iterate.apply(this,[c].concat(Array.prototype.slice.call(arguments,1))):this:g.apply(this,arguments)}}function p(c){var d=f.utilities[c]||f.utilities._initialize||!1;return d?d.apply(b,Array.prototype.slice.call(arguments,"object"===a.type(c)?0:1)):void 0}function q(b){f.defaults=a.extend(!0,f.defaults,b||{})}function r(b){for(var c=this,d=0,e=c.length;e>d;d++){var f=c.eq(d),g=j(f)||{};"undefined"!==a.type(g.$el)&&b.apply(f,[g].concat(Array.prototype.slice.call(arguments,1)))}return c}var s="fs-"+c,t="fs"+c.replace(/(^|\s)([a-z])/g,function(a,b,c){return b+c.toUpperCase()});return f.initialized=!1,f.priority=f.priority||10,f.classes=e("classes",s,m,f.classes),f.events=e("events",c,n,f.events),f.functions=a.extend({getData:j,iterate:r},k,f.functions),f.methods=a.extend(!0,{_setup:a.noop,_construct:a.noop,_destruct:a.noop,_resize:!1,destroy:h},f.methods),f.utilities=a.extend(!0,{_initialize:!1,_delegate:!1,defaults:q},f.utilities),f.widget&&(a.fn[c]=a.fn[t]=o),a[c]=a[t]=f.utilities._delegate||p,f.namespace=c,f.namespaceClean=t,f.guid=0,f.methods._resize&&(l.ResizeHandlers.push({namespace:c,priority:f.priority,callback:f.methods._resize}),l.ResizeHandlers.sort(i)),f}(c,f),l.Plugins[c]};var o=null,p=20;return l.$window.on("resize.fs",g),g(),a(function(){l.$body=a("body");for(var b in l.Plugins)l.Plugins.hasOwnProperty(b)&&d(b)}),n.clickTouchStart=n.click+" "+n.touchStart,f(),l}(jQuery,this,document);
+/*! formstone v0.6.9 [transition.js] 2015-06-17 | MIT License | formstone.it */
 
 !function(a,b){"use strict";function c(a,c){if(c){a.$target=this.find(a.target),a.$check=a.target?a.$target:this,a.callback=c,a.styles=h(a.$check),a.timer=null;var d=a.$check.css(b.transition+"-duration"),f=parseFloat(d);b.support.transition&&d&&f?this.on(k.transitionEnd,a,e):a.timer=l.startTimer(a.timer,50,function(){g(a)},!0)}}function d(a){l.clearTimer(a.timer,!0),this.off(k.namespace)}function e(b){b.stopPropagation(),b.preventDefault();var c=b.data,d=b.originalEvent,e=c.target?c.$target:c.$el;c.property&&d.propertyName!==c.property||!a(d.target).is(e)||f(c)}function f(a){a.always||a.$el[j.namespace]("destroy"),a.callback.apply(a.$el)}function g(a){var b=h(a.$check);i(a.styles,b)||f(a),a.styles=b}function h(b){var c,d,e,f={};if(b instanceof a&&(b=b[0]),m.getComputedStyle){c=m.getComputedStyle(b,null);for(var g=0,h=c.length;h>g;g++)d=c[g],e=c.getPropertyValue(d),f[d]=e}else if(b.currentStyle){c=b.currentStyle;for(d in c)c[d]&&(f[d]=c[d])}return f}function i(b,c){if(a.type(b)!==a.type(c))return!1;for(var d in b)if(!b.hasOwnProperty(d)||!c.hasOwnProperty(d)||b[d]!==c[d])return!1;return!0}var j=b.Plugin("transition",{widget:!0,defaults:{always:!1,property:null,target:null},methods:{_construct:c,_destruct:d,resolve:f}}),k=j.events,l=j.functions,m=b.window}(jQuery,Formstone);
-/*! formstone v0.5.3 [lightbox.js] 2015-04-17 | MIT License | formstone.it */
+/*! formstone v0.6.9 [lightbox.js] 2015-06-17 | MIT License | formstone.it */
 
-!function(a,b,c){"use strict";function d(){R=b.$body,S=a("html, body")}function e(){T&&j()}function f(a){this.on(N.click,a,i)}function g(){k(),this.off(N.namespace)}function h(b,c){b instanceof a&&i.apply(P,[{data:a.extend({},{$object:b},K,c||{})}])}function i(c){if(!T){var d=c.data,e=d.$el,f=d.$object,g=e&&e[0].href?e[0].href||"":"",h=e&&e[0].hash?e[0].hash||"":"",i=g.toLowerCase().split(".").pop().split(/\#|\?/),j=i[0],l=e?e.data(J+"-type"):"",m="image"===l||a.inArray(j,d.extensions)>-1||"data:image"===g.substr(0,10),o=g.indexOf("youtube.com/embed")>-1||g.indexOf("player.vimeo.com/video")>-1,q="url"===l||!m&&!o&&"http"===g.substr(0,4)&&!h,r="element"===l||!m&&!o&&!q&&"#"===h.substr(0,1),t="undefined"!=typeof f;if(r&&(g=h),!(m||o||q||r||t))return;if(O.killEvent(c),T=a.extend({},{visible:!1,gallery:{active:!1},isMobile:b.isMobile||d.mobile,isTouch:b.support.touch,isAnimating:!0,oldContentHeight:0,oldContentWidth:0},d),T.margin*=2,T.type=m?"image":o?"video":"element",m||o){var u=e.data(J+"-gallery");u&&(T.gallery.active=!0,T.gallery.id=u,T.gallery.$items=a("a[data-lightbox-gallery= "+T.gallery.id+"], a[rel= "+T.gallery.id+"]"),T.gallery.index=T.gallery.$items.index(T.$el),T.gallery.total=T.gallery.$items.length-1)}var w="";T.isMobile||(w+='<div class="'+[L.raw.overlay,T.customClass].join(" ")+'"></div>');var x=[L.raw.base,L.raw.loading,L.raw.animating,T.customClass];T.fixed&&x.push(L.raw.fixed),T.isMobile&&x.push(L.raw.mobile),T.isTouch&&x.push(L.raw.touch),q&&x.push(L.raw.iframed),(r||t)&&x.push(L.raw.inline),w+='<div class="'+x.join(" ")+'">',w+='<button type="button" class="'+L.raw.close+'">'+T.labels.close+"</button>",w+='<span class="'+L.raw.loading_icon+'"></span>',w+='<div class="'+L.raw.container+'">',w+='<div class="'+L.raw.content+'">',(m||o)&&(w+='<div class="'+L.raw.tools+'">',w+='<div class="'+L.raw.controls+'">',T.gallery.active&&(w+='<button type="button" class="'+[L.raw.control,L.raw.control_previous].join(" ")+'">'+T.labels.previous+"</button>",w+='<button type="button" class="'+[L.raw.control,L.raw.control_next].join(" ")+'">'+T.labels.next+"</button>"),T.isMobile&&T.isTouch&&(w+='<button type="button" class="'+[L.raw.caption_toggle].join(" ")+'">'+T.labels.captionClosed+"</button>"),w+="</div>",w+='<div class="'+L.raw.meta+'">',T.gallery.active&&(w+='<p class="'+L.raw.position+'"',T.gallery.total<1&&(w+=' style="display: none;"'),w+=">",w+='<span class="'+L.raw.position_current+'">'+(T.gallery.index+1)+"</span> ",w+=T.labels.count,w+=' <span class="'+L.raw.position_total+'">'+(T.gallery.total+1)+"</span>",w+="</p>"),w+='<div class="'+L.raw.caption+'">',w+=T.formatter.call(e,d),w+="</div></div>",w+="</div>"),w+="</div></div></div>",R.append(w),T.$overlay=a(L.overlay),T.$lightbox=a(L.base),T.$close=a(L.close),T.$container=a(L.container),T.$content=a(L.content),T.$tools=a(L.tools),T.$meta=a(L.meta),T.$position=a(L.position),T.$caption=a(L.caption),T.$controlBox=a(L.controls),T.$controls=a(L.control),T.isMobile?(T.paddingVertical=T.$close.outerHeight(),T.paddingHorizontal=0,T.mobilePaddingVertical=parseInt(T.$content.css("paddingTop"),10)+parseInt(T.$content.css("paddingBottom"),10),T.mobilePaddingHorizontal=parseInt(T.$content.css("paddingLeft"),10)+parseInt(T.$content.css("paddingRight"),10)):(T.paddingVertical=parseInt(T.$lightbox.css("paddingTop"),10)+parseInt(T.$lightbox.css("paddingBottom"),10),T.paddingHorizontal=parseInt(T.$lightbox.css("paddingLeft"),10)+parseInt(T.$lightbox.css("paddingRight"),10),T.mobilePaddingVertical=0,T.mobilePaddingHorizontal=0),T.contentHeight=T.$lightbox.outerHeight()-T.paddingVertical,T.contentWidth=T.$lightbox.outerWidth()-T.paddingHorizontal,T.controlHeight=T.$controls.outerHeight(),n(),T.gallery.active&&z(),Q.on(N.keyDown,A),R.on(N.clickTouchStart,[L.overlay,L.close].join(", "),k),T.gallery.active&&T.$lightbox.on(N.clickTouchStart,L.control,y),T.isMobile&&T.isTouch&&T.$lightbox.on(N.clickTouchStart,L.caption_toggle,p),T.$lightbox.transition({property:"opacity"},function(){m?s(g):o?v(g):q?C(g):r?B(g):t&&D(T.$object)}).addClass(L.raw.open),T.$overlay.addClass(L.raw.open)}}function j(a){"object"!=typeof a&&(T.targetHeight=arguments[0],T.targetWidth=arguments[1]),"element"===T.type?E(T.$content.find("> :first-child")):"image"===T.type?t():"video"===T.type&&w(),m()}function k(a){O.killEvent(a),T&&(T.$lightbox.transition("destroy"),T.$container.transition("destroy"),T.$lightbox.addClass(L.raw.animating).transition({property:"opacity"},function(){T.$lightbox.off(N.namespace),T.$container.off(N.namespace),Q.off(N.namespace),R.off(N.namespace),T.$overlay.remove(),T.$lightbox.remove(),T=null,Q.trigger(N.close)}),T.$lightbox.removeClass(L.raw.open),T.$overlay.removeClass(L.raw.open),T.isMobile&&S.removeClass(M.lock))}function l(){{var a=o();T.isMobile?0:T.duration}T.isMobile||T.$controls.css({marginTop:(T.contentHeight-T.controlHeight-T.metaHeight)/2}),!T.visible&&T.isMobile&&T.gallery.active&&T.$content.touch({axis:"x",swipe:!0}).on(N.swipe,G),T.$lightbox.transition({property:T.contentHeight!==T.oldContentHeight?"height":"width"},function(){T.$container.transition({property:"opacity"},function(){T.$lightbox.removeClass(L.raw.animating),T.isAnimating=!1}),T.$lightbox.removeClass(L.raw.loading),T.visible=!0,Q.trigger(N.open),T.gallery.active&&x()}),T.isMobile||T.$lightbox.css({height:T.contentHeight+T.paddingVertical,width:T.contentWidth+T.paddingHorizontal,top:T.fixed?0:a.top});var b=T.oldContentHeight!==T.contentHeight||T.oldContentWidth!==T.contentWidth;(T.isMobile||!b)&&T.$lightbox.transition("resolve"),T.oldContentHeight=T.contentHeight,T.oldContentWidth=T.contentWidth,T.isMobile&&S.addClass(M.lock)}function m(){if(T.visible&&!T.isMobile){var a=o();T.$controls.css({marginTop:(T.contentHeight-T.controlHeight-T.metaHeight)/2}),T.$lightbox.css({height:T.contentHeight+T.paddingVertical,width:T.contentWidth+T.paddingHorizontal,top:T.fixed?0:a.top})}}function n(){var a=o();T.$lightbox.css({top:T.fixed?0:a.top})}function o(){if(T.isMobile)return{left:0,top:0};var a={left:(b.windowWidth-T.contentWidth-T.paddingHorizontal)/2,top:T.top<=0?(b.windowHeight-T.contentHeight-T.paddingVertical)/2:T.top};return T.fixed!==!0&&(a.top+=Q.scrollTop()),a}function p(a){O.killEvent(a),T.captionOpen?q():(T.$lightbox.addClass(L.raw.caption_open).find(L.caption_toggle).text(T.labels.captionOpen),T.captionOpen=!0)}function q(){T.$lightbox.removeClass(L.raw.caption_open).find(L.caption_toggle).text(T.labels.captionClosed),T.captionOpen=!1}function r(){var a=this.attr("title"),b=a!==c&&a?a.replace(/^\s+|\s+$/g,""):!1;return b?'<p class="caption">'+b+"</p>":""}function s(b){T.$image=a("<img>"),T.$image.one(N.load,function(){var a=H(T.$image);T.naturalHeight=a.naturalHeight,T.naturalWidth=a.naturalWidth,T.retina&&(T.naturalHeight/=2,T.naturalWidth/=2),T.$content.prepend(T.$image),""===T.$caption.html()?T.$caption.hide():T.$caption.show(),t(),l()}).error(F).attr("src",b).addClass(L.raw.image),(T.$image[0].complete||4===T.$image[0].readyState)&&T.$image.trigger(N.load)}function t(){var a=0;for(T.windowHeight=T.viewportHeight=b.windowHeight-T.mobilePaddingVertical-T.paddingVertical,T.windowWidth=T.viewportWidth=b.windowWidth-T.mobilePaddingHorizontal-T.paddingHorizontal,T.contentHeight=1/0,T.contentWidth=1/0,T.imageMarginTop=0,T.imageMarginLeft=0;T.contentHeight>T.viewportHeight&&2>a;)T.imageHeight=0===a?T.naturalHeight:T.$image.outerHeight(),T.imageWidth=0===a?T.naturalWidth:T.$image.outerWidth(),T.metaHeight=0===a?0:T.metaHeight,T.spacerHeight=0===a?0:T.spacerHeight,0===a&&(T.ratioHorizontal=T.imageHeight/T.imageWidth,T.ratioVertical=T.imageWidth/T.imageHeight,T.isWide=T.imageWidth>T.imageHeight),T.imageHeight<T.minHeight&&(T.minHeight=T.imageHeight),T.imageWidth<T.minWidth&&(T.minWidth=T.imageWidth),T.isMobile?(T.isTouch?(T.$controlBox.css({width:b.windowWidth}),T.spacerHeight=T.$controls.outerHeight(!0)):(T.$tools.css({width:b.windowWidth}),T.spacerHeight=T.$tools.outerHeight(!0)),T.contentHeight=T.viewportHeight,T.contentWidth=T.viewportWidth,u(),T.imageMarginTop=(T.contentHeight-T.targetImageHeight-T.spacerHeight)/2,T.imageMarginLeft=(T.contentWidth-T.targetImageWidth)/2):(0===a&&(T.viewportHeight-=T.margin+T.paddingVertical,T.viewportWidth-=T.margin+T.paddingHorizontal),T.viewportHeight-=T.metaHeight,u(),T.contentHeight=T.targetImageHeight,T.contentWidth=T.targetImageWidth),T.isMobile||T.isTouch||T.$meta.css({width:T.contentWidth}),T.$image.css({height:T.targetImageHeight,width:T.targetImageWidth,marginTop:T.imageMarginTop,marginLeft:T.imageMarginLeft}),T.isMobile||(T.metaHeight=T.$meta.outerHeight(!0),T.contentHeight+=T.metaHeight),a++}function u(){var a=T.isMobile?T.contentHeight-T.spacerHeight:T.viewportHeight,b=T.isMobile?T.contentWidth:T.viewportWidth;T.isWide?(T.targetImageWidth=b,T.targetImageHeight=T.targetImageWidth*T.ratioHorizontal,T.targetImageHeight>a&&(T.targetImageHeight=a,T.targetImageWidth=T.targetImageHeight*T.ratioVertical)):(T.targetImageHeight=a,T.targetImageWidth=T.targetImageHeight*T.ratioVertical,T.targetImageWidth>b&&(T.targetImageWidth=b,T.targetImageHeight=T.targetImageWidth*T.ratioHorizontal)),(T.targetImageWidth>T.imageWidth||T.targetImageHeight>T.imageHeight)&&(T.targetImageHeight=T.imageHeight,T.targetImageWidth=T.imageWidth),(T.targetImageWidth<T.minWidth||T.targetImageHeight<T.minHeight)&&(T.targetImageWidth<T.minWidth?(T.targetImageWidth=T.minWidth,T.targetImageHeight=T.targetImageWidth*T.ratioHorizontal):(T.targetImageHeight=T.minHeight,T.targetImageWidth=T.targetImageHeight*T.ratioVertical))}function v(b){T.$videoWrapper=a('<div class="'+L.raw.videoWrapper+'"></div>'),T.$video=a('<iframe class="'+L.raw.video+'" seamless="seamless"></iframe>'),T.$video.attr("src",b).addClass(L.raw.video).prependTo(T.$videoWrapper),T.$content.prepend(T.$videoWrapper),w(),l()}function w(){T.windowHeight=T.viewportHeight=b.windowHeight-T.mobilePaddingVertical-T.paddingVertical,T.windowWidth=T.viewportWidth=b.windowWidth-T.mobilePaddingHorizontal-T.paddingHorizontal,T.videoMarginTop=0,T.videoMarginLeft=0,T.isMobile?(T.isTouch?(T.$controlBox.css({width:b.windowWidth}),T.spacerHeight=T.$controls.outerHeight(!0)):(T.$tools.css({width:b.windowWidth}),T.spacerHeight=T.$tools.outerHeight(!0)),T.viewportHeight-=T.spacerHeight,T.targetVideoWidth=T.viewportWidth,T.targetVideoHeight=T.targetVideoWidth*T.videoRatio,T.targetVideoHeight>T.viewportHeight&&(T.targetVideoHeight=T.viewportHeight,T.targetVideoWidth=T.targetVideoHeight/T.videoRatio),T.videoMarginTop=(T.viewportHeight-T.targetVideoHeight)/2,T.videoMarginLeft=(T.viewportWidth-T.targetVideoWidth)/2):(T.viewportHeight=T.windowHeight-T.margin,T.viewportWidth=T.windowWidth-T.margin,T.targetVideoWidth=T.videoWidth>T.viewportWidth?T.viewportWidth:T.videoWidth,T.targetVideoWidth<T.minWidth&&(T.targetVideoWidth=T.minWidth),T.targetVideoHeight=T.targetVideoWidth*T.videoRatio,T.contentHeight=T.targetVideoHeight,T.contentWidth=T.targetVideoWidth),T.isMobile||T.isTouch||T.$meta.css({width:T.contentWidth}),T.$videoWrapper.css({height:T.targetVideoHeight,width:T.targetVideoWidth,marginTop:T.videoMarginTop,marginLeft:T.videoMarginLeft}),T.isMobile||(T.metaHeight=T.$meta.outerHeight(!0),T.contentHeight=T.targetVideoHeight+T.metaHeight)}function x(){var b="";T.gallery.index>0&&(b=T.gallery.$items.eq(T.gallery.index-1).attr("href"),b.indexOf("youtube.com/embed")<0&&b.indexOf("player.vimeo.com/video")<0&&a('<img src="'+b+'">')),T.gallery.index<T.gallery.total&&(b=T.gallery.$items.eq(T.gallery.index+1).attr("href"),b.indexOf("youtube.com/embed")<0&&b.indexOf("player.vimeo.com/video")<0&&a('<img src="'+b+'">'))}function y(b){O.killEvent(b);var c=a(b.currentTarget);T.isAnimating||c.hasClass(L.raw.control_disabled)||(T.isAnimating=!0,q(),T.gallery.index+=c.hasClass(L.raw.control_next)?1:-1,T.gallery.index>T.gallery.total&&(T.gallery.index=T.infinite?0:T.gallery.total),T.gallery.index<0&&(T.gallery.index=T.infinite?T.gallery.total:0),T.$lightbox.addClass([L.raw.loading,L.raw.animating].join(" ")),T.$container.transition({property:"opacity"},function(){"undefined"!=typeof T.$image&&T.$image.remove(),"undefined"!=typeof T.$videoWrapper&&T.$videoWrapper.remove(),T.$el=T.gallery.$items.eq(T.gallery.index),T.$caption.html(T.formatter.call(T.$el,T)),T.$position.find(L.position_current).html(T.gallery.index+1);var a=T.$el.attr("href"),b=a.indexOf("youtube.com/embed")>-1||a.indexOf("player.vimeo.com/video")>-1;b?v(a):s(a),z()}))}function z(){T.$controls.removeClass(L.raw.control_disabled),T.infinite||(0===T.gallery.index&&T.$controls.filter(L.control_previous).addClass(M.control_disabled),T.gallery.index===T.gallery.total&&T.$controls.filter(L.control_next).addClass(M.control_disabled))}function A(a){!T.gallery.active||37!==a.keyCode&&39!==a.keyCode?27===a.keyCode&&T.$close.trigger(N.click):(O.killEvent(a),T.$controls.filter(37===a.keyCode?L.control_previous:L.control_next).trigger(N.click))}function B(b){var c=a(b).find("> :first-child").clone();D(c)}function C(b){b+=b.indexOf("?")>-1?"&"+T.requestKey+"=true":"?"+T.requestKey+"=true";var c=a('<iframe class="'+L.raw.iframe+'" src="'+b+'"></iframe>');D(c)}function D(a){T.$content.append(a),E(a),l()}function E(a){T.windowHeight=b.windowHeight-T.mobilePaddingVertical-T.paddingVertical,T.windowWidth=b.windowWidth-T.mobilePaddingHorizontal-T.paddingHorizontal,T.objectHeight=a.outerHeight(!0),T.objectWidth=a.outerWidth(!0),T.targetHeight=T.targetHeight||(T.$el?T.$el.data(J+"-height"):null),T.targetWidth=T.targetWidth||(T.$el?T.$el.data(J+"-width"):null),T.maxHeight=T.windowHeight<0?T.minHeight:T.windowHeight,T.isIframe=a.is("iframe"),T.objectMarginTop=0,T.objectMarginLeft=0,T.isMobile||(T.windowHeight-=T.margin,T.windowWidth-=T.margin),T.contentHeight=T.targetHeight?T.targetHeight:T.isIframe||T.isMobile?T.windowHeight:T.objectHeight,T.contentWidth=T.targetWidth?T.targetWidth:T.isIframe||T.isMobile?T.windowWidth:T.objectWidth,(T.isIframe||T.isObject)&&T.isMobile?(T.contentHeight=T.windowHeight,T.contentWidth=T.windowWidth):T.isObject&&(T.contentHeight=T.contentHeight>T.windowHeight?T.windowHeight:T.contentHeight,T.contentWidth=T.contentWidth>T.windowWidth?T.windowWidth:T.contentWidth)}function F(){var b=a('<div class="'+L.raw.error+'"><p>Error Loading Resource</p></div>');T.type="element",T.$tools.remove(),T.$image.off(N.namespace),D(b)}function G(a){T.captionOpen||T.$controls.filter("left"===a.directionX?L.control_next:L.control_previous).trigger(N.click)}function H(a){var b=a[0],c=new Image;return"undefined"!=typeof b.naturalHeight?{naturalHeight:b.naturalHeight,naturalWidth:b.naturalWidth}:"img"===b.tagName.toLowerCase()?(c.src=b.src,{naturalHeight:c.height,naturalWidth:c.width}):!1}var I=b.Plugin("lightbox",{widget:!0,defaults:{customClass:"",extensions:["jpg","sjpg","jpeg","png","gif"],fixed:!1,formatter:r,infinite:!1,labels:{close:"Close",count:"of",next:"Next",previous:"Previous",captionClosed:"View Caption",captionOpen:"Close Caption"},margin:50,minHeight:100,minWidth:100,mobile:!1,retina:!1,requestKey:"fs-lightbox",top:0,videoRatio:.5625,videoWidth:800},classes:["loading","animating","fixed","mobile","touch","inline","iframed","open","overlay","close","loading_icon","container","content","image","video","video_wrapper","tools","meta","controls","control","control_previous","control_next","control_disabled","position","position_current","position_total","caption_toggle","caption","caption_open","iframe","error","lock"],events:{open:"open",close:"close",swipe:"swipe"},methods:{_setup:d,_construct:f,_destruct:g,_resize:e,resize:j},utilities:{_initialize:h,close:k}}),J=I.namespace,K=I.defaults,L=I.classes,M=L.raw,N=I.events,O=I.functions,P=b.window,Q=b.$window,R=null,S=null,T=null}(jQuery,Formstone);
-/*! formstone v0.5.3 [tooltip.js] 2015-04-17 | MIT License | formstone.it */
+!function(a,b,c){"use strict";function d(){S=b.$body,T=a("html, body")}function e(){U&&j()}function f(a){this.on(O.click,a,i)}function g(){k(),this.off(O.namespace)}function h(b,c){b instanceof a&&i.apply(Q,[{data:a.extend({},{$object:b},L,c||{})}])}function i(c){if(!U){var d=c.data,e=d.$el,f=d.$object,g=e&&e[0].href?e[0].href||"":"",h=e&&e[0].hash?e[0].hash||"":"",i=g.toLowerCase().split(".").pop().split(/\#|\?/),j=i[0],l=e?e.data(K+"-type"):"",m="image"===l||a.inArray(j,d.extensions)>-1||"data:image"===g.substr(0,10),o=I(g),q="url"===l||!m&&!o&&"http"===g.substr(0,4)&&!h,r="element"===l||!m&&!o&&!q&&"#"===h.substr(0,1),t="undefined"!=typeof f;if(r&&(g=h),!(m||o||q||r||t))return;if(P.killEvent(c),U=a.extend({},{visible:!1,gallery:{active:!1},isMobile:b.isMobile||d.mobile,isTouch:b.support.touch,isAnimating:!0,oldContentHeight:0,oldContentWidth:0},d),U.margin*=2,U.type=m?"image":o?"video":"element",m||o){var u=e.data(K+"-gallery");u&&(U.gallery.active=!0,U.gallery.id=u,U.gallery.$items=a("a[data-lightbox-gallery= "+U.gallery.id+"], a[rel= "+U.gallery.id+"]"),U.gallery.index=U.gallery.$items.index(U.$el),U.gallery.total=U.gallery.$items.length-1)}var w="";U.isMobile||(w+='<div class="'+[M.raw.overlay,U.customClass].join(" ")+'"></div>');var x=[M.raw.base,M.raw.loading,M.raw.animating,U.customClass];U.fixed&&x.push(M.raw.fixed),U.isMobile&&x.push(M.raw.mobile),U.isTouch&&x.push(M.raw.touch),q&&x.push(M.raw.iframed),(r||t)&&x.push(M.raw.inline),w+='<div oncontextmenu="return false" class="'+x.join(" ")+'">',w+='<button type="button" class="'+M.raw.close+'">'+U.labels.close+"</button>",w+='<span class="'+M.raw.loading_icon+'"></span>',w+='<div class="'+M.raw.container+'">',w+='<div class="'+M.raw.content+'">',(m||o)&&(w+='<div class="'+M.raw.tools+'">',w+='<div class="'+M.raw.controls+'">',U.gallery.active&&(w+='<button type="button" class="'+[M.raw.control,M.raw.control_previous].join(" ")+'">'+U.labels.previous+"</button>",w+='<button type="button" class="'+[M.raw.control,M.raw.control_next].join(" ")+'">'+U.labels.next+"</button>"),U.isMobile&&U.isTouch&&(w+='<button type="button" class="'+[M.raw.caption_toggle].join(" ")+'">'+U.labels.captionClosed+"</button>"),w+="</div>",w+='<div class="'+M.raw.meta+'">',U.gallery.active&&(w+='<p class="'+M.raw.position+'"',U.gallery.total<1&&(w+=' style="display: none;"'),w+=">",w+='<span class="'+M.raw.position_current+'">'+(U.gallery.index+1)+"</span> ",w+=U.labels.count,w+=' <span class="'+M.raw.position_total+'">'+(U.gallery.total+1)+"</span>",w+="</p>"),w+='<div class="'+M.raw.caption+'">',w+=U.formatter.call(e,d),w+="</div></div>",w+="</div>"),w+="</div></div></div>",S.append(w),U.$overlay=a(M.overlay),U.$lightbox=a(M.base),U.$close=a(M.close),U.$container=a(M.container),U.$content=a(M.content),U.$tools=a(M.tools),U.$meta=a(M.meta),U.$position=a(M.position),U.$caption=a(M.caption),U.$controlBox=a(M.controls),U.$controls=a(M.control),U.isMobile?(U.paddingVertical=U.$close.outerHeight(),U.paddingHorizontal=0,U.mobilePaddingVertical=parseInt(U.$content.css("paddingTop"),10)+parseInt(U.$content.css("paddingBottom"),10),U.mobilePaddingHorizontal=parseInt(U.$content.css("paddingLeft"),10)+parseInt(U.$content.css("paddingRight"),10)):(U.paddingVertical=parseInt(U.$lightbox.css("paddingTop"),10)+parseInt(U.$lightbox.css("paddingBottom"),10),U.paddingHorizontal=parseInt(U.$lightbox.css("paddingLeft"),10)+parseInt(U.$lightbox.css("paddingRight"),10),U.mobilePaddingVertical=0,U.mobilePaddingHorizontal=0),U.contentHeight=U.$lightbox.outerHeight()-U.paddingVertical,U.contentWidth=U.$lightbox.outerWidth()-U.paddingHorizontal,U.controlHeight=U.$controls.outerHeight(),n(),U.gallery.active&&z(),R.on(O.keyDown,A),S.on(O.clickTouchStart,[M.overlay,M.close].join(", "),k),U.gallery.active&&U.$lightbox.on(O.clickTouchStart,M.control,y),U.isMobile&&U.isTouch&&U.$lightbox.on(O.clickTouchStart,M.caption_toggle,p),U.$lightbox.transition({property:"opacity"},function(){m?s(g):o?v(g):q?C(g):r?B(g):t&&D(U.$object)}).addClass(M.raw.open),U.$overlay.addClass(M.raw.open)}}function j(a){"object"!=typeof a&&(U.targetHeight=arguments[0],U.targetWidth=arguments[1]),"element"===U.type?E(U.$content.find("> :first-child")):"image"===U.type?t():"video"===U.type&&w(),m()}function k(a){P.killEvent(a),U&&(U.$lightbox.transition("destroy"),U.$container.transition("destroy"),U.$lightbox.addClass(M.raw.animating).transition({property:"opacity"},function(){U.$lightbox.off(O.namespace),U.$container.off(O.namespace),R.off(O.namespace),S.off(O.namespace),U.$overlay.remove(),U.$lightbox.remove(),U=null,R.trigger(O.close)}),U.$lightbox.removeClass(M.raw.open),U.$overlay.removeClass(M.raw.open),U.isMobile&&T.removeClass(N.lock))}function l(){{var a=o();U.isMobile?0:U.duration}U.isMobile||U.$controls.css({marginTop:(U.contentHeight-U.controlHeight-U.metaHeight)/2}),!U.visible&&U.isMobile&&U.gallery.active&&U.$content.touch({axis:"x",swipe:!0}).on(O.swipe,G),U.$lightbox.transition({property:U.contentHeight!==U.oldContentHeight?"height":"width"},function(){U.$container.transition({property:"opacity"},function(){U.$lightbox.removeClass(M.raw.animating),U.isAnimating=!1}),U.$lightbox.removeClass(M.raw.loading),U.visible=!0,R.trigger(O.open),U.gallery.active&&x()}),U.isMobile||U.$lightbox.css({height:U.contentHeight+U.paddingVertical,width:U.contentWidth+U.paddingHorizontal,top:U.fixed?0:a.top});var b=U.oldContentHeight!==U.contentHeight||U.oldContentWidth!==U.contentWidth;(U.isMobile||!b)&&U.$lightbox.transition("resolve"),U.oldContentHeight=U.contentHeight,U.oldContentWidth=U.contentWidth,U.isMobile&&T.addClass(N.lock)}function m(){if(U.visible&&!U.isMobile){var a=o();U.$controls.css({marginTop:(U.contentHeight-U.controlHeight-U.metaHeight)/2}),U.$lightbox.css({height:U.contentHeight+U.paddingVertical,width:U.contentWidth+U.paddingHorizontal,top:U.fixed?0:a.top})}}function n(){var a=o();U.$lightbox.css({top:U.fixed?0:a.top})}function o(){if(U.isMobile)return{left:0,top:0};var a={left:(b.windowWidth-U.contentWidth-U.paddingHorizontal)/2,top:U.top<=0?(b.windowHeight-U.contentHeight-U.paddingVertical)/2:U.top};return U.fixed!==!0&&(a.top+=R.scrollTop()),a}function p(a){P.killEvent(a),U.captionOpen?q():(U.$lightbox.addClass(M.raw.caption_open).find(M.caption_toggle).text(U.labels.captionOpen),U.captionOpen=!0)}function q(){U.$lightbox.removeClass(M.raw.caption_open).find(M.caption_toggle).text(U.labels.captionClosed),U.captionOpen=!1}function r(){var a=this.attr("title"),b=a!==c&&a?a.replace(/^\s+|\s+$/g,""):!1;return b?'<p class="caption">'+b+"</p>":""}function s(b){U.$image=a("<img>"),U.$image.one(O.load,function(){var a=H(U.$image);U.naturalHeight=a.naturalHeight,U.naturalWidth=a.naturalWidth,U.retina&&(U.naturalHeight/=2,U.naturalWidth/=2),U.$content.prepend(U.$image),""===U.$caption.html()?U.$caption.hide():U.$caption.show(),t(),l()}).error(F).attr("src",b).addClass(M.raw.image),(U.$image[0].complete||4===U.$image[0].readyState)&&U.$image.trigger(O.load)}function t(){var a=0;for(U.windowHeight=U.viewportHeight=b.windowHeight-U.mobilePaddingVertical-U.paddingVertical,U.windowWidth=U.viewportWidth=b.windowWidth-U.mobilePaddingHorizontal-U.paddingHorizontal,U.contentHeight=1/0,U.contentWidth=1/0,U.imageMarginTop=0,U.imageMarginLeft=0;U.contentHeight>U.viewportHeight&&2>a;)U.imageHeight=0===a?U.naturalHeight:U.$image.outerHeight(),U.imageWidth=0===a?U.naturalWidth:U.$image.outerWidth(),U.metaHeight=0===a?0:U.metaHeight,U.spacerHeight=0===a?0:U.spacerHeight,0===a&&(U.ratioHorizontal=U.imageHeight/U.imageWidth,U.ratioVertical=U.imageWidth/U.imageHeight,U.isWide=U.imageWidth>U.imageHeight),U.imageHeight<U.minHeight&&(U.minHeight=U.imageHeight),U.imageWidth<U.minWidth&&(U.minWidth=U.imageWidth),U.isMobile?(U.isTouch?(U.$controlBox.css({width:b.windowWidth}),U.spacerHeight=U.$controls.outerHeight(!0)):(U.$tools.css({width:b.windowWidth}),U.spacerHeight=U.$tools.outerHeight(!0)),U.contentHeight=U.viewportHeight,U.contentWidth=U.viewportWidth,u(),U.imageMarginTop=(U.contentHeight-U.targetImageHeight-U.spacerHeight)/2,U.imageMarginLeft=(U.contentWidth-U.targetImageWidth)/2):(0===a&&(U.viewportHeight-=U.margin+U.paddingVertical,U.viewportWidth-=U.margin+U.paddingHorizontal),U.viewportHeight-=U.metaHeight,u(),U.contentHeight=U.targetImageHeight,U.contentWidth=U.targetImageWidth),U.isMobile||U.isTouch||U.$meta.css({width:U.contentWidth}),U.$image.css({height:U.targetImageHeight,width:U.targetImageWidth,marginTop:U.imageMarginTop,marginLeft:U.imageMarginLeft}),U.isMobile||(U.metaHeight=U.$meta.outerHeight(!0),U.contentHeight+=U.metaHeight),a++}function u(){var a=U.isMobile?U.contentHeight-U.spacerHeight:U.viewportHeight,b=U.isMobile?U.contentWidth:U.viewportWidth;U.isWide?(U.targetImageWidth=b,U.targetImageHeight=U.targetImageWidth*U.ratioHorizontal,U.targetImageHeight>a&&(U.targetImageHeight=a,U.targetImageWidth=U.targetImageHeight*U.ratioVertical)):(U.targetImageHeight=a,U.targetImageWidth=U.targetImageHeight*U.ratioVertical,U.targetImageWidth>b&&(U.targetImageWidth=b,U.targetImageHeight=U.targetImageWidth*U.ratioHorizontal)),(U.targetImageWidth>U.imageWidth||U.targetImageHeight>U.imageHeight)&&(U.targetImageHeight=U.imageHeight,U.targetImageWidth=U.imageWidth),(U.targetImageWidth<U.minWidth||U.targetImageHeight<U.minHeight)&&(U.targetImageWidth<U.minWidth?(U.targetImageWidth=U.minWidth,U.targetImageHeight=U.targetImageWidth*U.ratioHorizontal):(U.targetImageHeight=U.minHeight,U.targetImageWidth=U.targetImageHeight*U.ratioVertical))}function v(b){var c=b.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i),d=b.match(/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/),e=null!==c?"//www.youtube.com/embed/"+c[1]:"//player.vimeo.com/video/"+d[3];U.$videoWrapper=a('<div class="'+M.raw.videoWrapper+'"></div>'),U.$video=a('<iframe class="'+M.raw.video+'" seamless="seamless"></iframe>'),U.$video.attr("src",e).addClass(M.raw.video).prependTo(U.$videoWrapper),U.$content.prepend(U.$videoWrapper),w(),l()}function w(){U.windowHeight=U.viewportHeight=b.windowHeight-U.mobilePaddingVertical-U.paddingVertical,U.windowWidth=U.viewportWidth=b.windowWidth-U.mobilePaddingHorizontal-U.paddingHorizontal,U.videoMarginTop=0,U.videoMarginLeft=0,U.isMobile?(U.isTouch?(U.$controlBox.css({width:b.windowWidth}),U.spacerHeight=U.$controls.outerHeight(!0)):(U.$tools.css({width:b.windowWidth}),U.spacerHeight=U.$tools.outerHeight(!0)),U.viewportHeight-=U.spacerHeight,U.targetVideoWidth=U.viewportWidth,U.targetVideoHeight=U.targetVideoWidth*U.videoRatio,U.targetVideoHeight>U.viewportHeight&&(U.targetVideoHeight=U.viewportHeight,U.targetVideoWidth=U.targetVideoHeight/U.videoRatio),U.videoMarginTop=(U.viewportHeight-U.targetVideoHeight)/2,U.videoMarginLeft=(U.viewportWidth-U.targetVideoWidth)/2):(U.viewportHeight=U.windowHeight-U.margin,U.viewportWidth=U.windowWidth-U.margin,U.targetVideoWidth=U.videoWidth>U.viewportWidth?U.viewportWidth:U.videoWidth,U.targetVideoWidth<U.minWidth&&(U.targetVideoWidth=U.minWidth),U.targetVideoHeight=U.targetVideoWidth*U.videoRatio,U.contentHeight=U.targetVideoHeight,U.contentWidth=U.targetVideoWidth),U.isMobile||U.isTouch||U.$meta.css({width:U.contentWidth}),U.$videoWrapper.css({height:U.targetVideoHeight,width:U.targetVideoWidth,marginTop:U.videoMarginTop,marginLeft:U.videoMarginLeft}),U.isMobile||(U.metaHeight=U.$meta.outerHeight(!0),U.contentHeight=U.targetVideoHeight+U.metaHeight)}function x(){var b="";U.gallery.index>0&&(b=U.gallery.$items.eq(U.gallery.index-1).attr("href"),I(b)||a('<img src="'+b+'">')),U.gallery.index<U.gallery.total&&(b=U.gallery.$items.eq(U.gallery.index+1).attr("href"),I(b)||a('<img src="'+b+'">'))}function y(b){P.killEvent(b);var c=a(b.currentTarget);U.isAnimating||c.hasClass(M.raw.control_disabled)||(U.isAnimating=!0,q(),U.gallery.index+=c.hasClass(M.raw.control_next)?1:-1,U.gallery.index>U.gallery.total&&(U.gallery.index=U.infinite?0:U.gallery.total),U.gallery.index<0&&(U.gallery.index=U.infinite?U.gallery.total:0),U.$lightbox.addClass(M.raw.animating),U.$container.transition({property:"opacity"},function(){"undefined"!=typeof U.$image&&U.$image.remove(),"undefined"!=typeof U.$videoWrapper&&U.$videoWrapper.remove(),U.$el=U.gallery.$items.eq(U.gallery.index),U.$caption.html(U.formatter.call(U.$el,U)),U.$position.find(M.position_current).html(U.gallery.index+1);var a=U.$el.attr("href"),b=I(a);b?v(a):s(a),z()}),U.$lightbox.addClass(M.raw.loading))}function z(){U.$controls.removeClass(M.raw.control_disabled),U.infinite||(0===U.gallery.index&&U.$controls.filter(M.control_previous).addClass(N.control_disabled),U.gallery.index===U.gallery.total&&U.$controls.filter(M.control_next).addClass(N.control_disabled))}function A(a){!U.gallery.active||37!==a.keyCode&&39!==a.keyCode?27===a.keyCode&&U.$close.trigger(O.click):(P.killEvent(a),U.$controls.filter(37===a.keyCode?M.control_previous:M.control_next).trigger(O.click))}function B(b){var c=a(b).find("> :first-child").clone();D(c)}function C(b){b+=b.indexOf("?")>-1?"&"+U.requestKey+"=true":"?"+U.requestKey+"=true";var c=a('<iframe class="'+M.raw.iframe+'" src="'+b+'"></iframe>');D(c)}function D(a){U.$content.append(a),E(a),l()}function E(a){U.windowHeight=b.windowHeight-U.mobilePaddingVertical-U.paddingVertical,U.windowWidth=b.windowWidth-U.mobilePaddingHorizontal-U.paddingHorizontal,U.objectHeight=a.outerHeight(!0),U.objectWidth=a.outerWidth(!0),U.targetHeight=U.targetHeight||(U.$el?U.$el.data(K+"-height"):null),U.targetWidth=U.targetWidth||(U.$el?U.$el.data(K+"-width"):null),U.maxHeight=U.windowHeight<0?U.minHeight:U.windowHeight,U.isIframe=a.is("iframe"),U.objectMarginTop=0,U.objectMarginLeft=0,U.isMobile||(U.windowHeight-=U.margin,U.windowWidth-=U.margin),U.contentHeight=U.targetHeight?U.targetHeight:U.isIframe||U.isMobile?U.windowHeight:U.objectHeight,U.contentWidth=U.targetWidth?U.targetWidth:U.isIframe||U.isMobile?U.windowWidth:U.objectWidth,(U.isIframe||U.isObject)&&U.isMobile?(U.contentHeight=U.windowHeight,U.contentWidth=U.windowWidth):U.isObject&&(U.contentHeight=U.contentHeight>U.windowHeight?U.windowHeight:U.contentHeight,U.contentWidth=U.contentWidth>U.windowWidth?U.windowWidth:U.contentWidth)}function F(){var b=a('<div class="'+M.raw.error+'"><p>Error Loading Resource</p></div>');U.type="element",U.$tools.remove(),U.$image.off(O.namespace),D(b)}function G(a){U.captionOpen||U.$controls.filter("left"===a.directionX?M.control_next:M.control_previous).trigger(O.click)}function H(a){var b=a[0],c=new Image;return"undefined"!=typeof b.naturalHeight?{naturalHeight:b.naturalHeight,naturalWidth:b.naturalWidth}:"img"===b.tagName.toLowerCase()?(c.src=b.src,{naturalHeight:c.height,naturalWidth:c.width}):!1}function I(a){return a.indexOf("youtube.com")>-1||a.indexOf("youtu.be")>-1||a.indexOf("vimeo.com")>-1}var J=b.Plugin("lightbox",{widget:!0,defaults:{customClass:"",extensions:["jpg","sjpg","jpeg","png","gif"],fixed:!1,formatter:r,infinite:!1,labels:{close:"Close",count:"of",next:"Next",previous:"Previous",captionClosed:"View Caption",captionOpen:"Close Caption"},margin:50,minHeight:100,minWidth:100,mobile:!1,retina:!1,requestKey:"fs-lightbox",top:0,videoRatio:.5625,videoWidth:800},classes:["loading","animating","fixed","mobile","touch","inline","iframed","open","overlay","close","loading_icon","container","content","image","video","video_wrapper","tools","meta","controls","control","control_previous","control_next","control_disabled","position","position_current","position_total","caption_toggle","caption","caption_open","iframe","error","lock"],events:{open:"open",close:"close",swipe:"swipe"},methods:{_setup:d,_construct:f,_destruct:g,_resize:e,resize:j},utilities:{_initialize:h,close:k}}),K=J.namespace,L=J.defaults,M=J.classes,N=M.raw,O=J.events,P=J.functions,Q=b.window,R=b.$window,S=null,T=null,U=null}(jQuery,Formstone);
+/*! formstone v0.6.9 [tooltip.js] 2015-06-17 | MIT License | formstone.it */
 
-!function(a,b){"use strict";function c(a){this.on(o.mouseEnter,a,e)}function d(){j(),this.off(o.namespace)}function e(a){j();var b=a.data;b.left=a.pageX,b.top=a.pageY,h(b)}function f(a){var b=a.data;p.clearTimer(b.timer),j()}function g(a){i(a.pageX,a.pageY)}function h(c){j();var d="";d+='<div class="',d+=[n.base,n[c.direction]].join(" "),d+='">',d+='<div class="'+n.content+'">',d+=c.formatter.call(c.$el,c),d+='<span class="'+n.caret+'"></span>',d+="</div>",d+="</div>",q={$tooltip:a(d),$el:c.$el},b.$body.append(q.$tooltip);var e=q.$tooltip.find(m.content),h=q.$tooltip.find(m.caret),k=c.$el.offset(),l=c.$el.outerHeight(),r=c.$el.outerWidth(),s=0,t=0,u=0,v=0,w=!1,x=!1,y=h.outerHeight(!0),z=h.outerWidth(!0),A=e.outerHeight(!0),B=e.outerWidth(!0);"right"===c.direction||"left"===c.direction?(x=(A-y)/2,v=-A/2,"right"===c.direction?u=c.margin:"left"===c.direction&&(u=-(B+c.margin))):(w=(B-z)/2,u=-B/2,"bottom"===c.direction?v=c.margin:"top"===c.direction&&(v=-(A+c.margin))),e.css({top:v,left:u}),h.css({top:x,left:w}),c.follow?c.$el.on(o.mouseMove,c,g):(c.match?"right"===c.direction||"left"===c.direction?(t=c.top,"right"===c.direction?s=k.left+r:"left"===c.direction&&(s=k.left)):(s=c.left,"bottom"===c.direction?t=k.top+l:"top"===c.direction&&(t=k.top)):"right"===c.direction||"left"===c.direction?(t=k.top+l/2,"right"===c.direction?s=k.left+r:"left"===c.direction&&(s=k.left)):(s=k.left+r/2,"bottom"===c.direction?t=k.top+l:"top"===c.direction&&(t=k.top)),i(s,t)),c.timer=p.startTimer(c.timer,c.delay,function(){q.$tooltip.addClass(n.visible)}),c.$el.one(o.mouseLeave,c,f)}function i(a,b){q&&q.$tooltip.css({left:a,top:b})}function j(){q&&(q.$el.off([o.mouseMove,o.mouseLeave].join(" ")),q.$tooltip.remove(),q=null)}function k(){return this.data("title")}var l=b.Plugin("tooltip",{widget:!0,defaults:{delay:0,direction:"top",follow:!1,formatter:k,margin:15,match:!1},classes:["content","caret","visible","top","bottom","right","left"],methods:{_construct:c,_destruct:d}}),m=l.classes,n=m.raw,o=l.events,p=l.functions,q=null}(jQuery,Formstone);
+!function(a,b){"use strict";function c(a){this.on(o.mouseEnter,a,e)}function d(){j(),this.off(o.namespace)}function e(a){j();var b=a.data;b.left=a.pageX,b.top=a.pageY,h(b)}function f(a){var b=a.data;p.clearTimer(b.timer),j()}function g(a){i(a.pageX,a.pageY)}function h(c){j();var d="";d+='<div class="',d+=[n.base,n[c.direction],c.customClass].join(" "),d+='">',d+='<div class="'+n.content+'">',d+=c.formatter.call(c.$el,c),d+='<span class="'+n.caret+'"></span>',d+="</div>",d+="</div>",q={$tooltip:a(d),$el:c.$el},b.$body.append(q.$tooltip);var e=q.$tooltip.find(m.content),h=q.$tooltip.find(m.caret),k=c.$el.offset(),l=c.$el.outerHeight(),r=c.$el.outerWidth(),s=0,t=0,u=0,v=0,w=!1,x=!1,y=h.outerHeight(!0),z=h.outerWidth(!0),A=e.outerHeight(!0),B=e.outerWidth(!0);"right"===c.direction||"left"===c.direction?(x=(A-y)/2,v=-A/2,"right"===c.direction?u=c.margin:"left"===c.direction&&(u=-(B+c.margin))):(w=(B-z)/2,u=-B/2,"bottom"===c.direction?v=c.margin:"top"===c.direction&&(v=-(A+c.margin))),e.css({top:v,left:u}),h.css({top:x,left:w}),c.follow?c.$el.on(o.mouseMove,c,g):(c.match?"right"===c.direction||"left"===c.direction?(t=c.top,"right"===c.direction?s=k.left+r:"left"===c.direction&&(s=k.left)):(s=c.left,"bottom"===c.direction?t=k.top+l:"top"===c.direction&&(t=k.top)):"right"===c.direction||"left"===c.direction?(t=k.top+l/2,"right"===c.direction?s=k.left+r:"left"===c.direction&&(s=k.left)):(s=k.left+r/2,"bottom"===c.direction?t=k.top+l:"top"===c.direction&&(t=k.top)),i(s,t)),c.timer=p.startTimer(c.timer,c.delay,function(){q.$tooltip.addClass(n.visible)}),c.$el.one(o.mouseLeave,c,f)}function i(a,b){q&&q.$tooltip.css({left:a,top:b})}function j(){q&&(q.$el.off([o.mouseMove,o.mouseLeave].join(" ")),q.$tooltip.remove(),q=null)}function k(){return this.data("title")}var l=b.Plugin("tooltip",{widget:!0,defaults:{customClass:"",delay:0,direction:"top",follow:!1,formatter:k,margin:15,match:!1},classes:["content","caret","visible","top","bottom","right","left"],methods:{_construct:c,_destruct:d}}),m=l.classes,n=m.raw,o=l.events,p=l.functions,q=null}(jQuery,Formstone);
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -2500,329 +2500,6 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-/*
- * Naver v3.1.2 - 2014-11-25
- * A jQuery plugin for responsive navigation. Part of the Formstone Library.
- * http://formstone.it/naver/
- *
- * Copyright 2014 Ben Plum; MIT Licensed
- */
-
-;(function ($, window) {
-	"use strict";
-
-	/**
-	 * @options
-	 * @param customClass [string] <''> "Class applied to instance"
-	 * @param label [boolean] <true> "Display handle width label"
-	 * @param labels.closed [string] <'Navigation'> "Closed state text"
-	 * @param labels.open [string] <'Close'> "Open state text"
-	 * @param maxWidth [string] <'980px'> "Width at which to auto-disable plugin"
-	 */
-	var options = {
-		customClass: "",
-		label: true,
-		labels: {
-			closed: "In this section",
-			open: "Close"
-		},
-		maxWidth: "767px"
-	};
-
-	/**
-	 * @events
-	 * @event open.naver "Navigation opened"
-	 * @event close.naver "Navigation closed"
-	 */
-
-	var pub = {
-
-		/**
-		 * @method
-		 * @name close
-		 * @description Closes instance
-		 * @example $(".target").naver("close");
-		 */
-		close: function(e) {
-			return $(this).each(function(i, nav) {
-				var data = $(nav).data("naver");
-
-				if (data && data.$nav.hasClass("enabled")) {
-					data.$wrapper.css({
-						height: 0
-					});
-					if (data.label) {
-						data.$handle.html(data.labels.closed);
-					}
-					data.$nav.removeClass("open")
-							 .trigger("close.naver");
-				}
-			});
-		},
-
-		/**
-		 * @method
-		 * @name defaults
-		 * @description Sets default plugin options
-		 * @param opts [object] <{}> "Options object"
-		 * @example $.naver("defaults", opts);
-		 */
-		defaults: function(opts) {
-			options = $.extend(true, options, opts || {});
-			return (typeof this === 'object') ? $(this) : true;
-		},
-
-		/**
-		 * @method
-		 * @name disable
-		 * @description Disables instance
-		 * @example $(".target").naver("disable");
-		 */
-		disable: function() {
-			return $(this).each(function(i, nav) {
-				var data = $(nav).data("naver");
-
-				if (data) {
-					data.$nav.removeClass("enabled");
-					data.$wrapper.css({ height: "" });
-				}
-			});
-		},
-
-		/**
-		 * @method
-		 * @name destroy
-		 * @description Destroys instance
-		 * @example $(".target").naver("destroy");
-		 */
-		destroy: function() {
-			return $(this).each(function(i, nav) {
-				var data = $(nav).data("naver");
-
-				if (data) {
-					data.$handle.remove();
-					data.$container.contents()
-								   .unwrap()
-								   .unwrap();
-
-					data.$nav.removeClass("enabled disabled naver " + data.customClass)
-							 .off(".naver")
-							 .removeData("naver");
-				}
-			});
-		},
-
-		/**
-		 * @method
-		 * @name enable
-		 * @description Enables instance
-		 * @example $(".target").naver("enable");
-		 */
-		enable: function() {
-			return $(this).each(function(i, nav) {
-				var data = $(nav).data("naver");
-
-				if (data) {
-					data.$nav.addClass("enabled");
-					pub.close.apply(data.$nav);
-				}
-			});
-		},
-
-		/**
-		 * @method
-		 * @name open
-		 * @description Opens instance
-		 * @example $(".target").naver("open");
-		 */
-		open: function() {
-			return $(this).each(function(i, nav) {
-				var data = $(nav).data("naver");
-
-				if (data && data.$nav.hasClass("enabled")) {
-					data.$wrapper.css({
-						height: data.$container.outerHeight(true)
-					});
-					if (data.label) {
-						data.$handle.html(data.labels.open);
-					}
-					data.$nav.addClass("open")
-							 .trigger("open.naver");
-				}
-			});
-		}
-	};
-
-	/**
-	 * @method private
-	 * @name _init
-	 * @description Initializes plugin
-	 * @param opts [object] "Initialization options"
-	 */
-	function _init(opts) {
-		// Settings
-		opts = $.extend(true, {}, options, opts);
-
-		// Apply to each element
-		var $items = $(this);
-		for (var i = 0, count = $items.length; i < count; i++) {
-			_build($items.eq(i), opts);
-		}
-		return $items;
-	}
-
-	/**
-	 * @method private
-	 * @name _build
-	 * @description Builds each instance
-	 * @param $nav [jQuery object] "Target jQuery object"
-	 * @param opts [object] <{}> "Options object"
-	 */
-	function _build($nav, opts) {
-		if (!$nav.data("naver")) {
-			// Extend Options
-			opts = $.extend(true, {}, opts, $nav.data("naver-options"));
-
-			var $handle = $nav.find(".naver-handle").length ? $nav.find(".naver-handle").detach() : $('<span class="naver-handle"></span>');
-
-			$nav.addClass("naver " + opts.customClass)
-				.wrapInner('<div class="naver-container"></div>')
-				.wrapInner('<div class="naver-wrapper"></div>')
-				.prepend($handle);
-
-			var data = $.extend(true, {
-				$nav: $nav,
-				$container: $nav.find(".naver-container"),
-				$wrapper: $nav.find(".naver-wrapper"),
-				$handle: $nav.find(".naver-handle")
-			}, opts);
-
-			data.$handle.text((opts.label) ? opts.labels.closed : '');
-			data.$nav.on("touchstart.naver", ".naver-handle", data, _onTouchStart)
-					 .on("click.naver", ".naver-handle", data, _onClick)
-					 .data("naver", data);
-
-
-			// Navtive MQ Support
-			if (window.matchMedia !== undefined) {
-				data.mediaQuery = window.matchMedia("(max-width:" + (data.maxWidth === Infinity ? "100000px" : data.maxWidth) + ")");
-				// Make sure we stay in context
-				data.mediaQuery.addListener(function() {
-					_onRespond.apply(data.$nav);
-				});
-				_onRespond.apply(data.$nav);
-			}
-		}
-	}
-
-	/**
-	 * @method private
-	 * @name _onTouchStart
-	 * @description Handles touchstart to selected item
-	 * @param e [object] "Event data"
-	 */
-	function _onTouchStart(e) {
-		e.stopPropagation();
-
-		var data = e.data;
-
-		data.touchStartEvent = e.originalEvent;
-
-		data.touchStartX = data.touchStartEvent.touches[0].clientX;
-		data.touchStartY = data.touchStartEvent.touches[0].clientY;
-
-		data.$nav.on("touchmove.naver", ".naver-handle", data, _onTouchMove)
-				 .on("touchend.naver", ".naver-handle", data, _onTouchEnd);
-	}
-
-	/**
-	 * @method private
-	 * @name _onTouchMove
-	 * @description Handles touchmove to selected item
-	 * @param e [object] "Event data"
-	 */
-	function _onTouchMove(e) {
-		var data = e.data,
-			oe = e.originalEvent;
-
-		if (Math.abs(oe.touches[0].clientX - data.touchStartX) > 10 || Math.abs(oe.touches[0].clientY - data.touchStartY) > 10) {
-			data.$nav.off("touchmove.naver touchend.naver");
-		}
-	}
-
-	/**
-	 * @method private
-	 * @name _onTouchEnd
-	 * @description Handles touchend to selected item
-	 * @param e [object] "Event data"
-	 */
-	function _onTouchEnd(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		var data = e.data;
-
-		data.touchStartEvent.preventDefault();
-
-		data.$nav.off("touchmove.naver touchend.naver click.naver");
-
-		_onClick(e);
-	}
-
-	/**
-	 * @method private
-	 * @name _onClick
-	 * @description Handles click nav click
-	 * @param e [object] "Event data"
-	 */
-	function _onClick(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		var $target = $(e.currentTarget),
-			data = e.data;
-
-		// Close other open instances
-		$(".naver").not(data.$nav)
-				   .naver("close");
-
-		if (data.$nav.hasClass("open")) {
-			pub.close.apply(data.$nav);
-		} else {
-			pub.open.apply(data.$nav);
-		}
-	}
-
-	/**
-	 * @method private
-	 * @name _onRespond
-	 * @description Handles media query match change
-	 */
-	function _onRespond() {
-		var data = $(this).data("naver");
-
-		if (data.mediaQuery.matches) {
-			pub.enable.apply(data.$nav);
-		} else {
-			pub.disable.apply(data.$nav);
-		}
-	}
-
-	$.fn.naver = function(method) {
-		if (pub[method]) {
-			return pub[method].apply(this, Array.prototype.slice.call(arguments, 1));
-		} else if (typeof method === 'object' || !method) {
-			return _init.apply(this, arguments);
-		}
-		return this;
-	};
-
-	$.naver = function(method) {
-		if (method === "defaults") {
-			pub.defaults.apply(this, Array.prototype.slice.call(arguments, 1));
-		}
-	};
-})(jQuery, window);
 /* 
  * Shifter v3.1.2 - 2014-10-28 
  * A jQuery plugin for simple slide-out mobile navigation. Part of the Formstone Library. 
@@ -3035,9 +2712,21 @@ if (typeof jQuery === 'undefined') {
 		return this;
 	};
 })(jQuery, window);
+/*! formstone v0.6.9 [mediaquery.js] 2015-06-17 | MIT License | formstone.it */
+
+!function(a,b){"use strict";function c(b){b=b||{};for(var c in t)t.hasOwnProperty(c)&&(l[c]=b[c]?a.merge(b[c],l[c]):l[c]);l=a.extend(l,b),l.minWidth.sort(p.sortDesc),l.maxWidth.sort(p.sortAsc),l.minHeight.sort(p.sortDesc),l.maxHeight.sort(p.sortAsc);for(var d in t)if(t.hasOwnProperty(d)){s[d]={};for(var e in l[d])if(l[d].hasOwnProperty(e)){var f=window.matchMedia("("+t[d]+": "+(l[d][e]===1/0?1e5:l[d][e])+l.unit+")");f.addListener(g),s[d][l[d][e]]=f}}g()}function d(a,b,c){var d=o.matchMedia(b),e=i(d.media);r[e]||(r[e]={mq:d,active:!0,enter:{},leave:{}},r[e].mq.addListener(h));for(var f in c)c.hasOwnProperty(f)&&r[e].hasOwnProperty(f)&&(r[e][f][a]=c[f]);h(r[e].mq)}function e(a,b){if(a)if(b){var c=i(b);r[c]&&(r[c].enter[a]&&delete r[c].enter[a],r[c].leave[a]&&delete r[c].leave[a])}else for(var d in r)r.hasOwnProperty(d)&&(r[d].enter[a]&&delete r[d].enter[a],r[d].leave[a]&&delete r[d].leave[a])}function f(){q={unit:l.unit};for(var a in t)if(t.hasOwnProperty(a))for(var b in s[a])if(s[a].hasOwnProperty(b)&&s[a][b].matches){var c="Infinity"===b?1/0:parseInt(b,10);a.indexOf("max")>-1?(!q[a]||c<q[a])&&(q[a]=c):(!q[a]||c>q[a])&&(q[a]=c)}}function g(){f(),n.trigger(m.mqChange,[q])}function h(a){var b=i(a.media),c=r[b],d=a.matches?m.enter:m.leave;if(c&&c.active||!c.active&&a.matches){for(var e in c[d])c[d].hasOwnProperty(e)&&c[d][e].apply(c.mq);c.active=!0}}function i(a){return a.replace(/[^a-z0-9\s]/gi,"").replace(/[_\s]/g,"").replace(/^\s+|\s+$/g,"")}function j(){return q}var k=b.Plugin("mediaquery",{utilities:{_initialize:c,state:j,bind:d,unbind:e},events:{mqChange:"mqchange"}}),l={minWidth:[0],maxWidth:[1/0],minHeight:[0],maxHeight:[1/0],unit:"px"},m=a.extend(k.events,{enter:"enter",leave:"leave"}),n=b.$window,o=n[0],p=k.functions,q=null,r=[],s={},t={minWidth:"min-width",maxWidth:"max-width",minHeight:"min-height",maxHeight:"max-height"}}(jQuery,Formstone);
+/*! formstone v0.6.9 [navigation.js] 2015-06-17 | MIT License | formstone.it */
+
+!function(a,b){"use strict";function c(){w=a("html, body")}function d(b){b.handleGuid=u.handle+b.guid,b.isToggle="toggle"===b.type,b.open=!1,b.isToggle&&(b.gravity="");var c=u.base,d=[c,b.type].join("-"),e=b.gravity?[d,b.gravity].join("-"):"",f=[b.rawGuid,b.customClass].join(" ");b.handle=this.data(s+"-handle"),b.content=this.data(s+"-content"),b.handleClasses=[u.handle,u.handle.replace(c,d),e?u.handle.replace(c,e):"",b.handleGuid,f].join(" "),b.navClasses=[u.nav.replace(c,d),e?u.nav.replace(c,e):"",f].join(" "),b.contentClasses=[u.content.replace(c,d),e?u.content.replace(c,e):"",f].join(" "),b.$nav=this.addClass(b.navClasses),b.$handle=a(b.handle).addClass(b.handleClasses),b.$content=a(b.content).addClass(b.contentClasses),b.$animate=a().add(b.$nav).add(b.$content),p(b),b.$handle.attr("data-swap-target",b.dotGuid).attr("data-swap-linked","."+b.handleGuid).attr("data-swap-group",u.base).on("activate.swap"+b.dotGuid,b,j).on("deactivate.swap"+b.dotGuid,b,k).on("enable.swap"+b.dotGuid,b,l).on("disable.swap"+b.dotGuid,b,m).swap({maxWidth:b.maxWidth,classes:{target:b.dotGuid,enabled:t.enabled,active:t.open,raw:{target:b.rawGuid,enabled:u.enabled,active:u.open}}})}function e(a){a.$content.removeClass(a.contentClasses).off(v.namespace),a.$handle.removeAttr("data-swap-target").removeData("swap-target").removeAttr("data-swap-linked").removeData("swap-linked").removeClass(a.handleClasses).off(a.dotGuid).text(a.originalLabel).swap("destroy"),q(a),o(a),this.removeClass(a.navClasses).off(v.namespace)}function f(a){a.$handle.swap("activate")}function g(a){a.$handle.swap("deactivate")}function h(a){a.$handle.swap("enable")}function i(a){a.$handle.swap("disable")}function j(a){if(!a.originalEvent){var b=a.data;b.open||(b.$el.trigger(v.open),b.$content.addClass(u.open).one(v.clickTouchStart,function(){g(b)}),b.label&&b.$handle.text(b.labels.open),n(b),b.open=!0)}}function k(a){if(!a.originalEvent){var b=a.data;b.open&&(b.$el.trigger(v.close),b.$content.removeClass(u.open).off(v.namespace),b.label&&b.$handle.text(b.labels.closed),o(b),b.open=!1)}}function l(a){var b=a.data;b.$content.addClass(u.enabled),setTimeout(function(){b.$animate.addClass(u.animated)},0),b.label&&b.$handle.text(b.labels.closed)}function m(a){var b=a.data;b.$content.removeClass(u.enabled,u.animated),b.$animate.removeClass(u.animated),q(b),o(b)}function n(a){a.isToggle||w.addClass(u.lock)}function o(a){a.isToggle||w.removeClass(u.lock)}function p(a){if(a.label)if(a.$handle.length>1){a.originalLabel=[];for(var b=0,c=a.$handle.length;c>b;b++)a.originalLabel[b]=a.$handle.eq(b).text()}else a.originalLabel=a.$handle.text()}function q(a){if(a.label)if(a.$handle.length>1)for(var b=0,c=a.$handle.length;c>b;b++)a.$handle.eq(b).text(a.originalLabel[b]);else a.$handle.text(a.originalLabel)}var r=b.Plugin("navigation",{widget:!0,defaults:{customClass:"",gravity:"left",label:!0,labels:{closed:"Menu",open:"Close"},maxWidth:"980px",type:"toggle"},classes:["handle","nav","content","animated","enabled","open","toggle","push","reveal","overlay","left","right","lock"],events:{tap:"tap",open:"open",close:"close"},methods:{_setup:c,_construct:d,_destruct:e,open:f,close:g,enable:h,disable:i}}),s=r.namespace,t=r.classes,u=t.raw,v=r.events,w=(r.functions,null)}(jQuery,Formstone);
+/*! formstone v0.6.9 [swap.js] 2015-06-17 | MIT License | formstone.it */
+
+!function(a,b){"use strict";function c(b){b.enabled=!1,b.active=!1,b.classes=a.extend(!0,{},l,b.classes),b.target=this.data(k+"-target"),b.$target=a(b.target).addClass(b.classes.raw.target),b.linked=this.data(k+"-linked"),b.mq="(max-width:"+(b.maxWidth===1/0?"100000px":b.maxWidth)+")";var c=this.data(k+"-group");b.group=c?"[data-"+k+'-group="'+c+'"]':!1,!b.collapse&&b.group&&a(b.group).eq(0).attr("data-"+k+"-active","true"),b.onEnable=this.data(k+"-active"),b.$swaps=a().add(this).add(b.$target),this.touch({tap:!0}).on(m.tap+b.dotGuid,b,i),a.mediaquery("bind",b.rawGuid,b.mq,{enter:function(){g.call(b.$el,b)},leave:function(){h.call(b.$el,b)}})}function d(b){a.mediaquery("unbind",b.rawGuid),b.$swaps.removeClass([b.classes.raw.enabled,b.classes.raw.active].join(" ")).off(m.namespace),this.touch("destroy")}function e(b,c){if(b.enabled&&!b.active){a(b.group).not(b.$el)[j.namespace]("deactivate");var d=b.group?a(b.group).index(b.$el):null;b.$swaps.addClass(b.classes.raw.active),b.linked&&!c&&(a(b.linked).not(b.$el).swap("activate",!0),this.trigger(m.activate,[d])),b.active=!0}}function f(b,c){b.enabled&&b.active&&(b.$swaps.removeClass(b.classes.raw.active),b.linked&&!c&&(a(b.linked).not(b.$el).swap("deactivate",!0),this.trigger(m.deactivate)),b.active=!1)}function g(b,c){b.enabled||(b.enabled=!0,b.$swaps.addClass(b.classes.raw.enabled),c||a(b.linked).not(b.$el).swap("enable"),this.trigger(m.enable),b.onEnable?(b.active=!0,b.$swaps.addClass(b.classes.raw.active)):(b.active=!0,f.call(this,b)))}function h(b,c){b.enabled&&(b.enabled=!1,b.$swaps.removeClass([b.classes.raw.enabled,b.classes.raw.active].join(" ")),c||a(b.linked).not(b.$el).swap("disable"),this.trigger(m.disable))}function i(a){n.killEvent(a);var b=a.data;b.active&&b.collapse?f.call(b.$el,b):e.call(b.$el,b)}var j=b.Plugin("swap",{widget:!0,defaults:{collapse:!0,maxWidth:1/0},classes:["target","enabled","active"],events:{tap:"tap",activate:"activate",deactivate:"deactivate",enable:"enable",disable:"disable"},methods:{_construct:c,_destruct:d,activate:e,deactivate:f,enable:g,disable:h}}),k=j.namespace,l=j.classes,m=j.events,n=j.functions}(jQuery,Formstone);
+/*! formstone v0.6.9 [touch.js] 2015-06-17 | MIT License | formstone.it */
+
+!function(a,b){"use strict";function c(a){a.touches=[],a.touching=!1,this.on(r.dragStart,s.killEvent),a.tap?(a.pan=!1,a.scale=!1,a.swipe=!1,b.support.touch?this.on([r.touchStart,r.pointerDown].join(" "),a,f):this.on(r.click,a,k)):(a.pan||a.swipe||a.scale)&&(a.tap=!1,a.swipe&&(a.pan=!0),a.scale&&(a.axis=!1),a.axis?(a.axisX="x"===a.axis,a.axisY="y"===a.axis):o(this,"none"),this.on([r.touchStart,r.pointerDown].join(" "),a,e),a.pan&&!b.support.touch&&this.on(r.mouseDown,a,f))}function d(){this.off(r.namespace),o(this,"")}function e(a){a.preventManipulation&&a.preventManipulation();var b=a.data,c=a.originalEvent;if(c.type.match(/(up|end)$/i))return void j(a);if(c.pointerId){var d=!1;for(var e in b.touches)b.touches[e].id===c.pointerId&&(d=!0,b.touches[e].pageX=c.clientX,b.touches[e].pageY=c.clientY);d||b.touches.push({id:c.pointerId,pageX:c.clientX,pageY:c.clientY})}else b.touches=c.touches;c.type.match(/(down|start)$/i)?f(a):c.type.match(/move$/i)&&g(a)}function f(b){var c=b.data,d="undefined"!==a.type(c.touches)?c.touches[0]:null;if(c.touching||(c.startE=b.originalEvent,c.startX=d?d.pageX:b.pageX,c.startY=d?d.pageY:b.pageY,c.startT=(new Date).getTime(),c.scaleD=1,c.passed=!1),c.tap)c.clicked=!1,c.$el.on([r.touchMove,r.pointerMove].join(" "),c,e).on([r.touchEnd,r.touchCancel,r.pointerUp,r.pointerCancel].join(" "),c,e);else if(c.pan||c.scale){c.$links&&c.$links.off(r.click);var f=l(c.scale?r.scaleStart:r.panStart,b,c.startX,c.startY,c.scaleD,0,0,"","");if(c.scale&&c.touches&&c.touches.length>=2){var h=c.touches;c.pinch={startX:m(h[0].pageX,h[1].pageX),startY:m(h[0].pageY,h[1].pageY),startD:n(h[1].pageX-h[0].pageX,h[1].pageY-h[0].pageY)},f.pageX=c.startX=c.pinch.startX,f.pageY=c.startY=c.pinch.startY}c.touching||(c.touching=!0,c.pan&&t.on(r.mouseMove,c,g).on(r.mouseUp,c,j),t.on([r.touchMove,r.touchEnd,r.touchCancel,r.pointerMove,r.pointerUp,r.pointerCancel].join(" "),c,e),c.$el.trigger(f))}}function g(b){var c=b.data,d="undefined"!==a.type(c.touches)?c.touches[0]:null,e=d?d.pageX:b.pageX,f=d?d.pageY:b.pageY,g=e-c.startX,h=f-c.startY,i=g>0?"right":"left",k=h>0?"down":"up",o=Math.abs(g)>u,p=Math.abs(h)>u;if(c.tap)(o||p)&&c.$el.off([r.touchMove,r.touchEnd,r.touchCancel,r.pointerMove,r.pointerUp,r.pointerCancel].join(" "));else if(c.pan||c.scale)if(!c.passed&&c.axis&&(c.axisX&&p||c.axisY&&o))j(b);else{!c.passed&&(!c.axis||c.axis&&c.axisX&&o||c.axisY&&p)&&(c.passed=!0),c.passed&&(s.killEvent(b),s.killEvent(c.startE));var q=!0,t=l(c.scale?r.scale:r.pan,b,e,f,c.scaleD,g,h,i,k);if(c.scale)if(c.touches&&c.touches.length>=2){var v=c.touches;c.pinch.endX=m(v[0].pageX,v[1].pageX),c.pinch.endY=m(v[0].pageY,v[1].pageY),c.pinch.endD=n(v[1].pageX-v[0].pageX,v[1].pageY-v[0].pageY),c.scaleD=c.pinch.endD/c.pinch.startD,t.pageX=c.pinch.endX,t.pageY=c.pinch.endY,t.scale=c.scaleD,t.deltaX=c.pinch.endX-c.pinch.startX,t.deltaY=c.pinch.endY-c.pinch.startY}else c.pan||(q=!1);q&&c.$el.trigger(t)}}function h(b,c){b.on(r.click,c,i);var d=a._data(b[0],"events").click;d.unshift(d.pop())}function i(a){s.killEvent(a,!0),a.data.$links.off(r.click)}function j(b){var c=b.data;if(c.tap)c.$el.off([r.touchMove,r.touchEnd,r.touchCancel,r.pointerMove,r.pointerUp,r.pointerCancel,r.mouseMove,r.mouseUp].join(" ")),c.startE.preventDefault(),k(b);else if(c.pan||c.scale){var d="undefined"!==a.type(c.touches)?c.touches[0]:null,e=d?d.pageX:b.pageX,f=d?d.pageY:b.pageY,g=e-c.startX,i=f-c.startY,j=(new Date).getTime(),m=c.scale?r.scaleEnd:r.panEnd,n=g>0?"right":"left",o=i>0?"down":"up",p=Math.abs(g)>1,q=Math.abs(i)>1;if(c.swipe&&Math.abs(g)>u&&j-c.startT<v&&(m=r.swipe),c.axis&&(c.axisX&&q||c.axisY&&p)||p||q){c.$links=c.$el.find("a");for(var s=0,w=c.$links.length;w>s;s++)h(c.$links.eq(s),c)}var x=l(m,b,e,f,c.scaleD,g,i,n,o);t.off([r.touchMove,r.touchEnd,r.touchCancel,r.mouseMove,r.mouseUp,r.pointerMove,r.pointerUp,r.pointerCancel].join(" ")),c.$el.trigger(x),c.touches=[],c.scale}c.touching=!1}function k(a){s.killEvent(a);var b=a.data;if(!b.clicked){"click"!==a.type&&(b.clicked=!0);var c=b.startE?b.startX:a.pageX,d=b.startE?b.startY:a.pageY,e=l(r.tap,a.originalEvent,c,d,1,0,0);b.$el.trigger(e)}}function l(b,c,d,e,f,g,h,i,j){return a.Event(b,{originalEvent:c,bubbles:!0,pageX:d,pageY:e,scale:f,deltaX:g,deltaY:h,directionX:i,directionY:j})}function m(a,b){return(a+b)/2}function n(a,b){return Math.sqrt(a*a+b*b)}function o(a,b){a.css({"-ms-touch-action":b,"touch-action":b})}var p=!b.window.PointerEvent,q=b.Plugin("touch",{widget:!0,defaults:{axis:!1,pan:!1,scale:!1,swipe:!1,tap:!1},methods:{_construct:c,_destruct:d},events:{pointerDown:p?"MSPointerDown":"pointerdown",pointerUp:p?"MSPointerUp":"pointerup",pointerMove:p?"MSPointerMove":"pointermove",pointerCancel:p?"MSPointerCancel":"pointercancel"}}),r=q.events,s=q.functions,t=b.$window,u=10,v=50;r.tap="tap",r.pan="pan",r.panStart="panstart",r.panEnd="panend",r.scale="scale",r.scaleStart="scalestart",r.scaleEnd="scaleend",r.swipe="swipe"}(jQuery,Formstone);
 
 $(function(){
-	$('.nav').setup_navigation();
+	$('.main-nav').setup_navigation();
 });
 
 var keyCodeMap = {
@@ -3246,11 +2935,14 @@ $(document).ready(function() {
 
 	// Shifter
 	$.shifter({
-		maxWidth: "767px"
+		maxWidth: "768px"
 	});
 
 	// Naver
-	$(".naver").naver();
+	// $(".naver").naver();
+	$(".sec-nav").navigation({
+		maxWidth: "768px"
+	});
 
 	// POPUP WINDOW FOR SOCIAL MEDIA
 	function windowPopup(url, width, height) {
@@ -3364,5 +3056,10 @@ $(document).ready(function() {
 
 	$(".noUi-handle").append("<a href='join'></a>");
 	//END RANGE SLIDER
+
+	// disable right click on images
+	$('img').bind('contextmenu', function(e) {
+		return false;
+	});
 
 });

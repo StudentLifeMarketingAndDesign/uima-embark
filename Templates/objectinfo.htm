@@ -1,15 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<!--ObjectInfo.htm-->
-<html>
-<head>
+{Include meta-head.inc}
 
-    <title>{Include title.inc} - {[Objects_1]Disp_Title}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-    {Include scripts.inc}
-
+<body class="CollectionHomePage  shifter">
   <script type="text/javascript">
     <!--
 		function submitPop(page,SessionID) {
@@ -31,7 +22,7 @@
   <script type="text/javascript" src="/scripts/gmaps/gmaps.js"></script>
   <script type="text/javascript" src="/scripts/gmaps/prettify.js"></script>
 
-  <script type="text/javascript">
+ <script type="text/javascript">
   
   var Lat = {[Objects_1]User_Def_7};
   var Lon = {[Objects_1]User_Def_8};
@@ -72,333 +63,356 @@
 -->
 
     </script>
-</head>
+	<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-<body class="clearfix">
 	{Include header.inc}
-	
-	{Include FilterBox.html}
-	
-	<div id="content">
 
-		{Include activerecords.inc}
-		<h1>Object Results</h1>
-
-		{Include pagenavigation.inc}
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
 		
-		<div class="display-options">
-			<div class="smalltxt">View:</div>
-			<div class="navtxt">
-				<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
-				<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
-			</div>
-			<div class="navtxt">
-				<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-				<a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-			</div>
-			<div class="navtxt">
-				<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-				<a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
-			</div>
-			<div class="navtxt">
-				<img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
-				description
-			</div>
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Collections Home</h3>
+		</div>
+
+		
+
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
 		</div>
 		
 
-{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8 col-lg-offset-1 children">
+			<section id="main-content" tabindex="-1">
 
-<table>
-	<tr>
-		<td class="object-info-image navtxt">
-		{if(Has Image)}
-		{if(Image height=="0")}
-			<object
-            classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="100"
-            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-            <param name="SRC" value="{Image Path}">
-            <param name="AUTOPLAY" value="true">
-            <param name="CONTROLLER" value="true">
-            <embed
-                src="{Image Path}" width="{Image width+100}" height="{Image height+100}"
-                autoplay="true" controller="true"
-                pluginspage="http://www.apple.com/quicktime/download/">
-            </embed>
-			</object>
-		{else}
-        {if(Image duration=="0")}
-			<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main" src="{preview}" width="{thumbnail width*2.3}" height="{thumbnail height*2.3}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
-        {else}
- <object
- classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
- codebase="http://www.apple.com/qtactivex/qtplugin.cab">
- <param name="SRC" value="{Image Path}">
- <param name="AUTOPLAY" value="true">
- <param name="CONTROLLER" value="true">
- <embed
- src="{Image Path}" width="{image width}" height="{image height+15}"
- autoplay="true" controller="true"
- pluginspage="http://www.apple.com/quicktime/download/">
- </embed>
- </object><br><br>
+				{Include activerecords.inc}
+				<h1>Object Results</h1>
 
-        {end if}
-		{end if}
-		{else}
-		This object does not have an image.
-		{end if}
-		
-			<a onclick="window.print();return false;" href="#">Print This Page</a><br>
+				{Include pagenavigation.inc}
+				
+				<div class="display-options">
+					<div class="smalltxt">View:</div>
+					<div class="navtxt">
+						<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
+						<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+						<a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+						<a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
+						description
+					</div>
+				</div>
+				
 
-			{if(Logged In)}
-				<a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});" onmouseover="self.status='Add this object to a portfolio';return true;" onmouseout="self.statue='';return true;" class="navtxt">Add to portfolio</a> &gt;<br>
-				{if(Editing Portfolio)}
-					&lt; <a href="{RemoveFromPortfolio}&display=INF" onmouseover="self.status='Remove this object from the portfolio';return true;" onmouseout= "self.status='';return true;" class="navtxt">Remove from &quot;{Portfolio Name}&quot;</a><br>
+		{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
+
+		<table>
+			<tr>
+				<td class="object-info-image navtxt">
+				{if(Has Image)}
+				{if(Image height=="0")}
+					<object
+		            classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="100"
+		            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		            <param name="SRC" value="{Image Path}">
+		            <param name="AUTOPLAY" value="true">
+		            <param name="CONTROLLER" value="true">
+		            <embed
+		                src="{Image Path}" width="{Image width+100}" height="{Image height+100}"
+		                autoplay="true" controller="true"
+		                pluginspage="http://www.apple.com/quicktime/download/">
+		            </embed>
+					</object>
+				{else}
+		        {if(Image duration=="0")}
+					<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main" src="{preview}" width="{thumbnail width*2.3}" height="{thumbnail height*2.3}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
+		        {else}
+		 <object
+		 classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
+		 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		 <param name="SRC" value="{Image Path}">
+		 <param name="AUTOPLAY" value="true">
+		 <param name="CONTROLLER" value="true">
+		 <embed
+		 src="{Image Path}" width="{image width}" height="{image height+15}"
+		 autoplay="true" controller="true"
+		 pluginspage="http://www.apple.com/quicktime/download/">
+		 </embed>
+		 </object><br><br>
+
+		        {end if}
 				{end if}
-			{end if}
-			<br>
-			<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
-			<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
-			<!-- {if ([Objects_1]Web_Access=="yes")}
-				<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
-			{end if} -->
+				{else}
+				This object does not have an image.
+				{end if}
+				
+					<a onclick="window.print();return false;" href="#">Print This Page</a><br>
 
-			<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
-			<!-- {if ([Objects_1]Web_Access=="yes")}
-				<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
-			{end if} -->
-
-			<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
-			<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
-			<br>
-			<!-- Sample code end -->
-			
-			<!-- AddThis Button BEGIN -->
-			<!-- This code must be updated for your own AddThis account at http://www.addthis.com. Please note the example for customizing the URL to make a bookmarkable URL without session id information. -->
-			<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://YOUR_URL.com/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->';  addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = '<your account name>';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script>
-			<!-- AddThis Button END -->
-		</td>
-
-		<td class="object-info-label">
-			{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}<br><br>{end if}
-
-
-
-
-			{Start Loop [Object_Artist]}
-				<a href="{Artist Info}">{[Artist_Maker]Full_Name}</a><br>
-				<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
-				{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
-				{Concat(" - ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]End_Date_Disp)}<br>
-				{if ([Object_Artist]Role != "")}
-					{concat(", ", [Object_Artist]Role, [Object_Artist]Place, [Object_Artist]Disp_Cont_Date)}<br><br>
+					{if(Logged In)}
+						<a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});" onmouseover="self.status='Add this object to a portfolio';return true;" onmouseout="self.statue='';return true;" class="navtxt">Add to portfolio</a> &gt;<br>
+						{if(Editing Portfolio)}
+							&lt; <a href="{RemoveFromPortfolio}&display=INF" onmouseover="self.status='Remove this object from the portfolio';return true;" onmouseout= "self.status='';return true;" class="navtxt">Remove from &quot;{Portfolio Name}&quot;</a><br>
+						{end if}
 					{end if}
-			{End Loop}
+					<br>
+					<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
+					<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
+					<!-- {if ([Objects_1]Web_Access=="yes")}
+						<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
+					{end if} -->
+
+					<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
+					<!-- {if ([Objects_1]Web_Access=="yes")}
+						<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
+					{end if} -->
+
+					<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
+					<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
+					<br>
+					<!-- Sample code end -->
+					
+					<!-- AddThis Button BEGIN -->
+					<!-- This code must be updated for your own AddThis account at http://www.addthis.com. Please note the example for customizing the URL to make a bookmarkable URL without session id information. -->
+					<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://YOUR_URL.com/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->';  addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = '<your account name>';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script>
+					<!-- AddThis Button END -->
+				</td>
+
+				<td class="object-info-label">
+					{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}<br><br>{end if}
+
+
+
+
+					{Start Loop [Object_Artist]}
+						<a href="{Artist Info}">{[Artist_Maker]Full_Name}</a><br>
+						<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
+						{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
+						{Concat(" - ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]End_Date_Disp)}<br>
+						{if ([Object_Artist]Role != "")}
+							{concat(", ", [Object_Artist]Role, [Object_Artist]Place, [Object_Artist]Disp_Cont_Date)}<br><br>
+							{end if}
+					{End Loop}
+					
+					<br>
+					
+					<!-- label copy start -->
+					<b><i>{[Objects_1]Disp_Title}</i></b><br>
+					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
+					{if([Objects_1]Century!="")}{[Objects_1]Century}<br>{end if}
+					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
+					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
+					<!-- label copy end -->
+
+					{if ([Objects_1]Technique!="")}
+						<div class="object-info-field"><b>Technique:</b> {[Objects_1]Technique}</div>
+					{end if}
+					
+					{if ([Objects_1]Class_System!="")}
+						<div class="object-info-field"><b>Curatorial Department:</b> {[Objects_1]Class_System}</div>
+					{end if}
+					
+					{if ([Objects_1]Creation_Place2!="")}
+						<div class="object-info-field"><b>Region:</b> {[Objects_1]Creation_Place2}</div>
+					{end if}
+
+					{if ([Objects_1]Dedication!="")}
+						<div class="object-info-field"><b>Credit Line:</b> {[Objects_1]Dedication}</div>
+					{end if}
+					
+						<!--<div class="object-info-field"><b>Legal Status Date:</b>-->
+						<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
+						<!--{[Objects_1]Lgl_Stts_Date}</div>-->
+
+					{if ([Objects_1]Disp_Access_No!="")}
+						<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
+					{end if}
+				</td>
+			</tr>
+		</table>
+
+		{if ([Objects_1]Info_Page_Comm!="")}
+		<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
+		{end if}
+
+		<div class="objnotes-record-box"><b>Notes:</b>
+		{Notes}
+		</div>
+		<br><br>
+		<i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i>
+
+		<div class="objkeywords-record-box">
+		{if ([Keywords])}
+		<br><hr><br>
+		<b>Keywords:</b> Click a term to load other records with the same keyword.
+		<ul>
+		{Start Loop [Keywords]}
+		<li><a href="/4DACTION/HANDLECGI/QSF4?display=por&sid={SessionId}&KW0={[Keywords]_New_Pathnums}&KWID0={[Keywords]_New_ID}&SearchType=ALL&RefineSearch=NewSelection">{[Keywords]Word}</a>  <!-- {if ([Keywords]Notes != "")} -- {[Keywords]Notes}{end if} -->  </li>
+		{End Loop}
+		</ul>
+		{end if}
+		</div>
+
+		{if ([Dimensions])}	
+		<hr><br>
+		<b>Dimensions</b>
+		<ul>	
+		    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
+		        <li><b>Subject:</b> {[Dimensions]Dimen_Subject} <b>Dimensions:</b> {[Dimensions]Disp_Dimen}
+		    {End Loop}
+		</ul>
+		{End if}
+
+		<!-- Display map with gmaps.js -->
+		<!-- This code is dependent on having Latitude and Longitude data in two object fields, such as User_Def_7 and User_Def_8 in the example below.  The code can be changed for any two Object fields. Be sure to adjust the script in the header if different fields are used. -->
+		{if([Objects_1]User_Def_7!="")}{if([Objects_1]User_Def_8!="")}
+		<hr>
+		<br><br>
+
+		        <div class="popin">
+		          <div id="map"></div>
+		        </div>
+				<div class="smalltxt"><br><br><center>Latitude: {[Objects_1]User_Def_7} - Longitude: {[Objects_1]User_Def_8}</center></div>
+		{end if}{end if}
+
+		<br><br>
+		{if (Has Parent)}
+		<hr>
+		<div class="objrelated-record-box">
+		<p>
+		    <b>Related Parents:</b>
+		    {Start Loop([Related_Object]Type=="Parent")}
+			<div class="objrelated-record-box">
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
+			</div>
+		    {End Loop}
+		</div>
+		{end if}
+
+		{if (Has Sibling)}
+		<br><br>
+		<hr>
+		<div class="objrelated-record-box">
+
+		<p>
+		    <b>Related Siblings(s):</b>
+		    {Start Loop([Related_Object]Type=="Sibling")}
+			<div class="objrelated-record-box">
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
+			</div>
+		    {End Loop}
+		</div>
+		{end if}
+
+		{if (Has Child)}
+		<br><br>
+		<hr>
+		<div class="objrelated-record-box">
+		<p>
+		    <b>Related Children:</b>
+		    {Start Loop([Related_Object]Type=="Child")}
+			<div class="objrelated-record-box">
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
+			</div>
+		    {End Loop}
+		</div>
+		{end if}
 			
-			<br>
-			
-			<!-- label copy start -->
-			<b><i>{[Objects_1]Disp_Title}</i></b><br>
-			{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
-			{if([Objects_1]Century!="")}{[Objects_1]Century}<br>{end if}
-			{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
-			{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
-			<!-- label copy end -->
+		{if ([Surrogates])}
+		<br>
+		<hr>
+		<br>
+		<b>Additional Images</b><br>
+		<p>Right-click (Windows) or Ctrl-click (Macintosh) to open PDF in a new browser tab.</p>
+		<br><br>
+		{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
+		<div class="objsur-record-box">
+			<div class="objsur-thumbnail">
+			{if(Has Image)}
+		{if(Image duration=="0")}
+		<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+		{end if}	
+		<br><br>
+		    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
+		    <div class="objsur-label"></div>
+		</div>
+		{End If}
+		{End Loop}
+		{end if}
 
-			{if ([Objects_1]Technique!="")}
-				<div class="object-info-field"><b>Technique:</b> {[Objects_1]Technique}</div>
-			{end if}
-			
-			{if ([Objects_1]Class_System!="")}
-				<div class="object-info-field"><b>Curatorial Department:</b> {[Objects_1]Class_System}</div>
-			{end if}
-			
-			{if ([Objects_1]Creation_Place2!="")}
-				<div class="object-info-field"><b>Region:</b> {[Objects_1]Creation_Place2}</div>
-			{end if}
+		{if ([Biblio_Citation])}
+		<hr>
+		<p>
+		    <b>Bibliography List</b><br/>
+		    This object has the following bibliographic references:
+		    <ul>
+		    {Start Loop([Biblio_Citation])}
+			<li>
+		      {if ([Biblio_Citation]Doc_Author_1!="")}{if ([Biblio_Citation]Doc_Author_2=="")}{[Biblio_Citation]Doc_Author_1}.{end if}{end if} 
+			  {if ([Biblio_Citation]Doc_Author_2!="")}{[Biblio_Citation]Doc_Author_1} and {[Biblio_Citation]Doc_Author_2}.{end if}  
+			  {if ([Biblio_Citation]Doc_Author_1=="")}{if ([Biblio_Citation]Doc_Author_2=="")}{if ([Biblio_Citation]Doc_Editor!="")}{[Biblio_Citation]Doc_Editor}, ed.{end if}{end if}{end if}
+			  {[Biblio_Citation]Doc_title}.
+			  {if([Biblio_Citation]Publisher!="")}{[Biblio_Citation]Publisher}.{end if}
+		      {if([Biblio_Citation]Doc_Pub_Place!="")}{[Biblio_Citation]Doc_Pub_Place}{end if}
+		      {if([Biblio_Citation]Doc_Date!="")}, {[Biblio_Citation]Doc_Date}.{end if}
+		      {if ([Object_Biblio]Page_Nums!="")}Page Number: {[Object_Biblio]Page_Nums}.{end if}
+		      {if ([Object_Biblio]Figure_Nums!="")}Figure Number: {[Object_Biblio]Figure_Nums}{end if}</li>
+		    {End Loop}
+		    </ul>
+		</p>
+		{end if}
 
-			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><b>Credit Line:</b> {[Objects_1]Dedication}</div>
-			{end if}
-			
-				<!--<div class="object-info-field"><b>Legal Status Date:</b>-->
-				<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
-				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
+		{if ([Portfolios])}
+		<br><hr><br>
+		<b>Portfolio List</b><br>
+		This object is a member of the following portfolios (click any portfolio name to view all objects in that portfolio):
+		<br><br>
+		{Start Loop([Portfolios])}
+		<div class="objport-record-box">
+			<div class="objport-thumbnail"><a href="{Portfolio}&display=POR"><img src="{Thumbnail}"></a></div><br><br>
+			<div class="objport-label"><a href="{Portfolio}&display=POR"><a href="{Portfolio}">{Portfolio Name}</a></div>
+		</div>
+		{End Loop}
+		{end if}
 
-			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
-			{end if}
-		</td>
-	</tr>
-</table>
+		<div id="clearDiv"></div>
 
-{if ([Objects_1]Info_Page_Comm!="")}
-<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
-{end if}
+		<br><hr><!-- <br>View Current Selection of Records as: <ul>
+		<li><a href="results.html?sid={SessionId}&layout=cdwa&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>CDWA Lite XML</a>
+		<li><a href="results.html?sid={SessionId}&layout=lido&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>LIDO XML</a>
+		</ul>
+		<hr>
+		<br> -->
 
-<div class="objnotes-record-box"><b>Notes:</b>
-{Notes}
-</div>
-<br><br>
-<i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i>
-
-<div class="objkeywords-record-box">
-{if ([Keywords])}
-<br><hr><br>
-<b>Keywords:</b> Click a term to load other records with the same keyword.
-<ul>
-{Start Loop [Keywords]}
-<li><a href="/4DACTION/HANDLECGI/QSF4?display=por&sid={SessionId}&KW0={[Keywords]_New_Pathnums}&KWID0={[Keywords]_New_ID}&SearchType=ALL&RefineSearch=NewSelection">{[Keywords]Word}</a>  <!-- {if ([Keywords]Notes != "")} -- {[Keywords]Notes}{end if} -->  </li>
-{End Loop}
-</ul>
-{end if}
-</div>
-
-{if ([Dimensions])}	
-<hr><br>
-<b>Dimensions</b>
-<ul>	
-    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-        <li><b>Subject:</b> {[Dimensions]Dimen_Subject} <b>Dimensions:</b> {[Dimensions]Disp_Dimen}
-    {End Loop}
-</ul>
-{End if}
-
-<!-- Display map with gmaps.js -->
-<!-- This code is dependent on having Latitude and Longitude data in two object fields, such as User_Def_7 and User_Def_8 in the example below.  The code can be changed for any two Object fields. Be sure to adjust the script in the header if different fields are used. -->
-{if([Objects_1]User_Def_7!="")}{if([Objects_1]User_Def_8!="")}
-<hr>
-<br><br>
-
-        <div class="popin">
-          <div id="map"></div>
-        </div>
-		<div class="smalltxt"><br><br><center>Latitude: {[Objects_1]User_Def_7} - Longitude: {[Objects_1]User_Def_8}</center></div>
-{end if}{end if}
-
-<br><br>
-{if (Has Parent)}
-<hr>
-<div class="objrelated-record-box">
-<p>
-    <b>Related Parents:</b>
-    {Start Loop([Related_Object]Type=="Parent")}
-	<div class="objrelated-record-box">
-		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
-		<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
-	</div>
-    {End Loop}
-</div>
-{end if}
-
-{if (Has Sibling)}
-<br><br>
-<hr>
-<div class="objrelated-record-box">
-
-<p>
-    <b>Related Siblings(s):</b>
-    {Start Loop([Related_Object]Type=="Sibling")}
-	<div class="objrelated-record-box">
-		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
-		<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
-	</div>
-    {End Loop}
-</div>
-{end if}
-
-{if (Has Child)}
-<br><br>
-<hr>
-<div class="objrelated-record-box">
-<p>
-    <b>Related Children:</b>
-    {Start Loop([Related_Object]Type=="Child")}
-	<div class="objrelated-record-box">
-		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
-		<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
-	</div>
-    {End Loop}
-</div>
-{end if}
-	
-{if ([Surrogates])}
-<br>
-<hr>
-<br>
-<b>Additional Images</b><br>
-<p>Right-click (Windows) or Ctrl-click (Macintosh) to open PDF in a new browser tab.</p>
-<br><br>
-{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
-<div class="objsur-record-box">
-	<div class="objsur-thumbnail">
-	{if(Has Image)}
-{if(Image duration=="0")}
-<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
-{end if}	
-<br><br>
-    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
-    <div class="objsur-label"></div>
-</div>
-{End If}
-{End Loop}
-{end if}
-
-{if ([Biblio_Citation])}
-<hr>
-<p>
-    <b>Bibliography List</b><br/>
-    This object has the following bibliographic references:
-    <ul>
-    {Start Loop([Biblio_Citation])}
-	<li>
-      {if ([Biblio_Citation]Doc_Author_1!="")}{if ([Biblio_Citation]Doc_Author_2=="")}{[Biblio_Citation]Doc_Author_1}.{end if}{end if} 
-	  {if ([Biblio_Citation]Doc_Author_2!="")}{[Biblio_Citation]Doc_Author_1} and {[Biblio_Citation]Doc_Author_2}.{end if}  
-	  {if ([Biblio_Citation]Doc_Author_1=="")}{if ([Biblio_Citation]Doc_Author_2=="")}{if ([Biblio_Citation]Doc_Editor!="")}{[Biblio_Citation]Doc_Editor}, ed.{end if}{end if}{end if}
-	  {[Biblio_Citation]Doc_title}.
-	  {if([Biblio_Citation]Publisher!="")}{[Biblio_Citation]Publisher}.{end if}
-      {if([Biblio_Citation]Doc_Pub_Place!="")}{[Biblio_Citation]Doc_Pub_Place}{end if}
-      {if([Biblio_Citation]Doc_Date!="")}, {[Biblio_Citation]Doc_Date}.{end if}
-      {if ([Object_Biblio]Page_Nums!="")}Page Number: {[Object_Biblio]Page_Nums}.{end if}
-      {if ([Object_Biblio]Figure_Nums!="")}Figure Number: {[Object_Biblio]Figure_Nums}{end if}</li>
-    {End Loop}
-    </ul>
-</p>
-{end if}
-
-{if ([Portfolios])}
-<br><hr><br>
-<b>Portfolio List</b><br>
-This object is a member of the following portfolios (click any portfolio name to view all objects in that portfolio):
-<br><br>
-{Start Loop([Portfolios])}
-<div class="objport-record-box">
-	<div class="objport-thumbnail"><a href="{Portfolio}&display=POR"><img src="{Thumbnail}"></a></div><br><br>
-	<div class="objport-label"><a href="{Portfolio}&display=POR"><a href="{Portfolio}">{Portfolio Name}</a></div>
-</div>
-{End Loop}
-{end if}
-
-<div id="clearDiv"></div>
-
-<br><hr><!-- <br>View Current Selection of Records as: <ul>
-<li><a href="results.html?sid={SessionId}&layout=cdwa&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>CDWA Lite XML</a>
-<li><a href="results.html?sid={SessionId}&layout=lido&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>LIDO XML</a>
-</ul>
-<hr>
-<br> -->
-
-{Include formaddtoport.inc}
-		
-{Include selectiondescription.inc}
-<br><br>
-{Include addobjtoportfolio.inc}</div></div>
-
-</div></div></div>
-</div>
-	
+		{Include formaddtoport.inc}
+				
+		{Include selectiondescription.inc}
+		<br><br>
+		{Include addobjtoportfolio.inc}
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>
+

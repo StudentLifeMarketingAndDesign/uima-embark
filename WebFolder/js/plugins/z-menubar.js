@@ -1,6 +1,6 @@
 
 $(function(){
-	$('.nav').setup_navigation();
+	$('.main-nav').setup_navigation();
 });
 
 var keyCodeMap = {
