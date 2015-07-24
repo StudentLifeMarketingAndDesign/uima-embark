@@ -33,7 +33,7 @@
 					<input type="button" onclick="document.searchForm.submit()" value="search">
 			</form>
 			<ul class="first-level">
-				<li class="active"><a href="/uima/about/">Collections Home</a></li>
+				<li class="active"><a href="/">Collections Home</a></li>
 				<li><a href="/IT_-1?sid={SessionId}&x={Sequence}">Browse Collections</a></li>
 				<li><a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Advanced Search</a></li>
 				<li><a href="/kiosk/help.htm">Help</a></li>
