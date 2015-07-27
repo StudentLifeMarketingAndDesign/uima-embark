@@ -1,46 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--PortfolioIndex.htm-->
-<html>
-<head>
-    <title>{Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
 
-<body onload="setMenu('portfolios');" class="clearfix">
 
-{Include header.inc}
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
 
-<div id="content">
+                <!-- Side Bar -->
 
-	<div class="right">{Include activerecords.inc}</div>
-	<h1>Portfolio Index</h1>
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
 
-	{Include pagenavigation.inc}
-	{Popup;portfolio}
-<br><br>
-			<!-- The following will repeat for each record in the page.
-			 The kiosk will take care of inserting <tr> tags as appropriate. -->
-{RecordLoop Start}		 
-<div class="portfolio-index-record-box">
-	<div class="portfolio-index-thumbnail">
-		{If(Has Image)}
-		<a href="{Portfolio}&display=th"><img src="{thumbnail}" alt=""/></a>
-		{Else}
-		<a href="{Portfolio}&display=th"><img src="/graphics/DefaultPostage.gif" alt=""/></a>
-		{End If}
-	</div>
-	<div class="portfolio-index-label">
-		<a href="{Portfolio}&display=th">{Portfolio Name}</a><br>
-		{Portfolio Size} record(s)
-	</div>
-</div>
-{RecordLoop End}
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <div class="right">{Include activerecords.inc}</div>
+                        <h1>Portfolio Index</h1>
 
-</div>
+                        {Popup;portfolio}
+                        <!-- The following will repeat for each record in the page.
+                        The kiosk will take care of inserting <tr> tags as appropriate. -->
+                            {RecordLoop Start}
+                            <div class="portfolio-index-record-box">
+                                <div class="portfolio-index-thumbnail">
+                                    {If(Has Image)}
+                                    <a href="{Portfolio}&display=th"><img src="{thumbnail}" alt=""/></a>
+                                    {Else}
+                                    <a href="{Portfolio}&display=th"><img src="/graphics/DefaultPostage.gif" alt=""/></a>
+                                    {End If}
+                                </div>
+                                <div class="portfolio-index-label">
+                                    <a href="{Portfolio}&display=th">{Portfolio Name}</a><br>
+                                    {Portfolio Size} record(s)
+                                </div>
+                            </div>
+                            {RecordLoop End}
 
-{Include footer.inc}
-
-</body>
-</html>
+                        </section>
+                        {Include pagenavigation.inc}
+                        </div><!-- end .col -->
+                        </div><!-- end .row -->
+                    </main>
+                    {Include footer.inc}
+                </div>
+                {Include shifternavigation.inc}
+                {Include scripts.inc}
+            </body>
+        </html>

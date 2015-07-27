@@ -1,69 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Search/Object/Contains.htm-->
-<html>
-<head>
-    <meta http-equiv="expires" content="1 Jan 1900 00:00 GMT"/>
-    <title>{Include title.inc} - Quick Search</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    <script type="text/javascript">
-    //<!--hide from older browsers
-        function focusEntry() {
-            self.document.forms["Contains"].elements["theKW"].focus();
-        }
-    //end script hiding-->
-    </script>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
 
-<body onload="focusEntry();setMenu('search');" class="clearfix">
 
-{Include header.inc}
-<div id="content">
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
 
-<h1>Quick Search</h1>
+                <!-- Side Bar -->
 
-<form id="Contains" name="Contains" action="/4DACTION/HANDLECGI/CTN3" method="post" >
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
 
-    <p>Enter word(s) below to search on key fields.</p>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>Quick Search</h1>
+                        <form id="Contains" name="Contains" action="/4DACTION/HANDLECGI/CTN3" method="post" >
+                            <p>Enter word(s) below to search on key fields.</p>
+                            <p><input size="30" type="text" name="theKW"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="submit" name="doSubmit" value="  Find  "/></p>
+                            <p><input type="checkbox" name="WholeWord" value="1"/>whole word(s) only</p>
+                            <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+                            <p><input type="radio" name="SearchType" value="all" checked="checked"/>all words
+                            <input type="radio" name="SearchType" value="any"/>any words</p>
+                            <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                            <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                            <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+                            <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option></select></p>
+                            <input type="hidden" name="sid" value="{SessionID}"/>
+                        </form>
+                        {if(Records)}
+                        <p>
+                        <br/><br/>
+                        <b>Your current selection of {Records - Object} records is:</b><br/>
+                        {Selection Name Object}
+                        </p>
+                        {end if}
+                        <p><b>Other Search Options:</b><br/>
+                        <a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
+                        Quick Search |
+                        <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+                        <a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
+                        <a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> |
+                        <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
 
-    <p><input size="30" type="text" name="theKW"/>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="submit" name="doSubmit" value="  Find  "/></p>
-
-    <p><input type="checkbox" name="WholeWord" value="1"/>whole word(s) only</p>
-
-    <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
-
-    <p><input type="radio" name="SearchType" value="all" checked="checked"/>all words
-    <input type="radio" name="SearchType" value="any"/>any words</p>
-
-    <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
-    <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
-    <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
-
-    <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option></select></p>
-
-	<input type="hidden" name="sid" value="{SessionID}"/>
-</form>
-
-{if(Records)}
-    <p>
-        <br/><br/>
-        <b>Your current selection of {Records - Object} records is:</b><br/>
-        {Selection Name Object}
-    </p>
-{end if}
-
-<p><b>Other Search Options:</b><br/>
-<a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
-Quick Search |
-<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
-<a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
-<a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> |
-<a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
-
-</div>
-{Include footer.inc}
-
-</body>
-</html>
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>
