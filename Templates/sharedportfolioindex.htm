@@ -1,83 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--SharedPortfolioIndex.htm-->
-
-<!-- Displays a list of all portfolios that have been published by 'community' users. -->
-
-<html>
-<head>
-	<title>{Include title.inc}</title>
-	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-	{Include scripts.inc}
-  <script type="text/javascript">
-	<!--
-	function showUser(userList,sessionID) {
-
-		// filter the portfolio list for a single author
-
-		if(userList.selectedIndex>0) {
-			if(userList.selectedIndex==1) {
-				document.userSelection.action="/SPOR1?sid="+sessionID ;
-			}
-			else {
-				document.userSelection.action= "/PRU"+userList.options[userList.selectedIndex].value+"?sid="+sessionID ;
-			}
-			document.userSelection.submit();
-		}
-	}
-	//-->
-	</script>
-</head>
-
-<body onload="setMenu('community');" class="clearfix">
-
-{Include header.inc}<div id="content">
-
-<h1>User Galleries</h1>
-
-<p>This page highlights portfolios of objects that have been created by users. In some cases, the gallery creator may have attached a note about why they chose to group a particular set of objects. In all cases, these are the galleries that they specifically chose to share with you. Browse and enjoy.</p>
-
-<form id="userSelection" name="userSelection" action="" method="get">
-    <input type="hidden" value="{SessionID}" name="sid"/>
-
-  Filter for galleries by:&nbsp;
-  <select name="userPopup" onchange="showUser(this,{SessionID});">
-    <option>- - - Select a user - - -</option>
-    <option>* All Users</option>
-    {popup;users}
-  </select>
-
-</form>
-
-<br/><br/>
-
-{Include pagenavigation.inc}
-
-<!--4DIF (lRecords>0)-->
-	<table cellpadding="0" cellspacing="0" width="100%">
-
-		<!-- The following will be repeated for each record in the page.
-         The kiosk will take care of inserting <tr> tags as appropriate. -->
-
-		{RecordLoop Start}
-
-      <td valign="top">
-        <a href="{Portfolio}">{Portfolio Name}</a><br/>
-        {Portfolio Size} record(s)<br/>
-        Created by: {PortOwner}<br/>
-        Notes: {[Portfolios]Notes}<br/>
-			</td>
-
-      <td width="20"> </td>
-
-		{RecordLoop End}
-
-	</table>
-<!--4DELSE-->
-	<p class="err">There are no published user galleries at this time.</p>
-<!--4DENDIF-->
-
-</div>{Include footer.inc}
-
-</body>
-</html>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <script type="text/javascript">
+    <!--
+    function showUser(userList,sessionID) {
+    // filter the portfolio list for a single author
+    if(userList.selectedIndex>0) {
+    if(userList.selectedIndex==1) {
+    document.userSelection.action="/SPOR1?sid="+sessionID ;
+    }
+    else {
+    document.userSelection.action= "/PRU"+userList.options[userList.selectedIndex].value+"?sid="+sessionID ;
+    }
+    document.userSelection.submit();
+    }
+    }
+    //-->
+    </script>
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>User Galleries</h1>
+                        <p>This page highlights portfolios of objects that have been created by users. In some cases, the gallery creator may have attached a note about why they chose to group a particular set of objects. In all cases, these are the galleries that they specifically chose to share with you. Browse and enjoy.</p>
+                        <form id="userSelection" name="userSelection" action="" method="get">
+                            <input type="hidden" value="{SessionID}" name="sid"/>
+                            Filter for galleries by:&nbsp;
+                            <select name="userPopup" onchange="showUser(this,{SessionID});">
+                                <option>- - - Select a user - - -</option>
+                                <option>* All Users</option>
+                                {popup;users}
+                            </select>
+                        </form>
+                       
+                        <!--4DIF (lRecords>0)-->
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <!-- The following will be repeated for each record in the page.
+                            The kiosk will take care of inserting <tr> tags as appropriate. -->
+                                {RecordLoop Start}
+                                <td valign="top">
+                                    <a href="{Portfolio}">{Portfolio Name}</a><br/>
+                                    {Portfolio Size} record(s)<br/>
+                                    Created by: {PortOwner}<br/>
+                                    Notes: {[Portfolios]Notes}<br/>
+                                </td>
+                                <td width="20"> </td>
+                                {RecordLoop End}
+                            </table>
+                            <!--4DELSE-->
+                            <p class="err">There are no published user galleries at this time.</p>
+                            <!--4DENDIF-->
+                        </section>
+                         {Include pagenavigation.inc}
+                        </div><!-- end .col -->
+                        </div><!-- end .row -->
+                    </main>
+                    {Include footer.inc}
+                </div>
+                {Include shifternavigation.inc}
+                {Include scripts.inc}
+            </body>
+        </html>

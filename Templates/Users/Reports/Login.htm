@@ -1,44 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Users/Reports/Login.htm-->
-<html>
-<head>
-  <title>{Include title.inc}</title>
-  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-  {Include scripts.inc}
-</head>
-
-<body class="clearfix">
-
-{Include header.inc}
-<div id="content">
-<p class="bold">You have successfully logged in, {Username}</p>
-
-<p><b>To create new portfolios:</b>
-<ol>
-  <li>Find a selection of objects by using:
-    <ul>
-      <li><u>Index Tree</u> - click the 'Collections' link in the left menu bar to navigate through portfolios</li>
-      <li><u>Quick Search</u> - type a term in the Quick search box at the top of the left menu bar, then click <img src="/graphics/menu/go.gif" width="22" height="18" alt="go"/></li>
-      <li><u>Advanced Search</u> - click the 'Search' link in the left menu bar</li>
-    </ul>
-  </li>
-  <li>Click 'Add to portfolio'. (This link will only appear after you have a selection of object records.)</li>
-  <li> Follow the directions on that page to add your selection to a new or existing portfolio.</li>
-</ol>
-
-<b>To view or edit existing portfolios</b>, click the 'My Portfolios' link in the left menu bar.</p>
-
-{if (Can Share)}
-<p><b>To share existing portfolios with the public:</b>
-<ol>
-  <li>Click the 'My Portfolios' link in the left menu bar.</li>
-  <li>Click the <u>Properties</u> link for the portfolio you would like to share.</li>
-  <li>Mark <u>Shared?</u> as Yes and click Save.</li>
-</ol></p>
-{end if}
-</div>
-{Include footer.inc}
-
-</body>
-</html>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>Login successful</h1><br>
+                        <p class="bold">You have successfully logged in, {Username}</p>
+                        <p><b>To create new portfolios:</b>
+                        <ol>
+                            <li>Find a selection of objects by using:
+                                <ul>
+                                    <li><u>Index Tree</u> - click the 'Collections' link in the left menu bar to navigate through portfolios</li>
+                                    <li><u>Quick Search</u> - type a term in the Quick search box at the top of the left menu bar, then click <img src="/graphics/menu/go.gif" width="22" height="18" alt="go"/></li>
+                                    <li><u>Advanced Search</u> - click the 'Search' link in the left menu bar</li>
+                                </ul>
+                            </li>
+                            <li>Click 'Add to portfolio'. (This link will only appear after you have a selection of object records.)</li>
+                            <li> Follow the directions on that page to add your selection to a new or existing portfolio.</li>
+                        </ol>
+                        <b>To view or edit existing portfolios</b>, click the 'My Portfolios' link in the left menu bar.</p>
+                        {if (Can Share)}
+                        <p><b>To share existing portfolios with the public:</b>
+                        <ol>
+                            <li>Click the 'My Portfolios' link in the left menu bar.</li>
+                            <li>Click the <u>Properties</u> link for the portfolio you would like to share.</li>
+                            <li>Mark <u>Shared?</u> as Yes and click Save.</li>
+                        </ol></p>
+                        {end if}
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <!--Users/Reports/Login.htm-->
+    <html>
+        <head>
+            <title>{Include title.inc}</title>
+            <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+            {Include scripts.inc}
+        </head>
+        <body class="clearfix">
+            {Include header.inc}
+            <div id="content">
+            </div>
+            {Include footer.inc}
+        </body>
+    </html>

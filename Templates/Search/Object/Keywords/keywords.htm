@@ -1,104 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Search/Object/Keywords/Keywords.htm-->
-<html>
-<head>
-    <title>{Include title.inc} - Keyword Search</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Search scripts}
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>Keyword Search</h1>
+                        <br><br>
+                        <div class="right"><a href="javascript:showHelp('KeywordSearch');">How do I use this search?</a></div>
+                        <!-- start keyword search form -->
+                        <form id="FindKW" name="FindKW" action="/4DACTION/HANDLECGI/KWA1" method="post">
+                            <input type="hidden" name="sid" value="{SessionID}"/>
+                            {HiddenValues}
+                            Find keywords that begin with:<br/>
+                            <input size="30" type="text" name="theKW"/> &nbsp; &nbsp;
+                            <input type="submit" name="doSubmit" value="Find Keywords"/>
+                        </form>
+
+
+                        <!-- end keyword search form -->
+                        <!-- start keyword selection form -->
+                        <form id="ChooseKW" name="ChooseKW" action="/4DACTION/HANDLECGI/QSF4?display=POR" method="post">
+                            {HiddenValues}
+                            <table cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        Keyword pick list
+                                    <select name="KeywordsFound" size="10" onchange="loadPath(this)">{KeywordsFound}</select>
+                                </td>
+                                <td align="center" width="100">
+                                    <input type="button" name="add" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&#62;&#62;&nbsp;&nbsp;&nbsp;" onclick="addKW(document.forms['ChooseKW'].elements['KeywordsFound'])"/>
+                                    <br/><br/>
+                                    <input type="button" name="remove" value="&#60;&#60;&nbsp;&nbsp;Remove" onclick="removeKW()"/>
+                                </td>
+                                <td>
+                                    Keywords to search by
+                                <select name="KeywordsSelected" size="10">{KeywordsSelected}</select>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>Keyword Path (for word selected in list above):<br/>
+                    <input type="text" name="DisplayPath" size="60" onfocus="this.blur()"/></p>
+                    <p>Return records with <b><input type="radio" name="SearchType" value="ALL" checked="checked"/>ALL<input type="radio" name="SearchType" value="ANY"/>ANY</b> &nbsp;&nbsp;of the selected keywords.</p>
+                    <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+                    <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                    <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                    <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+                    <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option></select></p>
+                    <input type="hidden" name="sid" value="{SessionID}"/>
+                    <p class="centered"><input type="submit" value="Find"/></p>
+                </form>
+                <!-- end keywords selection form -->
+                <form id="KeywordIDs" name="KeywordIDs" action="#">
+                    {KeywordIDs}
+                </form>
+                {if(Records)}
+                <p>
+                <br/><br/>
+                <b>Your current selection of {Records - Object} records is:</b><br/>
+                {Selection Name Object}
+                </p>
+                {end if}
+                <p><b>Other Search Options:</b><br/>
+                <a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
+                <a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
+                <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+                <a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
+                Keywords |
+                <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
+            </section>
+            </div><!-- end .col -->
+            </div><!-- end .row -->
+        </main>
+        {Include footer.inc}
+    </div>
+    {Include shifternavigation.inc}
     {Include scripts.inc}
-</head>
-
-<body onload="clearKW();setMenu('search');" class="clearfix">
-
-{Include header.inc}
-<div id="content">
-
-<h1>Keyword Search</h1>
-
-<br><br>
-<div class="right"><a href="javascript:showHelp('KeywordSearch');">How do I use this search?</a></div>
-
-<!-- start keyword search form -->
-<form id="FindKW" name="FindKW" action="/4DACTION/HANDLECGI/KWA1" method="post">
-        <input type="hidden" name="sid" value="{SessionID}"/>
-
-         {HiddenValues}
-
-            Find keywords that begin with:<br/>
-            <input size="30" type="text" name="theKW"/> &nbsp; &nbsp;
-            <input type="submit" name="doSubmit" value="Find Keywords"/>
-        </form>
-		
-		<br><br>
-        <!-- end keyword search form -->
-
-        <!-- start keyword selection form -->
-        <form id="ChooseKW" name="ChooseKW" action="/4DACTION/HANDLECGI/QSF4?display=POR" method="post">
-
-            {HiddenValues}
-
-            <table cellspacing="0" cellpadding="0">
-                <tr>
-                    <td>
-                        Keyword pick list
-                        <select name="KeywordsFound" size="10" onchange="loadPath(this)">{KeywordsFound}</select>
-                    </td>
-
-                    <td align="center" width="100">
-                        <input type="button" name="add" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&#62;&#62;&nbsp;&nbsp;&nbsp;" onclick="addKW(document.forms['ChooseKW'].elements['KeywordsFound'])"/>
-                        <br/><br/>
-                        <input type="button" name="remove" value="&#60;&#60;&nbsp;&nbsp;Remove" onclick="removeKW()"/>
-                    </td>
-
-                    <td>
-                        Keywords to search by
-                        <select name="KeywordsSelected" size="10">{KeywordsSelected}</select>
-                    </td>
-                </tr>
-            </table>
-
-            <p>Keyword Path (for word selected in list above):<br/>
-            <input type="text" name="DisplayPath" size="60" onfocus="this.blur()"/></p>
-
-            <p>Return records with <b><input type="radio" name="SearchType" value="ALL" checked="checked"/>ALL<input type="radio" name="SearchType" value="ANY"/>ANY</b> &nbsp;&nbsp;of the selected keywords.</p>
-
-            <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
-
-            <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
-            <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
-            <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
-
-                <p>Sort by: <select name="sort"><option value="9">Title</option><option value="7">Artist</option></select></p>
-
-	<input type="hidden" name="sid" value="{SessionID}"/>
-            <p class="centered"><input type="submit" value="Find"/></p>
-        </form>
-        <!-- end keywords selection form -->
-
-
-<form id="KeywordIDs" name="KeywordIDs" action="#">
-    {KeywordIDs}
-</form>
-
-{if(Records)}
-    <p>
-        <br/><br/>
-        <b>Your current selection of {Records - Object} records is:</b><br/>
-        {Selection Name Object}
-    </p>
-{end if}
-
-<p><b>Other Search Options:</b><br/>
-<a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
-<a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
-<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
-<a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
-Keywords |
-<a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
-
-</div>
-{Include footer.inc}
-
 </body>
 </html>

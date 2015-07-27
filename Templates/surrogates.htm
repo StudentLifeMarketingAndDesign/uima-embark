@@ -1,49 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Surrogates.htm-->
-<html>
-<head>
-    <title>{Include title.inc} - Images</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
-
-<body class="clearfix">
-
-{Include header.inc}
-
-<div id="content">
-
-<h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a></h1>
-<span class="navtxt">&lt;&nbsp;<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">return to object description</a></span>
-
-<br/><br/>
-
-<table cellpadding="0" cellspacing="0" width="600">
-    <tr>
-        <td><b>Surrogates</b></td>
-        <td align="right">{Include activerecords.inc}</td>
-    </tr>
-</table>
-
-{Include PageNavigation.inc}
-
-<table cellpadding="0" cellspacing="0">
-
-    <!-- The following will repeat for each surrogate in the page. The kiosk will take care of inserting <tr> tags as appropriate. -->
-    {RecordLoop Start}
-        <td align="center" width="130">
-          <a href="{Full View}"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt="Image"/></a>
-          <br/><br/>
-          {[Surrogates]Image_Type}<br/>
-        </td>
-        <td width="10"> </td>
-    {RecordLoop End}
-
-</table>
-
-</div>
-{Include footer.inc}
-
-</body>
-</html>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a></h1>
+                        <span class="navtxt">&lt;&nbsp;<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">return to object description</a></span>
+                        <table cellpadding="0" cellspacing="0" width="600">
+                            <tr>
+                                <td><b>Surrogates</b></td>
+                                <td align="right">{Include activerecords.inc}</td>
+                            </tr>
+                        </table>
+                        
+                        <table cellpadding="0" cellspacing="0">
+                            <!-- The following will repeat for each surrogate in the page. The kiosk will take care of inserting <tr> tags as appropriate. -->
+                            {RecordLoop Start}
+                            <td align="center" width="130">
+                                <a href="{Full View}"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt="Image"/></a>
+                                <br/><br/>
+                                {[Surrogates]Image_Type}<br/>
+                            </td>
+                            <td width="10"> </td>
+                            {RecordLoop End}
+                        </table>
+                    </section>
+                    {Include PageNavigation.inc}
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

@@ -1,22 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Users/Reports/DeletePortfolio.htm-->
-<html>
-<head>
-  <title>{Include title.inc}</title>
-  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-  {Include scripts.inc}
-</head>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
 
-<body class="clearfix">
 
-{Include header.inc}
-<div id="content">
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+
+                <!-- Side Bar -->
+
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
 <p class="bold">{Message}</p>
 
 <div class="navtxt"><a href="/UPor?sid={SessionId}&x={Sequence}">My Portfolios</a></div>
-</div>
-{Include footer.inc}
 
-</body>
-</html>
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

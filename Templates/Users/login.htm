@@ -1,93 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Users/Login.htm-->
-<html>
-<head>
-    <title>{Include title.inc} Login</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
     <script type="text/javascript">
     <!--
-        function submitLogin() {
-            var today = new Date();
-            var expdate = new Date();
-
-            if( document.logForm.rememberMe.checked == true ) {
-                // Store a cookie that remembers the username.
-
-                // By default, remember the username for a year.
-                expdate.setTime( today.getTime() + ( 24 * 60 * 60 * 1000*365 ) );
-
-                document.cookie = "username=" + escape( document.logForm.username.value ) +
-                                  "; expires=" + expdate.toGMTString();
-            } else {
-                // If the cookie exists, erase it.
-                expdate.setTime( today.getTime() - 3600000*24 );
-                document.cookie = "username=;expires=" + expdate.toGMTString;
+            function submitLogin() {
+                var today = new Date();
+                var expdate = new Date();
+                if( document.logForm.rememberMe.checked == true ) {
+                    // Store a cookie that remembers the username.
+                    // By default, remember the username for a year.
+                    expdate.setTime( today.getTime() + ( 24 * 60 * 60 * 1000*365 ) );
+                    document.cookie = "username=" + escape( document.logForm.username.value ) +
+                                    "; expires=" + expdate.toGMTString();
+                } else {
+                    // If the cookie exists, erase it.
+                    expdate.setTime( today.getTime() - 3600000*24 );
+                    document.cookie = "username=;expires=" + expdate.toGMTString;
+                }
+                return true;
             }
-            return true;
-        }
-
-        function setUsername() {
-            var index = document.cookie.indexOf( "username=" );
-            if( index == -1 ) {
-                document.logForm.username.focus();
-                document.logForm.rememberMe.checked = false;
-                return null;
+            function setUsername() {
+                var index = document.cookie.indexOf( "username=" );
+                if( index == -1 ) {
+                    document.logForm.username.focus();
+                    document.logForm.rememberMe.checked = false;
+                    return null;
+                }
+                // Set the index to the start of the username.
+                index = document.cookie.indexOf( "=", index ) + 1;
+                // Find the end of the username.
+                var endstr = document.cookie.indexOf(";", index);
+                if( endstr == -1 ) endstr = document.cookie.length;
+                document.logForm.username.value = unescape(document.cookie.substring(index, endstr));
+                document.logForm.rememberMe.checked = true;
+                document.logForm.password.focus();
             }
-
-            // Set the index to the start of the username.
-            index = document.cookie.indexOf( "=", index ) + 1;
-
-            // Find the end of the username.
-            var endstr = document.cookie.indexOf(";", index);
-            if( endstr == -1 ) endstr = document.cookie.length;
-
-            document.logForm.username.value = unescape(document.cookie.substring(index, endstr));
-            document.logForm.rememberMe.checked = true;
-            document.logForm.password.focus();
-        }
     //-->
     </script>
-</head>
-
-<body onload="setMenu('logon');setUsername();" class="clearfix">
-
-{Include header.inc}
-<div id="content">
-<p>Welcome to the User Module.  You can use this section of the web site to build your own portfolios of images.</p>
-
-<p>Please enter your username and password below.</p>
-
-<p>If you do not yet have logon privileges, please email your Web Kiosk <a href="mailto:">administrator</a>.</p>
-
-<form name="logForm" id="logForm" action="/4DACTION/HandleCGI/User" method="post" onsubmit="submitLogin();">
-<input type="hidden" name="sid" value="{SessionID}"/>
-    <!--{Error message}-->
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td><input type="text" size="20" name="username"/></td>
-        </tr>
-
-        <tr>
-            <td>Password:</td>
-            <td><input type="password" size="20" name="password"/></td>
-        </tr>
-
-        <tr>
-            <td colspan="2"><input type="checkbox" name="rememberMe"/>Remember me</td>
-        </tr>
-
-        <tr>
-            <td colspan="2"><input type="submit" value="Log On"/></td>
-        </tr>
-    </table>
-</form>
-
-</div>
-
-{Include footer.inc}
-
-</body>
-</html>
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>Login</h1>
+                        <p>Welcome to the User Module.  You can use this section of the web site to build your own portfolios of images.</p>
+                        <p>Please enter your username and password below.</p>
+                        <p>If you do not yet have logon privileges, please email your Web Kiosk <a href="mailto:">administrator</a>.</p>
+                        <form name="logForm" id="logForm" action="/4DACTION/HandleCGI/User" method="post" onsubmit="submitLogin();">
+                            <input type="hidden" name="sid" value="{SessionID}"/>
+                            <!--{Error message}-->
+                            <table>
+                                <tr>
+                                    <td>Username:</td>
+                                    <td><input type="text" size="20" name="username"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Password:</td>
+                                    <td><input type="password" size="20" name="password"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="checkbox" name="rememberMe"/>Remember me</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="submit" value="Log On"/></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

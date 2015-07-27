@@ -1,107 +1,100 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Users/Portfolio.htm-->
-<html>
-<head>
-    <title>{Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+  <!--display options start -->
+                        <div class="display-options">
+                            <div class="smalltxt">View:</div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
+                                <a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
+                            </div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                                <a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+                            </div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                                <a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
+                            </div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+                                <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">description</a>
+                            </div>
+                        </div>
+                        <!--display options end-->
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <table cellpadding="0" cellspacing="0" width="600">
+                            <tr valign="top">
+                                <td>
+                                    <h1>{Portfolio Name}</h1>
+                                    {if([Portfolio]Notes!="")}
+                                    <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes</a>&nbsp;&gt;</span>
+                                    {end if}
+                                </td>
+                                <td align="right">{Include activerecords.inc}</td>
+                            </tr>
+                        </table>
+                        {Include PageNavigation.inc}
+                      
+                        
+                        {pagePopup;Edit Portfolio}
+                    
+                        <form id="removeObj" action="URem" name="removeObj">
+                            <input type="button" value="Done" onclick="removeObj.submit();"/>
+                         
+                            <!-- The following will repeat for each record in the page.
+                            The kiosk will take care of inserting row tags as appropriate. -->
 
-<body onload="setMenu('myportfolios');" class="clearfix">
-
-{Include header.inc}
-<div id="content">
-<table cellpadding="0" cellspacing="0" width="600">
-    <tr valign="top">
-        <td>
-            <h1>{Portfolio Name}</h1>
-            {if([Portfolio]Notes!="")}
-                <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes</a>&nbsp;&gt;</span>
-            {end if}
-        </td>
-        <td align="right">{Include activerecords.inc}</td>
-    </tr>
-</table>
-
-{Include PageNavigation.inc}
-
-<!--display options start -->
-<div class="display-options">
-    <div class="smalltxt">View:</div>
-    <div class="navtxt">
-        <img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
-        <a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
-        <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">description</a>
-    </div>
-</div>
-<!--display options end-->
-
-<br/><br/>
-
-{pagePopup;Edit Portfolio}
-<br><br>
-
-<form id="removeObj" action="URem" name="removeObj">
-
-<input type="button" value="Done" onclick="removeObj.submit();"/>
-<br><br>
-
-<!-- The following will repeat for each record in the page.
-The kiosk will take care of inserting row tags as appropriate. -->
-			 
-{RecordLoop Start}
-<div class="user-portfolio-record-box">
-	<div class="user-portfolio-thumbnail"><a href="{Object Info}&x={Sequence}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{If(Has Image)}<img src="{thumbnail}" width="{thumbnail width}" height="{thumbnail height}" alt=""/>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}</a>
-	</div>
-	<div class="user-portfolio-label">
-				<i>{[Objects_1]Disp_Title}</i><br/>
-				{[Objects_1]Disp_Maker_1}<br/>
-				{[Objects_1]Disp_Dimen}<br/>
-				{[Objects_1]Disp_Medium}<br/>
-				{[Objects_1]Display2}<br/><br/>
-    </div>
-	<div class="user-portfolio-action">
-	<input type="button" value="Remove" onclick="removeObj.obj.value='{[Objects_1]_ID}';removeObj.submit();"/>
-	</div>
-</div>
-{RecordLoop End}	 
-
-<br><br>
-
-<input type="button" value="Done" onclick="removeObj.submit();"/>
-
-<br><br>
-
-	<input type="hidden" name="port" value="{PortID}"/>
-	<input type="hidden" name="obj" value=""/>
-	<input type="hidden" name="rec" value="{Current Page}"/>
-	<input type="hidden" name="sid" value="{SessionId}"/>
-
-</form>
-
-<div class="selectionDesc">
-{Include selectiondescription.inc}
-</div>
-<br/><br/>
-{Include addobjtoportfolio.inc}
-</div>
-{Include footer.inc}
-
-</body>
-</html>
-</html>
-
-
-
+                            {RecordLoop Start}
+                            <div class="user-portfolio-record-box">
+                                <div class="user-portfolio-thumbnail"><a href="{Object Info}&x={Sequence}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{If(Has Image)}<img src="{thumbnail}" width="{thumbnail width}" height="{thumbnail height}" alt=""/>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}</a>
+                                </div>
+                                <div class="user-portfolio-label">
+                                    <i>{[Objects_1]Disp_Title}</i><br/>
+                                    {[Objects_1]Disp_Maker_1}<br/>
+                                    {[Objects_1]Disp_Dimen}<br/>
+                                    {[Objects_1]Disp_Medium}<br/>
+                                    {[Objects_1]Display2}<br/><br/>
+                                </div>
+                                <div class="user-portfolio-action">
+                                    <input type="button" value="Remove" onclick="removeObj.obj.value='{[Objects_1]_ID}';removeObj.submit();"/>
+                                </div>
+                            </div>
+                            {RecordLoop End}
+                          
+                            <input type="button" value="Done" onclick="removeObj.submit();"/>
+                         
+                            <input type="hidden" name="port" value="{PortID}"/>
+                            <input type="hidden" name="obj" value=""/>
+                            <input type="hidden" name="rec" value="{Current Page}"/>
+                            <input type="hidden" name="sid" value="{SessionId}"/>
+                        </form>
+                        <div class="selectionDesc">
+                            {Include selectiondescription.inc}
+                        </div>
+                 
+                        {Include addobjtoportfolio.inc}
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

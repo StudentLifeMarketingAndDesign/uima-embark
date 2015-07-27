@@ -1,46 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Security/LoginGeneral.htm-->
-<html>
-<head>
-  <title>{Include title.inc} Login</title>
-  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-  <script type="text/javascript">
-  //<!-- hide scripting from older browsers
-  function cont(tag) {
-  document.forms["Login"].action="/4DACTION/HANDLECGI/Log"+tag
-  document.forms["Login"].submit()
-  }
-  // end script hiding-->
-  </script>
-  {Include scripts.inc}
-</head>
-
-<body class="clearfix">
-
-{Include header.inc}
-<div id="content">
-<form id="Login" name="Login" method="post" action="/4DACTION/HANDLECGI/LogOK">
-<input type="hidden" name="sid" value="{SessionID}"/>
-    <table width="300">
-        <tr>
-            <td>
-                <p>A password is required to view this page.</p>
-                <p>If you have {type} access priveleges, please enter the password below and click OK.</p>
-            </td>
-        </tr>
-        <tr>
-            <td align="center">
-              <input type="password" size="30"name="password"/>
-              {hiddenFields}
-              <br/><br/>
-              <input type="submit" value="OK"/>
-            </td>
-        </tr>
-    </table>
-</form>
-</div>
-{Include footer.inc}
-
-</body>
-</html>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                <h1>Login</h1>
+                    <section id="main-content" tabindex="-1">
+                        <form id="Login" name="Login" method="post" action="/4DACTION/HANDLECGI/LogOK">
+                            <input type="hidden" name="sid" value="{SessionID}"/>
+                            <table width="300">
+                                <tr>
+                                    <td>
+                                        <p>A password is required to view this page.</p>
+                                        <p>If you have {type} access priveleges, please enter the password below and click OK.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <input type="password" size="30"name="password"/>
+                                        {hiddenFields}
+                                        <br/><br/>
+                                        <input type="submit" value="OK"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>
