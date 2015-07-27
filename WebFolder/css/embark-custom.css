@@ -1,4 +1,4 @@
-/**** Global changes *******/
+/**** Global body width changes *******/
 body.CollectionPage .main.container{
 	max-width: 1800px;
 }
@@ -12,8 +12,27 @@ body.CollectionPage .main.container{
 	    width: 1800px;
 	}
 }
+
+
 /***** Portfolio Page ******/
 
 .portfolio-label a{
 	display: inline;
+}
+
+
+/** General Tags/Keywords Styles *****/
+
+.objkeywords-record-box ul {
+	list-style-type: none;
+	margin: 0;
+	display: inline;
+}
+
+.objkeywords-record-box ul li{
+	display: inline-block;
+	background: #eee;
+	padding: 5px;
+	margin-right: 3px;
+	margin-bottom: 3px;
 }

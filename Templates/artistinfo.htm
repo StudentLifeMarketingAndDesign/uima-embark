@@ -12,7 +12,7 @@
         
             
         <div class="col-sm-12">
-            <h3 class="section-title">Browse Collection</h3>
+            <h3 class="section-title">Artist results</h3>
         </div>
 
         
@@ -20,19 +20,7 @@
         <!-- Side Bar -->
         
         <div class="col-md-4 col-lg-3 sidebar">
-            {Include sidenav.inc}
-        </div>
-        
-
-        <!-- Main Content -->
-        <div class="col-md-8 col-lg-8  children">
-            <section id="main-content" tabindex="-1">
-
-                <h1>Artist Results</h1>
-
-                {Include pagenavigation.inc}
-
-                <!-- display options start -->
+            <!-- display options start -->
                 <div class="display-options">
                     <div class="smalltxt">View:</div>
                     <div class="navtxt">
@@ -45,13 +33,22 @@
                     </div>
                 </div>
                 <!-- display options end -->
+            {Include sidenav.inc}
+        </div>
+        
 
-                <br/>
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8  children">
+            <section id="main-content" tabindex="-1">
 
+                <h1>{[Artist_Maker]Full_Name}</h1>
+
+               
+
+        
                 {pagePopup;Artist Info}
 
-                <br/>
-
+     
                 <!-- data layout table start -->
                 <table cellpadding="0" cellspacing="0" width="503">
                     <tr valign="top">
@@ -85,24 +82,19 @@
                 			
                             <br/><br/>
 
-                            View <a href="{Artist's objects}">objects</a> by this artist.
+                            <a href="{Artist's objects}">View objects by this artist &rarr; </a> 
                         </td>
                         <!-- data cell end -->
                     </tr>
                 </table>
                 <!-- data layout table end -->
 
-                <br/><br/>
                 {[Artist_Maker]Biography}
 
 
-                <br/><br/>
                 {if ([Surrogates])}
-                <br>
                 <hr>
-                <br>
                 <b>Additional Images</b>
-                <br><br>
                 {Start Loop([Surrogates];Order by [Surrogates]_ID)}
                 <div class="objsur-record-box">
                 	<div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
@@ -111,10 +103,11 @@
                 {End Loop}
                 {end if}
 
-                {Include selectiondescription.inc}
-                <br/><br/>
-                <i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.<i/>
+                
 
+                <i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i>
+                     {Include pagenavigation.inc}
+                     {Include selectiondescription.inc}
                     </section>
                         </div><!-- end .col -->
                     </div><!-- end .row -->

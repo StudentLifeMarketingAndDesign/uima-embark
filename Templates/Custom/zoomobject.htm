@@ -1,35 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Custom/zoomobject.htm-->
-<html>
-<head>
-    <title>{Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/zoomstyles.css"/>
-    {Include scripts.inc}
-</head>
 
-<body class="clearfix">
+{Include meta-head.inc}
+<link rel="stylesheet" type="text/css" href="/zoomstyles.css"/>
+<body class="CollectionPage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-<div class="right"><a href="javascript:showHelp('Zoomify');" title="help">How do I use Zoomify?</a></div>
+	{Include header.inc}
 
-<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a><br/>
-<i>(<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">Click to return to Description</a>)</i>
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Browse Collection</h3>
+		</div>
 
-{Include pagenavigation.inc}
+		
 
-<center>
-<div id="zoomify">
-	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="750" height="450" id="theMovie">
-	<param name="FlashVars" value="zoomifyImagePath={Zoom;blank.gif;}">
-	<param name="Menu" value="FALSE">
-	<param name="src" value="zoomifyViewer.swf">
-	<param name="bgcolor" value="#000000">
-	<embed FlashVars="zoomifyImagePath={Zoom;blank.gif;}" src="zoomifyViewer.swf" menu="false" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="750" height="450" name="theMovie"></embed>
-	</object>
-	</div>
-</center>
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
 
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8  children">
+			<section id="main-content" tabindex="-1">
+				<div class="right"><a href="javascript:showHelp('Zoomify');" title="help">How do I use Zoomify?</a></div>
+
+				<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a><br/>
+				<i>(<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">Click to return to Description</a>)</i>
+
+				{Include pagenavigation.inc}
+
+				<center>
+				<div id="zoomify">
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="750" height="450" id="theMovie">
+					<param name="FlashVars" value="zoomifyImagePath={Zoom;blank.gif;}">
+					<param name="Menu" value="FALSE">
+					<param name="src" value="zoomifyViewer.swf">
+					<param name="bgcolor" value="#000000">
+					<embed FlashVars="zoomifyImagePath={Zoom;blank.gif;}" src="zoomifyViewer.swf" menu="false" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="750" height="450" name="theMovie"></embed>
+					</object>
+					</div>
+				</center>
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>
+

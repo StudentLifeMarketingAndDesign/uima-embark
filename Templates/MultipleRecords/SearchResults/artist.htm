@@ -1,79 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--MultipleRecords/SearchResults/Artist.htm-->
-<html>
-<head>
-    <title>Artist Results - {Include title.inc}</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
 
-<body class="clearfix">
 
-{Include header.inc}
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
 
-<div id="content">
+                <!-- Side Bar -->
 
-{Include activerecords.inc}
-<h1>Artist Results</h1>
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
 
-{Include pagenavigation.inc}
-
-<!-- display options start -->
-<div class="display-options">
-    <div class="smalltxt">View:</div>
-    <div class="navtxt">
-        <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-        <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-    </div>
-    <div class="navtxt">
-        <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
-        <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
-    </div>
-</div>
-<!-- display options end -->
-
-{pagePopup;Artist Info}
-
-<table cellpadding="0" cellspacing="0">
-
-    <!-- The following will repeat for each record in the page. -->
-    {RecordLoop Start}
-        <tr height="10">
-            <td colspan="3"> </td>
-        </tr>
-
-        <tr valign="top">
-        {If(Has Image)}
-            <td align="center" valign="middle"><br/>
-                <a href="{Artist Info}"><img src="{Thumbnail}" height="{Thumbnail Height*.6}" alt=""/></a><br/>
-            </td>
-        {Else}
-            <td align="center" valign="middle"><img src="/graphics/DefaultPostage.gif" alt=""/></td>
-        {EndIf}
-
-            <td width="10"> </td>
-
-            <td valign="middle" align="left">
-                <a href="{Artist Info}">{[Artist_Maker]Display_Name}</a><br/>
-                {[Artist_Maker]Nat_Culture_L2}<br/>
-                {[Artist_Maker]Disp_Maker_Life}<br/><br/>
-            </td>
-        </tr>
-        <tr height="3"><td colspan="2"> </td></tr>
-    {RecordLoop End}
-
-</table>
-
-<br/><br/>
-
-<div class="selectionDesc">
-{Include selectiondescription.inc}
-</div>
-
-</div>
-
-{Include footer.inc}
-
-</body>
-</html>
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <h1>Artist search results</h1>
+                        
+                        <!-- display options start -->
+                        <div class="display-options">
+                            <div class="smalltxt">View:</div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                                <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+                            </div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+                                <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
+                            </div>
+                        </div>
+                        <!-- display options end -->
+                        {pagePopup;Artist Info}
+                        <table cellpadding="0" cellspacing="0">
+                            <!-- The following will repeat for each record in the page. -->
+                            {RecordLoop Start}
+                            <tr height="10">
+                                <td colspan="3"> </td>
+                            </tr>
+                            <tr valign="top">
+                                {If(Has Image)}
+                                <td align="center" valign="middle"><br/>
+                                    <a href="{Artist Info}"><img src="{Thumbnail}" height="{Thumbnail Height*.6}" alt=""/></a><br/>
+                                </td>
+                                {Else}
+                                <td align="center" valign="middle"><img src="/graphics/DefaultPostage.gif" alt=""/></td>
+                                {EndIf}
+                                <td width="10"> </td>
+                                <td valign="middle" align="left">
+                                    <a href="{Artist Info}">{[Artist_Maker]Display_Name}</a><br/>
+                                    {[Artist_Maker]Nat_Culture_L2}<br/>
+                                    {[Artist_Maker]Disp_Maker_Life}<br/><br/>
+                                </td>
+                            </tr>
+                            <tr height="3"><td colspan="2"> </td></tr>
+                            {RecordLoop End}
+                        </table>
+                        {Include pagenavigation.inc}
+                        <div class="selectionDesc">
+                            {Include selectiondescription.inc}
+                        </div>
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

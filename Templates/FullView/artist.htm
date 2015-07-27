@@ -12,7 +12,7 @@
         
             
         <div class="col-sm-12">
-            <h3 class="section-title">Browse Collection</h3>
+            <h3 class="section-title">Browse collection - artists</h3>
         </div>
 
         
@@ -20,18 +20,6 @@
         <!-- Side Bar -->
         
         <div class="col-md-4 col-lg-3 sidebar">
-            {Include sidenav.inc}
-        </div>
-        
-
-        <!-- Main Content -->
-        <div class="col-md-8 col-lg-8  children">
-            <section id="main-content" tabindex="-1">
-            {Include activerecords.inc}
-            <h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Artist_Maker]Display_Name}</a></h1>
-
-            {Include pagenavigation.inc}
-
             <!-- display options start -->
             <div class="display-options">
                 <div class="smalltxt">View:</div>
@@ -45,6 +33,15 @@
                 </div>
             </div>
             <!-- display options end -->
+            {Include sidenav.inc}
+        </div>
+        
+
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8  children">
+            <section id="main-content" tabindex="-1">
+            
+            <h1><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Artist_Maker]Display_Name}</a></h1>
 
             {pagePopup;Artist Info}
 
@@ -85,9 +82,7 @@
                 This artist does not have an image.
             {end if}
             </center>
-
-            <br/><br/>
-
+            {Include activerecords.inc}
             <div class="selectionDesc">
             {Include selectiondescription.inc}
             </div>

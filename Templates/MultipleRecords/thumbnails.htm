@@ -11,20 +11,13 @@
       
       
       <div class="col-sm-12">
-        <h3 class="section-title">Browse Collection</h3>
+        <h3 class="section-title">Browse collection - thumbnail view</h3>
       </div>
       
       <!-- Side Bar -->
       
       <div class="col-md-4 col-lg-3 sidebar">
-        {Include sidenav.inc}
-        {Include FilterBox.html}
-      </div>
-      
-      <!-- Main Content -->
-      <div class="col-md-8 col-lg-8  children">
-        <section id="main-content" tabindex="-1">
-          <!-- display options start -->
+ <!-- display options start -->
           <div class="display-options">
             <div class="smalltxt">View:</div>
             <div class="navtxt">
@@ -45,6 +38,14 @@
             </div>
           </div>
           <!-- display options end -->
+        {Include sidenav.inc}
+        {Include FilterBox.html}
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-md-8 col-lg-8  children">
+        <section id="main-content" tabindex="-1">
+         
           {Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
           <br><br>
           <!-- The following will repeat for each record in the page.
@@ -53,24 +54,7 @@
           <ul class="collectionsholder justify">
             <!-- child branches start -->
             {RecordLoop Start}
-              <li class="justify-item">
-                <div class="thumbnail-record-box">
-                  <div class="thumbnail-thumbnail">{If(Has Image)}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true"
-                    onmouseout="self.status = '';return true" title="Display Object Description"><img src="{thumbnail}"
-                  height="{thumbnail height}" width="{thumbnail width}" alt=""/></a>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}
-                  </div>
-                  <br>
-                  <div class="thumbnail-label">
-                    <a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description"><i>{[Objects_1]Disp_Title}</i></a><br/>
-                    {if(Logged In)}<span class="smalltxt">
-                      <a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});">Add to portfolio</a>&nbsp;&gt;<br/>
-                      {if(Editing Portfolio)}
-                      &lt;&nbsp;<a href="{RemoveFromPortfolio}&display=THU">Remove from portfolios</a><br/>
-                    {end if}</span>
-                    {end if}
-                </div>
-              </div>     
-            </li>
+              {Include portfolioitem.inc}
             {RecordLoop End}
             <!-- child branches end -->
             <li class="justify-item filler"></li>

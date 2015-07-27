@@ -1,13 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Custom/zoomobject.htm-->
-<html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-    <title>{Include title.inc} - Zoomify HTML 5 test</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <link rel="stylesheet" type="text/css" href="/zoomstyles.css"/>
-    {Include scripts.inc}
+{Include meta-head.inc}
 
 		<script type="text/javascript" src="/scripts/ZoomifyImageViewer-min.js"></script>
 		<style type="text/css">
@@ -24,9 +16,33 @@
 		-->
 		</style>
 		<script type="text/javascript"> Z.showImage("myContainer", "{Zoom;blank.gif;}", "zSkinPath=/Graphics/Assets/Skins/Dark");</script>
-</head>
+<body class="CollectionPage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-<body class="clearfix">
+	{Include header.inc}
+
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Browse Collection</h3>
+		</div>
+
+		
+
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
+
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8  children">
+			<section id="main-content" tabindex="-1">
 
 <div class="right"><a href="javascript:showHelp('Zoomify');" title="help">How do I use Zoomify?</a></div>
 
@@ -38,8 +54,16 @@
 <center>
 <div id="myContainer"></div>
 </center>
-
+				
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>

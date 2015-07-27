@@ -106,15 +106,14 @@
 		<!-- Section Heading -->
 		
 			
-		<div class="col-sm-12">
-			<h3 class="section-title">Collections</h3>
-		</div>
+
 
 		
 
 		<!-- Side Bar -->
 		
 		<div class="col-md-4 col-lg-3 sidebar">
+			<h2>Collection Object</h2>
 				<div class="display-options">
 					<div class="smalltxt">View:</div>
 					<div class="navtxt">
@@ -177,7 +176,10 @@
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
 					<!-- label copy end -->
+					</div>
 
+
+					<hr />
 					{if ([Objects_1]Technique!="")}
 						<div class="object-info-field"><b>Technique:</b> {[Objects_1]Technique}</div>
 					{end if}
@@ -201,20 +203,20 @@
 					{if ([Objects_1]Disp_Access_No!="")}
 						<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
 					{end if}
-				</div>
+				
 
 		{if ([Objects_1]Info_Page_Comm!="")}
 		<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
 		{end if}
 
-		<div class="objnotes-record-box"><b>Notes:</b>
-		{Notes}
+		<div class="objnotes-record-box">
+		<p>{Notes}</p>
 		</div>
-		<i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i>
+		<p><i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i></p>
 
 		<div class="objkeywords-record-box">
-		{if ([Keywords])}<hr>
-		<b>Keywords:</b> Click a term to load other records with the same keyword.
+		{if ([Keywords])}
+		<b>Keywords:</b>
 		<ul>
 		{Start Loop [Keywords]}
 		<li><a href="/4DACTION/HANDLECGI/QSF4?display=por&sid={SessionId}&KW0={[Keywords]_New_Pathnums}&KWID0={[Keywords]_New_ID}&SearchType=ALL&RefineSearch=NewSelection">{[Keywords]Word}</a>  <!-- {if ([Keywords]Notes != "")} -- {[Keywords]Notes}{end if} -->  </li>

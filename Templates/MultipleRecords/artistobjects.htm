@@ -13,7 +13,7 @@
         
             
         <div class="col-sm-12">
-            <h3 class="section-title">Collection search</h3>
+            <h3 class="section-title">Collection search - artist objects</h3>
         </div>
 
         
@@ -43,7 +43,7 @@
                 </div>
                 <!-- display options end -->
             {Include sidenav.inc}
-
+            {Include FilterBox.html}
         </div>
         
 
@@ -52,12 +52,8 @@
             <section id="main-content" tabindex="-1">
                 <h1>Collection object search results</h1>
 
-               
-
-
-
                 {pagePopup;Object Info}
-                <br><br>
+    
                 <!-- The following will repeat for each record in the page.
                      The kiosk will take care of inserting row tags as appropriate, if specified in Preferences. 
                      (Note: This template is currently configured for a kiosk in which the table option has been turned off for Artist Objects page. -->
@@ -91,8 +87,6 @@
                 {Include formaddtoport.inc}
 
                 {Include selectiondescription.inc}
-
-                <br /><br />
 
                 {Include addobjtoportfolio.inc}
                  {Include pagenavigation.inc}
