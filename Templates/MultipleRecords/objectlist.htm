@@ -17,16 +17,6 @@
             <!-- Side Bar -->
             
             <div class="col-md-4 col-lg-3 sidebar">
-                {Include sidenav.inc}
-                {Include FilterBox.html}
-            </div>
-            
-            <!-- Main Content -->
-            <div class="col-md-8 col-lg-8  children">
-                <section id="main-content" tabindex="-1">
-                    <div class="right">{Include activerecords.inc}</div>
-                    <h1>Object Results</h1>
-                    {Include pagenavigation.inc}
                     <!-- display options start -->
                     <div class="display-options">
                         <div class="smalltxt">View:</div>
@@ -48,6 +38,16 @@
                         </div>
                     </div>
                     <!-- display options end -->
+                {Include sidenav.inc}
+                {Include FilterBox.html}
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-8 col-lg-8  children">
+                <section id="main-content" tabindex="-1">
+                    <h1>Collection object results</h1>
+                    
+
                     {Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
                     <p>(Click on an underlined column heading to sort the list.)</p>
                     <!-- list start -->
@@ -99,6 +99,7 @@
                         {Include selectiondescription.inc}
                         <br><br>
                         {Include addobjtoportfolio.inc}
+                        {Include pagenavigation.inc}
                     </section>
                     </div><!-- end .col -->
                     </div><!-- end .row -->

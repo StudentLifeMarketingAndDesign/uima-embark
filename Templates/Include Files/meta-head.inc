@@ -8,7 +8,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>University of Iowa Museum of Art</title>
+	<title>
+	{if([Objects_1]Disp_Title!="")}{[Objects_1]Disp_Title} - {end if}University of Iowa Museum of Art
+
+	</title>
 	<script src="/js/modernizr.js"></script>
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>

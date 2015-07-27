@@ -1,33 +1,29 @@
-<!-- start pagenavigation -->
+<div id="PageNumbers">
+    <ul class="pagination">
 
-<!-- draws next/previous links at the top of every page that has a record selection -->
+         <!--4DIF (HasPrevious=TRUE)-->
+            <li class="arrow">
+                <a href="{First Page}" title="View the first page">« First page</a>
+             </li>
+            <li class="arrow">
+                <a href="{Previous}" title="View the previous page">« Previous page</a>
+             </li>
+         <!--4DELSE-->
 
-<p class="err">{Message}</p>
+         <!--4DENDIF-->
 
-<div class="page-nav">
-    <div class="page-nav-left navtxt">
-        <!--4DIF (HasPrevious=TRUE)-->
-            &lt;&lt;<a href="{First Page}">first</a>
-            &lt;<a href="{Previous}">previous</a>
+         <!--4DIF (HasNext)-->
+            <li class="arrow">
+                <a href="{Next}" title="View the next page">Next page »</a>
+             </li>
+            <li class="arrow">
+                <a href="{Last Page}" title="View the last page">Last page »</a>
+             </li>
         <!--4DELSE-->
-            &lt;&lt;first
-            &lt;previous
-        <!--4DENDIF-->
-    </div>
 
-    <div class="page-nav-right navtxt">
-        <!--4DIF (HasNext)-->
-            <!-- start active next/last links -->
-                <a href="{Next}">next</a>&gt;
-                <a href="{Last Page}">last</a>&gt;&gt;
-            <!-- end active next/last links -->
-        <!--4DELSE-->
-            <!-- start inactive next/last links -->
-                next&gt;
-                last&gt;&gt;
-            <!-- end inactive next/last links -->
         <!--4DENDIF-->
-    </div>
-</div>
 
-<!-- end pagenavigation -->
+    </ul>
+    <p>{Include activerecords.inc}</p>
+    </div><!-- start pagenavigation -->
+   

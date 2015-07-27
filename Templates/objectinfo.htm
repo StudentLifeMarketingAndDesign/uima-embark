@@ -68,6 +68,39 @@
 
 	{Include header.inc}
 
+{if(Has Image)}
+					<section class="artwork-image">
+				{if(Image height=="0")}
+					
+						<div class="container">
+							<img src="{Image Path}" alt="Joan Miró ">
+							
+						</div>
+					
+				{else}
+		        {if(Image duration=="0")}
+					<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main" src="{preview}" width="{thumbnail width*2.3}" height="{thumbnail height*2.3}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
+		        {else}
+		 <object
+		 classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
+		 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		 <param name="SRC" value="{Image Path}">
+		 <param name="AUTOPLAY" value="true">
+		 <param name="CONTROLLER" value="true">
+		 <embed
+		 src="{Image Path}" width="{image width}" height="{image height+15}"
+		 autoplay="true" controller="true"
+		 pluginspage="http://www.apple.com/quicktime/download/">
+		 </embed>
+		 </object>
+
+		        {end if}
+		        </section>
+				{end if}
+				{else}
+				This object does not have an image.
+				{end if}
+				
 	<main class="container main" role="main">
 	<div class="row">
 		<!-- Section Heading -->
@@ -82,19 +115,6 @@
 		<!-- Side Bar -->
 		
 		<div class="col-md-4 col-lg-3 sidebar">
-			{Include sidenav.inc}
-		</div>
-		
-
-		<!-- Main Content -->
-		<div class="col-md-8 col-lg-8  children">
-			<section id="main-content" tabindex="-1">
-
-				{Include activerecords.inc}
-				<h1>Object Results</h1>
-
-				{Include pagenavigation.inc}
-				
 				<div class="display-options">
 					<div class="smalltxt">View:</div>
 					<div class="navtxt">
@@ -114,101 +134,44 @@
 						description
 					</div>
 				</div>
+			{Include sidenav.inc}
+		</div>
+		
+
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8  children">
+			<section id="main-content" tabindex="-1">
+
+
+
+				
 				
 
-		{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
-
-		<table>
-			<tr>
-				<td class="object-info-image navtxt">
-				{if(Has Image)}
-				{if(Image height=="0")}
-					<object
-		            classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="200" height="100"
-		            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		            <param name="SRC" value="{Image Path}">
-		            <param name="AUTOPLAY" value="true">
-		            <param name="CONTROLLER" value="true">
-		            <embed
-		                src="{Image Path}" width="{Image width+100}" height="{Image height+100}"
-		                autoplay="true" controller="true"
-		                pluginspage="http://www.apple.com/quicktime/download/">
-		            </embed>
-					</object>
-				{else}
-		        {if(Image duration=="0")}
-					<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main" src="{preview}" width="{thumbnail width*2.3}" height="{thumbnail height*2.3}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
-		        {else}
-		 <object
-		 classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
-		 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		 <param name="SRC" value="{Image Path}">
-		 <param name="AUTOPLAY" value="true">
-		 <param name="CONTROLLER" value="true">
-		 <embed
-		 src="{Image Path}" width="{image width}" height="{image height+15}"
-		 autoplay="true" controller="true"
-		 pluginspage="http://www.apple.com/quicktime/download/">
-		 </embed>
-		 </object><br><br>
-
-		        {end if}
-				{end if}
-				{else}
-				This object does not have an image.
-				{end if}
 				
-					<a onclick="window.print();return false;" href="#">Print This Page</a><br>
 
-					{if(Logged In)}
-						<a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});" onmouseover="self.status='Add this object to a portfolio';return true;" onmouseout="self.statue='';return true;" class="navtxt">Add to portfolio</a> &gt;<br>
-						{if(Editing Portfolio)}
-							&lt; <a href="{RemoveFromPortfolio}&display=INF" onmouseover="self.status='Remove this object from the portfolio';return true;" onmouseout= "self.status='';return true;" class="navtxt">Remove from &quot;{Portfolio Name}&quot;</a><br>
-						{end if}
-					{end if}
-					<br>
-					<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
-					<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
-					<!-- {if ([Objects_1]Web_Access=="yes")}
-						<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
-					{end if} -->
+		
 
-					<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
-					<!-- {if ([Objects_1]Web_Access=="yes")}
-						<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
-					{end if} -->
 
-					<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
-					<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
-					<br>
-					<!-- Sample code end -->
-					
-					<!-- AddThis Button BEGIN -->
-					<!-- This code must be updated for your own AddThis account at http://www.addthis.com. Please note the example for customizing the URL to make a bookmarkable URL without session id information. -->
-					<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://YOUR_URL.com/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->';  addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = '<your account name>';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script>
-					<!-- AddThis Button END -->
-				</td>
-
-				<td class="object-info-label">
-					{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}<br><br>{end if}
+					{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}{end if}
 
 
 
 
 					{Start Loop [Object_Artist]}
-						<a href="{Artist Info}">{[Artist_Maker]Full_Name}</a><br>
+						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Full_Name}</a></h1>
 						<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
+						<div class="cutline">
 						{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
 						{Concat(" - ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]End_Date_Disp)}<br>
 						{if ([Object_Artist]Role != "")}
-							{concat(", ", [Object_Artist]Role, [Object_Artist]Place, [Object_Artist]Disp_Cont_Date)}<br><br>
+							{concat(", ", [Object_Artist]Role, [Object_Artist]Place, [Object_Artist]Disp_Cont_Date)}
 							{end if}
+						</div>
 					{End Loop}
-					
-					<br>
-					
+					<br />
+					<div class="cutline">
 					<!-- label copy start -->
-					<b><i>{[Objects_1]Disp_Title}</i></b><br>
+					<em>{[Objects_1]Disp_Title}</em><br>
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 					{if([Objects_1]Century!="")}{[Objects_1]Century}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
@@ -238,9 +201,7 @@
 					{if ([Objects_1]Disp_Access_No!="")}
 						<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
 					{end if}
-				</td>
-			</tr>
-		</table>
+				</div>
 
 		{if ([Objects_1]Info_Page_Comm!="")}
 		<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
@@ -249,12 +210,10 @@
 		<div class="objnotes-record-box"><b>Notes:</b>
 		{Notes}
 		</div>
-		<br><br>
 		<i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i>
 
 		<div class="objkeywords-record-box">
-		{if ([Keywords])}
-		<br><hr><br>
+		{if ([Keywords])}<hr>
 		<b>Keywords:</b> Click a term to load other records with the same keyword.
 		<ul>
 		{Start Loop [Keywords]}
@@ -265,7 +224,7 @@
 		</div>
 
 		{if ([Dimensions])}	
-		<hr><br>
+		<hr>
 		<b>Dimensions</b>
 		<ul>	
 		    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
@@ -278,15 +237,15 @@
 		<!-- This code is dependent on having Latitude and Longitude data in two object fields, such as User_Def_7 and User_Def_8 in the example below.  The code can be changed for any two Object fields. Be sure to adjust the script in the header if different fields are used. -->
 		{if([Objects_1]User_Def_7!="")}{if([Objects_1]User_Def_8!="")}
 		<hr>
-		<br><br>
+	
 
 		        <div class="popin">
 		          <div id="map"></div>
 		        </div>
-				<div class="smalltxt"><br><br><center>Latitude: {[Objects_1]User_Def_7} - Longitude: {[Objects_1]User_Def_8}</center></div>
+				<div class="smalltxt"><center>Latitude: {[Objects_1]User_Def_7} - Longitude: {[Objects_1]User_Def_8}</center></div>
 		{end if}{end if}
 
-		<br><br>
+
 		{if (Has Parent)}
 		<hr>
 		<div class="objrelated-record-box">
@@ -294,7 +253,7 @@
 		    <b>Related Parents:</b>
 		    {Start Loop([Related_Object]Type=="Parent")}
 			<div class="objrelated-record-box">
-				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
 				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
 			</div>
 		    {End Loop}
@@ -302,7 +261,6 @@
 		{end if}
 
 		{if (Has Sibling)}
-		<br><br>
 		<hr>
 		<div class="objrelated-record-box">
 
@@ -310,7 +268,7 @@
 		    <b>Related Siblings(s):</b>
 		    {Start Loop([Related_Object]Type=="Sibling")}
 			<div class="objrelated-record-box">
-				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
 				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
 			</div>
 		    {End Loop}
@@ -318,14 +276,13 @@
 		{end if}
 
 		{if (Has Child)}
-		<br><br>
 		<hr>
 		<div class="objrelated-record-box">
 		<p>
 		    <b>Related Children:</b>
 		    {Start Loop([Related_Object]Type=="Child")}
 			<div class="objrelated-record-box">
-				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
+				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
 				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
 			</div>
 		    {End Loop}
@@ -333,20 +290,16 @@
 		{end if}
 			
 		{if ([Surrogates])}
-		<br>
 		<hr>
-		<br>
-		<b>Additional Images</b><br>
+		<b>Additional Images</b>
 		<p>Right-click (Windows) or Ctrl-click (Macintosh) to open PDF in a new browser tab.</p>
-		<br><br>
 		{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
 		<div class="objsur-record-box">
 			<div class="objsur-thumbnail">
 			{if(Has Image)}
 		{if(Image duration=="0")}
-		<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+		<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div>
 		{end if}	
-		<br><br>
 		    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
 		    <div class="objsur-label"></div>
 		</div>
@@ -377,13 +330,13 @@
 		{end if}
 
 		{if ([Portfolios])}
-		<br><hr><br>
+		<hr>
 		<b>Portfolio List</b><br>
 		This object is a member of the following portfolios (click any portfolio name to view all objects in that portfolio):
-		<br><br>
+		
 		{Start Loop([Portfolios])}
 		<div class="objport-record-box">
-			<div class="objport-thumbnail"><a href="{Portfolio}&display=POR"><img src="{Thumbnail}"></a></div><br><br>
+			<div class="objport-thumbnail"><a href="{Portfolio}&display=POR"><img src="{Thumbnail}"></a></div>
 			<div class="objport-label"><a href="{Portfolio}&display=POR"><a href="{Portfolio}">{Portfolio Name}</a></div>
 		</div>
 		{End Loop}
@@ -391,7 +344,7 @@
 
 		<div id="clearDiv"></div>
 
-		<br><hr><!-- <br>View Current Selection of Records as: <ul>
+		<hr><!-- <br>View Current Selection of Records as: <ul>
 		<li><a href="results.html?sid={SessionId}&layout=cdwa&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>CDWA Lite XML</a>
 		<li><a href="results.html?sid={SessionId}&layout=lido&format=xml&maximumrecords=-1&recordType=objects_1&query=[Objects_1]_Objects_1_id within Current Selection" target=_blank>LIDO XML</a>
 		</ul>
@@ -400,9 +353,41 @@
 
 		{Include formaddtoport.inc}
 				
-		{Include selectiondescription.inc}
-		<br><br>
+		
+		
 		{Include addobjtoportfolio.inc}
+		{Include pagenavigation.inc}
+		{Include selectiondescription.inc}
+		{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
+<a onclick="window.print();return false;" href="#">Print This Page</a>
+
+					{if(Logged In)}
+						<a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});" onmouseover="self.status='Add this object to a portfolio';return true;" onmouseout="self.statue='';return true;" class="navtxt">Add to portfolio</a> &gt;<br>
+						{if(Editing Portfolio)}
+							&lt; <a href="{RemoveFromPortfolio}&display=INF" onmouseover="self.status='Remove this object from the portfolio';return true;" onmouseout= "self.status='';return true;" class="navtxt">Remove from &quot;{Portfolio Name}&quot;</a><br>
+						{end if}
+					{end if}
+					<br>
+					<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
+					<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
+					<!-- {if ([Objects_1]Web_Access=="yes")}
+						<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
+					{end if} -->
+
+					<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
+					<!-- {if ([Objects_1]Web_Access=="yes")}
+						<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
+					{end if} -->
+
+					<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
+					<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
+					<br>
+					<!-- Sample code end -->
+					
+					<!-- AddThis Button BEGIN -->
+					<!-- This code must be updated for your own AddThis account at http://www.addthis.com. Please note the example for customizing the URL to make a bookmarkable URL without session id information. -->
+					<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://YOUR_URL.com/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->';  addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = '<your account name>';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script>
+					<!-- AddThis Button END -->
 			</section>
 		</div><!-- end .col -->
 	</div><!-- end .row -->

@@ -1,3 +1,1 @@
-<br>
-<br>
-Your current search criteria is: {Selection Name}
+<p>Your current search criteria is: {Selection Name}</p>

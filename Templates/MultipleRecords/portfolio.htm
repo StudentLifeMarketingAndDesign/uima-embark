@@ -40,7 +40,7 @@
                     </div>
                     <!-- display options end -->
                 {Include sidenav.inc}
-                {Include FilterBox.html}
+                
             </div>
             
             <!-- Main Content -->
@@ -51,12 +51,12 @@
                     <!--4DELSE--><!--General record selection--><h1>Collection object results</h1>
                     <!--4DENDIF-->
                     {if([Portfolios]Notes!="")}
-                    <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes</a>&nbsp;&gt;</span>
+                    <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes &rarr;</a></span>
                     {end if}
                   
-                    
+            
                     {Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
-                    <br>
+    
                     {Include selectiondescription.inc}
                     <ul class="collectionsholder justify">
                     <!-- The following will repeat for each record in the page.
@@ -123,7 +123,6 @@
                 <br><br>
                 {Include addobjtoportfolio.inc}
                   {Include PageNavigation.inc}
-                  <div class="right">{Include activerecords.inc}</div>
             </section>
             </div><!-- end .col -->
             </div><!-- end .row -->
