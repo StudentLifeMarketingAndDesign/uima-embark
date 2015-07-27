@@ -1,0 +1,19 @@
+/**** Global changes *******/
+body.CollectionPage .main.container{
+	max-width: 1800px;
+}
+@media (min-width: 1600px){
+	body.CollectionPage .main.container{
+	    width: 1600px;
+	}
+}
+@media (min-width: 1800px){
+	body.CollectionPage .main.container{
+	    width: 1800px;
+	}
+}
+/***** Portfolio Page ******/
+
+.portfolio-label a{
+	display: inline;
+}

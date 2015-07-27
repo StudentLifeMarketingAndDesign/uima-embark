@@ -33,9 +33,15 @@
 					<input type="button" onclick="document.searchForm.submit()" value="search">
 			</form>
 			<ul class="first-level">
-				<li class="active"><a href="/">Collections Home</a></li>
-				<li><a href="/IT_-1?sid={SessionId}&x={Sequence}">Browse Collections</a></li>
-				<li><a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Advanced Search</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/IT_-1?sid={SessionId}&x={Sequence}">Browse collections</a>
+				<ul class="second-level">
+					<li><a href="/kiosk/browseartist.htm?sid=83&x=367">Browse by artist</a></li>
+					<li><a href="/kiosk/browseGeography.htm?sid=83&x=368">Browse by geography</a></li>
+					<li><a href="/kiosk/browsecategory.htm?sid=83&x369">Browse by curatorial category</a></li>
+				</ul>
+				</li>
+				<li><a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Advanced search</a></li>
 				<li><a href="/kiosk/help.htm">Help</a></li>
 			</ul>
 		</nav>

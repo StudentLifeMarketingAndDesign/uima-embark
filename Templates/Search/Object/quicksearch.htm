@@ -1,23 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Search/Object/QuickSearch.htm-->
-<html>
-<head>
-    <meta http-equiv="expires" content="1 Jan 1900 00:00 GMT"/>
-    <title>EmbARK Web Kiosk - Advanced Search</title>
-    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-    <script type="text/javascript">
-    //<!-- hide Javascript from older browsers
-        {scripts}
-    // end script hiding -->
-    </script>
-    {Include scripts.inc}
-</head>
+{Include meta-head.inc}
 
-<body onload="checkValues();setMenu('search');" class="clearfix">
+<body class="CollectionPage  shifter">
+<div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-{Include header.inc}
-<div id="content">
+    {Include header.inc}
+
+    <main class="container main" role="main">
+    <div class="row">
+        <!-- Section Heading -->
+        
+            
+        <div class="col-sm-12">
+            <h3 class="section-title">Browse Collection</h3>
+        </div>
+
+        
+
+        <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-3 sidebar">
+            {Include sidenav.inc}
+        </div>
+        
+
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8  children">
+            <section id="main-content" tabindex="-1">
+                <h1>{Branch title;Online Collections}</h1><br>
 <form action="/4DACTION/HANDLECGI/QSF2?display=POR" method="POST" name="QuickSearch">
     <h1>Advanced Search</h1>
 
@@ -68,7 +78,7 @@
 
                 <p><b>Other Search Options:</b><br/>
                 Advanced |
-		<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+        <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
                 <a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
                 <!-- <a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> | -->
                 <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
@@ -78,9 +88,20 @@
 <input type="hidden" name="sid" value="{SessionID}"/>
 
 </form>
-
-</div>
+            </section>
+        </div><!-- end .col -->
+    </div><!-- end .row -->
+</main>
 {Include footer.inc}
+</div>
 
+{Include shifternavigation.inc}
+
+{Include scripts.inc}
 </body>
 </html>
+
+
+
+
+

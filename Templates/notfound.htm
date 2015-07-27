@@ -1,24 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--NotFound.htm-->
-<html>
-<head>
-	<title>{Include title.inc}</title>
-	<link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-	{Include scripts.inc}
-</head>
 
-<body class="clearfix" class="clearfix">
+{Include meta-head.inc}
 
-{Include header.inc}
-<div id="content">
-<h1>ERROR: File not found.</h1>
+<body class="CollectionPage  shifter">
+<div class="shifter-page">
+	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
-({Error message})
+	{Include header.inc}
 
+	<main class="container main" role="main">
+	<div class="row">
+		<!-- Section Heading -->
+		
+			
+		<div class="col-sm-12">
+			<h3 class="section-title">Browse Collection</h3>
+		</div>
+
+		
+
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-3 sidebar">
+			{Include sidenav.inc}
+		</div>
+		
+
+		<!-- Main Content -->
+		<div class="col-md-8 col-lg-8  children">
+			<section id="main-content" tabindex="-1">
+			    <h1>Sorry, we couldn't find the page you were looking for. </h1><br>
+				
+			</section>
+		</div><!-- end .col -->
+	</div><!-- end .row -->
+</main>
+{Include footer.inc}
 </div>
 
-{Include footer.inc}
+{Include shifternavigation.inc}
 
+{Include scripts.inc}
 </body>
 </html>

@@ -1,7 +1,7 @@
 {Include meta-head.inc}
 {Include scripts.inc}
 {Include FilterBoxScripts.inc}
-<body class="CollectionHomePage  shifter">
+<body class="CollectionPage  shifter">
     <div class="shifter-page">
         <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
         {Include header.inc}
@@ -11,28 +11,14 @@
             
             
             <div class="col-sm-12">
-                <h3 class="section-title">Browse Collection</h3>
+                <h3 class="section-title">Browse collection</h3>
+
             </div>
             
             <!-- Side Bar -->
             
             <div class="col-md-4 col-lg-3 sidebar">
-                {Include sidenav.inc}
-                {Include FilterBox.html}
-            </div>
-            
-            <!-- Main Content -->
-            <div class="col-md-8 col-lg-8 col-lg-offset-1 children">
-                <section id="main-content" tabindex="-1">
-                    <div class="right">{Include activerecords.inc}</div>
-                    <!--4DIF (lPortId # 0)--><!--We're in a portfolio--><h1>{Portfolio Name}</h1>
-                    <!--4DELSE--><!--General record selection--><h1>Object Results</h1>
-                    <!--4DENDIF-->
-                    {if([Portfolios]Notes!="")}
-                    <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes</a>&nbsp;&gt;</span>
-                    {end if}
-                    {Include PageNavigation.inc}
-                    <!-- display options start -->
+                <!-- display options start -->
                     <div class="display-options">
                         <div class="smalltxt">View:</div>
                         <div class="navtxt">
@@ -53,19 +39,41 @@
                         </div>
                     </div>
                     <!-- display options end -->
+                {Include sidenav.inc}
+                {Include FilterBox.html}
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-8 col-lg-8  children">
+                <section id="main-content" tabindex="-1">
+                    
+                    <!--4DIF (lPortId # 0)--><!--We're in a portfolio--><h1>{Portfolio Name}</h1>
+                    <!--4DELSE--><!--General record selection--><h1>Collection object results</h1>
+                    <!--4DENDIF-->
+                    {if([Portfolios]Notes!="")}
+                    <span class="smalltxt"><a href="{Portfolio Note Link}">View portfolio notes</a>&nbsp;&gt;</span>
+                    {end if}
+                  
+                    
                     {Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
-                    <br><br>
+                    <br>
+                    {Include selectiondescription.inc}
                     <ul class="collectionsholder justify">
                     <!-- The following will repeat for each record in the page.
                     The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
                     (Note: This template is currently configured for a kiosk in which the table option has been turned off for Portfolio. -->
                     {RecordLoop Start}
+
                             <li class="justify-item">
+
+                                <div class="collection-box" style="background-image: url({Thumbnail});">
+
+                                </div>
                             <div class="portfolio-record-box">
-                                <div class="portfolio-thumbnail">{If(Has Image)}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true"
+                               <!-- <div class="portfolio-thumbnail">{If(Has Image)}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true"
                                     onmouseout="self.status = '';return true" title="Display Object Description"><img src="{thumbnail}"
                                 height="{thumbnail height*.7}" width="{thumbnail width*.7}" alt=""/></a>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}
-                            </div>
+                            </div>-->
                             <div class="portfolio-label">
                                 {If([Objects_1]Disp_Title!="")}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description"><i>{[Objects_1]Disp_Title}</i></a><br/>{End If}
                                 {If([Objects_1]Disp_Maker_1!="")}<a href="{Artist Info}">{[Objects_1]Disp_Maker_1}</a><br/>{End If}
@@ -83,6 +91,19 @@
                             </div>
                         </div>
                     </li>
+
+
+                   <!--<li class="highlight-item clearfix">
+                            <a class="highlight-link" href="{Object Info}">
+                                <span class="highlight-img" style="background-image: url({thumbnail});"></span>
+                                <div class="highlight-content">
+                                    <h4 class="highlight-artist"><a href="{Artist Info}">{[Objects_1]Disp_Maker_1}</a></h4>
+                                    {If([Objects_1]Disp_Create_DT!="")}<h4 class="highlight-lifespan">{[Objects_1]Disp_Create_DT}<br/></h4>{End If}
+                                    {If([Objects_1]Disp_Medium!="")}<h4 class="highlight-title">{[Objects_1]Disp_Medium}</h4>{End If}
+                                    <h5 class="highlight-title"><p><em>{[Objects_1]Disp_Title}</em></p>, {If([Objects_1]Creation_Place2!="")}<span>{[Objects_1]Creation_Place2}</span>{End If}</h5>
+                                </div>
+                            </a>
+                        </li>-->
                 {RecordLoop End}
                     <li class="justify-item filler"></li>
                 </ul>
@@ -98,9 +119,11 @@
                 <hr>
                 <br>
                 {Include formaddtoport.inc}
-                {Include selectiondescription.inc}
+                
                 <br><br>
                 {Include addobjtoportfolio.inc}
+                  {Include PageNavigation.inc}
+                  <div class="right">{Include activerecords.inc}</div>
             </section>
             </div><!-- end .col -->
             </div><!-- end .row -->
