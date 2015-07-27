@@ -13,6 +13,24 @@ body.CollectionPage .main.container{
 	}
 }
 
+/****** Side Nav Search *****/
+
+.sec-nav .search-bar #Search{
+	float: none;
+}
+
+/** Side Nav Hide Display Menu on Mobile *****/
+
+
+.display-options{
+	display: none;
+}
+
+@media (min-width: 960px){
+	.display-options{
+		display: block;
+	}
+}
 
 /***** Portfolio Page ******/
 
