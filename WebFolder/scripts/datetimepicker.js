@@ -154,11 +154,11 @@ function RenderCal()
 	}
 	vCalHeader+="</select></td>";
 	//Year selector
-	vCalHeader+="\n<td align='right'><a href=\"javascript:winMain.Cal.DecYear();winMain.RenderCal()\"><b><font color=\""+YrSelColor+"\"><</font></b></a><font face=\"Verdana\" color=\""+YrSelColor+"\" size=2><b> "+Cal.Year+" </b></font><a href=\"javascript:winMain.Cal.IncYear();winMain.RenderCal()\"><b><font color=\""+YrSelColor+"\">></font></b></a></td></tr></table></td>\n";	
+	vCalHeader+="\n<td align='right'><a href=\"javascript:winMain.Cal.DecYear();winMain.RenderCal()\"><strong><font color=\""+YrSelColor+"\"><</font></strong></a><font face=\"Verdana\" color=\""+YrSelColor+"\" size=2><strong> "+Cal.Year+" </strong></font><a href=\"javascript:winMain.Cal.IncYear();winMain.RenderCal()\"><strong><font color=\""+YrSelColor+"\">></font></strong></a></td></tr></table></td>\n";	
 	vCalHeader+="</tr>";
 	//Calendar header shows Month and Year
 	if (ShowMonthYear)
-		vCalHeader+="<tr><td colspan='7'><font face='Verdana' size='2' align='center' color='"+MonthYearColor+"'><b>"+Cal.GetMonthName(ShowLongMonth)+" "+Cal.Year+"</b></font></td></tr>\n";
+		vCalHeader+="<tr><td colspan='7'><font face='Verdana' size='2' align='center' color='"+MonthYearColor+"'><strong>"+Cal.GetMonthName(ShowLongMonth)+" "+Cal.Year+"</strong></font></td></tr>\n";
 	//Week day header
 	vCalHeader+="<tr bgcolor="+WeekHeadColor+">";
 	for (i=0;i<7;i++)
@@ -257,7 +257,7 @@ function GenCell(pValue,pHighLight,pColor)//Generate table cell with value
 	else
 		vColor="";	
 	if ((pHighLight!=null)&&(pHighLight))
-		{vHLstr1="color='red'><b>";vHLstr2="</b>";}
+		{vHLstr1="color='red'><strong>";vHLstr2="</strong>";}
 	else
 		{vHLstr1=">";vHLstr2="";}	
 	

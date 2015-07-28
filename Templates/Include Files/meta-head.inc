@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>
-	{if([Objects_1]Disp_Title!="")}{[Objects_1]Disp_Title} - {end if}University of Iowa Museum of Art
+	{if([Objects_1]Disp_Title!="")}{[Objects_1]Disp_Title} - {end if}University of Iowa Museum of Art Collections
 
 	</title>
 	<script src="/js/modernizr.js"></script>

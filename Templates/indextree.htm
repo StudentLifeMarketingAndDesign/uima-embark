@@ -27,21 +27,15 @@
 		<!-- Main Content -->
 		<div class="col-md-8 col-lg-8  children">
 			<section id="main-content" tabindex="-1">
-			    <h1>{Branch title;Online Collections}</h1><br>
+			    <h1>{Branch title;All collections}</h1>
 				    <!-- Hide 'up a level' at top level -->
 			    {if(_ID!="-1")}
 			    	<span class="smalltxt"><a href="{ParentLink}">&uarr; Go up a level</a></span>
 				{else}
-			    	Click any link below to begin browsing through the collection.
+			    
 			    {end if}
-				 <br><br>
-				<a href="kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by Artist</a> - <a href="kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by Geography</a> - 
-				<a href="kiosk/browsecategory.htm?sid={SessionId}&x{Sequence}">Browse by Curatorial Category</a>
-				
-				<br><br>
-				<hr>
 
-				<ul class="collectionsholder justify">
+				<ul class="collectionsholder justify-4">
 					<!-- child branches start -->
 					{RecordLoop Start}
 						{Include collectionitem.inc}

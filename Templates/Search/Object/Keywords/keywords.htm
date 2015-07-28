@@ -52,7 +52,7 @@
                     </table>
                     <p>Keyword Path (for word selected in list above):<br/>
                     <input type="text" name="DisplayPath" size="60" onfocus="this.blur()"/></p>
-                    <p>Return records with <b><input type="radio" name="SearchType" value="ALL" checked="checked"/>ALL<input type="radio" name="SearchType" value="ANY"/>ANY</b> &nbsp;&nbsp;of the selected keywords.</p>
+                    <p>Return records with <strong><input type="radio" name="SearchType" value="ALL" checked="checked"/>ALL<input type="radio" name="SearchType" value="ANY"/>ANY</strong> &nbsp;&nbsp;of the selected keywords.</p>
                     <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
                     <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
                     <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
@@ -68,11 +68,11 @@
                 {if(Records)}
                 <p>
                 <br/><br/>
-                <b>Your current selection of {Records - Object} records is:</b><br/>
+                <strong>Your current selection of {Records - Object} records is:</strong><br/>
                 {Selection Name Object}
                 </p>
                 {end if}
-                <p><b>Other Search Options:</b><br/>
+                <p><strong>Other Search Options:</strong><br/>
                 <a href="/QS_2?sid={SessionId}&x={Sequence}">Advanced</a> |
                 <a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
                 <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |

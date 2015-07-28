@@ -124,8 +124,8 @@
 
                     <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
 
-                    <p><input type="radio" name="SearchType" value="all" checked/><b>AND</b> search terms
-                    <input type="radio" name="SearchType" value="any"/><b>OR</b> search terms</p>
+                    <p><input type="radio" name="SearchType" value="all" checked/><strong>AND</strong> search terms
+                    <input type="radio" name="SearchType" value="any"/><strong>OR</strong> search terms</p>
 
                     <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
                     <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
@@ -139,13 +139,13 @@
                 {if(Records)}
                     <p>
                         <br/><br/>
-                        <b>Your current selection of {Records - Object} records is:</b><br/>
+                        <strong>Your current selection of {Records - Object} records is:</strong><br/>
                         {Selection Name Object}
                     </p>
                 {end if}
 
 
-                <p><b>Other Search Options:</b><br/>
+                <p><strong>Other Search Options:</strong><br/>
                 Advanced Search |
                 <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
                 

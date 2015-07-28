@@ -115,7 +115,7 @@
 		<div class="col-md-4 col-lg-3 sidebar">
 			<h2>Collection Object</h2>
 				<div class="display-options">
-					<div class="smalltxt">View:</div>
+					<div class="smalltxt">View as:</div>
 					<div class="navtxt">
 						<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
 						<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
@@ -130,7 +130,7 @@
 					</div>
 					<div class="navtxt">
 						<img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
-						description
+						descriptions
 					</div>
 				</div>
 			{Include sidenav.inc}
@@ -180,43 +180,72 @@
 
 
 					<hr />
-					{if ([Objects_1]Technique!="")}
-						<div class="object-info-field"><b>Technique:</b> {[Objects_1]Technique}</div>
-					{end if}
-					
-					{if ([Objects_1]Class_System!="")}
-						<div class="object-info-field"><b>Curatorial Department:</b> {[Objects_1]Class_System}</div>
-					{end if}
-					
-					{if ([Objects_1]Creation_Place2!="")}
-						<div class="object-info-field"><b>Region:</b> {[Objects_1]Creation_Place2}</div>
-					{end if}
 
-					{if ([Objects_1]Dedication!="")}
-						<div class="object-info-field"><b>Credit Line:</b> {[Objects_1]Dedication}</div>
-					{end if}
-					
-						<!--<div class="object-info-field"><b>Legal Status Date:</b>-->
-						<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
-						<!--{[Objects_1]Lgl_Stts_Date}</div>-->
+		<div class="row">
 
-					{if ([Objects_1]Disp_Access_No!="")}
-						<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
-					{end if}
-				
+		<div class="col-lg-8">
+			{if ([Objects_1]Technique!="")}
+				<div class="object-info-field"><strong>Technique:</strong> {[Objects_1]Technique}</div>
+			{end if}
+			
+			{if ([Objects_1]Class_System!="")}
+				<div class="object-info-field"><strong>Curatorial Department:</strong> {[Objects_1]Class_System}</div>
+			{end if}
+			
+			{if ([Objects_1]Creation_Place2!="")}
+				<div class="object-info-field"><strong>Region:</strong> {[Objects_1]Creation_Place2}</div>
+			{end if}
 
-		{if ([Objects_1]Info_Page_Comm!="")}
-		<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
-		{end if}
+			{if ([Objects_1]Dedication!="")}
+				<div class="object-info-field"><strong>Credit Line:</strong> {[Objects_1]Dedication}</div>
+			{end if}
+			
+				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
+				<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
+				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
 
-		<div class="objnotes-record-box">
-		<p>{Notes}</p>
+			{if ([Objects_1]Disp_Access_No!="")}
+				<div class="object-info-field"><strong>Accession Number:</strong> {[Objects_1]Disp_Access_No}</div>
+			{end if}
+				{if ([Dimensions])}	
+				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
+				    	<div class="object-info-field"><strong>Subject:</strong> {[Dimensions]Dimen_Subject}<br />
+				    	<strong>Dimensions:</strong> {[Dimensions]Disp_Dimen}</div>
+				    {End Loop}
+				{End if}					
+
+			{if ([Objects_1]Info_Page_Comm!="")}
+			<div class="object-info-field"><strong>Comments:</strong> {[Objects_1]Info_Page_Comm}</div>
+			{end if}
+			<div class="objnotes-record-box">
+			<p>{Notes}</p>
+			</div>
 		</div>
+
+		{if ([Surrogates])}
+		<div class="col-lg-4 text-right">
+			<strong>Additional Images</strong>
+			{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
+			<div class="objsur-record-box">
+				<div class="objsur-thumbnail">
+				{if(Has Image)}
+			{if(Image duration=="0")}
+			<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div>
+			{end if}	
+			    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
+			    <div class="objsur-label"></div>
+			</div>
+			{End If}
+			{End Loop}
+		</div>
+		{end if}
+		</div>
+
 		<p><i>Please be aware that the UIMA Online Collections were created from historic documentation. Not all cataloguing records have been reviewed by a curator and some may be inaccurate or incomplete. Our records are frequently updated and revised.</i></p>
 
 		<div class="objkeywords-record-box">
 		{if ([Keywords])}
-		<b>Keywords:</b>
+		<strong>Keywords:</strong>
 		<ul>
 		{Start Loop [Keywords]}
 		<li><a href="/4DACTION/HANDLECGI/QSF4?display=por&sid={SessionId}&KW0={[Keywords]_New_Pathnums}&KWID0={[Keywords]_New_ID}&SearchType=ALL&RefineSearch=NewSelection">{[Keywords]Word}</a>  <!-- {if ([Keywords]Notes != "")} -- {[Keywords]Notes}{end if} -->  </li>
@@ -225,15 +254,7 @@
 		{end if}
 		</div>
 
-		{if ([Dimensions])}	
-		<hr>
-		<b>Dimensions</b>
-		<ul>	
-		    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-		        <li><b>Subject:</b> {[Dimensions]Dimen_Subject} <b>Dimensions:</b> {[Dimensions]Disp_Dimen}
-		    {End Loop}
-		</ul>
-		{End if}
+
 
 		<!-- Display map with gmaps.js -->
 		<!-- This code is dependent on having Latitude and Longitude data in two object fields, such as User_Def_7 and User_Def_8 in the example below.  The code can be changed for any two Object fields. Be sure to adjust the script in the header if different fields are used. -->
@@ -252,7 +273,7 @@
 		<hr>
 		<div class="objrelated-record-box">
 		<p>
-		    <b>Related Parents:</b>
+		    <strong>Related Parents:</strong>
 		    {Start Loop([Related_Object]Type=="Parent")}
 			<div class="objrelated-record-box">
 				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
@@ -267,7 +288,7 @@
 		<div class="objrelated-record-box">
 
 		<p>
-		    <b>Related Siblings(s):</b>
+		    <strong>Related Siblings(s):</strong>
 		    {Start Loop([Related_Object]Type=="Sibling")}
 			<div class="objrelated-record-box">
 				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
@@ -281,38 +302,22 @@
 		<hr>
 		<div class="objrelated-record-box">
 		<p>
-		    <b>Related Children:</b>
+		    <strong>Related Children:</strong>
+		    <ul class="collectionsholder justify-4">
 		    {Start Loop([Related_Object]Type=="Child")}
-			<div class="objrelated-record-box">
-				<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div>
-				<div class="objrelated-label"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}">{[Objects_1]Disp_Title}</a></div>
-			</div>
+		    	{Include portfolioitem.inc}
 		    {End Loop}
+		    	<li class="justify-item filler"></li>
+		    </ul>
 		</div>
 		{end if}
 			
-		{if ([Surrogates])}
-		<hr>
-		<b>Additional Images</b>
-		<p>Right-click (Windows) or Ctrl-click (Macintosh) to open PDF in a new browser tab.</p>
-		{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
-		<div class="objsur-record-box">
-			<div class="objsur-thumbnail">
-			{if(Has Image)}
-		{if(Image duration=="0")}
-		<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div>
-		{end if}	
-		    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
-		    <div class="objsur-label"></div>
-		</div>
-		{End If}
-		{End Loop}
-		{end if}
+
 
 		{if ([Biblio_Citation])}
 		<hr>
 		<p>
-		    <b>Bibliography List</b><br/>
+		    <strong>Bibliography</strong><br/>
 		    This object has the following bibliographic references:
 		    <ul>
 		    {Start Loop([Biblio_Citation])}
@@ -333,15 +338,21 @@
 
 		{if ([Portfolios])}
 		<hr>
-		<b>Portfolio List</b><br>
+		<strong>Portfolio List</strong>
 		This object is a member of the following portfolios (click any portfolio name to view all objects in that portfolio):
-		
+
+		<ul class="collectionsholder justify-4">
 		{Start Loop([Portfolios])}
-		<div class="objport-record-box">
-			<div class="objport-thumbnail"><a href="{Portfolio}&display=POR"><img src="{Thumbnail}"></a></div>
-			<div class="objport-label"><a href="{Portfolio}&display=POR"><a href="{Portfolio}">{Portfolio Name}</a></div>
-		</div>
+			<li class="justify-item">
+				<a href="{Portfolio}&display=POR">
+				<div class="collection-box" style="background-image: url({Thumbnail});">
+					<h2 class="title">{Portfolio Name}</h2>
+				</div>
+				</a>
+			</li>
 		{End Loop}
+		<li class="justify-item filler"></li>
+		</ul>
 		{end if}
 
 		<div id="clearDiv"></div>
@@ -360,7 +371,7 @@
 		{Include addobjtoportfolio.inc}
 		{Include pagenavigation.inc}
 		{Include selectiondescription.inc}
-		{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}
+		<!--{Popup;Object Info;<<[Objects_1]Disp_Title>> - <<[Objects_1]Disp_Maker_1>>}-->
 <a onclick="window.print();return false;" href="#">Print This Page</a>
 
 					{if(Logged In)}
@@ -369,21 +380,21 @@
 							&lt; <a href="{RemoveFromPortfolio}&display=INF" onmouseover="self.status='Remove this object from the portfolio';return true;" onmouseout= "self.status='';return true;" class="navtxt">Remove from &quot;{Portfolio Name}&quot;</a><br>
 						{end if}
 					{end if}
-					<br>
+				
 					<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
 					<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
 					<!-- {if ([Objects_1]Web_Access=="yes")}
-						<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
+						<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><strong>Zoomable Image - HTML 5 Viewer</strong></a><br>
 					{end if} -->
 
 					<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
 					<!-- {if ([Objects_1]Web_Access=="yes")}
-						<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
+						<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><strong>Zoomable Image - Flash Viewer</strong></a><br>
 					{end if} -->
 
 					<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
 					<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
-					<br>
+		
 					<!-- Sample code end -->
 					
 					<!-- AddThis Button BEGIN -->

@@ -87,7 +87,7 @@
 		{Include pagenavigation.inc}
 		
 		<div class="display-options">
-			<div class="smalltxt">View:</div>
+			<div class="smalltxt">View as:</div>
 			<div class="navtxt">
 				<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
 				<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
@@ -161,12 +161,12 @@
 			<!-- Zoomify HTML5 link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
 			<!-- Save ZoomifyImageViewer-min.js to the webfolder/scripts directory. Purchase file at http://www.zoomify.com -->
 			{if ([Objects_1]Web_Access=="yes")}
-				<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - HTML 5 Viewer</b></a><br>
+				<a href="{Custom;zoomobject5;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><strong>Zoomable Image - HTML 5 Viewer</strong></a><br>
 			{end if}
 
 			<!-- Zoom link. You must use the Zoomify utility available at http://www.zoomify.com to convert your high-res files to Zoomify format. -->
 			{if ([Objects_1]Web_Access=="yes")}
-				<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><b>Zoomable Image - Flash Viewer</b></a><br>
+				<a href="{Custom;zoomobject;Current}&x={Sequence}" onmouseover="self.status = 'View Zoom Image';return true" onmouseout="self.status = '';return true"><strong>Zoomable Image - Flash Viewer</strong></a><br>
 			{end if}
 
 			<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
@@ -184,7 +184,7 @@
 			{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}<br><br>{end if}
 
 			<!-- label copy start -->
-			<b>{[Objects_1]Disp_Title}</b><br>
+			<strong>{[Objects_1]Disp_Title}</strong><br>
 			{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 			{if([Objects_1]Century!="")}{[Objects_1]Century}<br>{end if}
 			{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
@@ -203,40 +203,40 @@
 
 
 			{if ([Objects_1]Disp_Obj_Type!="")}
-				<div class="object-info-field"><b>Object Type:</b> {[Objects_1]Disp_Obj_Type}</div>
+				<div class="object-info-field"><strong>Object Type:</strong> {[Objects_1]Disp_Obj_Type}</div>
 			{end if}
 
 			{if ([Objects_1]Disp_Medium!="")}
-				<div class="object-info-field"><b>Medium and Support:</b> {[Objects_1]Disp_Medium}</div>
+				<div class="object-info-field"><strong>Medium and Support:</strong> {[Objects_1]Disp_Medium}</div>
 			{end if}
 
 			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><b>Credit Line:</b> {[Objects_1]Dedication}</div>
+				<div class="object-info-field"><strong>Credit Line:</strong> {[Objects_1]Dedication}</div>
 			{end if}
 
-				<div class="object-info-field"><b>Legal Status Date:</b>
+				<div class="object-info-field"><strong>Legal Status Date:</strong>
 				<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
 				{[Objects_1]Lgl_Stts_Date}</div>
 
 			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><b>Accession Number:</b> {[Objects_1]Disp_Access_No}</div>
+				<div class="object-info-field"><strong>Accession Number:</strong> {[Objects_1]Disp_Access_No}</div>
 			{end if}
 
 			{if ([Objects_1]Info_Page_Comm!="")}
-				<div class="object-info-field"><b>Comments:</b> {[Objects_1]Info_Page_Comm}</div>
+				<div class="object-info-field"><strong>Comments:</strong> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 		</td>
 	</tr>
 </table>
 
-<div class="objnotes-record-box"><b>Notes:</b>
+<div class="objnotes-record-box"><strong>Notes:</strong>
 {Notes}
 </div>
 
 <div class="objkeywords-record-box">
 {if ([Keywords])}
 <br><hr><br>
-<b>Keywords:</b> Click a term to load other records with the same keyword.
+<strong>Keywords:</strong> Click a term to load other records with the same keyword.
 <ul>
 {Start Loop [Keywords]}
 <li><a href="/4DACTION/HANDLECGI/QSF4?display=por&sid={SessionId}&KW0={[Keywords]_New_Pathnums}&KWID0={[Keywords]_New_ID}&SearchType=ALL&RefineSearch=NewSelection">{[Keywords]Word}</a>  {if ([Keywords]Notes != "")} -- {[Keywords]Notes}{end if}</li>
@@ -247,10 +247,10 @@
 
 {if ([Dimensions])}	
 <hr><br>
-<b>Dimensions</b>
+<strong>Dimensions</strong>
 <ul>	
     {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-        <li><b>Subject:</b> {[Dimensions]Dimen_Subject} <b>Measured by:</b> {[Dimensions]Measured_by~[Agents]Sort_Name} <b>Dimensions:</b> {[Dimensions]Disp_Dimen}  {if ([Dimensions]Remarks!="")}<b>Remarks:</b> {[Dimensions]Remarks}{End if}
+        <li><strong>Subject:</strong> {[Dimensions]Dimen_Subject} <strong>Measured by:</strong> {[Dimensions]Measured_by~[Agents]Sort_Name} <strong>Dimensions:</strong> {[Dimensions]Disp_Dimen}  {if ([Dimensions]Remarks!="")}<strong>Remarks:</strong> {[Dimensions]Remarks}{End if}
     {End Loop}
 </ul>
 {End if}
@@ -272,7 +272,7 @@
 <hr>
 <div class="objrelated-record-box">
 <p>
-    <b>Related Parents:</b>
+    <strong>Related Parents:</strong>
     {Start Loop([Related_Object]Type=="Parent")}
 	<div class="objrelated-record-box">
 		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
@@ -288,7 +288,7 @@
 <div class="objrelated-record-box">
 
 <p>
-    <b>Related Siblings(s):</b>
+    <strong>Related Siblings(s):</strong>
     {Start Loop([Related_Object]Type=="Sibling")}
 	<div class="objrelated-record-box">
 		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
@@ -303,7 +303,7 @@
 <hr>
 <div class="objrelated-record-box">
 <p>
-    <b>Related Children:</b>
+    <strong>Related Children:</strong>
     {Start Loop([Related_Object]Type=="Child")}
 	<div class="objrelated-record-box">
 		<div class="objrelated-thumbnail"><a href="/obj{_ID}.htm?sid={SessionId}&x={Sequence}"><img src="{Thumbnail}" border="0"></a></div><br><br>
@@ -317,7 +317,7 @@
 <br>
 <hr>
 <br>
-<b>Additional Images</b>
+<strong>Additional Images</strong>
 <br><br>
 {Start Loop([Surrogates];Order by [Surrogates]_ID)}
 <div class="objsur-record-box">
@@ -330,7 +330,7 @@
 {if ([Biblio_Citation])}
 <hr>
 <p>
-    <b>Bibliography List</b><br/>
+    <strong>Bibliography List</strong><br/>
     This object has the following bibliographic references:
     <ul>
     {Start Loop([Biblio_Citation])}
@@ -351,7 +351,7 @@
 
 {if ([Portfolios])}
 <br><hr><br>
-<b>Portfolio List</b><br>
+<strong>Portfolio List</strong><br>
 This object is a member of the following portfolios (click any portfolio name to view all objects in that portfolio):
 <br><br>
 {Start Loop([Portfolios])}

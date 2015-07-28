@@ -49,7 +49,7 @@ xmlns:dc="http://dublincore.org/documents/2006/12/18/dces/">
 <dc:type>Image</dc:type>
 <dc:type>Image</dc:type>
 <dcterms:valid>Validity</dcterms:valid>
-<mediaLabel><b><!--#4DVAR [Objects_1]Disp_Title--></b><br/>
+<mediaLabel><strong><!--#4DVAR [Objects_1]Disp_Title--></strong><br/>
 <!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker--><!--#4DIF (GetSelectedRecordNumber(17) # 1)-->; <!--#4DENDIF--><!--#4DVAR [Artist_Maker]Sort_Name--><!--#4DENDLOOP--><br/>
 <!--#4DVAR [Objects_1]Disp_Create_DT--><br/>
 <!--#4DVAR [Objects_1]Disp_Medium--><br/>

@@ -13,7 +13,12 @@ body.CollectionPage .main.container{
 	}
 }
 
-/****** Side Nav Search *****/
+/****** Side Nav *****/
+@media (min-width: 769px){
+ body.CollectionPage .sec-nav .first-level>li {
+ 	border-color: #ccc;
+ }
+}
 
 .sec-nav .search-bar #Search{
 	float: none;
