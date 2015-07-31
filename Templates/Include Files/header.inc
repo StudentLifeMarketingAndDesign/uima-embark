@@ -37,13 +37,6 @@
 			<li class=" parent" role="menuitem" aria-haspopup="true"><a href="http://uima.uiowa.edu/exhibitions/">Exhibitions</a>
 
 				
-					<ul data-test="true" aria-hidden="true" role="menu">
-						<li role="menuitem"><a href="http://uima.uiowa.edu/exhibitions/" tabindex="-1">Current</a></li>
-						<li role="menuitem"><a href="http://uima.uiowa.edu/exhibitions/upcoming" tabindex="-1">Upcoming</a></li>
-						<li role="menuitem"><a href="http://uima.uiowa.edu/exhibitions/past" tabindex="-1">Past</a></li>
-					</ul>
-
-				
 
 			</li>
 		
