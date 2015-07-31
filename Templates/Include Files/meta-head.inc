@@ -8,9 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>
-	{if([Objects_1]Disp_Title!="")}{[Objects_1]Disp_Title} - {end if}University of Iowa Museum of Art Collections
-
+	<title>{Include title.inc}
 	</title>
 	<script src="/js/modernizr.js"></script>
 	<!-- Google Fonts -->

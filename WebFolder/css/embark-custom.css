@@ -16,7 +16,7 @@ body.CollectionPage .main.container{
 /****** Side Nav *****/
 @media (min-width: 769px){
  body.CollectionPage .sec-nav .first-level>li {
- 	border-color: #ccc;
+ 	border: none;
  }
 }
 
@@ -43,6 +43,9 @@ body.CollectionPage .main.container{
 	display: inline;
 }
 
+.CollectionPage .justify-item{
+	margin-bottom: 4px;
+}
 
 /** General Tags/Keywords Styles *****/
 

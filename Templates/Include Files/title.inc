@@ -1,1 +1,1 @@
-EmbARK Web Kiosk
+University of Iowa Museum of Art Online Collections
