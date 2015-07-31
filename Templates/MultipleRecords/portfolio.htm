@@ -121,18 +121,15 @@
                 </ul>
 
                 {If(Logged In)}
-                <br><br>
-                Download the current selection of images:<br>
+                <p>Download the current selection of images:<br>
                 <a href="/{Portfolio Name}.zip?download=images&rec={Current Record}&sid={SessionId}&x={Sequence}">Full Images</a> |
                 <a href="/{Portfolio Name}.zip?download=previews&rec={Current Record}&sid={SessionId}&x={Sequence}">Previews (300px)</a> |
-                <a href="/{Portfolio Name}.zip?download=thumbnails&rec={Current Record}&sid={SessionId}&x={Sequence}">Thumbnails (128px)</a>
+                <a href="/{Portfolio Name}.zip?download=thumbnails&rec={Current Record}&sid={SessionId}&x={Sequence}">Thumbnails (128px)</a></p>
                 {End If}
                 
                 <hr>
-                <br>
                 {Include formaddtoport.inc}
                 
-                <br><br>
                 {Include addobjtoportfolio.inc}
                   {Include PageNavigation.inc}
                   {Include selectiondescription.inc}
