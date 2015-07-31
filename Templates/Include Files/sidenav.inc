@@ -39,7 +39,7 @@
                  </li>
                
                 <li><a href="/kiosk/help.htm">Help</a></li>
-                <li><a href="/">About the collections</a></li>
+                <li><a href="/">About the online collections</a></li>
 
             </ul>
         </nav>
