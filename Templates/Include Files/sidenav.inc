@@ -38,8 +38,12 @@
                 </ul>
                  </li>
                
-                <li><a href="/kiosk/help.htm">Help</a></li>
-                <li><a href="/">About the online collections</a></li>
+                <li><a href="/kiosk/help.htm">Help</a>
+                    <ul class="second-level">
+                        <li><a href="/">About the online collections</a></li>
+                    </ul>
+                </li>
+                
 
             </ul>
         </nav>
