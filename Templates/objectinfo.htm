@@ -219,19 +219,19 @@
 
 		<div class="col-lg-8">
 			{if ([Objects_1]Technique!="")}
-				<div class="object-info-field"><strong>Technique:</strong> {[Objects_1]Technique}</div>
+				<div class="object-info-field"><h2>Technique</h2><p>{[Objects_1]Technique}</p></div>
 			{end if}
 			
 			{if ([Objects_1]Class_System!="")}
-				<div class="object-info-field"><strong>Curatorial Department:</strong> {[Objects_1]Class_System}</div>
+				<div class="object-info-field"><h2>Curatorial department</h2><p>{[Objects_1]Class_System}</p></div>
 			{end if}
 			
 			{if ([Objects_1]Creation_Place2!="")}
-				<div class="object-info-field"><strong>Region:</strong> {[Objects_1]Creation_Place2}</div>
+				<div class="object-info-field"><h2>Region</h2> <p>{[Objects_1]Creation_Place2}</p></div>
 			{end if}
 
 			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><strong>Credit Line:</strong> {[Objects_1]Dedication}</div>
+				<div class="object-info-field"><h2>Credit line</h2><p>{[Objects_1]Dedication}</p></div>
 			{end if}
 			
 				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
@@ -239,19 +239,28 @@
 				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
 
 			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><strong>Accession Number:</strong> {[Objects_1]Disp_Access_No}</div>
+				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
 			{end if}
 				{if ([Dimensions])}	
+					<ul class="large-block-grid-3 small-block-grid-2">
 				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-				    	<div class="object-info-field"><strong>Subject:</strong> {[Dimensions]Dimen_Subject}<br />
-				    	<strong>Dimensions:</strong> {[Dimensions]Disp_Dimen}</div>
+				    	<li>
+					    	<div class="object-info-field">
+					    		<h2>Subject</h2>
+					    		<p>{[Dimensions]Dimen_Subject}</p>
+					    		<h2>Dimensions</h2>
+					    		<p>{[Dimensions]Disp_Dimen}</p>
+					    	</div>
+				    	</li>
 				    {End Loop}
+				    </ul>
 				{End if}					
 
 			{if ([Objects_1]Info_Page_Comm!="")}
-			<div class="object-info-field"><strong>Comments:</strong> {[Objects_1]Info_Page_Comm}</div>
+			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 			<div class="objnotes-record-box">
+			<h2>Additional notes</h2>
 			<p>{Notes}</p>
 			</div>
 		</div>

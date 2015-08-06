@@ -52,6 +52,16 @@ body.CollectionPage .main.container{
 	background-position: left center;
 }
 
+.collectionsholder{
+	.collection-box{
+		background-position: top center;
+		background-size: contain;
+		background-color: #222;
+		background-repeat: no-repeat;
+	}
+}
+
+
 /** General Tags/Keywords Styles *****/
 
 .objkeywords-record-box ul {
