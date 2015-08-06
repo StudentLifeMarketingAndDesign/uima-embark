@@ -55,9 +55,13 @@ body.CollectionPage .main.container{
 .collectionsholder{
 	.collection-box{
 		background-position: top center;
-		background-size: contain;
 		background-color: #222;
 		background-repeat: no-repeat;
+	}
+
+	&.thumbnails .collection-box{
+		background-position: left center;
+		background-color: transparent;
 	}
 }
 
