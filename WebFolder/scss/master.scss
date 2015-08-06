@@ -32,6 +32,15 @@
 @import "plugins/tooltip";
 @import "plugins/nouislider";
 @import "plugins/nouislider-pips";
+
+/* import foundation components
+-------------------------------------------*/
+
+//@import "foundation/components/grid";
+@import "foundation/components/block-grid";
+@import "foundation/components/visibility";
+
+
 /* Layout
 -------------------------------------------*/
 @import "site/childpages";
@@ -55,6 +64,7 @@
 /* Site specific styles
 -------------------------------------------*/
 @import "site/site";
+@import "site/embark";
 
 
 /* Print

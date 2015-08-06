@@ -1,6 +1,6 @@
 <div class="naver">
     <div class="side-navigation">
-        <h4 id="handle" class="fs-navigation-handle fs-navigation-toggle-handle fs-navigation-handle__0 fs-navigation__0 fs-swap-element fs-touch-element" data-swap-target=".fs-navigation__0" data-swap-linked=".fs-navigation-handle__0" data-swap-group="fs-navigation">Navigation</h4>
+
         <nav class="sec-nav fs-navigation-element fs-navigation-toggle-nav fs-navigation__0" aria-label="Secondary" data-navigation-handle="#handle">
             <ul class="first-level">
             	<!--<li><a href="/">Home</a></li>-->
