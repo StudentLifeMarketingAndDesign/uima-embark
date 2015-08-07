@@ -17,7 +17,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/css/master.css" />
-	<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />
+	<!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
 	<!--[if IE 8]>
 		<meta http-equiv="x-ua-compatible" content="IE=8">
 	  	<script>var IE8 = true;</script>
