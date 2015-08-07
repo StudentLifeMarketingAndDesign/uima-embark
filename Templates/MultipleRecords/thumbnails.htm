@@ -33,8 +33,8 @@
 		 <script src="/js/ie/respond.min.js"></script>
 	<![endif]-->
 </head>
-{Include scripts.inc}
-{Include FilterBoxScripts.inc}
+
+
 <body class="CollectionPage  shifter">
   <div class="shifter-page">
     <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
@@ -86,14 +86,14 @@
           <!-- The following will repeat for each record in the page.
           The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
           (Note: This template is currently configured for a kiosk in which the table option has been turned off for Thumnail. -->
-          <ul class="collectionsholder thumbnails justify-4">
+          <div class="thumbnail-grid">
             <!-- child branches start -->
             {RecordLoop Start}
               {Include thumbnailitem.inc}
             {RecordLoop End}
-            <!-- child branches end -->
-            <li class="justify-item filler"></li>
-          </ul> 
+                <!-- child branches end -->
+          </div>
+
 
         {If(Logged In)}
         <br><br>
@@ -116,5 +116,7 @@
     </div>
     {Include shifternavigation.inc}
     {Include scripts.inc}
+    {Include FilterBoxScripts.inc}
+
   </body>
 </html>

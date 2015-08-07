@@ -90,11 +90,13 @@
                 <!-- The following will repeat for each record in the page.
                      The kiosk will take care of inserting row tags as appropriate, if specified in Preferences. 
                      (Note: This template is currently configured for a kiosk in which the table option has been turned off for Artist Objects page. -->
-                <ul class="collectionsholder justify-4">
+         <ul class="medium-block-grid-2 large-block-grid-4">
+                    <!-- The following will repeat for each record in the page.
+                    The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
+                    (Note: This template is currently configured for a kiosk in which the table option has been turned off for Portfolio. -->
                 {RecordLoop Start}
-                        {Include portfolioitem.inc}
+                     {Include portfolioitem.inc}
                 {RecordLoop End}
-                <li class="justify-item filler"></li>
                 
                 </ul>
                 {Include formaddtoport.inc}

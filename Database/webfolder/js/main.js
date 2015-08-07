@@ -134,4 +134,14 @@ $(document).ready(function() {
 		return false;
 	});
 
+    var $container = $('.thumbnail-grid');
+
+    $container.imagesLoaded( function(){
+      $container.masonry({
+            itemSelector: '.thumbnail-grid-item',
+            columnWidth: 200,
+            "gutter": 10
+      });
+    });
+
 });

@@ -19,6 +19,8 @@ module.exports = function(grunt) {
 			dist: {
 				src: [
 					'<%= project.src %>/bower_components/nouislider/distribute/jquery.nouislider.all.js',
+					'<%= project.src %>/bower_components/imagesloaded/imagesloaded.pkgd.js',
+					'<%= project.src %>/bower_components/masonry/dist/masonry.pkgd.js',
 					'<%= project.src %>/js/plugins/05_core.js',
 					'<%= project.src %>/js/plugins/10_transition.js',
 					'<%= project.src %>/js/plugins/15_lightbox.js',
@@ -30,6 +32,7 @@ module.exports = function(grunt) {
 					'<%= project.src %>/js/plugins/swap.js',
 					'<%= project.src %>/js/plugins/touch.js',
 					'<%= project.src %>/js/plugins/z-menubar.js',
+
 					'<%= project.src %>/js/main.js'
 				],
 				dest: '<%= project.src %>/js/build/production.js'
