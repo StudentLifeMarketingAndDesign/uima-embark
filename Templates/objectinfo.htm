@@ -56,12 +56,12 @@
   <script type="text/javascript" src="/scripts/gmaps/gmaps.js"></script>
   <script type="text/javascript" src="/scripts/gmaps/prettify.js"></script>
 
- <script type="text/javascript">
+   <!--
+<script type="text/javascript">
   
   var Lat = {[Objects_1]User_Def_7};
   var Lon = {[Objects_1]User_Def_8};
   
-  <!--
     var map;
     $(document).ready(function(){
       prettyPrint();
@@ -94,9 +94,9 @@
         }
       });
     });
--->
 
-    </script>
+    </script>-->
+
 	<div class="shifter-page">
 	<a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
 
@@ -241,18 +241,16 @@
 				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
 			{end if}
 				{if ([Dimensions])}	
-					<ul class="large-block-grid-3 small-block-grid-2">
+	
 				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-				    	<li>
 					    	<div class="object-info-field">
-					    		<h2>Subject</h2>
-					    		<p>{[Dimensions]Dimen_Subject}</p>
-					    		<h2>Dimensions</h2>
-					    		<p>{[Dimensions]Disp_Dimen}</p>
+					    		<p><strong>Subject </strong>{[Dimensions]Dimen_Subject}
+			
+					    		<strong>Dimensions </strong>
+					    		{[Dimensions]Disp_Dimen}</p>
 					    	</div>
-				    	</li>
 				    {End Loop}
-				    </ul>
+
 				{End if}					
 
 			{if ([Objects_1]Info_Page_Comm!="")}
