@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Search/Object/QuickSearch.htm-->
+<html>
+<head>
+    <meta http-equiv="expires" content="1 Jan 1900 00:00 GMT"/>
+    <title>EmbARK Web Kiosk - Advanced Search</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    <script type="text/javascript">
+    //<!-- hide Javascript from older browsers
+        {scripts}
+    // end script hiding -->
+    </script>
+    {Include scripts.inc}
+</head>
+
+<body onload="checkValues();setMenu('search');" class="clearfix">
+
+{Include header.inc}
+<div id="content">
+<form action="/4DACTION/HANDLECGI/QSF2?display=POR" method="Post" name="QuickSearch">
+    <h1>Advanced Search</h1>
+
+<br><br>
+
+    <table cellpadding="0" cellspacing="0" width="600">
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>Field to search:</td>
+                        <td>Value:</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <!-- The following will repeat for each line of search criteria the user adds. -->
+                    {LineLoop Start}
+                        <tr>
+                            <td>{SearchType}</td>
+                            <td>{Field Popup}</td>
+                            <td>{Value Popup}</td>
+                            <td>{Line Buttons}</td>
+                        </tr>
+                    {LineLoop End}
+
+                </table>
+
+                <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+
+                <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+
+    <p>Sort by: <select name="sort"><option value="7">Artist</option><option value="62">Creation Date</option><option value="53">Medium</option><option value="9">Title</option></select></p>
+
+                <p class="centered"><input type="submit" value="Find"/></p>
+
+                <br/><br/>
+
+                {if(Records)}
+                    <p>
+                        <br/><br/>
+                        <b>Your current selection of {Records - Object} records is:</b><br/>
+                        {Selection Name Object}
+                    </p>
+                {end if}
+
+                <p><b>Other Search Options:</b><br/>
+                Advanced |
+                <a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
+		<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+                <a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
+                <a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> |
+                <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
+            </td>
+        </tr>
+    </table>
+<input type="hidden" name="sid" value="{SessionID}"/>
+
+</form>
+
+</div>
+{Include footer.inc}
+
+</body>
+</html>
