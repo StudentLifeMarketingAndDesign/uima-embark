@@ -206,7 +206,6 @@
 					<!-- label copy start -->
 					<em>{[Objects_1]Disp_Title}</em><br>
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
-					{if([Objects_1]Century!="")}{[Objects_1]Century}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
 					<!-- label copy end -->
@@ -260,8 +259,13 @@
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 			<div class="objnotes-record-box">
-			<h2>Additional notes</h2>
-			<p>{Notes}</p>
+			
+			<h2>Exhibition History</h2>
+			<p>{[Object Notes]Exhibition}</p>
+			<h2>Bibliography</h2>
+			<p>{[Object Notes]Bibliography}</p>
+			<h2>Provenance</h2>
+			<p>{[Object Notes]Provenance}</p>
 			</div>
 		</div>
 
