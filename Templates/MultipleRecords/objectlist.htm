@@ -91,8 +91,9 @@
                         <tr>
                             <td class="list-heading"><a href="{List Objects_1-Disp_Title}" title="Sort records by Title">Title</a></td>
                             <td class="list-heading"><a href="{List Objects_1-Sort_Artist}" title="Sort records by Artist">Artist</a></td>
+							<td class="list-heading"><a href="{List Objects_1-Disp_Create_DT}" title="Sort records by Creation Date">Creation Date</a></td>
                             <td class="list-heading"><a href="{List Objects_1-Disp_Medium}" title="Sort records by Medium & Support">Medium &amp; Support</a></td>
-                            <td class="list-heading"><a href="{List Objects_1-Disp_Create_DT}" title="Sort records by Creation Date">Creation Date</a></td>
+                            
                             {if(Logged In)}
                             <td class="list-heading">&nbsp;</td>
                             {end if}
@@ -103,8 +104,8 @@
                         <tr valign="top">
                             <td class="list-row"><a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description"><i>{[Objects_1]Disp_Title}</i></a>&nbsp;</td>
                             <td class="list-row"><a href="{Artist Info}" title="view artist description">{[Objects_1]Sort_Artist}</a>&nbsp;</td>
-                            <td class="list-row">{[Objects_1]Disp_Medium}&nbsp;</td>
                             <td class="list-row">{[Objects_1]Disp_Create_DT}&nbsp;</td>
+							<td class="list-row">{[Objects_1]Disp_Medium}&nbsp;</td>
                             {if(Logged In)}
                             <td class="list-row smalltxt">
                                 <a href="javascript:addToPort({SessionID},'&x={Sequence}',{_ID});">Add to portfolio</a>&nbsp;&gt;

@@ -10,9 +10,9 @@
                 
                 <li><a href="/IT_-1?sid={SessionId}&x={Sequence}">Browse collections</a>
                     <ul class="second-level">
-                        <li><a href="/kiosk/browseartist.htm?sid=83&x=367">Browse by artist</a></li>
-                        <li><a href="/kiosk/browseGeography.htm?sid=83&x=368">Browse by geography</a></li>
-                        <li><a href="http://127.0.0.1:8080/kiosk/browsecategory.htm?sid=83&x369">Browse by curatorial category</a></li>
+                        <li><a href="/kiosk/browseartist.htm?sid={SessionId}&x={Sequence}">Browse by artist</a></li>
+                        <li><a href="/kiosk/browseGeography.htm?sid={SessionId}&x={Sequence}">Browse by geography</a></li>
+                        <li><a href="/kiosk/browseCategory.htm?sid={SessionId}&x={Sequence}">Browse by curatorial category</a></li>
                     </ul>
                 </li>
                 <li><div class="search-bar" role="search">

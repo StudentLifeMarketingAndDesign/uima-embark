@@ -1,0 +1,69 @@
+/**** Global body width changes *******/
+body.CollectionPage .main.container{
+	max-width: 1800px;
+}
+@media (min-width: 1600px){
+	body.CollectionPage .main.container{
+	    width: 1600px;
+	}
+}
+@media (min-width: 1800px){
+	body.CollectionPage .main.container{
+	    width: 1800px;
+	}
+}
+
+/****** Side Nav *****/
+@media (min-width: 769px){
+ body.CollectionPage .sec-nav .first-level>li {
+ 	border: none;
+ }
+}
+
+.sec-nav .search-bar #Search{
+	float: none;
+}
+
+/** Side Nav Hide Display Menu on Mobile *****/
+
+
+.display-options{
+	display: none;
+}
+
+@media (min-width: 960px){
+	.display-options{
+		display: block;
+	}
+}
+
+/***** Portfolio Page ******/
+
+.portfolio-label a{
+	display: inline;
+}
+
+.CollectionPage .justify-item{
+	margin-bottom: 4px;
+}
+
+.collection-box {
+	background-size: contain;
+	background-color: #eee;
+}
+
+/** General Tags/Keywords Styles *****/
+
+.objkeywords-record-box ul {
+	list-style-type: none;
+	margin: 0;
+	display: inline;
+}
+
+.objkeywords-record-box ul li{
+	display: inline-block;
+	background: #eee;
+	padding: 5px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}

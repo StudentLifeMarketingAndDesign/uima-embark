@@ -1,0 +1,52 @@
+/*
+ 4D (the "Software") and the corresponding source code remain
+ the exclusive property of 4D and/or its licensors and are protected by national
+ and/or international legislations.
+ This file is part of the source code of the Software provided under the relevant
+ 4D License Agreement available on http://www.4D.com/license whose compliance
+ constitutes a prerequisite to any use of this file and more generally of the
+ Software and the corresponding source code.
+*/
+
+/* RESET */
+html,html * {
+    margin: 0;
+    padding: 0;
+
+    /*font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Segoe UI', 'Tahoma',
+            'Arial', 'Verdana', sans-serif;*/
+
+    /*	font-family: 'SegoeUI', 'Lucida Grande', sans-serif;*/
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+    border: none;
+    text-align: left;
+    background-color: transparent;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+
+    /*border: 1px dotted red;*/
+}
+
+.information-dialog * {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+.centered {
+    text-align: center;
+}
+
+.cached {
+    display: none;
+}
+
+.visible {
+    display: inline;
+}
+
+[title~=select] {
+    -webkit-user-select: text;
+}

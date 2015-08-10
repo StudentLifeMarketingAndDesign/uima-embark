@@ -1,68 +1,24 @@
-
-<!DOCTYPE html>
-<!--[if lt IE 10]><html lang="en" class="lt-ie10 no-js"> <![endif]-->
-<!--[if lt IE 9]><html lang="en" class="lt-ie9 no-js"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Search/Object/QuickSearch.htm-->
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Quick search - {Include title.inc}
-	</title>
-	<script src="/js/modernizr.js"></script>
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/master.css" />
-	<!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
-	<!--[if IE 8]>
-		<meta http-equiv="x-ua-compatible" content="IE=8">
-	  	<script>var IE8 = true;</script>
-	  	<script src="/js/ie/site.ie8.js"></script>
-		<link rel="stylesheet" href="/css/site.ie8.css">
-	<![endif]-->
-	<!--[if IE 9]>
-		<script>var IE9 = true;</script>
-		<script src="/js/ie/site.ie9.js"></script>
-	<![endif]-->
-	<!--[if lt IE 9]>
-		 <script src="/js/ie/html5shiv.js"></script>
-		 <script src="/js/ie/respond.min.js"></script>
-	<![endif]-->
+    <meta http-equiv="expires" content="1 Jan 1900 00:00 GMT"/>
+    <title>EmbARK Web Kiosk - Advanced Search</title>
+    <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
+    <script type="text/javascript">
+    //<!-- hide Javascript from older browsers
+        {scripts}
+    // end script hiding -->
+    </script>
+    {Include scripts.inc}
 </head>
 
-<body class="CollectionPage  shifter">
-<div class="shifter-page">
-    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+<body onload="checkValues();setMenu('search');" class="clearfix">
 
-    {Include header.inc}
-
-    <main class="container main" role="main">
-    <div class="row">
-        <!-- Section Heading -->
-        
-            
-        <div class="col-sm-12">
-            <h3 class="section-title">Quick search</h3>
-        </div>
-
-        
-
-        <!-- Side Bar -->
-        
-        <div class="col-md-4 col-lg-3 sidebar">
-            {Include sidenav.inc}
-        </div>
-        
-
-        <!-- Main Content -->
-        <div class="col-md-8 col-lg-8  children">
-            <section id="main-content" tabindex="-1">
-                <h1>{Branch title;Online Collections}</h1><br>
-<form action="/4DACTION/HANDLECGI/QSF2?display=POR" method="POST" name="QuickSearch">
+{Include header.inc}
+<div id="content">
+<form action="/4DACTION/HANDLECGI/QSF2?display=POR" method="Post" name="QuickSearch">
     <h1>Advanced Search</h1>
 
 <br><br>
@@ -105,16 +61,17 @@
                 {if(Records)}
                     <p>
                         <br/><br/>
-                        <strong>Your current selection of {Records - Object} records is:</strong><br/>
+                        <b>Your current selection of {Records - Object} records is:</b><br/>
                         {Selection Name Object}
                     </p>
                 {end if}
 
-                <p><strong>Other Search Options:</strong><br/>
+                <p><b>Other Search Options:</b><br/>
                 Advanced |
-        <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
+                <a href="/QS_5?sid={SessionId}&x={Sequence}">Quick Search</a> |
+		<a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Custom</a> |
                 <a href="/QS_6?sid={SessionId}&x={Sequence}">Date</a> |
-                <!-- <a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> | -->
+                <a href="/QS_4?sid={SessionId}&x={Sequence}">Keywords</a> |
                 <a href="/QS_1?sid={SessionId}&x={Sequence}">Artist Biographies</a></p>
             </td>
         </tr>
@@ -122,20 +79,9 @@
 <input type="hidden" name="sid" value="{SessionID}"/>
 
 </form>
-            </section>
-        </div><!-- end .col -->
-    </div><!-- end .row -->
-</main>
-{Include footer.inc}
+
 </div>
+{Include footer.inc}
 
-{Include shifternavigation.inc}
-
-{Include scripts.inc}
 </body>
 </html>
-
-
-
-
-
