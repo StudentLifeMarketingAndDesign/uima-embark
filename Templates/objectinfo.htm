@@ -225,6 +225,26 @@
 				<div class="object-info-field"><h2>Curatorial department</h2><p>{[Objects_1]Class_System}</p></div>
 			{end if}
 			
+						{if ([Objects_1]Series Title!="")}
+				<div class="object-info-field"><h2>Series Title</h2><p>{[Objects_1]Series Title}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Port_Name!="")}
+				<div class="object-info-field"><h2>Portfolio Name</h2><p>{[Objects_1]Port_Name}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Book_title!="")}
+				<div class="object-info-field"><h2>Book Title</h2><p>{[Objects_1]Book_title}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Edition!="")}
+				<div class="object-info-field"><h2>Edition</h2><p>{[Objects_1]Edition}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Edition_text!="")}
+				<div class="object-info-field"><h2>Edition Notes</h2><p>{[Objects_1]Edition_text}</p></div>
+			{end if}
+			
 			{if ([Objects_1]Creation_Place2!="")}
 				<div class="object-info-field"><h2>Region</h2> <p>{[Objects_1]Creation_Place2}</p></div>
 			{end if}
@@ -240,6 +260,8 @@
 			{if ([Objects_1]Disp_Access_No!="")}
 				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
 			{end if}
+			
+
 				{if ([Dimensions])}	
 	
 				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
