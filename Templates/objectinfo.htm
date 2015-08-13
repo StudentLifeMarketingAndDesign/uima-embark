@@ -279,13 +279,20 @@
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 			<div class="objnotes-record-box">
-			
-			<h2>Exhibition History</h2>
-			<p>{[Object Notes]Exhibition}</p>
-			<h2>Bibliography</h2>
-			<p>{[Object Notes]Bibliography}</p>
-			<h2>Provenance</h2>
-			<p>{[Object Notes]Provenance}</p>
+				{if ([Object Notes]Exhibition != ""}
+					<h2>Exhibition History</h2>
+					<p>{[Object Notes]Exhibition}</p>
+				{end if}
+
+				{if ([Object Notes]Bibliography != ""}
+					<h2>Bibliography</h2>
+					<p>{[Object Notes]Bibliography}</p>
+				{end if}
+
+				{if ([Object Notes]Provenance != ""}
+				<h2>Provenance</h2>
+				<p>{[Object Notes]Provenance}</p>
+				{end if}
 			</div>
 		</div>
 
@@ -410,13 +417,7 @@
 
 		<ul class="collectionsholder justify-4">
 		{Start Loop([Portfolios])}
-			<li class="justify-item">
-				<a href="{Portfolio}&display=POR">
-				<div class="collection-box" style="background-image: url({Thumbnail});">
-					<h2 class="title">{Portfolio Name}</h2>
-				</div>
-				</a>
-			</li>
+			{Include collectionitem.inc}
 		{End Loop}
 		<li class="justify-item filler"></li>
 		</ul>
