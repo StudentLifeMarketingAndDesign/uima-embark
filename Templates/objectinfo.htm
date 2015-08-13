@@ -225,6 +225,26 @@
 				<div class="object-info-field"><h2>Curatorial department</h2><p>{[Objects_1]Class_System}</p></div>
 			{end if}
 			
+						{if ([Objects_1]Series Title!="")}
+				<div class="object-info-field"><h2>Series Title</h2><p>{[Objects_1]Series Title}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Port_Name!="")}
+				<div class="object-info-field"><h2>Portfolio Name</h2><p>{[Objects_1]Port_Name}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Book_title!="")}
+				<div class="object-info-field"><h2>Book Title</h2><p>{[Objects_1]Book_title}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Edition!="")}
+				<div class="object-info-field"><h2>Edition</h2><p>{[Objects_1]Edition}</p></div>
+			{end if}
+			
+			{if ([Objects_1]Edition_text!="")}
+				<div class="object-info-field"><h2>Edition Notes</h2><p>{[Objects_1]Edition_text}</p></div>
+			{end if}
+			
 			{if ([Objects_1]Creation_Place2!="")}
 				<div class="object-info-field"><h2>Region</h2> <p>{[Objects_1]Creation_Place2}</p></div>
 			{end if}
@@ -240,6 +260,8 @@
 			{if ([Objects_1]Disp_Access_No!="")}
 				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
 			{end if}
+			
+
 				{if ([Dimensions])}	
 	
 				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
@@ -257,13 +279,20 @@
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 			<div class="objnotes-record-box">
-			
-			<h2>Exhibition History</h2>
-			<p>{[Object Notes]Exhibition}</p>
-			<h2>Bibliography</h2>
-			<p>{[Object Notes]Bibliography}</p>
-			<h2>Provenance</h2>
-			<p>{[Object Notes]Provenance}</p>
+				{if ([Object Notes]Exhibition != ""}
+					<h2>Exhibition History</h2>
+					<p>{[Object Notes]Exhibition}</p>
+				{end if}
+
+				{if ([Object Notes]Bibliography != ""}
+					<h2>Bibliography</h2>
+					<p>{[Object Notes]Bibliography}</p>
+				{end if}
+
+				{if ([Object Notes]Provenance != ""}
+				<h2>Provenance</h2>
+				<p>{[Object Notes]Provenance}</p>
+				{end if}
 			</div>
 		</div>
 
@@ -388,13 +417,7 @@
 
 		<ul class="collectionsholder justify-4">
 		{Start Loop([Portfolios])}
-			<li class="justify-item">
-				<a href="{Portfolio}&display=POR">
-				<div class="collection-box" style="background-image: url({Thumbnail});">
-					<h2 class="title">{Portfolio Name}</h2>
-				</div>
-				</a>
-			</li>
+			{Include collectionitem.inc}
 		{End Loop}
 		<li class="justify-item filler"></li>
 		</ul>
