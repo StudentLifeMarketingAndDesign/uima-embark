@@ -34,7 +34,7 @@
 	<![endif]-->
 </head>
 
-<body class="CollectionPage  shifter">
+<body class="CollectionPage ObjectInfo shifter">
   <script type="text/javascript">
     <!--
 		function submitPop(page,SessionID) {
@@ -102,47 +102,97 @@
 
 	{Include header.inc}
 
-{if(Has Image)}
-					<section class="artwork-image">
-				{if(Image height=="0")}
-					
-						<div class="container">
-							<img src="{Image Path}" alt="Joan Miró ">
-							
-						</div>
-					
-				{else}
-		        {if(Image duration=="0")}
-					<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main" src="{preview}" width="{thumbnail width*2.3}" height="{thumbnail height*2.3}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
-		        {else}
-		 <object
-		 classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
-		 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		 <param name="SRC" value="{Image Path}">
-		 <param name="AUTOPLAY" value="true">
-		 <param name="CONTROLLER" value="true">
-		 <embed
-		 src="{Image Path}" width="{image width}" height="{image height+15}"
-		 autoplay="true" controller="true"
-		 pluginspage="http://www.apple.com/quicktime/download/">
-		 </embed>
-		 </object>
+	{if(Has Image)}
+		<section>
+			{if(Image height=="0")}
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-2">
 
-		        {end if}
-		        </section>
-				{end if}
-				{else}
-				This object does not have an image.
-				{end if}
+							<div class="row">
+								<div class="col-lg-4">
+								<img src="{Image Path}" alt="{[Objects_1]Disp_Title}">
+								</div>
+
+								<div class="col-lg-8">
+									{Include objectcutline.inc}
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+	
+			{else}
+	        {if(Image duration=="0")}
+
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-2">
+
+							<div class="row">
+								<div class="col-lg-4">
+
+
+
+						
+									<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main-artwork-image" src="{preview}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
+								</div>
+
+								<div class="col-lg-8">
+									{Include objectcutline.inc}
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			  {else}
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-2 text-center">
+
+
+							<video width="{image width}" height="{image height}" controls>
+								 <source src="{Image Path}" />
+								 <object
+								 classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="{image width}" height="{image height}"
+								 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+								 <param name="SRC" value="{Image Path}">
+								 <param name="AUTOPLAY" value="true">
+								 <param name="CONTROLLER" value="true">
+								 <embed
+								 src="{Image Path}" width="{image width}" height="{image height+15}"
+								 autoplay="true" controller="true"
+								 pluginspage="http://www.apple.com/quicktime/download/">
+								 </embed>
+								 </object>
+							</video>
+							<div class="text-left">
+									{Include objectcutline.inc}
+								</div>
+						</div>
+
+					</div>
+
+				</div>
+			
+	        {end if}
+    	</section>
+	{end if}
+
+	{else}
+		<p>This object does not have an image.</p>
+	{end if}
 				
 	<main class="container main" role="main">
 	<div class="row">
 		<!-- Section Heading -->
-		
-			
-
-
-		
 
 		<!-- Side Bar -->
 		
@@ -176,50 +226,6 @@
 		<div class="col-md-8 col-lg-8  children">
 			<section id="main-content" tabindex="-1">
 
-
-
-				
-				
-
-				
-
-	
-
-					{if([Objects_1]Object Description!="")}{[Objects_1]Object Description}{end if}
-
-
-
-
-					{Start Loop [Object_Artist]}
-						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Display_Name}</a></h1>
-						{if ([Artist_Maker]Alt_Name != "")}<a href="{Artist Info}">Also known as: {[Artist_Maker]Alt_Name}</a>{end if}
-						<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
-						<div class="cutline">
-						{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
-						{Concat(" - ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]End_Date_Disp)}<br>
-						{if ([Object_Artist]Role != "")}
-							{concat(", ", [Object_Artist]Role, [Object_Artist]Place, [Object_Artist]Disp_Cont_Date)}
-							{end if}
-						</div>
-					{End Loop}
-					<br />
-					<div class="cutline">
-					<!-- label copy start -->
-					{if([Objects_1]Attribution != "")}<em>{[Objects_1]Attribution}</em><br>{end if}
-					{if([Objects_1]Whole==TRUE)}
-					<em>{[Objects_1]Disp_Title}</em>
-					{else}
-					<b>{[Objects_1]Disp_Title}</b>
-					{end if}<br>
-					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
-					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
-					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
-					<!-- label copy end -->
-					</div>
-
-
-					<hr />
-
 		<div class="row">
 
 		<div class="col-lg-8">
@@ -232,14 +238,15 @@
 			
 			{if ([Objects_1]Class_System!="")}
 				<div class="object-info-field">
-				<h2>Curatorial department</h2> 
-				<p>{[Objects_1]Class_System}</p></div>
+					<h2>Curatorial department</h2> 
+					<p>{[Objects_1]Class_System}</p>
+				</div>
 			{end if}
 			
 			{if ([Objects_1]Ed_Num="")}
 				<div class="object-info-field">
-				<h2>Edition Number</h2>
-				<p>{[Objects_1]Ed_Num}</p>
+					<h2>Edition Number</h2>
+					<p>{[Objects_1]Ed_Num}</p>
 				</div>
 			{end if}
 				
@@ -257,11 +264,11 @@
 			{end if}
 						
 			{if ([Objects_1]Creation_Place2!="")}
-				<div class="object-info-field"><h2>Region</h2> {[Objects_1]Creation_Place2}</div>
+				<div class="object-info-field"><h2>Region</h2><p>{[Objects_1]Creation_Place2}</p></div>
 			{end if}
 
 			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><h2>Credit line</h2>{[Objects_1]Dedication}</div>
+				<div class="object-info-field"><h2>Credit line</h2><p>{[Objects_1]Dedication}</p></div>
 			{end if}
 			
 				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
@@ -269,7 +276,7 @@
 				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
 
 			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><h2>Accession number</h2>{[Objects_1]Disp_Access_No}</div>
+				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
 			{end if}
 			
 
@@ -287,7 +294,7 @@
 				{End if}					
 
 			{if ([Objects_1]Info_Page_Comm!="")}
-			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
+			<div class="object-info-field"><h2>Comments</h2><p>{[Objects_1]Info_Page_Comm}></p></div>
 			{end if}
 			
 			
@@ -325,7 +332,7 @@
 
 		{if ([Surrogates])}
 		<div class="col-lg-4 text-right">
-			<strong>Additional Images</strong>
+			<h2>Additional Images</h2>
 			{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
 			<div class="objsur-record-box">
 				<div class="objsur-thumbnail">
@@ -489,7 +496,7 @@
 					{end if} -->
 
 					<!-- Sample code for the 'SubmitFile' feature. Template that opens is custom/sampleform.htm -->
-					<a href="{Custom;SampleForm;Current}" class="navtxt">Submit comments about this object</a><br>
+					<a href="mailto:UIMA@uiowa.edu?subject=[Online collections feedback] Item {[Objects_1]Disp_Access_No}" class="navtxt">Submit comments about this object</a><br>
 		
 					<!-- Sample code end -->
 					
