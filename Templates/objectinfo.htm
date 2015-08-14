@@ -204,7 +204,11 @@
 					<br />
 					<div class="cutline">
 					<!-- label copy start -->
-					<em>{[Objects_1]Disp_Title}</em><br>
+					{if([Objects_1]Whole==TRUE)}
+					<em>{[Objects_1]Disp_Title}</em>
+					{else}
+					<b>{[Objects_1]Disp_Title}</b>
+					{end if}<br>
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
@@ -218,39 +222,31 @@
 
 		<div class="col-lg-8">
 			{if ([Objects_1]Technique!="")}
-				<div class="object-info-field"><h2>Technique</h2><p>{[Objects_1]Technique}</p></div>
+				<div class="object-info-field"><h2>Technique</h2>{[Objects_1]Technique}</div>
 			{end if}
 			
 			{if ([Objects_1]Class_System!="")}
-				<div class="object-info-field"><h2>Curatorial department</h2><p>{[Objects_1]Class_System}</p></div>
+				<div class="object-info-field"><h2>Curatorial department</h2> {[Objects_1]Class_System}</div>
 			{end if}
 			
-						{if ([Objects_1]Series Title!="")}
-				<div class="object-info-field"><h2>Series Title</h2><p>{[Objects_1]Series Title}</p></div>
+			{if ([Objects_1]Ed_Num="")}
+				<div class="object-info-field"><h2>Edition Number</h2>{[Objects_1]Ed_Num}</div>
 			{end if}
-			
-			{if ([Objects_1]Port_Name!="")}
-				<div class="object-info-field"><h2>Portfolio Name</h2><p>{[Objects_1]Port_Name}</p></div>
+				
+			{if ([Objects_1]Ed_Reg_Num="")}
+				<div class="object-info-field"><h2>State</h2>{[Objects_1]Ed_Reg_Num}</div>
 			{end if}
-			
-			{if ([Objects_1]Book_title!="")}
-				<div class="object-info-field"><h2>Book Title</h2><p>{[Objects_1]Book_title}</p></div>
-			{end if}
-			
+				
 			{if ([Objects_1]Edition!="")}
-				<div class="object-info-field"><h2>Edition</h2><p>{[Objects_1]Edition}</p></div>
+				<div class="object-info-field"><h2>Proofs</h2>{[Objects_1]Edition}</div>
 			{end if}
-			
-			{if ([Objects_1]Edition_text!="")}
-				<div class="object-info-field"><h2>Edition Notes</h2><p>{[Objects_1]Edition_text}</p></div>
-			{end if}
-			
+						
 			{if ([Objects_1]Creation_Place2!="")}
-				<div class="object-info-field"><h2>Region</h2> <p>{[Objects_1]Creation_Place2}</p></div>
+				<div class="object-info-field"><h2>Region</h2> {[Objects_1]Creation_Place2}</div>
 			{end if}
 
 			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><h2>Credit line</h2><p>{[Objects_1]Dedication}</p></div>
+				<div class="object-info-field"><h2>Credit line</h2>{[Objects_1]Dedication}</div>
 			{end if}
 			
 				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
@@ -258,7 +254,7 @@
 				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
 
 			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
+				<div class="object-info-field"><h2>Accession number</h2>{[Objects_1]Disp_Access_No}</div>
 			{end if}
 			
 
@@ -279,21 +275,35 @@
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
 			<div class="objnotes-record-box">
-				{if ([Object Notes]Exhibition != ""}
-					<h2>Exhibition History</h2>
-					<p>{[Object Notes]Exhibition}</p>
-				{end if}
 
-				{if ([Object Notes]Bibliography != ""}
-					<h2>Bibliography</h2>
-					<p>{[Object Notes]Bibliography}</p>
-				{end if}
-
-				{if ([Object Notes]Provenance != ""}
-				<h2>Provenance</h2>
-				<p>{[Object Notes]Provenance}</p>
-				{end if}
+				{if ([Object Notes]Marks!="")}
+					<h2>Marks</h2>
+					{[Object Notes]Marks}
+				{End if}
+			
+				{if ([Object Notes]Exhibition!="")}
+					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseExhibitionHistory" aria-expanded="false" aria-controls="collapseExhibitionHistory">Exhibition History</h2>
+					<div class="collapse" id="collapseExhibitionHistory">
+						{[Object Notes]Exhibition}
+					</div>
+				{End if}
+					
+				{if ([Object Notes]Bibliography!="")}
+					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseBibliography" aria-expanded="false" aria-controls="collapseBibliography">Bibliography</h2>
+					<div class="collapse" id="collapseBibliography">
+						{[Object Notes]Bibliography}
+					</div>
+				{End if}
+					
+				{if ([Object Notes]Provenance!="")}
+					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseProvenance" aria-expanded="false" aria-controls="collapseProvenance">Provenance</h2>
+					<div class="collapse" id="collapseProvenance">
+						{[Object Notes]Provenance}
+					</div>
+				{End if}
+				
 			</div>
+
 		</div>
 
 		{if ([Surrogates])}
@@ -388,7 +398,7 @@
 			
 
 
-		{if ([Biblio_Citation])}
+		<!--{if ([Biblio_Citation])}
 		<hr>
 		<p>
 		    <strong>Bibliography</strong><br/>
@@ -409,6 +419,7 @@
 		    </ul>
 		</p>
 		{end if}
+		/!-->
 
 		{if ([Portfolios])}
 		<hr>

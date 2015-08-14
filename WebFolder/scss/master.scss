@@ -16,6 +16,8 @@
 -------------------------------------------*/
 /*@import "elements/button-bootstrap";*/
 /*@import "elements/form-bootstrap";*/
+@import "bootstrap/mixins/_vendor-prefixes";
+@import "bootstrap/_component-animations.scss";
 @import "elements/grid-bootstrap";
 @import "elements/nav-bootstrap";
 @import "elements/tables";

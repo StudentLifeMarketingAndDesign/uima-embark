@@ -21,6 +21,9 @@ module.exports = function(grunt) {
 					'<%= project.src %>/bower_components/nouislider/distribute/jquery.nouislider.all.js',
 					'<%= project.src %>/bower_components/imagesloaded/imagesloaded.pkgd.js',
 					'<%= project.src %>/bower_components/masonry/dist/masonry.pkgd.js',
+					'<%= project.src %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+					//'<%= project.src %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+					//'<%= project.src %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
 					'<%= project.src %>/js/plugins/05_core.js',
 					'<%= project.src %>/js/plugins/10_transition.js',
 					'<%= project.src %>/js/plugins/15_lightbox.js',
@@ -51,7 +54,7 @@ module.exports = function(grunt) {
 				options: {
 					style: 'compressed',
 					compass: true,
-					loadPath: '<%= project.src %>/bower_components/foundation/scss/'
+					loadPath: ['<%= project.src %>/bower_components/foundation/scss/','<%= project.src %>/bower_components/bootstrap-sass/assets/stylesheets']
 				},
 				files: {
 					'<%= project.src %>/css/master.css': '<%= project.src %>/scss/master.scss',

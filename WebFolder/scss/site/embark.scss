@@ -73,6 +73,24 @@ body.CollectionPage .main.container{
 .thumbnail-grid-item--width2 { width: 600px; }
 
 
+/* Object info */
+
+.collapse-header{
+	&:after{
+		content: '-';
+		font-size: 15px;
+		padding-left: 30px;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+
+	&.collapsed:after{
+		content: '+';
+	}
+}
+
+
 /** General Tags/Keywords Styles *****/
 
 .objkeywords-record-box ul {
