@@ -4,34 +4,34 @@
 <!--[if lt IE 9]><html lang="en" class="lt-ie9 no-js"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>{[Artist_Maker]Full_Name} - {Include title.inc}
-	</title>
-	<script src="/js/modernizr.js"></script>
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/master.css" />
-	<!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
-	<!--[if IE 8]>
-		<meta http-equiv="x-ua-compatible" content="IE=8">
-	  	<script>var IE8 = true;</script>
-	  	<script src="/js/ie/site.ie8.js"></script>
-		<link rel="stylesheet" href="/css/site.ie8.css">
-	<![endif]-->
-	<!--[if IE 9]>
-		<script>var IE9 = true;</script>
-		<script src="/js/ie/site.ie9.js"></script>
-	<![endif]-->
-	<!--[if lt IE 9]>
-		 <script src="/js/ie/html5shiv.js"></script>
-		 <script src="/js/ie/respond.min.js"></script>
-	<![endif]-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{[Artist_Maker]Full_Name} - {Include title.inc}
+    </title>
+    <script src="/js/modernizr.js"></script>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/master.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
+    <!--[if IE 8]>
+        <meta http-equiv="x-ua-compatible" content="IE=8">
+        <script>var IE8 = true;</script>
+        <script src="/js/ie/site.ie8.js"></script>
+        <link rel="stylesheet" href="/css/site.ie8.css">
+    <![endif]-->
+    <!--[if IE 9]>
+        <script>var IE9 = true;</script>
+        <script src="/js/ie/site.ie9.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+         <script src="/js/ie/html5shiv.js"></script>
+         <script src="/js/ie/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body class="CollectionPage  shifter">
@@ -89,25 +89,24 @@
 
                         {End If}
 
-        
-                            <strong>{[Artist_Maker]Full_Name}</strong><br/>
+                            {if ([Artist_Maker]Alt_Name != "")}<strong>Also known as: {[Artist_Maker]Alt_Name}</strong><br/>{end if}
                             <!-- {[Artist_Maker]Artist_Label}<br/> -->
                             {if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br/>{end if}
                             {if ([Artist_Maker]Disp_Maker_Life != "")}{[Artist_Maker]Disp_Maker_Life}<br/>{end if}
                             {if ([Artist_Maker]Name_Elab != "")}{[Artist_Maker]Name_Elab}<br/>{end if}
-                			{if ({[Surrogates]Photo_Credit} != "")}{[Surrogates]Photo_Credit}<br/>{end if}
-                			{[Surrogates]Photo_Credit}
-                			{if ([Artist_Maker]Nat_Culture_L2 !="")}{[Artist_Maker]Nat_Culture_L2}<br/>{end if}
-                			{if ([Artist_Maker]Ethnicity != "")}
-                				<div class="artist-info-field"><strong>Cultural Group: </strong> {[Artist_Maker]Ethnicity}</div>
-                			{end if}
-                			
-                			
-                			
-                			<!--<br/>{if ([Artist_Maker]Artist_Code != "")}Getty ULAN ID for the artist: 
-                			<a href="http://www.getty.edu/vow/ULANFullDisplay?find={[Artist_Maker]Artist_Code}&role=&nation=&prev_page=1&subjectid={[Artist_Maker]Artist_Code}">
-                			{if ([Artist_Maker]Artist_Code != "")}{[Artist_Maker]Artist_Code}<br/>{end if}</a>{end if}-->
-                			
+                            {if ({[Surrogates]Photo_Credit} != "")}{[Surrogates]Photo_Credit}<br/>{end if}
+                            {[Surrogates]Photo_Credit}
+                            {if ([Artist_Maker]Nat_Culture_L2 !="")}{[Artist_Maker]Nat_Culture_L2}<br/>{end if}
+                            {if ([Artist_Maker]Ethnicity != "")}
+                                <div class="artist-info-field"><strong>Cultural Group: </strong> {[Artist_Maker]Ethnicity}</div>
+                            {end if}
+                            
+                            
+                            
+                            <!--<br/>{if ([Artist_Maker]Artist_Code != "")}Getty ULAN ID for the artist: 
+                            <a href="http://www.getty.edu/vow/ULANFullDisplay?find={[Artist_Maker]Artist_Code}&role=&nation=&prev_page=1&subjectid={[Artist_Maker]Artist_Code}">
+                            {if ([Artist_Maker]Artist_Code != "")}{[Artist_Maker]Artist_Code}<br/>{end if}</a>{end if}-->
+                            
 
                            
                     
@@ -122,8 +121,8 @@
                 <strong>Additional Images</strong>
                 {Start Loop([Surrogates];Order by [Surrogates]_ID)}
                 <div class="objsur-record-box">
-                	<div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
-                	<div class="objsur-label">{[Surrogates]View_1}</div>
+                    <div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+                    <div class="objsur-label">{[Surrogates]View_1}</div>
                 </div>
                 {End Loop}
                 {end if}

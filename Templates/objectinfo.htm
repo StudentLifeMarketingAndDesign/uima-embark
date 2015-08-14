@@ -191,7 +191,8 @@
 
 
 					{Start Loop [Object_Artist]}
-						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Full_Name}</a></h1>
+						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Display_Name}</a></h1>
+						{if ([Artist_Maker]Alt_Name != "")}<a href="{Artist Info}">Also known as: {[Artist_Maker]Alt_Name}</a>{end if}
 						<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
 						<div class="cutline">
 						{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
@@ -222,23 +223,36 @@
 
 		<div class="col-lg-8">
 			{if ([Objects_1]Technique!="")}
-				<div class="object-info-field"><h2>Technique</h2>{[Objects_1]Technique}</div>
+				<div class="object-info-field">
+					<h2>Technique</h2>
+					<p>{[Objects_1]Technique}</p>
+				</div>
 			{end if}
 			
 			{if ([Objects_1]Class_System!="")}
-				<div class="object-info-field"><h2>Curatorial department</h2> {[Objects_1]Class_System}</div>
+				<div class="object-info-field">
+				<h2>Curatorial department</h2> 
+				<p>{[Objects_1]Class_System}</p></div>
 			{end if}
 			
 			{if ([Objects_1]Ed_Num="")}
-				<div class="object-info-field"><h2>Edition Number</h2>{[Objects_1]Ed_Num}</div>
+				<div class="object-info-field">
+				<h2>Edition Number</h2>
+				<p>{[Objects_1]Ed_Num}</p>
+				</div>
 			{end if}
 				
 			{if ([Objects_1]Ed_Reg_Num="")}
-				<div class="object-info-field"><h2>State</h2>{[Objects_1]Ed_Reg_Num}</div>
+				<div class="object-info-field">
+					<h2>State</h2>
+					<p>{[Objects_1]Ed_Reg_Num}</p>
+				</div>
 			{end if}
 				
 			{if ([Objects_1]Edition!="")}
-				<div class="object-info-field"><h2>Proofs</h2>{[Objects_1]Edition}</div>
+				<div class="object-info-field"><h2>Proofs</h2>
+					<p>{[Objects_1]Edition}</p>
+				</div>
 			{end if}
 						
 			{if ([Objects_1]Creation_Place2!="")}
@@ -274,31 +288,33 @@
 			{if ([Objects_1]Info_Page_Comm!="")}
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
+			
+			
 			<div class="objnotes-record-box">
 
 				{if ([Object Notes]Marks!="")}
 					<h2>Marks</h2>
-					{[Object Notes]Marks}
+					<p>{[Object Notes]Marks}</p>
 				{End if}
 			
 				{if ([Object Notes]Exhibition!="")}
 					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseExhibitionHistory" aria-expanded="false" aria-controls="collapseExhibitionHistory">Exhibition History</h2>
 					<div class="collapse" id="collapseExhibitionHistory">
-						{[Object Notes]Exhibition}
+						<p>{[Object Notes]Exhibition}</p>
 					</div>
 				{End if}
 					
 				{if ([Object Notes]Bibliography!="")}
 					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseBibliography" aria-expanded="false" aria-controls="collapseBibliography">Bibliography</h2>
 					<div class="collapse" id="collapseBibliography">
-						{[Object Notes]Bibliography}
+						<p>{[Object Notes]Bibliography}</p>
 					</div>
 				{End if}
 					
 				{if ([Object Notes]Provenance!="")}
 					<h2 data-toggle="collapse" class="collapse-header collapsed" href="#collapseProvenance" aria-expanded="false" aria-controls="collapseProvenance">Provenance</h2>
 					<div class="collapse" id="collapseProvenance">
-						{[Object Notes]Provenance}
+						<p>{[Object Notes]Provenance}</p>
 					</div>
 				{End if}
 				
