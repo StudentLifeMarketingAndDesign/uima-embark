@@ -191,7 +191,8 @@
 
 
 					{Start Loop [Object_Artist]}
-						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Full_Name}</a></h1>
+						<h1 class="art-title"><a href="{Artist Info}">{[Artist_Maker]Display_Name}</a></h1>
+						{if ([Artist_Maker]Alt_Name != "")}<a href="{Artist Info}">Also known as: {[Artist_Maker]Alt_Name}</a>{end if}
 						<!-- {Concat("; ", [Artist_Maker]Start_Date_Disp, [Artist_Maker]Birth_Place)}<br> -->
 						<div class="cutline">
 						{if ([Artist_Maker]Nat_Culture_L3 != "")}{[Artist_Maker]Nat_Culture_L3}<br>{end if}
@@ -204,7 +205,11 @@
 					<br />
 					<div class="cutline">
 					<!-- label copy start -->
-					<em>{[Objects_1]Disp_Title}</em><br>
+					{if([Objects_1]Whole==TRUE)}
+					<em>{[Objects_1]Disp_Title}</em>
+					{else}
+					<b>{[Objects_1]Disp_Title}</b>
+					{end if}<br>
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
@@ -218,39 +223,31 @@
 
 		<div class="col-lg-8">
 			{if ([Objects_1]Technique!="")}
-				<div class="object-info-field"><h2>Technique</h2><p>{[Objects_1]Technique}</p></div>
+				<div class="object-info-field"><h2>Technique</h2>{[Objects_1]Technique}</div>
 			{end if}
 			
 			{if ([Objects_1]Class_System!="")}
-				<div class="object-info-field"><h2>Curatorial department</h2><p>{[Objects_1]Class_System}</p></div>
+				<div class="object-info-field"><h2>Curatorial department</h2> {[Objects_1]Class_System}</div>
 			{end if}
 			
-						{if ([Objects_1]Series Title!="")}
-				<div class="object-info-field"><h2>Series Title</h2><p>{[Objects_1]Series Title}</p></div>
+			{if ([Objects_1]Ed_Num="")}
+				<div class="object-info-field"><h2>Edition Number</h2>{[Objects_1]Ed_Num}</div>
 			{end if}
-			
-			{if ([Objects_1]Port_Name!="")}
-				<div class="object-info-field"><h2>Portfolio Name</h2><p>{[Objects_1]Port_Name}</p></div>
+				
+			{if ([Objects_1]Ed_Reg_Num="")}
+				<div class="object-info-field"><h2>State</h2>{[Objects_1]Ed_Reg_Num}</div>
 			{end if}
-			
-			{if ([Objects_1]Book_title!="")}
-				<div class="object-info-field"><h2>Book Title</h2><p>{[Objects_1]Book_title}</p></div>
-			{end if}
-			
+				
 			{if ([Objects_1]Edition!="")}
-				<div class="object-info-field"><h2>Edition</h2><p>{[Objects_1]Edition}</p></div>
+				<div class="object-info-field"><h2>Proofs</h2>{[Objects_1]Edition}</div>
 			{end if}
-			
-			{if ([Objects_1]Edition_text!="")}
-				<div class="object-info-field"><h2>Edition Notes</h2><p>{[Objects_1]Edition_text}</p></div>
-			{end if}
-			
+						
 			{if ([Objects_1]Creation_Place2!="")}
-				<div class="object-info-field"><h2>Region</h2> <p>{[Objects_1]Creation_Place2}</p></div>
+				<div class="object-info-field"><h2>Region</h2> {[Objects_1]Creation_Place2}</div>
 			{end if}
 
 			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><h2>Credit line</h2><p>{[Objects_1]Dedication}</p></div>
+				<div class="object-info-field"><h2>Credit line</h2>{[Objects_1]Dedication}</div>
 			{end if}
 			
 				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
@@ -258,7 +255,7 @@
 				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
 
 			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
+				<div class="object-info-field"><h2>Accession number</h2>{[Objects_1]Disp_Access_No}</div>
 			{end if}
 			
 
@@ -278,22 +275,33 @@
 			{if ([Objects_1]Info_Page_Comm!="")}
 			<div class="object-info-field"><h2>Comments</h2> {[Objects_1]Info_Page_Comm}</div>
 			{end if}
+			
+			
 			<div class="objnotes-record-box">
-				{if ([Object Notes]Exhibition != ""}
+			
+				
+				{if ([Object Notes]Marks!="")}
+					<h2>Marks</h2>
+					{[Object Notes]Marks}
+				{End if}
+			
+				{if ([Object Notes]Exhibition!="")}
 					<h2>Exhibition History</h2>
-					<p>{[Object Notes]Exhibition}</p>
-				{end if}
-
-				{if ([Object Notes]Bibliography != ""}
+					{[Object Notes]Exhibition}
+				{End if}
+					
+				{if ([Object Notes]Bibliography!="")}
 					<h2>Bibliography</h2>
-					<p>{[Object Notes]Bibliography}</p>
-				{end if}
-
-				{if ([Object Notes]Provenance != ""}
-				<h2>Provenance</h2>
-				<p>{[Object Notes]Provenance}</p>
-				{end if}
+					{[Object Notes]Bibliography}
+				{End if}
+					
+				{if ([Object Notes]Provenance!="")}
+					<h2>Provenance</h2>
+					{[Object Notes]Provenance}
+				{End if}
+				
 			</div>
+
 		</div>
 
 		{if ([Surrogates])}
@@ -388,7 +396,7 @@
 			
 
 
-		{if ([Biblio_Citation])}
+		<!--{if ([Biblio_Citation])}
 		<hr>
 		<p>
 		    <strong>Bibliography</strong><br/>
@@ -409,6 +417,7 @@
 		    </ul>
 		</p>
 		{end if}
+		/!-->
 
 		{if ([Portfolios])}
 		<hr>
