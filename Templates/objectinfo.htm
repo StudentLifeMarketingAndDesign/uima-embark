@@ -108,10 +108,10 @@
 	<main class="container main" role="main">
 	{if(Has Image)}
 		<section>
-			{if(Image height=="0")}
+			{if(Image height=="0")}<!-- if the image height is 0? PDF? -->
 		
 					<div class="row">
-						<div class="col-lg-10 col-lg-offset-2">
+						<div class="col-lg-2 col-lg-offset-3">
 
 							<div class="row">
 								<div class="col-lg-4">
@@ -130,7 +130,7 @@
 
 	
 			{else}
-	        {if(Image duration=="0")}
+	        {if(Image duration=="0")} <!-- if there's a static image, not a video -->
 
 
 					<div class="row">
@@ -140,7 +140,7 @@
 
 
 				
-							<a class="highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);" target="_blank"><img class="main-artwork-image" src="{preview}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
+							<a class="lightbox" href="{Image Path}" target="_blank" data-lightbox-gallery="object-gallery"><img class="main-artwork-image" src="{preview}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
 						</div>
 
 						<div class="col-lg-4">
@@ -152,10 +152,10 @@
 					</div>
 					<hr />
 
-			  {else}
+			  {else} <!-- if there is a video -->
 
 					<div class="row">
-						<div class="col-lg-10 col-lg-offset-2 text-center">
+						<div class="col-lg-6 col-lg-offset-3">
 
 
 							<video width="{image width}" height="{image height}" controls>
@@ -185,7 +185,7 @@
     	</section>
 	{end if}
 
-	{else}
+	{else} <!-- no image case -->
 		<p>This object does not have an image.</p>
 	{end if}
 	<div class="row">
@@ -345,16 +345,17 @@
 			<h2>Additional Images</h2>
 			{Start Loop([Surrogates];[Surrogates]IsPrimary=="no";Order By [Surrogates]_ID)}
 			<div class="objsur-record-box">
-				<div class="objsur-thumbnail">
+				<div class="objsur-thumbnail ">
 				{if(Has Image)}
-			{if(Image duration=="0")}
-			<a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div>
-			{end if}	
+					{if(Image duration=="0")}
+					<a class="item highslide lightbox" href="{Image Path}" class="lightbox" data-lightbox-gallery="object-gallery" ><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}"  /><br></a></div>
+					{end if}	
 			    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
 			    <div class="objsur-label"></div>
 			</div>
 			{End If}
 			{End Loop}
+
 		</div>
 		{end if}
 		</div>

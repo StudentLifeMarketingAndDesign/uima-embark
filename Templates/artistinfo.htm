@@ -121,7 +121,7 @@
                 <strong>Additional Images</strong>
                 {Start Loop([Surrogates];Order by [Surrogates]_ID)}
                 <div class="objsur-record-box">
-                    <div class="objsur-thumbnail"><a class="item highslide" href="{Image Path}" onclick="return hs.expand(this, hs.__.paramGallery);"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
+                    <div class="objsur-thumbnail"><a class="item highslide lightbox" href="{Image Path}"  data-lightbox-gallery="="artist-objects"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}" /><br></a></div><br><br>
                     <div class="objsur-label">{[Surrogates]View_1}</div>
                 </div>
                 {End Loop}
