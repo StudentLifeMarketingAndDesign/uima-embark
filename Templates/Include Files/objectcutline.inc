@@ -15,11 +15,12 @@
 					<div class="cutline">
 					<!-- label copy start -->
 					{if([Objects_1]Attribution != "")}<em>{[Objects_1]Attribution}</em><br>{end if}
-					{if([Objects_1]Whole==TRUE)}
-					<em>{[Objects_1]Disp_Title}</em>
-					{else}
-					<b>{[Objects_1]Disp_Title}</b>
-					{end if}<br>
+{if([Objects_1]Whole=="No")}
+<i><b>{[Objects_1]Disp_Title}</b></i>
+{else}
+<b>{[Objects_1]Disp_Title}</b>
+{end if}<br>
+
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}

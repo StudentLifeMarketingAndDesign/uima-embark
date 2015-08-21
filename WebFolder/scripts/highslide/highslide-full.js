@@ -35,8 +35,8 @@ lang : {
 },
 // See http://highslide.com/ref for examples of settings  
 graphicsDir : 'highslide/graphics/',
-expandCursor : 'zoomin.cur', // null disables
-restoreCursor : 'zoomout.cur', // null disables
+expandCursor : null, // null disables
+restoreCursor : null, // null disables
 expandDuration : 250, // milliseconds
 restoreDuration : 250,
 marginLeft : 15,

@@ -4,10 +4,7 @@
    <!-- <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>-->
     <script src="/js/build/production.js"></script>
 
-    <!-- default embark javascript (to be minified) -->
-    <script type="text/javascript" src="/scripts/highslide/highslide-full.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/scripts/highslide/highslide.css" />
-    <script type="text/javascript" src="/scripts/highslideinit.js"></script>
+
 	<script type="text/javascript" src="/scripts/globalize.js"></script>
 	<!--<script type="text/javascript" src="/scripts/filterbox.js"></script>-->
 	<script type="text/javascript" src="/scripts/myscript.js"></script>
@@ -78,6 +75,3 @@
 
     </script>
     <!-- end scripts -->
-    <script type="text/javascript">
-
-    </script>

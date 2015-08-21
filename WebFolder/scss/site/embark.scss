@@ -116,7 +116,12 @@ body.CollectionPage .main.container{
 		content: '+';
 	}
 }
-
+img.mfp-img {
+    padding: 0;
+    margin: 40px auto;
+    /*Add your border*/
+    border: 5px solid white;
+}
 
 /** General Tags/Keywords Styles *****/
 
