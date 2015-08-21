@@ -31,9 +31,7 @@ $(document).ready(function() {
 	}
 
 	// Lightbox
-	$(".lightbox").lightbox({
-		mobile: true
-	});
+	$(".lightbox").lightbox();
 
 	// Tooltip
 	$(".tooltip").tooltip({
