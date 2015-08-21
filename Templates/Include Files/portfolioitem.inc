@@ -8,6 +8,11 @@
                         height="{thumbnail height*.7}" width="{thumbnail width*.7}" alt=""/></a>{Else}<img src="/graphics/DefaultThumbnail.gif" alt=""/>{EndIf}
         </div>-->
         <div class="portfolio-label">
+            {if([Objects_1]Whole=="No")}
+            <i><b>{[Objects_1]Disp_Title}</b></i>
+            {else}
+            <b>{[Objects_1]Disp_Title}</b>
+            {end if}<br>
             {If([Objects_1]Disp_Title!="")}<a href="{Object Info}" onmouseover="self.status = 'Display Object Description';return true" onmouseout="self.status = '';return true" title="Display Object Description">{[Objects_1]Disp_Title}</a><br/>{End If}
             {If([Objects_1]Disp_Maker_1!="")}<a href="{Artist Info}">{[Objects_1]Disp_Maker_1}</a><br/>{End If}
             {If([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br/>{End If}
