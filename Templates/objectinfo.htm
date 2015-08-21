@@ -137,10 +137,7 @@
 
 						<div class="col-lg-2 col-lg-offset-3">
 
-
-
-				
-							<a class="lightbox" href="{Image Path}" target="_blank" data-lightbox-gallery="object-gallery"><img class="main-artwork-image" src="{preview}" alt="Image: {[Objects_1]Disp_Title}" /></a><br>
+							<a href="{Image Path}" target="_blank" class="lightbox-image"><img class=" main-artwork-image" src="{preview}" alt="Image: {[Objects_1]Disp_Title}" /></a>
 						</div>
 
 						<div class="col-lg-4">
@@ -349,7 +346,7 @@
 				<div class="objsur-thumbnail ">
 				{if(Has Image)}
 					{if(Image duration=="0")}
-					<a class="item highslide lightbox" href="{Image Path}" class="lightbox" data-lightbox-gallery="object-gallery" ><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}"  /><br></a></div>
+					<a class="item highslide lightbox-image" href="{Image Path}"><img src="{thumbnail}" height="{thumbnail height}" width="{thumbnail width}" alt"Image: {[Surrogates]View_1}"  /><br></a></div>
 					{end if}	
 			    <div class="objsur-label">{if([Surrogates]View_1!="")}{[Surrogates]View_1}<br/>{end if}</div>
 			    <div class="objsur-label"></div>

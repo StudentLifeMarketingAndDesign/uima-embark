@@ -31,8 +31,15 @@ $(document).ready(function() {
 	}
 
 	// Lightbox
-	$(".lightbox").lightbox();
+	//$(".lightbox").lightbox();
 
+	// This will create a single gallery from all elements that have class "gallery-item"
+	$('.lightbox-image').magnificPopup({
+	  type: 'image',
+	  gallery:{
+	    enabled:true
+	  }
+	});
 	// Tooltip
 	$(".tooltip").tooltip({
 		direction: "top"
