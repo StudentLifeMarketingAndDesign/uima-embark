@@ -231,12 +231,25 @@
 				</div>
 			{end if}
 			
-			{if ([Objects_1]Class_System!="")}
+			{if ([Dimensions])}	
+	
+				{Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
+					<div class="object-info-field">
+						<p><strong>Subject </strong>{[Dimensions]Dimen_Subject}
+			
+				   		<strong>Dimensions </strong>
+				   		{[Dimensions]Disp_Dimen}</p>
+				   	</div>
+				    {End Loop}
+
+			{End if}
+			
+			<!-- {if ([Objects_1]Class_System!="")}
 				<div class="object-info-field">
 					<h2>Curatorial department</h2> 
 					<p>{[Objects_1]Class_System}</p>
 				</div>
-			{end if}
+			{end if} -->
 			
 			{if ([Objects_1]Ed_Num="")}
 				<div class="object-info-field">
@@ -275,21 +288,10 @@
 			{end if}
 			
 
-				{if ([Dimensions])}	
-	
-				    {Start Loop([Dimensions]Dimen_Subject!="";Order by [Dimensions]Dimen_Subject >)}
-					    	<div class="object-info-field">
-					    		<p><strong>Subject </strong>{[Dimensions]Dimen_Subject}
-			
-					    		<strong>Dimensions </strong>
-					    		{[Dimensions]Disp_Dimen}</p>
-					    	</div>
-				    {End Loop}
-
-				{End if}					
+				
 
 			{if ([Objects_1]Info_Page_Comm!="")}
-			<div class="object-info-field"><h2>Comments</h2><p>{[Objects_1]Info_Page_Comm}></p></div>
+			<div class="object-info-field"><h2>Comments</h2><p>{[Objects_1]Info_Page_Comm}</p></div>
 			{end if}
 			
 			
