@@ -183,8 +183,24 @@
 	{end if}
 
 	{else} <!-- no image case -->
-		<p>This object does not have an image.</p>
-		{Include objectcutline.inc}
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-3">
+
+				<div class="row">
+					<div class="col-lg-4">
+						<p>This object does not have an image.</p>
+					</div>
+
+					<div class="col-lg-8">
+						{Include objectcutline.inc}
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
 	{end if}
 	<div class="row">
 		<!-- Section Heading -->
@@ -501,10 +517,7 @@
 		
 					<!-- Sample code end -->
 					
-					<!-- AddThis Button BEGIN -->
-					<!-- This code must be updated for your own AddThis account at http://www.addthis.com. Please note the example for customizing the URL to make a bookmarkable URL without session id information. -->
-					<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url='http://YOUR_URL.com/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->';  addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s9.addthis.com/button1-bm.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = '<your account name>';</script><script type="text/javascript" src="http://s9.addthis.com/js/widget.php?v=10"></script>
-					<!-- AddThis Button END -->
+
 			</section>
 		</div><!-- end .col -->
 	</div><!-- end .row -->

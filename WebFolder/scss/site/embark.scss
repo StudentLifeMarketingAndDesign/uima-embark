@@ -75,6 +75,15 @@ body.CollectionPage .main.container{
 
 /* Object info */
 
+h1.art-title{
+	margin-top: 13px;
+	margin-bottom: 10px;
+}
+h1.art-title:nth-child(n+2){
+	font-size: 20px;
+	margin-bottom: 7px;
+
+}
 .ObjectInfo .main-artwork-image{
 	margin-top: 0.75em;
 }
