@@ -274,20 +274,10 @@
 			{if ([Objects_1]Creation_Place2!="")}
 				<div class="object-info-field"><h2>Region</h2><p>{[Objects_1]Creation_Place2}</p></div>
 			{end if}
-
-			{if ([Objects_1]Dedication!="")}
-				<div class="object-info-field"><h2>Credit line</h2><p>{[Objects_1]Dedication}</p></div>
-			{end if}
+		
+			<div class="object-info-field"><h2>Credit line and accession number</h2><p>{Concat(", ", [Objects_1]Dedication, [Objects_1]Disp_Access_No)}</p></div>
 			
-				<!--<div class="object-info-field"><strong>Legal Status Date:</strong>-->
-				<!-- info about globalizeDate is at https://github.com/jquery/globalize#parseDate -->
-				<!--{[Objects_1]Lgl_Stts_Date}</div>-->
-
-			{if ([Objects_1]Disp_Access_No!="")}
-				<div class="object-info-field"><h2>Accession number</h2><p>{[Objects_1]Disp_Access_No}</p></div>
-			{end if}
 			
-
 				
 
 			{if ([Objects_1]Info_Page_Comm!="")}

@@ -24,5 +24,6 @@
 					{if([Objects_1]Disp_Create_DT!="")}{[Objects_1]Disp_Create_DT}<br>{end if}
 					{if([Objects_1]Disp_Medium!="")}{[Objects_1]Disp_Medium}<br>{end if}
 					{if([Objects_1]Disp_Dimen!="")}{[Objects_1]Disp_Dimen}<br>{end if}
+					{Concat(", ", [Objects_1]Dedication, [Objects_1]Disp_Access_No)}
 					<!-- label copy end -->
 					</div>
