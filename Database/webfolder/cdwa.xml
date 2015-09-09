@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?> 
+
+<cdwalite:cdwaliteWrap xmlns:cdwalite="http://www.getty.edu/CDWA/CDWALite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.getty.edu/CDWA/CDWALite
+C:\DOCUME~1\aa.AWMF\Desktop\cdwalite_009c2.xsd">
+
+<info>
+<foundcount><!--#4DVAR Records in Selection([Objects_1])--></foundcount>
+<criteria><!--#4DVAR queryString--></criteria>
+</info> 
+<!--#4DLOOP [Objects_1]-->
+<cdwalite:cdwalite>
+        <cdwalite:descriptiveMetadata>  
+            <cdwalite:objectWorkTypeWrap>   
+                <cdwalite:objectWorkType><!--#4DVAR [Objects_1]Disp_Obj_Type--></cdwalite:objectWorkType>   
+            </cdwalite:objectWorkTypeWrap>
+            <cdwalite:titleWrap>    
+                <cdwalite:titleSet>
+                    <cdwalite:title><!--#4DVAR [Objects_1]Disp_Title--></cdwalite:title>
+                </cdwalite:titleSet>
+                <!--#4DIF ([Objects_1]Alt_Title#"")--><cdwalite:titleSet>
+                    <cdwalite:title cdwalite:pref="Alternate"><!--#4DVAR [Objects_1]Alt_Title--></cdwalite:title>
+                </cdwalite:titleSet><!--#4DENDIF-->
+                <!--#4DIF ([Objects_1]Series_Title#"")--><cdwalite:titleSet>
+                    <cdwalite:title cdwalite:type="series"><!--#4DVAR [Objects_1]Series Title--></cdwalite:title>
+                </cdwalite:titleSet><!--#4DENDIF-->
+            </cdwalite:titleWrap>
+            <cdwalite:displayCreator><!--#4DIF ([Objects_1]Attribution#"")--><!--#4DVAR [Objects_1]Attribution--> <!--#4DENDIF--><!--#4DVAR [Objects_1]Disp_Maker_1--><!--#4DIF ([Objects_1]Artist_Dates#"")-->, <!--#4DVAR [Objects_1]Artist_Dates--><!--#4DENDIF--></cdwalite:displayCreator>
+            <cdwalite:indexingCreatorWrap>  
+		<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker-->
+                <cdwalite:indexingCreatorSet>   
+                    <cdwalite:nameCreatorSet>
+                        <cdwalite:nameCreator><!--#4DVAR [Artist_Maker]Sort_Name--></cdwalite:nameCreator>
+                    </cdwalite:nameCreatorSet>
+                    <cdwalite:nationalityCreator><!--#4DVAR [Artist_Maker]Nat_Culture_L2--></cdwalite:nationalityCreator>
+                    <cdwalite:vitalDatesCreator><!--#4DIF ([Artist_Maker]Start_Date_Disp#"")--><!--#4DVAR [Artist_Maker]Start_Date_Disp--><!--#4DENDIF--><!--#4DIF ([Artist_Maker]End_Date_Disp#"")--> - <!--#4DVAR [Artist_Maker]End_Date_Disp--><!--#4DENDIF--></cdwalite:vitalDatesCreator>
+                    <cdwalite:genderCreator><!--#4DVAR [Artist_Maker]Gender--></cdwalite:genderCreator>
+                    <cdwalite:roleCreator><!--#4DVAR [Object_Artist]Role--></cdwalite:roleCreator>
+                    <cdwalite:attributionQualifierCreator><!--#4DVAR [Object_Artist]Attribution--></cdwalite:attributionQualifierCreator>
+                    <cdwalite:extentCreator><!--#4DVAR [Object_Artist]Extent--></cdwalite:extentCreator>
+                </cdwalite:indexingCreatorSet><!--#4DENDLOOP-->
+            </cdwalite:indexingCreatorWrap> 
+            <cdwalite:displayMeasurements><!--#4DVAR [Objects_1]Disp_Dimen--></cdwalite:displayMeasurements>    
+            <cdwalite:indexingMeasurementsWrap> 
+                <!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Dimensions--><!--#4DLOOP [Dimensions]--><cdwalite:indexingMeasurementsSet>
+                    <cdwalite:measurementSet cdwalite:value="<!--#4DVAR [Dimensions]Disp_Height-->" cdwalite:unit="in" cdwalite:type="height">.</cdwalite:measurementSet>
+                    <cdwalite:measurementSet cdwalite:value="<!--#4DVAR [Dimensions]Disp_Width-->" cdwalite:unit="in" cdwalite:type="width">.</cdwalite:measurementSet>
+                    <cdwalite:measurementSet cdwalite:value="<!--#4DVAR [Dimensions]Disp_Depth-->" cdwalite:unit="in" cdwalite:type="depth">.</cdwalite:measurementSet>
+                    <cdwalite:extentMeasurements><!--#4DVAR [Dimensions]Extent--></cdwalite:extentMeasurements>
+                    <cdwalite:qualifierMeasurements><!--#4DVAR [Dimensions]Orientation--></cdwalite:qualifierMeasurements>
+                    <cdwalite:formatMeasurements><!--#4DVAR [Dimensions]Dimen_Subject--></cdwalite:formatMeasurements>
+                    <cdwalite:shapeMeasurements><!--#4DVAR [Dimensions]Shape--></cdwalite:shapeMeasurements>
+                    <cdwalite:scaleMeasurements><!--#4DVAR [Dimensions]Scale--></cdwalite:scaleMeasurements>
+                </cdwalite:indexingMeasurementsSet><!--#4DENDLOOP-->
+            </cdwalite:indexingMeasurementsWrap>
+            <cdwalite:displayMaterialsTech><!--#4DVAR [Objects_1]Medium--></cdwalite:displayMaterialsTech> 
+            <cdwalite:indexingMaterialsTechWrap>    
+                <cdwalite:indexingMaterialsTechSet> 
+                    <cdwalite:termMaterialsTech><!--#4DVAR [Objects_1]Medium--></cdwalite:termMaterialsTech>
+   			<!--#4DSCRIPT/LoadObjectNotes/Medium-->
+                    <cdwalite:extentMaterialsTech><!--#4DVAR [Object_Notes]Text--></cdwalite:extentMaterialsTech> 
+                    <cdwalite:sourceMaterialsTech></cdwalite:sourceMaterialsTech>  
+                </cdwalite:indexingMaterialsTechSet>
+            </cdwalite:indexingMaterialsTechWrap>
+            <cdwalite:displayStateEditionWrap>  
+                <cdwalite:displayState><!--#4DVAR [Objects_1]Edition--></cdwalite:displayState> 
+                <cdwalite:displayEdition></cdwalite:displayEdition>    
+                <cdwalite:sourceStateEdition></cdwalite:sourceStateEdition>    
+            </cdwalite:displayStateEditionWrap>
+            <cdwalite:styleWrap>    
+                <cdwalite:style><!--#4DVAR [Objects_1]Style--></cdwalite:style> 
+            </cdwalite:styleWrap>
+            <cdwalite:cultureWrap>  
+                <cdwalite:culture><!--#4DVAR [Objects_1]Creation_PlaceH--></cdwalite:culture>   
+            </cdwalite:cultureWrap>
+            <cdwalite:displayCreationDate><!--#4DVAR [Objects_1]Disp_Create_DT--></cdwalite:displayCreationDate>    
+            <cdwalite:indexingDatesWrap>    
+                <cdwalite:indexingDatesSet> 
+                    <cdwalite:dateQualifier></cdwalite:dateQualifier> 
+                    <cdwalite:earliestDate><!--#4DVAR [Objects_1]_Disp_Start_Dat--></cdwalite:earliestDate>    
+                    <cdwalite:latestDate><!--#4DVAR [Objects_1]_Disp_End_Date--></cdwalite:latestDate> 
+                </cdwalite:indexingDatesSet>
+            </cdwalite:indexingDatesWrap>
+            <cdwalite:locationWrap> 
+                <cdwalite:locationSet>  
+                    <cdwalite:locationName><!--#4DIF ([Objects_1]Class1#"")--><!--#4DVAR [Objects_1]Class1--><!--#4DENDIF--><!--#4DIF ([Objects_1]Class_System#"")-->, <!--#4DVAR [Objects_1]Class_System--><!--#4DENDIF--></cdwalite:locationName>    
+                    <cdwalite:workID><!--#4DVAR [Objects_1]Alt_Number_1--></cdwalite:workID>    
+                </cdwalite:locationSet>
+            </cdwalite:locationWrap>
+            <cdwalite:indexingSubjectWrap>  
+                <cdwalite:indexingSubjectSet>   
+                    <cdwalite:extentSubject></cdwalite:extentSubject>   
+                    <cdwalite:subjectTerm><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Keywords--><!--#4DLOOP [Keywords]--><!--#4DIF (GetSelectedRecordNumber(72) # 1)-->, <!--#4DENDIF--><!--#4DVAR [Keywords]Word--><!--#4DENDLOOP--></cdwalite:subjectTerm>    
+                </cdwalite:indexingSubjectSet>
+            </cdwalite:indexingSubjectWrap>
+            <cdwalite:classWrap>    
+                <cdwalite:class><!--#4DVAR [Objects_1]Disp_Obj_Type--></cdwalite:class> 
+            </cdwalite:classWrap>
+            <cdwalite:descriptiveNoteWrap>  
+                <cdwalite:descriptiveNoteSet>   
+                    <cdwalite:descriptiveNote><!--#4DVAR [Objects_1]Info_Page_Comm--></cdwalite:descriptiveNote>    
+                    <cdwalite:sourceDescriptiveNote></cdwalite:sourceDescriptiveNote>  
+                </cdwalite:descriptiveNoteSet>
+            </cdwalite:descriptiveNoteWrap>
+            <cdwalite:inscriptionsWrap> 
+                <!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Marks--><!--#4DLOOP [Marks]--><cdwalite:inscriptions><!--#4DIF ([Marks]Signed#"")--><!--#4DVAR [Marks]Signed-->, <!--#4DENDIF--><!--#4DIF ([Marks]Location#"")--><!--#4DVAR [Marks]Location--><!--#4DENDIF--><!--#4DIF ([Marks]Description#"")-->, <!--#4DVAR [Marks]Description--><!--#4DENDIF--></cdwalite:inscriptions><!--#4DENDLOOP-->
+            </cdwalite:inscriptionsWrap>
+            <cdwalite:relatedWorksWrap> 
+                <cdwalite:relatedWorkSet>   
+                    <cdwalite:linkRelatedWork></cdwalite:linkRelatedWork>   
+                    <cdwalite:relatedWorkRelType></cdwalite:relatedWorkRelType>
+                    <cdwalite:labelRelatedWork></cdwalite:labelRelatedWork>    
+                    <cdwalite:locRelatedWork></cdwalite:locRelatedWork>    
+                </cdwalite:relatedWorkSet>
+            </cdwalite:relatedWorksWrap>
+        </cdwalite:descriptiveMetadata>
+        <cdwalite:administrativeMetadata>   
+            <cdwalite:rightsWork><!--#4DVAR Get_FieldValue("[Objects_1]CopyrightHolder")--></cdwalite:rightsWork>    
+            <cdwalite:recordWrap>   
+                <cdwalite:recordID><!--#4DIF ([Objects_1]Disp_Access_No#"")--><!--#4DVAR [Objects_1]Disp_Access_No--><!--#4DELSE--> <!--#4DVAR [Objects_1]Temp_ID--><!--#4DENDIF--></cdwalite:recordID>  
+                <cdwalite:recordType>item</cdwalite:recordType> 
+                <cdwalite:recordSource><!--#4DVAR <>vtInstitution--></cdwalite:recordSource>  
+                
+			<cdwalite:recordInfoWrap>   
+                    <cdwalite:recordInfoID></cdwalite:recordInfoID>  
+                    <cdwalite:recordInfoLink></cdwalite:recordInfoLink> 
+                    <cdwalite:recordRelID></cdwalite:recordRelID>    
+                    <cdwalite:recordMetadataLoc></cdwalite:recordMetadataLoc>    
+                    <cdwalite:recordMetadataDate><!--#4DVAR [Objects_1]Record_Date--></cdwalite:recordMetadataDate> 
+                </cdwalite:recordInfoWrap>
+            </cdwalite:recordWrap>
+            <cdwalite:resourceWrap> 
+                <!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Surrogates--><!--#4DLOOP [Surrogates]-->
+		    <cdwalite:resourceSet>
+			  <cdwalite:linkResource></cdwalite:linkResource>
+                    <cdwalite:resourceID><!--#4DVAR [Surrogates]ID_Num--></cdwalite:resourceID>
+                    <cdwalite:resourceRelType><!--#4DVAR [Surrogates]Subject--></cdwalite:resourceRelType>
+                    <cdwalite:resourceType><!--#4DVAR [Surrogates]Image_Type--></cdwalite:resourceType>
+                    <cdwalite:rightsResource><!--#4DVAR Get_FieldValue("[Surrogates]CopyrightHolder")--></cdwalite:rightsResource>
+                    <cdwalite:resourceViewDescription><!--#4DVAR [Surrogates]View_1--></cdwalite:resourceViewDescription>
+                    <cdwalite:resourceViewType><!--#4DVAR [Surrogates]Status--></cdwalite:resourceViewType>
+                    <cdwalite:resourceViewSubjectTerm><!--#4DVAR [Surrogates]Image_Size--></cdwalite:resourceViewSubjectTerm>
+                    <cdwalite:resourceViewDate><!--#4DVAR [Surrogates]Create_Date--></cdwalite:resourceViewDate>
+                    <cdwalite:resourceSource></cdwalite:resourceSource>
+                    <cdwalite:resourceMetadataLoc>http://127.0.0.1:5000<!--#4DVAR ImagePath("Surrogates")--></cdwalite:resourceMetadataLoc>
+                </cdwalite:resourceSet>
+			<!--#4DENDLOOP-->
+            </cdwalite:resourceWrap>
+        </cdwalite:administrativeMetadata>
+    </cdwalite:cdwalite>
+<!--#4DENDLOOP--> 
+</cdwalite:cdwaliteWrap>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?> 
+
+<results
+xmlns:accmd="http://www.w3.org/TR/WCAG10-TECHS/"
+xmlns:pachyderm="http://www.pachyderm.org/metadatastandards/pachyderm/" 
+xmlns:dcterms="http://dublincore.org/documents/2006/12/18/dces/"
+xmlns:dc="http://dublincore.org/documents/2006/12/18/dces/">
+
+<info>
+<foundcount><!--#4DVAR Records in Selection([Objects_1])--></foundcount>
+<criteria><!--#4DVAR queryString--></criteria>
+</info> 
+<!--#4DLOOP [Objects_1]-->
+<record>
+<asset> 
+<dc:title><!--#4DVAR [Objects_1]Disp_Title--></dc:title>
+<dcterms:alternative><!--#4DVAR [Objects_1]Alt_Title--></dcterms:alternative>
+<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker--><dc:creator><!--#4DVAR [Artist_Maker]Sort_Name--></dc:creator><!--#4DENDLOOP-->
+<dcterms:created><!--#4DVAR [Objects_1]Disp_Create_DT--></dcterms:created>
+<dcterms:medium><!--#4DVAR [Objects_1]Disp_Medium--></dcterms:medium>
+<dimensions><!--#4DVAR [Objects_1]Disp_Dimen--></dimensions>
+<dc:date><!--#4DVAR [Objects_1]Disp_Create_DT--></dc:date><dc:description><!--#4DVAR [Objects_1]Info_Page_Comm--></dc:description> 
+<dc:identifier><!--#4DIF ([Objects_1]Disp_Access_No#"")--><!--#4DVAR [Objects_1]Disp_Access_No--><!--#4DELSE--> <!--#4DVAR [Objects_1]Temp_ID--><!--#4DENDIF--> </dc:identifier>
+<!--#4DSCRIPT/LoadObjectNotes/Related Objects--><dc:relation><!--#4DVAR [Object_Notes]Text--></dc:relation>
+<dcterms:rightsHolder><!--#4DVAR Get_FieldValue("[Objects_1]CopyrightHolder")--></dcterms:rightsHolder>
+<dc:source><!--#4DVAR [Objects_1]User_Def_1--></dc:source>
+<dedication><!--#4DVAR [Objects_1]Dedication--></dedication>
+<dc:subject><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Keywords--><!--#4DLOOP [Keywords]--><!--#4DIF (GetSelectedRecordNumber(72) # 1)-->, <!--#4DENDIF--><!--#4DVAR [Keywords]Word--><!--#4DENDLOOP--></dc:subject>
+<pachyderm:assetURL>http://webkiosk.gallerysystems.com<!--#4DVAR TAGImagePath("")--></pachyderm:assetURL>
+<pachyderm:mediumAssetURL>http://webkiosk.gallerysystems.com<!--#4DVAR PreviewPath("Objects_1")--></pachyderm:mediumAssetURL>
+<pachyderm:thumbnailURL>http://webkiosk.gallerysystems.com<!--#4DVAR ThumbnailPath("Objects_1")--></pachyderm:thumbnailURL>
+<id>http://worldimage.sjsu.edu/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->.htm</id>
+<dc:contributor><!--#4DVAR <>vtInstitution--></dc:contributor>
+<dcterms:dateModified><!--#4DVAR [Objects_1]Mod_Date--></dcterms:dateModified>
+</asset>
+</record>
+<!--#4DENDLOOP--> 
+</results>
+

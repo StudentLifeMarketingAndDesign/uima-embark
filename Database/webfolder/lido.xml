@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+The Davison Art Center / EmbARK XML template from which this LIDO was generated is in beta.
+Its output should be well-formed but does not quite yet validate against the LIDO schema:
+In vitalDatesActor, displayDate is an invalid hack to transport display-override strings
+for life dates, which concatenated earliestDate and latestDate elements can misrepresent. 
+-->
+
+<lido:lidoWrap xmlns:lido="http://www.lido-schema.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.lido-schema.org/schema/v1.0/ http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd"
+	xmlns:gml="http://www.opengis.net/gml">
+	
+	<!--#4DLOOP [Objects_1]-->
+	
+	<lido:lido>
+		<lido:lidoRecID lido:source="Institution Name" lido:type="local">US-CtW-XXX/lido-<!--#4DVAR [Objects_1]Temp_ID--></lido:lidoRecID>
+		<lido:category>
+			<lido:conceptID lido:type="URI">http://www.cidoc-crm.org/crm-concepts/#E22</lido:conceptID>
+			<lido:term xml:lang="en">Man-Made Object</lido:term>
+		</lido:category>
+
+		<lido:descriptiveMetadata xml:lang="en">
+
+			<lido:objectClassificationWrap>
+				<lido:objectWorkTypeWrap>
+					<lido:objectWorkType>
+						<lido:term><!--#4DVAR [Objects_1]Disp_Obj_Type--></lido:term>
+					</lido:objectWorkType>
+				</lido:objectWorkTypeWrap>
+				<lido:classificationWrap>
+					<lido:classification>
+						<lido:term>Image</lido:term>
+					</lido:classification>
+				</lido:classificationWrap>
+			</lido:objectClassificationWrap>
+
+			<lido:objectIdentificationWrap>
+				<lido:titleWrap>
+					<lido:titleSet>
+						<lido:appellationValue lido:pref="preferred"><!--#4DVAR [Objects_1]Obj_Title--></lido:appellationValue>
+					</lido:titleSet><!--#4DIF ([Objects_1]Series_Title#"")-->
+					<lido:titleSet>
+						<lido:appellationValue lido:label="From Set or Series"><!--#4DVAR [Objects_1]Series_Title--></lido:appellationValue>
+					</lido:titleSet><!--#4DENDIF-->
+				</lido:titleWrap>
+				<lido:inscriptionsWrap>
+					<lido:inscriptions>
+						<lido:inscriptionDescription>
+							<lido:descriptiveNoteValue><!--#4DSCRIPT/LoadObjectNotes/Marks--><!--#4DSCRIPT/SQL_Encode/[Object_Notes]Text--></lido:descriptiveNoteValue>
+						</lido:inscriptionDescription>
+					</lido:inscriptions>
+				</lido:inscriptionsWrap>
+				<lido:repositoryWrap>
+					<lido:repositorySet lido:type="current">
+						<lido:repositoryName>
+							<lido:legalBodyID lido:source="ULAN" lido:type="local">54321</lido:legalBodyID>
+							<lido:legalBodyName>
+								<lido:appellationValue>Institution name</lido:appellationValue>
+							</lido:legalBodyName>
+							<lido:legalBodyWeblink>http://YourURL.org</lido:legalBodyWeblink>
+						</lido:repositoryName>
+						<lido:workID lido:type="accession number"><!--#4DVAR [Objects_1]Disp_Access_No--></lido:workID>
+						<lido:repositoryLocation>
+							<lido:partOfPlace>
+								<lido:namePlaceSet>
+									<lido:appellationValue lido:label="Site">Institution Name</lido:appellationValue>
+								</lido:namePlaceSet>
+								<lido:gml>
+									<gml:Point>
+										<gml:coordinates>111.111, -22.2222</gml:coordinates>
+									</gml:Point>
+								</lido:gml>
+							</lido:partOfPlace>
+							<lido:partOfPlace>
+								<lido:placeID lido:type="local" lido:source="TGN" lido:label="Location">12345</lido:placeID>
+								<lido:namePlaceSet>
+									<lido:appellationValue>Institution City</lido:appellationValue>
+								</lido:namePlaceSet>
+								<lido:gml>
+									<gml:Point>
+										<gml:coordinates>111.111, -22.2222</gml:coordinates>
+									</gml:Point>
+								</lido:gml>
+							</lido:partOfPlace>
+						</lido:repositoryLocation>
+					</lido:repositorySet>
+				</lido:repositoryWrap>
+				<lido:displayStateEditionWrap><!--#4DIF ([Objects_1]State_1#"")-->
+					<lido:displayState><!--#4DVAR [Objects_1]State_1--></lido:displayState><!--#4DENDIF-->
+					<lido:displayEdition><!--#4DSCRIPT/LoadObjectNotes/Edition--><!--#4DSCRIPT/SQL_Encode/[Object_Notes]Text--></lido:displayEdition>
+				</lido:displayStateEditionWrap>
+				<lido:objectDescriptionWrap /> 
+				<lido:objectMeasurementsWrap>
+					<lido:objectMeasurementsSet>
+						<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Dimensions--><lido:displayObjectMeasurements><!--#4DLOOP [Dimensions]--><!--#4DIF ([Dimensions]Extent#"")--><!--#4DVAR [Dimensions]Extent--><!--#4DENDIF--><!--#4DIF ([Dimensions]Disp_Dimen#"")--> dimensions: <!--#4DVAR [Dimensions]Disp_Dimen-->. <!--#4DENDIF--><!--#4DENDLOOP--></lido:displayObjectMeasurements>
+					</lido:objectMeasurementsSet>
+				</lido:objectMeasurementsWrap>
+			</lido:objectIdentificationWrap>
+
+			<lido:eventWrap>
+				<lido:eventSet>
+					<lido:event>
+						<lido:eventType>
+							<lido:term>creation</lido:term>
+						</lido:eventType>
+						<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker--><lido:eventActor>
+							<lido:actorInRole>
+								<lido:actor lido:type="person"><!--#4DIF ([Artist_Maker]Artist_Code#"")--><lido:actorID lido:type="local" lido:source="ULAN"><!--#4DVAR [Artist_Maker]Artist_Code--></lido:actorID><!--#4DENDIF-->
+									<lido:nameActorSet>
+										<lido:appellationValue lido:pref="preferred"><!--#4DVAR [Artist_Maker]Sort_Name--></lido:appellationValue>
+									</lido:nameActorSet>
+									<lido:nationalityActor>
+										<lido:term><!--#4DVAR [Artist_Maker]Nat_Culture_L2--></lido:term>
+									</lido:nationalityActor>
+									<lido:vitalDatesActor>									
+										<lido:displayDate><!--#4DTEXT Replace string(Replace string([Artist_Maker]Disp_Maker_Life;"(";"");")";"")--></lido:displayDate>
+										<lido:earliestDate><!--#4DIF ([Artist_Maker]Start_Date_Disp#"")--><!--#4DVAR [Artist_Maker]Start_Date_Disp--><!--#4DENDIF--></lido:earliestDate>
+										<lido:latestDate><!--#4DIF ([Artist_Maker]End_Date_Disp#"")--><!--#4DVAR [Artist_Maker]End_Date_Disp--><!--#4DENDIF--></lido:latestDate>
+									</lido:vitalDatesActor>
+									<lido:genderActor><!--#4DVAR [Artist_Maker]Gender--></lido:genderActor>
+								</lido:actor>
+								<lido:roleActor><lido:term><!--#4DVAR [Object_Artist]Role--></lido:term></lido:roleActor><!--#4DIF ([Object_Artist]Attribution#"")-->
+								<lido:attributionQualifierActor><!--#4DVAR [Object_Artist]Attribution--></lido:attributionQualifierActor><!--#4DENDIF-->
+							</lido:actorInRole>
+						</lido:eventActor>
+						<!--#4DENDLOOP-->
+						<lido:eventDate>
+							<lido:displayDate><!--#4DVAR [Objects_1]Disp_Create_DT--></lido:displayDate>
+							<lido:date>
+								<lido:earliestDate><!--#4DVAR [Objects_1]User_Num_1--></lido:earliestDate>
+								<lido:latestDate><!--#4DVAR [Objects_1]User_Num_2--></lido:latestDate>
+							</lido:date>
+						</lido:eventDate>
+						<lido:eventMaterialsTech>
+							<lido:displayMaterialsTech><!--#4DVAR [Objects_1]Disp_Medium--><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Marks--><!--#4DLOOP [Marks]--><!--#4DIF ([Marks]Mark_Type="watermark")-->. <!--#4DVAR [Marks]Mark_Type--><!--#4DENDIF--><!--#4DIF ([Marks]Description#"")-->: <!--#4DVAR [Marks]Description--><!--#4DENDIF--><!--#4DENDLOOP--></lido:displayMaterialsTech>
+						</lido:eventMaterialsTech>
+					</lido:event>
+				</lido:eventSet>
+
+				<lido:eventSet>
+					<lido:event>
+						<lido:eventType>
+							<lido:term>acquisition</lido:term>
+						</lido:eventType>
+						<lido:eventDescriptionSet>
+							<lido:descriptiveNoteValue><!--#4DVAR [Objects_1]Dedication--></lido:descriptiveNoteValue>
+						</lido:eventDescriptionSet>
+					</lido:event>
+				</lido:eventSet>
+			</lido:eventWrap>
+
+			<lido:objectRelationWrap>
+				<lido:subjectWrap>
+					<lido:subjectSet>
+						<lido:subject lido:type="description">
+							<lido:subjectConcept><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Keywords--><!--#4DLOOP [Keywords]--><!--#4DIF (GetSelectedRecordNumber(72) # 1)--><!--#4DENDIF-->
+								<lido:term lido:addedSearchTerm="yes"><!--#4DVAR [Keywords]Word--></lido:term>
+								<!--#4DENDLOOP--></lido:subjectConcept>
+						</lido:subject>
+					</lido:subjectSet>
+				</lido:subjectWrap>
+				<lido:relatedWorksWrap>
+					<lido:relatedWorkSet>
+						<lido:relatedWork>
+							<lido:displayObject lido:label="Bibliography"><!--#4DSCRIPT/LoadObjectNotes/Bibliography--><!--#4DSCRIPT/SQL_Encode/[Object_Notes]Text--></lido:displayObject>
+						</lido:relatedWork>
+					</lido:relatedWorkSet>
+				</lido:relatedWorksWrap>
+			</lido:objectRelationWrap>
+		</lido:descriptiveMetadata>
+
+		<lido:administrativeMetadata xml:lang="en">
+			<lido:rightsWorkWrap />
+			<lido:recordWrap>
+				<lido:recordID lido:type="local" lido:label="DAC Object Record ID"><!--#4DVAR [Objects_1]Temp_ID--></lido:recordID>
+				<lido:recordType><lido:term><!--#4DVAR [Objects_1]User_Def_4--></lido:term></lido:recordType>
+				<lido:recordSource>
+					<lido:legalBodyName>
+						<lido:appellationValue>Institution Name</lido:appellationValue>
+					</lido:legalBodyName>
+					<lido:legalBodyWeblink>http://yoururl.org</lido:legalBodyWeblink>
+				</lido:recordSource>
+				<lido:recordRights>
+					<lido:rightsHolder>
+						<lido:legalBodyName>
+							<lido:appellationValue>Institution Name</lido:appellationValue>
+						</lido:legalBodyName>
+						<lido:legalBodyWeblink>http://yourURL.org</lido:legalBodyWeblink>
+					</lido:rightsHolder>
+				</lido:recordRights>
+				<lido:recordInfoSet>
+					<lido:recordInfoLink lido:formatResource="text/html">http://yourkioskURL.org/Obj<!--#4DVAR [Objects_1]_Objects_1_ID--></lido:recordInfoLink>
+				</lido:recordInfoSet>
+			</lido:recordWrap>
+			<!--#4DIF ([Objects_1]Copyright_text="DAC Open Access Image (http://www.wesleyan.edu/dac/openaccess)")-->
+			<lido:resourceWrap>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="local">DAC_<!--#4DVAR [Objects_1]Accession_Num_1-->-<!--#4DVAR [Objects_1]Accession_Num_2-->-<!--#4DVAR [Objects_1]Accession_Num_3--><!--#4DIF ([Objects_1]Accession_Num_4#"")-->-<!--#4DVAR [Objects_1]Accession_Num_4--><!--#4DENDIF--><!--#4DIF ([Objects_1]Accession_Num_5#"")-->-<!--#4DVAR [Objects_1]Accession_Num_5--><!--#4DENDIF-->_001_249.jpg</lido:resourceID>
+					<lido:resourceRepresentation>
+						<lido:linkResource>http://dac-collection.wesleyan.edu/Media/249s/<!--#4DVAR [Objects_1]Accession_Num_1-->/DAC_<!--#4DVAR [Objects_1]Accession_Num_1-->-<!--#4DVAR [Objects_1]Accession_Num_2-->-<!--#4DVAR [Objects_1]Accession_Num_3--><!--#4DIF ([Objects_1]Accession_Num_4#"")-->-<!--#4DVAR [Objects_1]Accession_Num_4--><!--#4DENDIF--><!--#4DIF ([Objects_1]Accession_Num_5#"")-->-<!--#4DVAR [Objects_1]Accession_Num_5--><!--#4DENDIF-->_001_249.jpg</lido:linkResource>
+					</lido:resourceRepresentation>
+					<lido:resourceType><lido:term>digital image</lido:term></lido:resourceType>
+					<lido:resourceRelType><lido:term>thumbnail image</lido:term></lido:resourceRelType>
+					<lido:resourceDescription>overall view</lido:resourceDescription>
+					<lido:rightsResource>
+						<lido:creditLine>Thumbnail image from the your Institution Name</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+				<lido:resourceSet>
+					<lido:resourceID lido:type="local">DAC_<!--#4DVAR [Objects_1]Accession_Num_1-->-<!--#4DVAR [Objects_1]Accession_Num_2-->-<!--#4DVAR [Objects_1]Accession_Num_3--><!--#4DIF ([Objects_1]Accession_Num_4#"")-->-<!--#4DVAR [Objects_1]Accession_Num_4--><!--#4DENDIF--><!--#4DIF ([Objects_1]Accession_Num_5#"")-->-<!--#4DVAR [Objects_1]Accession_Num_5--><!--#4DENDIF-->_001_OA.tif</lido:resourceID>
+					<lido:resourceRepresentation>
+						<lido:linkResource>http://www.wesleyan.edu/dac/open/images/DAC_<!--#4DVAR [Objects_1]Accession_Num_1-->-<!--#4DVAR [Objects_1]Accession_Num_2-->-<!--#4DVAR [Objects_1]Accession_Num_3--><!--#4DIF ([Objects_1]Accession_Num_4#"")-->-<!--#4DVAR [Objects_1]Accession_Num_4--><!--#4DENDIF--><!--#4DIF ([Objects_1]Accession_Num_5#"")-->-<!--#4DVAR [Objects_1]Accession_Num_5--><!--#4DENDIF-->_001_OA.tif</lido:linkResource>
+					</lido:resourceRepresentation>
+					<lido:resourceType><lido:term>digital image</lido:term></lido:resourceType>
+					<lido:resourceRelType><lido:term>open access image</lido:term></lido:resourceRelType>
+					<lido:resourceDescription>overall view</lido:resourceDescription>
+					<lido:rightsResource>
+						<lido:creditLine>Open Access Image from the YOUR INSTITUTION (http://yourURL/openaccess)</lido:creditLine>
+					</lido:rightsResource>
+				</lido:resourceSet>
+			</lido:resourceWrap>
+			<!--#4DENDIF-->
+		</lido:administrativeMetadata>
+	</lido:lido><!--#4DENDLOOP--> 
+	
+</lido:lidoWrap>

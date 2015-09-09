@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en" class="lt-ie10 no-js"> <![endif]-->
+<!--[if lt IE 9]><html lang="en" class="lt-ie9 no-js"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Artist biography quick search - {Include title.inc}
+	</title>
+	<script src="/js/modernizr.js"></script>
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/css/master.css" />
+	<!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
+	<!--[if IE 8]>
+		<meta http-equiv="x-ua-compatible" content="IE=8">
+	  	<script>var IE8 = true;</script>
+	  	<script src="/js/ie/site.ie8.js"></script>
+		<link rel="stylesheet" href="/css/site.ie8.css">
+	<![endif]-->
+	<!--[if IE 9]>
+		<script>var IE9 = true;</script>
+		<script src="/js/ie/site.ie9.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		 <script src="/js/ie/html5shiv.js"></script>
+		 <script src="/js/ie/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="CollectionPage  shifter">
+    <div class="shifter-page">
+        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+        {Include header.inc}
+        <main class="container main" role="main">
+            <div class="row">
+                <!-- Section Heading -->
+
+
+                <div class="col-sm-12">
+                    <h3 class="section-title">Browse collections</h3>
+                </div>
+
+                <!-- Side Bar -->
+
+                <div class="col-md-4 col-lg-3 sidebar">
+                    {Include sidenav.inc}
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-8 col-lg-8  children">
+                    <section id="main-content" tabindex="-1">
+                        <form action="/4DACTION/HANDLECGI/QSF1" method="post" name="QuickSearch">
+                            <h1>Search for artist biographies</h1>
+                            <table cellpadding="0" cellspacing="0" width="500">
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0" cellspacing="0" width="580">
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>Field to search:</td>
+                                                <td>Value:</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <!-- The following will repeat for each line of search criteria that the user creates.-->
+                                            {LineLoop Start}
+                                            <tr>
+                                                <td>{SearchType}</td>
+                                                <td>{Field Popup}</td>
+                                                <td>{Value Popup}</td>
+                                                <td>{Line Buttons}</td>
+                                            </tr>
+                                            {LineLoop End}
+                                        </table>
+
+                                        <p><input type="checkbox" name="ImagesOnly" value="1"/>with images only</p>
+                                        <p><input type="radio" name="RefineSearch" value="NewSelection" checked="checked"/>New Selection
+                                        <input type="radio" name="RefineSearch" value="AddToCurrent"/>Add to Current Selection
+                                        <input type="radio" name="RefineSearch" value="WithinCurrent"/>Search only Current Selection</p>
+                                        <p class="centered"><input type="submit" value="Find"/></p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="hidden" name="sid" value="{SessionID}"/>
+                        </form>
+                        {if(Records - Artist)}
+                        <p>
+                        <br/><br/>
+                        <strong>Your current selection of {Records - Artist} records is:</strong><br/>
+                        {Selection Name Artist}
+                        </p>
+                        {end if}
+                        <p><strong>Other Search Options:</strong><br/>
+                        <a href="/kiosk/search.htm?sid={SessionId}&x={Sequence}">Advanced Search</a> |
+                        Artist Biographies</p>
+
+                    </section>
+                    </div><!-- end .col -->
+                    </div><!-- end .row -->
+                </main>
+                {Include footer.inc}
+            </div>
+            {Include shifternavigation.inc}
+            {Include scripts.inc}
+        </body>
+    </html>

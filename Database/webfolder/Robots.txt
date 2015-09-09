@@ -1,0 +1,33 @@
+###############################
+#
+#Robots.html file in Kiosk Pages is indexable.  It is the only file with .html file extension.
+#
+User-agent: *
+Disallow: /O*
+Disallow: /A*
+Disallow: /P*
+Disallow: /F*
+Disallow: /IT*
+Disallow: /L*
+Disallow: /P*
+Disallow: /Q*
+Disallow: /S*
+Disallow: /T*
+Disallow: /U*
+Disallow: /Graphics/
+Disallow: /help/
+Disallow: /Media/
+Disallow: /default.htm
+Disallow: /kiosk/*.htm$
+Disallow: /Templates/
+Disallow: /manual/
+Disallow: /4d Extensions/
+Disallow: /Database/
+Disallow: /datafile/
+Disallow: /Kiosk datafile/
+Disallow: /Licenses/
+Disallow: /Plugins/
+Disallow: /quicktime/
+Disallow: /userportdata/
+Disallow: /*.css
+###############################

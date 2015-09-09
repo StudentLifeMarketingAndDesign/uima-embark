@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?> 
+
+<results
+xmlns:accmd="http://www.w3.org/TR/WCAG10-TECHS/"
+xmlns:pachyderm="http://www.pachyderm.org/metadatastandards/pachyderm/" 
+xmlns:dcterms="http://dublincore.org/documents/2006/12/18/dces/"
+xmlns:dc="http://dublincore.org/documents/2006/12/18/dces/">
+
+<info>
+<foundcount><!--#4DVAR Records in Selection([Objects_1])--></foundcount>
+<criteria><!--#4DVAR queryString--></criteria>
+</info> 
+<!--#4DLOOP [Objects_1]-->
+<record>
+<asset> 
+<dcterms:audience>Audience</dcterms:audience>
+<dc:contributor><!--#4DVAR <>vtInstitution--></dc:contributor>
+<dc:coverage><!--#4DVAR [Objects_1]Creation_Place2--><!--#4DIF ([Objects_1]Disp_Create_DT#"")-->, <!--#4DVAR [Objects_1]Disp_Create_DT--><!--#4DENDIF--><!--#4DIF ([Objects_1]Period#"")-->, <!--#4DVAR [Objects_1]Period--><!--#4DENDIF--></dc:coverage>
+<dcterms:created><!--#4DVAR [Objects_1]Disp_Create_DT--></dcterms:created>
+<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker--><dc:creator><!--#4DVAR [Artist_Maker]Sort_Name--></dc:creator><!--#4DENDLOOP-->
+<dc:date><!--#4DVAR [Objects_1]Disp_Create_DT--></dc:date>
+<dcterms:dateAccepted>Date Accepted</dcterms:dateAccepted>
+<dcterms:dateCopyrighted>Date Copyrighted</dcterms:dateCopyrighted>
+<dcterms:dateSubmitted>Date Submitted</dcterms:dateSubmitted>
+<dcterms:dateModified><!--#4DVAR [Objects_1]Mod_Date--></dcterms:dateModified>
+<dc:description><!--#4DVAR [Objects_1]Info_Page_Comm--></dc:description> 
+<dcterms:educationLevel>Education Level</dcterms:educationLevel>
+<dcterms:extent>Extent</dcterms:extent>
+<dc:format><!--#4DVAR [Objects_1]Disp_Obj_Type--><!--#4DIF ([Objects_1]Disp_Dimen#"")--><!--#4DIF ([Objects_1]Disp_Obj_Type#"")-->,<!--#4DENDIF--><!--#4DVAR [Objects_1]Disp_Dimen--><!--#4DENDIF--></dc:format>
+<dc:identifier><!--#4DIF ([Objects_1]Disp_Access_No#"")--><!--#4DVAR [Objects_1]Disp_Access_No--><!--#4DELSE--> <!--#4DVAR [Objects_1]Temp_ID--><!--#4DENDIF--> </dc:identifier>
+<dcterms:instructionalMethod>Instructional Method</dcterms:instructionalMethod>
+<dcterms:issued>Issued</dcterms:issued>
+<dcterms:license>License</dcterms:license>
+<dc:language>English</dc:language>
+<dcterms:mediator>Mediator</dcterms:mediator>
+<dcterms:medium><!--#4DVAR [Objects_1]Medium--></dcterms:medium>
+<!--#4DSCRIPT/LoadObjectNotes/Provenance--><dcterms:provenance><!--#4DVAR [Object_Notes]Text--></dcterms:provenance>
+<dc:publisher><!--#4DVAR <>vtInstitution--></dc:publisher>
+<!--#4DSCRIPT/LoadObjectNotes/Related Objects--><dc:relation><!--#4DVAR [Object_Notes]Text--></dc:relation>
+<dc:rights><!--#4DVAR <>vtInstitution--></dc:rights> 
+<dcterms:rightsHolder><!--#4DVAR Get_FieldValue("[Objects_1]CopyrightHolder")--></dcterms:rightsHolder>
+<dcterms:accessRights>Access Rights</dcterms:accessRights>
+<dc:source><!--#4DVAR [Objects_1]User_Def_1--></dc:source>
+<dcterms:spatial>Spatial</dcterms:spatial>
+<dc:subject><!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Keywords--><!--#4DLOOP [Keywords]--><!--#4DIF (GetSelectedRecordNumber(72) # 1)-->, <!--#4DENDIF--><!--#4DVAR [Keywords]Word--><!--#4DENDLOOP--></dc:subject>
+<dcterms:temporal>Temporal</dcterms:temporal>
+<dc:title><!--#4DVAR [Objects_1]Disp_Title--></dc:title>
+<dcterms:alternative><!--#4DVAR [Objects_1]Alt_Title--></dcterms:alternative>
+<dc:type>Image</dc:type>
+<dc:type>Image</dc:type>
+<dcterms:valid>Validity</dcterms:valid>
+<mediaLabel><b><!--#4DVAR [Objects_1]Disp_Title--></b><br/>
+<!--#4DSCRIPT/LoadRelatedRecords/Objects_1:Object_Artist--><!--#4DLOOP [Object_Artist]--><!--#4DSCRIPT/LoadRelatedRecords/Object_Artist:Artist_Maker--><!--#4DIF (GetSelectedRecordNumber(17) # 1)-->; <!--#4DENDIF--><!--#4DVAR [Artist_Maker]Sort_Name--><!--#4DENDLOOP--><br/>
+<!--#4DVAR [Objects_1]Disp_Create_DT--><br/>
+<!--#4DVAR [Objects_1]Disp_Medium--><br/>
+<!--#4DVAR [Objects_1]Disp_Dimen--><br/>
+<!--#4DVAR [Objects_1]Dedication--><br/>
+<!--#4DVAR Get_FieldValue("[Objects_1]CopyrightHolder")--><br/>
+<!--#4DVAR [Objects_1]Info_Page_Comm--></mediaLabel>
+<pachyderm:identifier><!--#4DIF ([Objects_1]Disp_Access_No#"")--><!--#4DVAR [Objects_1]Disp_Access_No--><!--#4DELSE--> <!--#4DVAR [Objects_1]Temp_ID--><!--#4DENDIF--></pachyderm:identifier>
+<pachyderm:assetURL>http://webkiosk.gallerysystems.com<!--#4DVAR TAGImagePath("")--></pachyderm:assetURL>
+<pachyderm:mediumAssetURL>http://webkiosk.gallerysystems.com<!--#4DVAR PreviewPath("Objects_1")--></pachyderm:mediumAssetURL>
+<pachyderm:thumbnailURL>http://webkiosk.gallerysystems.com<!--#4DVAR ThumbnailPath("Objects_1")--></pachyderm:thumbnailURL>
+<accmd:accessibilityAltText>Alternate Text</accmd:accessibilityAltText>
+<accmd:accessibilityLongDescription>Long Description</accmd:accessibilityLongDescription>
+<accmd:accessibilityTranscript>Transcript</accmd:accessibilityTranscript>
+<accmd:accessibilitySynchronizedCaption>Synchronized Caption</accmd:accessibilitySynchronizedCaption>
+<id>http://worldimage.sjsu.edu/Obj<!--#4DVAR [Objects_1]_Objects_1_ID-->.htm</id>
+</asset>
+</record>
+<!--#4DENDLOOP--> 
+</results>
+
