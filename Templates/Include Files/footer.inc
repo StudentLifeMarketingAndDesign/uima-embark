@@ -84,7 +84,7 @@
 				<a href="http://www.uiowa.edu">
 					<img src="/images/uiowalogo.gif" alt="University of Iowa">
 				</a>
-				<a href="http://www.uima.uiowa.edu">
+				<a href="http://uima.uiowa.edu">
 					<img src="/images/iowamuseum_logo.gif" alt="University of Iowa Museum of Art">
 				</a>
 			</div>

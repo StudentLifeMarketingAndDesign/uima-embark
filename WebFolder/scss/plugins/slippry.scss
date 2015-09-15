@@ -18,7 +18,7 @@ $color_high: #e24b70 !default;     // highlight colour
 $color_gray: #ccc !default;        // neutral colour
 $controls_size: 2.8em !default;    // size of the next/ prev buttons
 $pager_size: 1.2em !default;       // size of the pager bubbles
-$trans_ease: ease !default;        // easing for the transitions
+$trans_ease: linear !default;        // easing for the transitions
 $mobile_break: 600px !default;     // breakpoint to use some special mobile styling
 $spinner_url: '../images/sy-loader.gif' !default;
 $arrows_url: '../images/arrows.svg' !default;
@@ -52,18 +52,18 @@ $arrows_url: '../images/arrows.svg' !default;
 /* kenBurns animations, very basic */
 @include keyframes(left-right) {
   0% {
-    @include transform(translateY(-10%) translateX(-5%));
+    @include transform(translateY(-3%) translateX(-3%));
   }
   100% {
-    @include transform(translateY(0%) translateX(5%));
+    @include transform(translateY(0%) translateX(3%));
   }
 }
 @include keyframes(right-left) {
   0% {
-    @include transform(translateY(0%) translateX(5%));
+    @include transform(translateY(0%) translateX(3%));
   }
   100% {
-    @include transform(translateY(-10%) translateX(-5%));
+    @include transform(translateY(-3%) translateX(-3%));
   }
 }
 

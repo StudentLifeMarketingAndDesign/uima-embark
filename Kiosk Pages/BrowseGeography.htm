@@ -51,15 +51,11 @@
 
 		
 
-		<!-- Side Bar -->
-		
-		<div class="col-md-4 col-lg-3 sidebar">
-			{Include sidenav.inc}
-		</div>
+
 		
 
 		<!-- Main Content -->
-		<div class="col-md-8 col-lg-8  children">
+		<div class="col-md-8 col-lg-8 col-lg-push-3 children">
 			<section id="main-content" tabindex="-1">
 			<h1>Browse by geography</h1>
 
@@ -75,18 +71,23 @@
 			<hr />
 
 			<h2>By continent</h2>
-			</hr />
-				<ul>
+			<ul>
 				<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@africa&sid={sessionid}">Africa</a></li>
 				<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@americas&sid={sessionid}">Americas</a></li>
 				<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@asia&sid={sessionid}">Asia</a></li>
 				<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@europe&sid={sessionid}">Europe</a></li>
 				<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=7&lineCount=1&RefineSearch=NewSelection&value1=@oceania&sid={sessionid}">Oceania</a></li>
-				</ul>
 			</ul>
 
 			</section>
 		</div><!-- end .col -->
+
+				<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+			{Include sidenav.inc}
+		</div>
+
 	</div><!-- end .row -->
 </main>
 {Include footer.inc}

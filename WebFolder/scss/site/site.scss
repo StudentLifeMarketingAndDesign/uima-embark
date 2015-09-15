@@ -23,12 +23,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 .mobile-hide {
-	@media (max-width: $break-medium - 1 ) {
+	@media (max-width: $break-medium ) {
 		display: none;
 	}
 }
 .tablet-hide {
-	@media (max-width: $break-large - 1 ) {
+	@media (max-width: $break-large ) {
 		display: none;
 	}
 }
@@ -77,10 +77,17 @@ Layout
 	width: 100%;
 }
 
+.credit-content {
+	& p {
+		display: inline;
+		margin: 0;
+	}
+}
 
 
-
-
+.fs-navigation-handle {
+	display: none;
+}
 
 
 

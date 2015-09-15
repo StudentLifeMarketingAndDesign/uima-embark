@@ -2,28 +2,31 @@
 	background: #fff;
 	padding-top: 23px;
 	position: relative;
-	z-index: 10;
+	z-index: 20;
 	@media (max-width: $break-medium) {
 		padding-bottom: 20px;
 	}
 }
 /* logo */
 .logo {
-	margin-right: 1em;
+	width: 80%;
 	float: left;
-	@media (min-width: $break-small) {
-		margin-right: 0;
+	@media (min-width: $break-medium) {
+		width: auto;
 	}
 	& img {
 		display: block;
 	}
 }
+.shifter .shifter-handle {
+	width: 20%;
+}
 /* ---------------------------------------------------------------
 Search Form new
 --------------------------------------------------------------- */
 .search-bar fieldset {
-	margin: 0;
-	padding: 0;
+	margin: 0 !important;
+	padding: 0 !important;
 	border: none;
 }
 .search-bar #Search {

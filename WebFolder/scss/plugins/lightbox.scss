@@ -1,59 +1,59 @@
-/*! formstone v0.5.3 [lightbox.css] 2015-04-17 | MIT License | formstone.it */
+/*! formstone v0.6.9 [lightbox.css] 2015-06-17 | MIT License | formstone.it */
 
 /**
-	 * @class
-	 * @name .fs-lightbox-element
-	 * @type element
-	 * @description Target elmement
-	 */
+   * @class
+   * @name .fs-lightbox-element
+   * @type element
+   * @description Target elmement
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox
-	 * @type element
-	 * @description Base widget class
-	 */
+   * @class
+   * @name .fs-lightbox
+   * @type element
+   * @description Base widget class
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-open
-	 * @type modifier
-	 * @description Indicates open state
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-open
+   * @type modifier
+   * @description Indicates open state
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-loading
-	 * @type modifier
-	 * @description Indicates loading state
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-loading
+   * @type modifier
+   * @description Indicates loading state
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-animating
-	 * @type modifier
-	 * @description Indicates animating state
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-animating
+   * @type modifier
+   * @description Indicates animating state
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-mobile
-	 * @type modifier
-	 * @description Indicates mobile display
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-mobile
+   * @type modifier
+   * @description Indicates mobile display
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-fixed
-	 * @type modifier
-	 * @description Indicates fixed positioning
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-fixed
+   * @type modifier
+   * @description Indicates fixed positioning
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-inline
-	 * @type modifier
-	 * @description Indicates inline content
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-inline
+   * @type modifier
+   * @description Indicates inline content
+   */
 /**
-	 * @class
-	 * @name .fs-lightbox.fs-lightbox-iframed
-	 * @type modifier
-	 * @description Indicates iFrame content
-	 */
+   * @class
+   * @name .fs-lightbox.fs-lightbox-iframed
+   * @type modifier
+   * @description Indicates iFrame content
+   */
 .fs-lightbox {
   width: 200px;
   height: 200px;
@@ -69,131 +69,131 @@
   padding: 10px;
   -webkit-transform: translateZ(0);
   /**
-		 * @class
-		 * @name .fs-lightbox-overlay
-		 * @type element
-		 * @description Overlay element
-		 */
+     * @class
+     * @name .fs-lightbox-overlay
+     * @type element
+     * @description Overlay element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-close
-		 * @type element
-		 * @description Close element
-		 */
+     * @class
+     * @name .fs-lightbox-close
+     * @type element
+     * @description Close element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-loading_icon
-		 * @type element
-		 * @description Loading icon element
-		 */
+     * @class
+     * @name .fs-lightbox-loading_icon
+     * @type element
+     * @description Loading icon element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-container
-		 * @type element
-		 * @description Container element
-		 */
+     * @class
+     * @name .fs-lightbox-container
+     * @type element
+     * @description Container element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-content
-		 * @type element
-		 * @description Content element
-		 */
+     * @class
+     * @name .fs-lightbox-content
+     * @type element
+     * @description Content element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-image
-		 * @type element
-		 * @description Image element
-		 */
+     * @class
+     * @name .fs-lightbox-image
+     * @type element
+     * @description Image element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-video
-		 * @type element
-		 * @description Video element
-		 */
+     * @class
+     * @name .fs-lightbox-video
+     * @type element
+     * @description Video element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-iframe
-		 * @type element
-		 * @description iFrame element
-		 */
+     * @class
+     * @name .fs-lightbox-iframe
+     * @type element
+     * @description iFrame element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-tools
-		 * @type element
-		 * @description Tools element
-		 */
+     * @class
+     * @name .fs-lightbox-tools
+     * @type element
+     * @description Tools element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-meta
-		 * @type element
-		 * @description Meta info element
-		 */
+     * @class
+     * @name .fs-lightbox-meta
+     * @type element
+     * @description Meta info element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-controls
-		 * @type element
-		 * @description Controls container element
-		 */
+     * @class
+     * @name .fs-lightbox-controls
+     * @type element
+     * @description Controls container element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-control
-		 * @type element
-		 * @description Control element
-		 */
+     * @class
+     * @name .fs-lightbox-control
+     * @type element
+     * @description Control element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-control.fs-lightbox-control_previous
-		 * @type modifier
-		 * @description Indicates previous control
-		 */
+     * @class
+     * @name .fs-lightbox-control.fs-lightbox-control_previous
+     * @type modifier
+     * @description Indicates previous control
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-control.fs-lightbox-control_next
-		 * @type modifier
-		 * @description Indicates next control
-		 */
+     * @class
+     * @name .fs-lightbox-control.fs-lightbox-control_next
+     * @type modifier
+     * @description Indicates next control
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-control.fs-lightbox-control_disabled
-		 * @type modifier
-		 * @description Indicates disbaled state
-		 */
+     * @class
+     * @name .fs-lightbox-control.fs-lightbox-control_disabled
+     * @type modifier
+     * @description Indicates disbaled state
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-position
-		 * @type element
-		 * @description Position element
-		 */
+     * @class
+     * @name .fs-lightbox-position
+     * @type element
+     * @description Position element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-position_current
-		 * @type element
-		 * @description Current position element
-		 */
+     * @class
+     * @name .fs-lightbox-position_current
+     * @type element
+     * @description Current position element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-position_total
-		 * @type element
-		 * @description Total position element
-		 */
+     * @class
+     * @name .fs-lightbox-position_total
+     * @type element
+     * @description Total position element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-caption
-		 * @type element
-		 * @description Caption element
-		 */
+     * @class
+     * @name .fs-lightbox-caption
+     * @type element
+     * @description Caption element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-error
-		 * @type element
-		 * @description Error message element
-		 */
+     * @class
+     * @name .fs-lightbox-error
+     * @type element
+     * @description Error message element
+     */
   /**
-		 * @class
-		 * @name .fs-lightbox-lock
-		 * @type modifier
-		 * @description Indicates locked state; Applied to body element
-		 */
+     * @class
+     * @name .fs-lightbox-lock
+     * @type modifier
+     * @description Indicates locked state; Applied to body element
+     */
 }
 .fs-lightbox,
 .fs-lightbox * {
@@ -533,6 +533,7 @@
   border-top-color: #999999;
 }
 .fs-lightbox-mobile .fs-lightbox-container {
+  position: static;
   background: #111111;
 }
 .fs-lightbox-mobile .fs-lightbox-content {

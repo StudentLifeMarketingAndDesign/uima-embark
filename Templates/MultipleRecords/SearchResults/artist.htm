@@ -46,28 +46,10 @@
                     <h3 class="section-title">Search results</h3>
                 </div>
 
-                <!-- Side Bar -->
-
-                <div class="col-md-4 col-lg-3 sidebar">
-                    {Include sidenav.inc}
-                        
-                        <!-- display options start -->
-                        <div class="display-options">
-                            <div class="smalltxt">View results as:</div>
-                            <div class="navtxt">
-                                <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-                                <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-                            </div>
-                            <div class="navtxt">
-                                <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
-                                <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
-                            </div>
-                        </div>
-                        <!-- display options end -->
-                </div>
+               
 
                 <!-- Main Content -->
-                <div class="col-md-8 col-lg-8  children">
+                <div class="col-md-8 col-lg-8 col-lg-push-3 children">
                     <section id="main-content" tabindex="-1">
                         <h1>Artist results</h1>
 
@@ -102,6 +84,26 @@
                         </div>
                     </section>
                     </div><!-- end .col -->
+
+ <!-- Side Bar -->
+
+                <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+                    {Include sidenav.inc}
+                        
+                        <!-- display options start -->
+                        <div class="display-options">
+                            <div class="smalltxt">View results as:</div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+                                <a href="/LST1?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+                            </div>
+                            <div class="navtxt">
+                                <img src="/graphics/icon3.gif" width="12" height="12" alt=""/>
+                                <a href="ART0?rec={Current Record}&sid={SessionId}&x={Sequence}">biography</a>
+                            </div>
+                        </div>
+                        <!-- display options end -->
+                </div>
                     </div><!-- end .row -->
                 </main>
                 {Include footer.inc}

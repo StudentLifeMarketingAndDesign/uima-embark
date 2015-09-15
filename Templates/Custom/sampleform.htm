@@ -44,15 +44,10 @@
             <div class="col-sm-12">
                 <h3 class="section-title">Submit feedback</h3>
             </div>
-            
-            <!-- Side Bar -->
-            
-            <div class="col-md-4 col-lg-3 sidebar">
-                {Include sidenav.inc}
-            </div>
+
             
             <!-- Main Content -->
-            <div class="col-md-8 col-lg-8  children">
+            <div class="col-md-8 col-lg-8 col-lg-push-3 children">
                 <section id="main-content" tabindex="-1">
                     <p>Please fill out the form below to send our curator your comments about this object. Comments are gathered for periodic review; please do not expect an immediate personal response.</p>
                     <table cellpadding="0" cellspacing="0">
@@ -103,8 +98,14 @@
                         
                     </section>
                     </div><!-- end .col -->
-                    </div><!-- end .row -->
-                    </main>
+
+                    <!-- Side Bar -->
+                    
+                    <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+                        {Include sidenav.inc}
+                    </div>
+                </div><!-- end .row -->
+            </main>
                     {Include footer.inc}
                 </div>
                 {Include shifternavigation.inc}

@@ -46,14 +46,10 @@
                     <h3 class="section-title">Browse collections</h3>
                 </div>
 
-                <!-- Side Bar -->
 
-                <div class="col-md-4 col-lg-3 sidebar">
-                    {Include sidenav.inc}
-                </div>
 
                 <!-- Main Content -->
-                <div class="col-md-8 col-lg-8  children">
+               <div class="col-md-8 col-lg-8 col-lg-push-8 children">
                     <section id="main-content" tabindex="-1">
                         <div class="right">{Include activerecords.inc}</div>
                         <h1>Portfolio index</h1>
@@ -80,6 +76,11 @@
                         </section>
                         {Include pagenavigation.inc}
                         </div><!-- end .col -->
+                        <!-- Side Bar -->
+
+                        <div class="col-md-4 col-lg-3 col-lg-pull-8 sidebar">
+                            {Include sidenav.inc}
+                        </div>
                         </div><!-- end .row -->
                     </main>
                     {Include footer.inc}

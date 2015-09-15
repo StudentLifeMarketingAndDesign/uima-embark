@@ -52,9 +52,37 @@
 
         
 
-        <!-- Side Bar -->
+
         
-        <div class="col-md-4 col-lg-3 sidebar">
+
+        <!-- Main Content -->
+        <div class="col-md-8 col-lg-8 col-lg-push-3 children">
+            <section id="main-content" tabindex="-1">
+                {pagePopup;Object Info}
+    
+                <!-- The following will repeat for each record in the page.
+                     The kiosk will take care of inserting row tags as appropriate, if specified in Preferences. 
+                     (Note: This template is currently configured for a kiosk in which the table option has been turned off for Artist Objects page. -->
+                <ul class="medium-block-grid-2 large-block-grid-4">
+                    <!-- The following will repeat for each record in the page.
+                    The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
+                    (Note: This template is currently configured for a kiosk in which the table option has been turned off for Portfolio. -->
+                {RecordLoop Start}
+                     {Include portfolioitem.inc}
+                {RecordLoop End}
+                
+                </ul>
+                {Include formaddtoport.inc}
+
+                {Include selectiondescription.inc}
+
+                {Include addobjtoportfolio.inc}
+                 {Include pagenavigation.inc}
+                 </section>
+        </div>
+          <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
               
             {Include sidenav.inc}
   <!-- display options start -->
@@ -79,37 +107,8 @@
                 </div>
                 <!-- display options end -->
             {Include FilterBox.html}
-        </div>
-        
-
-        <!-- Main Content -->
-        <div class="col-md-8 col-lg-8  children">
-            <section id="main-content" tabindex="-1">
-                {pagePopup;Object Info}
-    
-                <!-- The following will repeat for each record in the page.
-                     The kiosk will take care of inserting row tags as appropriate, if specified in Preferences. 
-                     (Note: This template is currently configured for a kiosk in which the table option has been turned off for Artist Objects page. -->
-         <ul class="medium-block-grid-2 large-block-grid-4">
-                    <!-- The following will repeat for each record in the page.
-                    The kiosk will take care of inserting row tags as appropriate, if specified in Preferences.
-                    (Note: This template is currently configured for a kiosk in which the table option has been turned off for Portfolio. -->
-                {RecordLoop Start}
-                     {Include portfolioitem.inc}
-                {RecordLoop End}
-                
-                </ul>
-                {Include formaddtoport.inc}
-
-                {Include selectiondescription.inc}
-
-                {Include addobjtoportfolio.inc}
-                 {Include pagenavigation.inc}
-                </div>
-                
-                
-            </section>
-        </div><!-- end .col -->
+        </div>              
+            
     </div><!-- end .row -->
 </main>
 {Include footer.inc}
