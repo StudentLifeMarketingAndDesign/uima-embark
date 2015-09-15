@@ -11,10 +11,13 @@
 .newsblock-title {
   margin: 0 0 5px;
 }
-.entry-date {
+.entry-date, .entry-location {
 	color: #666;
 	font-size: 13px;
 	margin: 0 0 10px 0;
+}
+.entry-location {
+	margin-bottom: 0;
 }
 .entry-content, .entry-content p {
 	margin: 0;

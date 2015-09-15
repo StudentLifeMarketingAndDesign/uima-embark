@@ -1,101 +1,71 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 10]><html lang="en" class="lt-ie10 no-js"> <![endif]-->
 <!--[if lt IE 9]><html lang="en" class="lt-ie9 no-js"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Kiosk login - {Include title.inc}
-	</title>
-	<script src="/js/modernizr.js"></script>
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/master.css" />
-	<!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
-	<!--[if IE 8]>
-		<meta http-equiv="x-ua-compatible" content="IE=8">
-	  	<script>var IE8 = true;</script>
-	  	<script src="/js/ie/site.ie8.js"></script>
-		<link rel="stylesheet" href="/css/site.ie8.css">
-	<![endif]-->
-	<!--[if IE 9]>
-		<script>var IE9 = true;</script>
-		<script src="/js/ie/site.ie9.js"></script>
-	<![endif]-->
-	<!--[if lt IE 9]>
-		 <script src="/js/ie/html5shiv.js"></script>
-		 <script src="/js/ie/respond.min.js"></script>
-	<![endif]-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Kiosk login - {Include title.inc}
+  </title>
+  <script src="/js/modernizr.js"></script>
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Lato:400,700' rel='stylesheet' type='text/css'>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/master.css" />
+  <!--<link rel="stylesheet" type="text/css" href="/css/embark-custom.css" />-->
+  <!--[if IE 8]>
+    <meta http-equiv="x-ua-compatible" content="IE=8">
+  <script>var IE8 = true;</script>
+  <script src="/js/ie/site.ie8.js"></script>
+  <link rel="stylesheet" href="/css/site.ie8.css">
+  <![endif]-->
+  <!--[if IE 9]>
+  <script>var IE9 = true;</script>
+  <script src="/js/ie/site.ie9.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="/js/ie/html5shiv.js"></script>
+  <script src="/js/ie/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body class="CollectionPage  shifter">
-    <div class="shifter-page">
-        <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
-        {Include header.inc}
-        <main class="container main" role="main">
-            <div class="row">
-                <!-- Section Heading -->
-
-
-                <div class="col-sm-12">
-                    <h3 class="section-title">Browse collections</h3>
-                </div>
-
-                <!-- Side Bar -->
-
-                <div class="col-md-4 col-lg-3 sidebar">
-                    {Include sidenav.inc}
-                </div>
-
-                <!-- Main Content -->
-                <div class="col-md-8 col-lg-8  children">
-                    <section id="main-content" tabindex="-1">
-                    <h1>Login</h1>
-<form id="Login" name="Login" method="post" action="/4DACTION/HANDLECGI/LogOK">
-<input type="hidden" name="sid" value="{SessionID}"/>
-
-              <p>A password is required to view this page.<br/><br/>
-              If you have access priveleges for this kiosk, please enter the password below and click OK.</p>
-
-              <input type="password" size="30"name="password"/>
-              {hiddenFields}
-              <br/><br/>
-              <input type="submit" value="OK"/>
-
-</form>
-                    </section>
-                    </div><!-- end .col -->
-                    </div><!-- end .row -->
-                </main>
-                {Include footer.inc}
-            </div>
-            {Include shifternavigation.inc}
-            {Include scripts.inc}
-        </body>
-    </html>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--Security/LoginKiosk.htm-->
-<html>
-<head>
-  <title>{Include title.inc} Login</title>
-  <link rel="stylesheet" type="text/css" href="/kioskstyles.css"/>
-  {Include scripts.inc}
-</head>
-
-<body class="clearfix">
-
-{Include header.inc}
-<div id="content">
-
-</div>
-{Include footer.inc}
-
-</body>
-</html>
+  <div class="shifter-page">
+    <a id="skiptocontent" class="visuallyhidden focusable" href="#main-content">Skip to main content</a>
+    {Include header.inc}
+    <main class="container main" role="main">
+    <div class="row">
+      <!-- Section Heading -->
+      <div class="col-sm-12">
+        <h3 class="section-title">Browse collections</h3>
+      </div>
+      <!-- Main Content -->
+      <div class="col-md-8 col-lg-8 col-lg-push-3 children">
+        <section id="main-content" tabindex="-1">
+          <h1>Login</h1>
+          <form id="Login" name="Login" method="post" action="/4DACTION/HANDLECGI/LogOK">
+            <input type="hidden" name="sid" value="{SessionID}"/>
+            <p>A password is required to view this page.<br/><br/>
+            If you have access priveleges for this kiosk, please enter the password below and click OK.</p>
+            <input type="password" size="30"name="password"/>
+            {hiddenFields}
+            <br/><br/>
+            <input type="submit" value="OK"/>
+          </form>
+        </section>
+        </div><!-- end .col -->
+        <!-- Side Bar -->
+        <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+          {Include sidenav.inc}
+        </div>
+        </div><!-- end .row -->
+        </main>
+        {Include footer.inc}
+      </div>
+      {Include shifternavigation.inc}
+      {Include scripts.inc}
+    </body>
+  </html>

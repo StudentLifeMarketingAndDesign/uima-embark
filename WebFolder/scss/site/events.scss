@@ -27,19 +27,24 @@
 		font-size: 24px;
 	}
 }
-.eventlist-time {
-	@media (min-width: $break-medium) {
-		display: block;
-	}
 
-}
 .eventlist-title {
 	font-size: 20px;
 	font-weight: bold;
 	line-height: 1.3;
 	margin-bottom: 1em;
+	& span {
+		display: block;
+		font-size: 75%;
+	}
 	@media (min-width: $break-medium) {
 		font-size: 24px;
+	}
+
+}
+.eventlist-time {
+	@media (min-width: $break-medium) {
+		display: block;
 	}
 }
 .eventlist .more-info {
@@ -54,21 +59,17 @@ Event Page
 
 .event-largeimg {
 	background-color: #4f4b48;
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 370px;
+	overflow: hidden;
 	position: relative;
-	@media (min-width: $break-medium) {
-		padding-top: 50%;
-		height: auto;
-	}
-	@media (min-width: $break-xlarge) {
-		background-size: inherit;
-		padding-top: 0;
-		height: 600px;
-	}
+	overflow: hidden;
+}
+.event-largeimg .eventpage-img{
+	display: block;
+	margin: 0 auto;
 
+	@media (max-width: $break-small) {
+		width: 100%;
+	}
 }
 .event-largeimg .inner {
 	color: #fff;
@@ -77,16 +78,17 @@ Event Page
 	left: 0;
 	padding: 5em 0 2em;
 	width: 100%;
-	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 70%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(70%,rgba(0,0,0,0.8)));
-	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 70%);
-	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 70%);
-	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 70%);
-	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 70%);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 65%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(65%,rgba(0,0,0,0.9)));
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 65%);
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 65%);
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 65%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 65%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
 }
-.event-content p, .event-content p span {
-	font-size: 18px !important;
+.eventpage-title span {
+	display: block;
+	font-size: 75%;
 }
 .title-date {
 	font-weight: bold;
@@ -95,16 +97,13 @@ Event Page
 		width: 85%;
 	}
 }
-.title-date h3 {
-	color: #fff;
-	font-size: 26px;
-	font-weight: bold;
-	margin: 0;
-}
 .title-date h4 {
 	color: #fff;
 	font-size: 18px;
 	margin: 10px 0 0 0;
+}
+.event-location {
+	margin-top: 0;
 }
 .event-sociallinks {
 	margin-top: 1em;
@@ -114,30 +113,12 @@ Event Page
 	}
 }
 .event-dates {
-	-webkit-column-count: 2; /* Chrome, Safari, Opera */
-		-moz-column-count: 2; /* Firefox */
-		column-count: 2;
-		-webkit-column-rule: 1px solid #ddd; /* Chrome, Safari, Opera */
-		-moz-column-rule: 1px solid #ddd; /* Firefox */
-		column-rule: 1px solid #ddd;
-		-webkit-column-gap: 2em; /* Chrome, Safari, Opera */
-		-moz-column-gap: 2em; /* Firefox */
-		column-gap: 2em;
-	@media (min-width: $break-medium) {
-		-webkit-column-count: 3; /* Chrome, Safari, Opera */
-		-moz-column-count: 3; /* Firefox */
-		column-count: 3;
-	}
 	& p {
 		margin-top: 0;
 	}
 }
 /* Add to Calendar */
 .addtocalendar {
-	background-color: #f4f4f4;
-	border: 1px solid #ddd;
-	border-radius: 1px;
-	padding: 10px;
 	& h3 {
 		margin-bottom: 1em;
 		margin-top: 0;
@@ -151,7 +132,11 @@ Event Page
 		margin-right: 8px;
 	}
 }
-
+.accessibility {
+	font-size: 11px;
+	line-height: 1.3;
+	margin-top: 3em;
+}
 
 
 

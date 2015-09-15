@@ -69,19 +69,16 @@
                 <div class="col-sm-12">
                     <h3 class="section-title">Browse collections</h3>
                 </div>
-                <!-- Side Bar -->
-                <div class="col-md-4 col-lg-3 sidebar">
-                    {Include sidenav.inc}
-                </div>
+
                 <!-- Main Content -->
-                <div class="col-md-8 col-lg-8  children">
+                <div class="col-md-8 col-lg-8 col-lg-push-3 children">
                     <section id="main-content" tabindex="-1">
                         <h1>Change sort order for portfolio {Portfolio Name}</h1>
                         <p>To change the portfolio sort order, adjust the numbers in the left column below, then click 'Save Sort Order'.</p>
                         <p>For example, to make a particular object the first to display in the portfolio, change the number at its left to '1', and change the first object to '2'.</p>
                         <p>If you create duplicate sort numbers, the kiosk will do its best to adjust them appropriately. You may wish to 'Resort' a second time to verify these adjustments.</p>
                         <form id="objSort" name="objSort" action="/USavS{_ID}" method="GET">
-                            <input type="hidden" name="sid" value="{SessionID}"/>
+                            <input type="hidden" name="sid" value="{SessionID}" />
                             <input type="hidden" name="order" value=""/>
                         </form>
                         <form id="processSort" name="processSort" method="post">
@@ -132,6 +129,10 @@
                         </form>
                     </section>
                     </div><!-- end .col -->
+                <!-- Side Bar -->
+                <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+                    {Include sidenav.inc}
+                </div>
                     </div><!-- end .row -->
                 </main>
                 {Include footer.inc}

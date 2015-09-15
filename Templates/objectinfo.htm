@@ -206,35 +206,11 @@
 		<!-- Section Heading -->
 
 		<!-- Side Bar -->
-		
-		<div class="col-md-4 col-lg-3 sidebar">
-			<h2>Collection object</h2>
 
-			{Include sidenav.inc}
-				<div class="display-options">
-					<div class="smalltxt">View results as:</div>
-					<div class="navtxt">
-						<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
-						<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
-					</div>
-					<div class="navtxt">
-						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-						<a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
-					</div>
-					<div class="navtxt">
-						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
-						<a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
-					</div>
-					<div class="navtxt">
-						<img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
-						descriptions
-					</div>
-				</div>
-		</div>
 		
 
 		<!-- Main Content -->
-		<div class="col-md-8 col-lg-8  children">
+		<div class="col-md-8 col-lg-8  col-lg-push-3 children">
 			<section id="main-content" tabindex="-1">
 
 		<div class="row">
@@ -526,6 +502,31 @@
 
 			</section>
 		</div><!-- end .col -->
+
+		<div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+			<h2>Collection object</h2>
+
+			{Include sidenav.inc}
+				<div class="display-options">
+					<div class="smalltxt">View results as:</div>
+					<div class="navtxt">
+						<img src="/graphics/icon1.gif" width="12" height="12" alt=""/>
+						<a href="/THU?rec={Current Record}&sid={SessionId}&x={Sequence}">thumbnails</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+						<a href="/LST2?rec={Current Record}&sid={SessionId}&x={Sequence}">text list</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon2.gif" width="12" height="12" alt=""/>
+						<a href="/PRT0?rec={Current Record}&sid={SessionId}&x={Sequence}">image &amp; label</a>
+					</div>
+					<div class="navtxt">
+						<img src="/graphics/icon3b.gif" width="12" height="12" alt=""/>
+						descriptions
+					</div>
+				</div>
+		</div>
 	</div><!-- end .row -->
 </main>
 {Include footer.inc}

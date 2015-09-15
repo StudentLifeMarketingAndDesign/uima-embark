@@ -51,15 +51,10 @@
 
 		
 
-		<!-- Side Bar -->
-		
-		<div class="col-md-4 col-lg-3 sidebar">
-			{Include sidenav.inc}
-		</div>
 		
 
 		<!-- Main Content -->
-		<div class="col-md-8 col-lg-8  children">
+		<div class="col-md-8 col-lg-8 col-lg-push-3 children">
 			<section id="main-content" tabindex="-1">
 				<h1>Browse by curatorial category</h1>
 
@@ -87,10 +82,15 @@
 					<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Prints&lineCount=1&RefineSearch=NewSelection&sort=7&sid={sessionid}">Prints</a></li>
 					<li><a href="/4DACTION/HANDLECGI/QSF2?display=por&whichfield=1&field1=5&value1=Sculptures&lineCount=1&RefineSearch=NewSelection&sort=7&sid={sessionid}">Sculptures</a></li>
 					</ul>
-				</ul>
 
 			</section>
 		</div><!-- end .col -->
+
+		<!-- Side Bar -->
+		
+		<div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+			{Include sidenav.inc}
+		</div>
 	</div><!-- end .row -->
 </main>
 {Include footer.inc}

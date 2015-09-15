@@ -46,14 +46,8 @@
                     <h3 class="section-title">Browse collections</h3>
                 </div>
 
-                <!-- Side Bar -->
-
-                <div class="col-md-4 col-lg-3 sidebar">
-                    {Include sidenav.inc}
-                </div>
-
                 <!-- Main Content -->
-                <div class="col-md-8 col-lg-8  children">
+                <div class="col-md-8 col-lg-8 col-lg-push-3 children">
                     <section id="main-content" tabindex="-1">
                         <h1>Quick search</h1>
                         <form id="Contains" name="Contains" action="/4DACTION/HANDLECGI/CTN3" method="post" >
@@ -87,6 +81,13 @@
 
                     </section>
                     </div><!-- end .col -->
+
+                    <!-- Side Bar -->
+
+                    <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+                        {Include sidenav.inc}
+                    </div>
+
                     </div><!-- end .row -->
                 </main>
                 {Include footer.inc}

@@ -53,6 +53,12 @@
 		padding: 10px 43px;
 	}
 }
+.lt-ie10 .main-nav li a {
+	padding: 10px 14px;
+	@media (min-width: $break-large) {
+		padding: 10px 25px;
+	}
+}
 /* Top level hover state, preserve hover state when hovering dropdown  */
 .main-nav li > a:hover,
 .main-nav li > a:focus,
@@ -69,11 +75,11 @@
 	position: absolute;
 	top: 44px;
 	left: -9999px;
-	margin-left: -75px;
+	margin-left: -90px;
 	opacity: 0;
 	-webkit-transition: opacity 0.2s linear;
 	transition: opacity .2s linear;
-	min-width: 150px;
+	min-width: 180px;
 	background: #4f4b48;
 }
 /* Arrow */

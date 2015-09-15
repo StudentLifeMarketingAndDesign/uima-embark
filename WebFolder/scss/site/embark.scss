@@ -51,12 +51,25 @@ body.CollectionPage .main.container{
 	background-size: contain;
 	background-position: left center;
 }
-
+.collection-box .title {
+	font-size: 14px;
+	padding: 10px;
+	@media (min-width: $break-large) {
+		font-size: 18px;
+		line-height: 1.1;
+		padding: 1em 1.5em 1em;
+	}
+}
 .collectionsholder{
+
+
 	.collection-box{
 		background-position: top center;
 		background-color: #222;
 		background-repeat: no-repeat;
+
+
+
 	}
 
 	&.thumbnails .collection-box{
@@ -150,4 +163,18 @@ img.mfp-img {
 
 .surrogate-list .objsur-thumbnail {
 	padding: 4px 0;
+}
+
+/** Sidebar additional styles **/
+
+.sidebar{
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 4px solid #eee;
+
+	@media (min-width: $break-large) {
+		margin-top: 0;
+		padding-top: 0;
+		border: none;
+	} 
 }

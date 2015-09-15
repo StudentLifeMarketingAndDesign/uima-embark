@@ -71,15 +71,9 @@
 
         
 
-        <!-- Side Bar -->
-        
-        <div class="col-md-4 col-lg-3 sidebar">
-            {Include sidenav.inc}
-        </div>
-        
 
         <!-- Main Content -->
-        <div class="col-md-8 col-lg-8  children">
+       <div class="col-md-8 col-lg-8 col-lg-push-3 children">
             <section id="main-content" tabindex="-1">
                 <h1>Advanced search</h1>
 
@@ -185,6 +179,13 @@
                 
             </section>
         </div><!-- end .col -->
+
+        <!-- Side Bar -->
+        
+        <div class="col-md-4 col-lg-4 col-lg-pull-8 sidebar">
+            {Include sidenav.inc}
+        </div>
+        
     </div><!-- end .row -->
 </main>
 {Include footer.inc}

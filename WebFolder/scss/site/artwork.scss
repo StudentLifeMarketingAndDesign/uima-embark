@@ -1,16 +1,33 @@
 .artwork-image {
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 }
 .artwork-image img {
-	display: inline-block;
+	display: block;
 	margin: 0 auto;
 }
-.artworktitle {
-	color: #333;
-	font-size: 18px;
+.art-title {
+	font-size: 24px;
+}
+.cutline {
+	font-size: 14px;
+	line-height: 1.5;
 	& p {
-		margin: 0;
 		display: inline;
+		margin: 0;
 	}
+}
+.artcredit {
+	display: block;
+	font-size: 14px;
+	margin: 5px 0;
+}
+.fs-lightbox-caption {
+	color: #eeeeee;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+.fs-lightbox-caption p {
+	display: inline;
 }
