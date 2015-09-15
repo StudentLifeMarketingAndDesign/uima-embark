@@ -2,25 +2,25 @@
 		<div class="mobile-navigation">
 			<ul class="">
 				
-					<li><a href="/uima/visit/" class="link">Visit</a>
+					<li><a href="http://uima.uiowa.edu/visit/" class="link">Visit</a>
 					</li>
 				
-					<li><a href="/uima/exhibitions/" class="link">Exhibitions</a>
+					<li><a href="http://uima.uiowa.edu/exhibitions/" class="link">Exhibitions</a>
 					</li>
 				
-					<li><a href="/uima/collections/" class="link">Collections</a>
+					<li><a href="http://uima.uiowa.edu/collections/" class="link">Collections</a>
 					</li>
 				
-					<li><a href="/uima/education/" class="link">Education</a>
+					<li><a href="http://uima.uiowa.edu/education/" class="link">Education</a>
 					</li>
 				
-					<li><a href="/uima/events/" class="link">Events</a>
+					<li><a href="http://uima.uiowa.edu/events/" class="link">Events</a>
 					</li>
 				
-					<li class="active"><a href="/uima/about/" class="link">About</a>
+					<li class="active"><a href="http://uima.uiowa.edu/about/" class="link">About</a>
 					</li>
 				
-					<li><a href="/uima/support/" class="link">Support</a>
+					<li><a href="http://uima.uiowa.edu/support/" class="link">Support</a>
 					</li>
 				
 			</ul>
