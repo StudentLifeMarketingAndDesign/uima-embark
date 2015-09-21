@@ -37,6 +37,11 @@ body.CollectionPage .main.container{
 	}
 }
 
+/*** Section Title ****/
+h3.section-title{
+	padding: 0 15px;
+}
+
 /***** Portfolio Page ******/
 
 .portfolio-label a{
@@ -177,4 +182,13 @@ img.mfp-img {
 		padding-top: 0;
 		border: none;
 	} 
+}
+
+
+/* Advanced Search */
+
+form#Search{
+	input[type="text"]{
+		width: 100%;
+	}
 }
